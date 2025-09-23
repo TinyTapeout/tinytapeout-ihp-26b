@@ -15,7 +15,7 @@ export TT_GL_VERILOG := $(abspath ../../../tt-multiplexer/ol2/tt_top/verilog/)
 SIM           ?= icarus
 WAVES         ?= yes
 TOPLEVEL      ?= test_mux_tb
-MODULE        ?= test_mux
+COCOTB_TEST_MODULES ?= test_mux
 TOPLEVEL_LANG ?= verilog
 COMPILE_ARGS  += -DSIM_$(shell echo $(SIM) | tr a-z A-Z)=1
 COMPILE_ARGS  += -DROM_VMEM_PATH=\"../../../tt/rom/rom.vmem\"
