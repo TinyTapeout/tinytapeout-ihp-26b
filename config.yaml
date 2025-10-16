@@ -1,8 +1,16 @@
 id: 'ttihp25b'
 name: 'Tiny Tapeout IHP 25b'
+pdk: 'ihp-sg13g2'
 end_date: '2025-09-01'
 project_dir: 'projects'
 top_level_macro: 'tt_ihp_wrapper'
 powered_netlists: false
 no_power_gating: false
-pdk: 'ihp-sg13g2'
+
+datasheet_config:
+  theme_override_colour: tt.colours.THEME_SKY_BLUE
+  link_override_colour: tt.colours.THEME_SKY_BLUE
+
+  # include:
+    # - docs/chip_map.typ
+    # - docs/funding.typ
