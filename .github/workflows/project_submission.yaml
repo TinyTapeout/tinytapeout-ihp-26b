@@ -72,21 +72,21 @@ jobs:
         working-directory: tt/precheck
         run: nix-build
 
-      - name: Get all project GDS files that have changed
+      - name: Get all project OAS files that have changed
         id: changed-files
         uses: tj-actions/changed-files@v46
         with:
-          files: projects/tt_um_*/*.gds
+          files: projects/tt_um_*/*.oas
 
       - name: Run precheck
         shell: bash
         working-directory: tt/precheck
         if: steps.changed-files.outputs.any_changed == 'true'
         env:
-          GDS_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
+          OAS_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
         run: |
-          for gds_file in $GDS_FILES; do
-            nix-shell --run "python precheck.py --gds ${{ github.workspace }}/${gds_file} --tech $TECH"
+          for oas_file in $OAS_FILES; do
+            nix-shell --run "python precheck.py --gds ${{ github.workspace }}/${oas_file} --tech $TECH"
           done
 
       - name: Test Summary
