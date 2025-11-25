@@ -104,9 +104,10 @@ async def test_rom(dut):
         key, value = line.split("=", 2)
         items[key] = value
 
-    dut._log.info(f"ROM start bytes: {binascii.hexlify(rom_data[:32], ' ').decode('ascii')}")
+    dut._log.info(
+        f"ROM start bytes: {binascii.hexlify(rom_data[:32], ' ').decode('ascii')}"
+    )
     dut._log.info(f"ROM text data: {items}")
-
 
     assert "shuttle" in items
     assert "repo" in items
@@ -118,7 +119,7 @@ async def test_rom(dut):
     assert re.match("^[0-9a-f]{8}$", items["commit"]) != None
 
     magic = rom_data[248:252]
-    assert magic == b"TT\xFA\xBB"
+    assert magic == b"TT\xfa\xbb"
 
     crc32 = int.from_bytes(rom_data[252:256], "little")
     assert crc32 == binascii.crc32(rom_data[0:252])
