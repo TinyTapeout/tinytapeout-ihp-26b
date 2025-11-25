@@ -135,9 +135,11 @@ jobs:
           name: foundry_submission
           path: foundry_submission
 
-      # Install iverilog (required for GL simulation)
-      - name: install iverilog
-        run: sudo apt-get update && sudo apt-get install -y iverilog
+      - name: Install iverilog (for GL simulation)
+        run: |
+          wget https://github.com/TinyTapeout/iverilog/releases/download/13.0-git-d8c3c51/iverilog_13.0-git-d8c3c51a-1_amd64.deb
+          sudo apt-get update -y
+          sudo apt-get install -y ./iverilog_13.0-git-d8c3c51a-1_amd64.deb
 
       - name: GL simulation
         working-directory: verilog/dv/mux
