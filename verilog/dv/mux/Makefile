@@ -39,7 +39,7 @@ ifeq ($(SIM),verilator)
   endif
 else ifeq ($(SIM),icarus)
   ifeq ($(WAVES),yes)
-    PLUSARGS += +WAVE_FILE=test_mux.vcd
+    COCOTB_PLUSARGS += +WAVE_FILE=test_mux.vcd
   endif
 endif
 

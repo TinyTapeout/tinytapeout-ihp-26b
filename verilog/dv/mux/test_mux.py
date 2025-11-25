@@ -62,7 +62,7 @@ async def test_factory_test(dut):
 
     dut._log.info("test counter")
     for i in range(256):
-        assert dut.uo_out.value == dut.uio_out.value.integer
+        assert dut.uo_out.value == dut.uio_out.value
         assert dut.uo_out.value == i
         await ClockCycles(dut.clk, 1)  # wait until the wait state config is read
 
@@ -87,14 +87,14 @@ async def test_rom(dut):
     for byte_idx in range(len(rom_data)):
         dut.ui_in.value = byte_idx
         await ClockCycles(dut.clk, 1)
-        rom_data[byte_idx] = dut.uo_out.value.integer
+        rom_data[byte_idx] = dut.uo_out.value
 
     dut._log.info(f"Read ROM, addressing sequentially (rst_n=0)")
     dut.rst_n.value = 0
     rom_data_seq = bytearray(256)
     for byte_idx in range(len(rom_data_seq)):
         await ClockCycles(dut.clk, 1)
-        rom_data_seq[byte_idx] = dut.uo_out.value.integer
+        rom_data_seq[byte_idx] = dut.uo_out.value
 
     text = rom_data[32:128].rstrip(b"\0").decode("ascii")
     items = {}
