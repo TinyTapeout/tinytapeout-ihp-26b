@@ -147,7 +147,7 @@ jobs:
           EXPECTED_REPO: ${{ github.repository }}
         run: |
           # temporary workaround for missing bits in pad_raw:
-          sed -i 's/inout \[49:0\] pad_raw/inout [63:0] pad_raw/' ../../../foundry_submission/verilog/gl/tt_ihp_wrapper.nl.v
+          sed -i 's/inout \[61:0\] pad_raw/inout [63:0] pad_raw/' ../../../foundry_submission/verilog/gl/tt_ihp_wrapper.nl.v
 
           make clean test_mux_gl
           # make will return success even if the test fails, so check for failure in the results.xml
