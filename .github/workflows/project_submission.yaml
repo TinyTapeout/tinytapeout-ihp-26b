@@ -41,8 +41,9 @@ jobs:
     runs-on: ubuntu-24.04
     env:
       PDK: ihp-sg13g2
-      PDK_ROOT: ${{ github.workspace }}/IHP-Open-PDK
+      PDK_ROOT: /home/runner/pdk
       PDK_NAME: ihp-sg13g2
+      PDK_VERSION: c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c
       TECH: ihp-sg13g2
     steps:
       - name: checkout repo
@@ -60,6 +61,13 @@ jobs:
         shell: bash
         working-directory: tt/precheck
         run: pip install -r requirements.txt
+
+      - name: Install ${{ env.PDK }} PDK
+        uses: TinyTapeout/ciel-action@v1
+        with:
+          pdk_name: ${{ env.PDK }}
+          pdk_version: ${{ env.PDK_VERSION }}
+          pdk_root: ${{ env.PDK_ROOT }}
 
       - name: Install Nix
         uses: rikhuijzer/cache-install@v1.1.4
