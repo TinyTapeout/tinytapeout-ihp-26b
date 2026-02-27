@@ -12,3 +12,15 @@ modules:
     y: 14
     width: 1
     height: 2
+  # Analog projects - pins pre-assigned (TTIHP26a has no analog switch, dedicated pins)
+  - name: adex_neuron_ncs
+    x: 0
+    y: 12
+    width: 2
+    height: 2
+    analog:
+      0: 15
+      1: 14
+      2: 13
+      3: 12
+      4: 11
