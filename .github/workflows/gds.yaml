@@ -68,13 +68,6 @@ jobs:
       - name: Copy macros
         run: python ./tt/configure.py --copy-macros
 
-      - name: Patch tt_top build script to skip DRC
-        run: |
-          sed -i 's/^[[:space:]]*KLayout\.DRC,$/#&/' tt-multiplexer/ol2/tt_top/build.py
-          sed -i 's/^[[:space:]]*Checker\.KLayoutDRC,$/#&/' tt-multiplexer/ol2/tt_top/build.py
-          sed -i 's/^[[:space:]]*Magic\.DRC,$/#&/' tt-multiplexer/ol2/tt_top/build.py
-          sed -i 's/^[[:space:]]*Checker\.MagicDRC,$/#&/' tt-multiplexer/ol2/tt_top/build.py
-
       - name: Harden tt_top
         working-directory: tt-multiplexer/ol2/tt_top
         run: nix-shell $GITHUB_WORKSPACE/librelane/shell.nix --run "python build.py"
