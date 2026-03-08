@@ -12,6 +12,9 @@ modules:
     y: 14
     width: 1
     height: 2
+  - name: mlyoung_wedgetail
+    x: 9
+    y: 14
   # Analog projects - pins pre-assigned (TTIHP26a has no analog switch, dedicated pins)
   - name: adex_neuron_ncs
     x: 0
