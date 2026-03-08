@@ -33,8 +33,17 @@ $(TMP_DIR)/step-fill2.gds: $(SRC) | $(TMP_DIR)
 		-rd no_activ \
 		$<
 
+# Step 4b: Metal2 micro fill boost — adds 1.0x1.0 um fill cells in gaps
+# too narrow for the standard fill cells, fixing marginal M2Fil.h/k
+# density violations.
+$(TMP_DIR)/step-fill2b.gds: $(TMP_DIR)/step-fill2.gds | $(TMP_DIR)
+	$(KLAYOUT_CMD) -b -zz \
+		-r ./ihp_fill_m2_boost.lym \
+		-rd output_file=$@ \
+		$<
+
 # Step 5: Combine fills
-$(FINAL_GDS): $(TMP_DIR)/step-fill2.gds $(TMP_DIR)/step-fill1.gds | $(TMP_DIR)
+$(FINAL_GDS): $(TMP_DIR)/step-fill2b.gds $(TMP_DIR)/step-fill1.gds | $(TMP_DIR)
 	./ihp_fill_combine.py $^ $@
 
 # Step 6: Run DRC check
