@@ -13,3 +13,6 @@
 #    level: medium
 #    reason: 'The project shorts the power rails when the "addi x0, x0, 0xdeadbeef" instruction is executed.'
 # ```
+tt_um_fpga_can_lehmann:
+  level: medium
+  reason: 'Since the FPGA implements a random bitstream at startup, it may lead to combinatorial loops. See the documentation for how to prevent this.'
