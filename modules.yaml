@@ -28,3 +28,12 @@ modules:
       3: 12
       4: 11
       5: 10
+  - name: opamp_gfcwfzkm
+    x: 19
+    y: 14
+    width: 1
+    height: 2
+    analog:
+      0: 5
+      1: 6
+      2: 7
