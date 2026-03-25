@@ -56,3 +56,12 @@ modules:
     analog:
       0: 15
       1: 14
+  # Force Wokwi projects into the M2 density violation tile area at (800,4000)-(1600,4800).
+  # This displaces denser projects whose high utilization leaves insufficient room for
+  # Metal2 fill, allowing the fill step to meet the 25% M2 density requirement.
+  - name: wokwi_450492230413445121
+    x: 3
+    y: 21
+  - name: wokwi_450492214548484097
+    x: 4
+    y: 21
