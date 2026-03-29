@@ -14,7 +14,7 @@ on:
 jobs:
   gds:
     env:
-      SHUTTLE_SLUG: TTIHP26a
+      FOUNDRY_ID: TT2603
       PYTHONIOENCODING: utf-8
       PDK: ihp-sg13g2
       PDK_ROOT: ${{ github.workspace }}/IHP-Open-PDK
@@ -118,8 +118,8 @@ jobs:
 
       - name: Rename top-level cell for IHP submission, convert to OAS
         run: |
-          python fill/rename.py foundry_submission/gds/tt_ihp_wrapper_final.gds foundry_submission/gds/FMD_QNC_$SHUTTLE_SLUG.gds FMD_QNC_$SHUTTLE_SLUG
-          strm2oas foundry_submission/gds/FMD_QNC_$SHUTTLE_SLUG.gds foundry_submission/gds/FMD_QNC_$SHUTTLE_SLUG.oas
+          python fill/rename.py foundry_submission/gds/tt_ihp_wrapper_final.gds foundry_submission/gds/$FOUNDRY_ID.gds $FOUNDRY_ID
+          strm2oas foundry_submission/gds/$FOUNDRY_ID.gds foundry_submission/gds/$FOUNDRY_ID.oas
 
       - name: upload foundry submission directory
         uses: actions/upload-artifact@v4
