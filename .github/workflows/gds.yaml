@@ -14,7 +14,7 @@ on:
 jobs:
   gds:
     env:
-      FOUNDRY_ID: TT2603
+      FOUNDRY_ID: TT2609
       PYTHONIOENCODING: utf-8
       PDK: ihp-sg13g2
       PDK_ROOT: ${{ github.workspace }}/IHP-Open-PDK
