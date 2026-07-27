@@ -1,67 +1,8 @@
 modules:
-  # Hard coded module locations - other modules will be assigned dynamically
-  - name: chip_rom
-    x: 9
-    y: 13
-  - name: factory_test
-    x: 9
-    y: 12
-  # Art containing modules that needs to be carefully placed so they don't get flipped/mirrored:
-  - name: oscillating_bones
-    x: 8
-    y: 14
-    width: 1
-    height: 2
-  - name: mlyoung_wedgetail
-    x: 9
-    y: 14
-  # Analog projects - pins pre-assigned (TTIHP26a has no analog switch, dedicated pins)
-  - name: adex_neuron_ncs
-    x: 0
-    y: 12
-    width: 2
-    height: 2
-    analog:
-      0: 13
-      1: 12
-      2: 11
-      3: 10
-      4:  9
-      5:  8
-  - name: opamp_gfcwfzkm
-    x: 19
-    y: 14
-    width: 1
-    height: 2
-    analog:
-      0: 5
-      1: 6
-      2: 7
-  - name: analog_genesis
-    x: 18
-    y: 14
-    width: 2
-    height: 2
-    analog:
-      0: 0
-      1: 1
-      2: 2
-      3: 3
-      4: 4
-  - name: techhu_analog_trial
-    x: 2
-    y: 12
-    width: 1
-    height: 2
-    analog:
-      0: 15
-      1: 14
-  # Force Wokwi projects into the M2 density violation tile area at (800,4000)-(1600,4800).
-  # This displaces denser projects whose high utilization leaves insufficient room for
-  # Metal2 fill, allowing the fill step to meet the 25% M2 density requirement.
-  - name: wokwi_450492230413445121
-    x: 3
-    y: 21
-  - name: wokwi_450492214548484097
-    x: 4
-    y: 21
+  # The following modules need to have specific mux addresses assigned
+  - name: 'chip_rom' # ROM module, address 0
+    mux_id: 0
+    blk_id: 0
+  - name: 'factory_test' # Factory test module, address 1
+    mux_id: 0
+    blk_id: 1
