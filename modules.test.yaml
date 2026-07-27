@@ -1,9 +1,10 @@
 modules:
-  - name: "chip_rom"
-    x: 9
-    y: 13
+  # The following modules need to have specific mux addresses assigned
+  - name: 'chip_rom' # ROM module, address 0
+    mux_id: 0
+    blk_id: 0
     pg_vdd: false
-  - name: "factory_test"
-    x: 9
-    y: 12
+  - name: 'factory_test' # Factory test module, address 1
+    mux_id: 0
+    blk_id: 1
     pg_vdd: false
