@@ -29,6 +29,12 @@ jobs:
         with:
           submodules: recursive
 
+      # Nix 2.35.0 (2026-07-13) added an isShallow() guard throwing
+      # "is a shallow Git repository, so 'revCount' is not available".
+      # Work around this by unshallowing the librelane submodule.
+      - name: Unshallow the librelane submodule
+        run: git -C librelane fetch --unshallow
+
       - name: Free Disk Space (Ubuntu)
         uses: jlumbroso/free-disk-space@main
         with:
