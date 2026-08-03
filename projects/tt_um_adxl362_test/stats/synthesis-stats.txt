@@ -1,0 +1,46 @@
+163. Printing statistics.
+
+=== tt_um_adxl362_test ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+      799        - wires
+      834        - wire bits
+      168        - public wires
+      203        - public wire bits
+        8        - ports
+       43        - port bits
+      815 1.45E+04 cells
+        7   88.906   sg13g2_a21o_1
+       46  417.312   sg13g2_a21oi_1
+       10  145.152   sg13g2_a221oi_1
+       20  216.972   sg13g2_a22oi_1
+       34  308.448   sg13g2_and2_1
+       13   165.11   sg13g2_and3_1
+       13  188.698   sg13g2_and4_1
+        6   43.546   sg13g2_buf_1
+      164 8.03E+03   sg13g2_dfrbpq_1
+       45  244.944   sg13g2_inv_1
+       56 1.02E+03   sg13g2_mux2_1
+       57  413.683   sg13g2_nand2_1
+       21  190.512   sg13g2_nand2b_1
+       30   272.16   sg13g2_nand3_1
+        3   38.102   sg13g2_nand3b_1
+       17  185.069   sg13g2_nand4_1
+       72  522.547   sg13g2_nor2_1
+       15   136.08   sg13g2_nor2b_1
+       43  390.096   sg13g2_nor3_1
+       14   152.41   sg13g2_nor4_1
+       67  607.824   sg13g2_o21ai_1
+       12  108.864   sg13g2_or2_1
+       10  127.008   sg13g2_or3_1
+        3   43.546   sg13g2_or4_1
+        3   21.773   sg13g2_tiehi
+       16  116.122   sg13g2_tielo
+       11  159.667   sg13g2_xnor2_1
+        7  101.606   sg13g2_xor2_1
+
+   Chip area for module '\tt_um_adxl362_test': 14456.383200
+     of which used for sequential elements: 8034.163200 (55.58%)
+
