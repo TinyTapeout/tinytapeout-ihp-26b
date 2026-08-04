@@ -1,0 +1,55 @@
+# Tiny Tapeout project information
+project:
+  title:        "1D CA/GO/SO CFAR radar detector"
+  author:       "Lars Nitschke"
+  discord:      ""
+  description:  "A constant false alarm rate detector for pulse radar, processing one 8-bit magnitude sample per clock and emitting one detection decision per range cell, with cell-averaging, greatest-of and smallest-of variants selectable at runtime."
+  language:     "Verilog"
+  clock_hz:     50000000
+
+  # Two tiles reserved for ~205 flip-flops + combo
+  tiles: "1x2"
+
+  top_module:  "tt_um_larsnit_cfar"
+
+  # Source files in ./src — also update PROJECT_SOURCES in test/Makefile
+  source_files:
+    - "project.v"
+    - "cfar_window.v"
+    - "cfar_combine.v"
+    - "cfar_threshold.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+pinout:
+  # Inputs
+  ui[0]: "sample[0]"
+  ui[1]: "sample[1]"
+  ui[2]: "sample[2]"
+  ui[3]: "sample[3]"
+  ui[4]: "sample[4]"
+  ui[5]: "sample[5]"
+  ui[6]: "sample[6]"
+  ui[7]: "sample[7]"
+
+  # Outputs
+  uo[0]: "det"
+  uo[1]: "valid"
+  uo[2]: "half_sel"
+  uo[3]: "v_dbg[0]"
+  uo[4]: "v_dbg[1]"
+  uo[5]: "v_dbg[2]"
+  uo[6]: "v_dbg[3]"
+  uo[7]: "v_dbg[4]"
+
+  # Bidirectional pins (inputs only; uio_oe = 0)
+  uio[0]: "mode[0]"
+  uio[1]: "mode[1]"
+  uio[2]: "mode[2]"
+  uio[3]: "alpha_sel[0]"
+  uio[4]: "alpha_sel[1]"
+  uio[5]: "alpha_sel[2]"
+  uio[6]: "sop"
+  uio[7]: ""
+
+# Do not change!
+yaml_version: 6
