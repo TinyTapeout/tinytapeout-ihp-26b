@@ -1,0 +1,56 @@
+# Tiny Tapeout project information
+project:
+  title:        "Sine Wave Synthesizer"      # Project title
+  author:       "Alberto Beccari"      # Your name
+  discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "This tile synthesizes sine waves in the audio frequency range by means of a CORDIC engine and pulse-density modulation."      # One line description of what your project does
+  language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz:     12288000       # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_abeccari_swsynth"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "project.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs -- musical note selector: {octave[7:4], semitone[3:0]}
+  ui[0]: "NOTE0 (semitone LSB)"
+  ui[1]: "NOTE1"
+  ui[2]: "NOTE2"
+  ui[3]: "NOTE3 (semitone MSB; 0=A..11=G#)"
+  ui[4]: "OCT0 (octave LSB)"
+  ui[5]: "OCT1"
+  ui[6]: "OCT2"
+  ui[7]: "OCT3 (octave MSB; above A0=27.5Hz)"
+
+  # Outputs -- 7-bit parallel sine (offset-binary) + 1-bit sigma-delta
+  uo[0]: "SINE0 (sine LSB, offset-binary)"
+  uo[1]: "SINE1"
+  uo[2]: "SINE2"
+  uo[3]: "SINE3"
+  uo[4]: "SINE4"
+  uo[5]: "SINE5"
+  uo[6]: "SINE6 (sine MSB)"
+  uo[7]: "PDM (1-bit sigma-delta audio out)"
+
+  # Bidirectional pins -- used as debug outputs: sample strobe + cosine
+  uio[0]: "SAMPLE_EN (48 kHz sample strobe)"
+  uio[1]: "COS0 (cosine LSB, offset-binary)"
+  uio[2]: "COS1"
+  uio[3]: "COS2"
+  uio[4]: "COS3"
+  uio[5]: "COS4"
+  uio[6]: "COS5"
+  uio[7]: "COS6 (cosine MSB)"
+
+# Do not change!
+yaml_version: 6
