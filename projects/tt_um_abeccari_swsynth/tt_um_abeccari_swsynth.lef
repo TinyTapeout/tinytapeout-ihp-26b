@@ -301,7 +301,7 @@ MACRO tt_um_abeccari_swsynth
   PIN uio_out[1]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.677200 ;
+    ANTENNADIFFAREA 0.708600 ;
     PORT
       LAYER Metal4 ;
         RECT 83.370 153.980 83.670 154.980 ;
@@ -310,7 +310,7 @@ MACRO tt_um_abeccari_swsynth
   PIN uio_out[2]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.677200 ;
+    ANTENNADIFFAREA 0.299200 ;
     PORT
       LAYER Metal4 ;
         RECT 79.530 153.980 79.830 154.980 ;
@@ -319,7 +319,7 @@ MACRO tt_um_abeccari_swsynth
   PIN uio_out[3]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.677200 ;
+    ANTENNADIFFAREA 0.299200 ;
     PORT
       LAYER Metal4 ;
         RECT 75.690 153.980 75.990 154.980 ;
@@ -328,7 +328,7 @@ MACRO tt_um_abeccari_swsynth
   PIN uio_out[4]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.677200 ;
+    ANTENNADIFFAREA 0.299200 ;
     PORT
       LAYER Metal4 ;
         RECT 71.850 153.980 72.150 154.980 ;
@@ -337,7 +337,7 @@ MACRO tt_um_abeccari_swsynth
   PIN uio_out[5]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.677200 ;
+    ANTENNADIFFAREA 0.299200 ;
     PORT
       LAYER Metal4 ;
         RECT 68.010 153.980 68.310 154.980 ;
@@ -346,7 +346,7 @@ MACRO tt_um_abeccari_swsynth
   PIN uio_out[6]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.677200 ;
+    ANTENNADIFFAREA 0.299200 ;
     PORT
       LAYER Metal4 ;
         RECT 64.170 153.980 64.470 154.980 ;
@@ -355,8 +355,7 @@ MACRO tt_um_abeccari_swsynth
   PIN uio_out[7]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.241800 ;
-    ANTENNADIFFAREA 0.677200 ;
+    ANTENNADIFFAREA 0.299200 ;
     PORT
       LAYER Metal4 ;
         RECT 60.330 153.980 60.630 154.980 ;
@@ -440,11 +439,11 @@ MACRO tt_um_abeccari_swsynth
       LAYER Metal1 ;
         RECT 2.880 3.560 199.200 151.420 ;
       LAYER Metal2 ;
-        RECT 3.735 3.635 199.300 154.285 ;
+        RECT 3.255 3.260 199.305 152.185 ;
       LAYER Metal3 ;
-        RECT 3.695 3.680 198.865 154.240 ;
+        RECT 3.215 3.680 199.345 152.145 ;
       LAYER Metal4 ;
-        RECT 10.460 153.770 29.400 153.980 ;
+        RECT 8.540 153.770 29.400 153.980 ;
         RECT 30.120 153.770 33.240 153.980 ;
         RECT 33.960 153.770 37.080 153.980 ;
         RECT 37.800 153.770 40.920 153.980 ;
@@ -486,7 +485,8 @@ MACRO tt_um_abeccari_swsynth
         RECT 176.040 153.770 179.160 153.980 ;
         RECT 179.880 153.770 183.000 153.980 ;
         RECT 183.720 153.770 186.840 153.980 ;
-        RECT 10.460 3.635 187.300 153.770 ;
+        RECT 187.560 153.770 188.740 153.980 ;
+        RECT 8.540 3.635 188.740 153.770 ;
       LAYER Metal5 ;
         RECT 15.515 3.470 179.125 151.510 ;
   END
