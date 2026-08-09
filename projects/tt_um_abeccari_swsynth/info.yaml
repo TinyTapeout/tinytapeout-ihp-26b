@@ -40,17 +40,17 @@ pinout:
   uo[4]: "SINE4"
   uo[5]: "SINE5"
   uo[6]: "SINE6 (sine MSB)"
-  uo[7]: "PDM (1-bit sigma-delta audio out)"
+  uo[7]: "PDM_I (1-bit sigma-delta audio out)"
 
   # Bidirectional pins -- used as debug outputs: sample strobe + cosine
   uio[0]: "SAMPLE_EN (48 kHz sample strobe)"
-  uio[1]: "COS0 (cosine LSB, offset-binary)"
-  uio[2]: "COS1"
-  uio[3]: "COS2"
-  uio[4]: "COS3"
-  uio[5]: "COS4"
-  uio[6]: "COS5"
-  uio[7]: "COS6 (cosine MSB)"
+  uio[1]: "PDM_Q (1-bit sigma-delta audio out - 90 degrees out of phase from PDM_I)"
+  uio[2]: "unused"
+  uio[3]: "unused"
+  uio[4]: "unused"
+  uio[5]: "unused"
+  uio[6]: "unused"
+  uio[7]: "unused"
 
 # Do not change!
 yaml_version: 6
