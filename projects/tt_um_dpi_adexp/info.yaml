@@ -1,0 +1,68 @@
+# Tiny Tapeout project information
+project:
+  title:        "AdExp DPI Neuron "      # Project title
+  author:       "Saptarshi Ghosh"      # Your name
+  discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "Adaptive Exponential Integrate-and-Fire Neuron "      # One line description of what your project does
+  language:     "Verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 200x150 uM.
+  tiles: "2x2"          # Valid values for analog projects: 1x2, 1x2, 2x2
+
+  # How many analog pins does your project use?
+  analog_pins: 0        # Valid values: 0 to 6
+  uses_3v3: false       # Keep false for this shuttle
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_dpi_adexp"
+
+  # List your project's source files here. Source files must be in ./src and you must list each source file separately, one per line:
+  source_files:        
+    - "project.v"
+    - "adex_block.v"
+    - "adex_pair.v"
+    - "adex_network.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+pinout:
+  # Inputs (ui_in[7:0]) - These are dedicated user inputs for controlling the core.
+  ui[0]: "PWM_E0"            # Input current for pair 0 E block
+  ui[1]: "PWM_I0"            # Input current for pair 0 I block
+  ui[2]: "PWM_E1"            # Input current for pair 1 E block
+  ui[3]: "PWM_I1"            # Input current for pair 1 I block
+  ui[4]: ""                  # Spare
+  ui[5]: ""                  # Spare
+  ui[6]: ""                  # Spare
+  ui[7]: ""                  # Spare
+
+  # Outputs (uo_out[7:0]) - These are dedicated user outputs.
+  uo[0]: "spike_E0"          # Pair 0 E block spike
+  uo[1]: "spike_I0"          # Pair 0 I block spike
+  uo[2]: "spike_E1"          # Pair 1 E block spike
+  uo[3]: "spike_I1"          # Pair 1 I block spike
+  uo[4]: "any_spike"         # Aggregate: OR of all four spikes
+  uo[5]: ""                  # Spare
+  uo[6]: ""                  # Spare
+  uo[7]: ""                  # Spare
+
+  # Bidirectional pins (uio[7:0]) - Unused in the baseline; serial config loader deferred.
+  uio[0]: ""                 # Spare
+  uio[1]: ""                 # Spare
+  uio[2]: ""                 # Spare
+  uio[3]: ""                 # Spare
+  uio[4]: ""                 # Spare
+  uio[5]: ""                 # Spare
+  uio[6]: ""                 # Spare
+  uio[7]: ""                 # Spare
+
+  # Analog pins - unused for digital-only neuron core
+  ua[0]: ""
+  ua[1]: ""
+  ua[2]: ""
+  ua[3]: ""
+  ua[4]: ""
+  ua[5]: ""
+
+# Do not change!
+yaml_version: 6
