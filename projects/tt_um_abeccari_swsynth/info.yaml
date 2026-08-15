@@ -18,6 +18,7 @@ project:
   # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
   source_files:
     - "project.v"
+    - "noise.v"
 
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
 # This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
@@ -44,13 +45,13 @@ pinout:
 
   # Bidirectional pins -- used as debug outputs: sample strobe + cosine
   uio[0]: "SAMPLE_EN (48 kHz sample strobe)"
-  uio[1]: "PDM_Q (1-bit sigma-delta audio out - 90 degrees out of phase from PDM_I)"
+  uio[1]: "unused"
   uio[2]: "unused"
   uio[3]: "unused"
-  uio[4]: "unused"
-  uio[5]: "unused"
-  uio[6]: "unused"
-  uio[7]: "unused"
+  uio[4]: "NOISE (1-bit white noise, maximal-length LFSR PRBS)"
+  uio[5]: "SAW (1-bit sigma-delta sawtooth at the tone frequency)"
+  uio[6]: "SQR (1-bit square wave at the tone frequency)"
+  uio[7]: "PDM_Q (1-bit sigma-delta audio out - 90 degrees out of phase from PDM_I)"
 
 # Do not change!
 yaml_version: 6
