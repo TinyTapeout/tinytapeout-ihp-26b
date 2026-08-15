@@ -1,46 +1,46 @@
-138. Printing statistics.
+139. Printing statistics.
 
 === tt_um_abeccari_swsynth ===
 
         +----------Local Count, excluding submodules.
         |        +-Local Area, excluding submodules.
         |        | 
-     1290        - wires
-     1325        - wire bits
-      110        - public wires
-      145        - public wire bits
+     1492        - wires
+     1527        - wire bits
+      143        - public wires
+      178        - public wire bits
         8        - ports
        43        - port bits
-     1306 1.66E+04 cells
-       43  546.134   sg13g2_a21o_1
-      114 1.03E+03   sg13g2_a21oi_1
+     1508 1.96E+04 cells
+       46  584.237   sg13g2_a21o_1
+      128 1.16E+03   sg13g2_a21oi_1
        24  348.365   sg13g2_a221oi_1
-       19  206.123   sg13g2_a22oi_1
-       36  326.592   sg13g2_and2_1
-       24  304.819   sg13g2_and3_1
-        1   14.515   sg13g2_and4_1
-        3   21.773   sg13g2_buf_1
-      101 4.95E+03   sg13g2_dfrbpq_1
-       63  342.922   sg13g2_inv_1
-       11  199.584   sg13g2_mux2_1
-        1   38.102   sg13g2_mux4_1
-      129   936.23   sg13g2_nand2_1
-       37  335.664   sg13g2_nand2b_1
-       53  480.816   sg13g2_nand3_1
+       38  412.247   sg13g2_a22oi_1
+       39  353.808   sg13g2_and2_1
+       29  368.323   sg13g2_and3_1
+        2    29.03   sg13g2_and4_1
+        6   43.546   sg13g2_buf_1
+      134 6.56E+03   sg13g2_dfrbpq_1
+       86  468.115   sg13g2_inv_1
+        9  163.296   sg13g2_mux2_1
+        2   76.205   sg13g2_mux4_1
+      143 1.04E+03   sg13g2_nand2_1
+       46  417.312   sg13g2_nand2b_1
+       56  508.032   sg13g2_nand3_1
         2   25.402   sg13g2_nand3b_1
         5   54.432   sg13g2_nand4_1
-      107  776.563   sg13g2_nor2_1
-       28  254.016   sg13g2_nor2b_1
-       25    226.8   sg13g2_nor3_1
-        2   21.773   sg13g2_nor4_1
-      138 1.25E+03   sg13g2_o21ai_1
-       37  335.664   sg13g2_or2_1
-        4   50.803   sg13g2_or3_1
-      109  791.078   sg13g2_tiehi
-        6   43.546   sg13g2_tielo
-      124  1.8E+03   sg13g2_xnor2_1
+      116  841.882   sg13g2_nor2_1
+       43  390.096   sg13g2_nor2b_1
+       28  254.016   sg13g2_nor3_1
+        5   54.432   sg13g2_nor4_1
+      151 1.37E+03   sg13g2_o21ai_1
+       36  326.592   sg13g2_or2_1
+        9  114.307   sg13g2_or3_1
+      142 1.03E+03   sg13g2_tiehi
+        3   21.773   sg13g2_tielo
+      120 1.74E+03   sg13g2_xnor2_1
        60  870.912   sg13g2_xor2_1
 
-   Chip area for module '\tt_um_abeccari_swsynth': 16586.526600
-     of which used for sequential elements: 4947.868800 (29.83%)
+   Chip area for module '\tt_um_abeccari_swsynth': 19632.186000
+     of which used for sequential elements: 6564.499200 (33.44%)
 
