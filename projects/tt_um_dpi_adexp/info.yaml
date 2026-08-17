@@ -20,6 +20,7 @@ project:
   # List your project's source files here. Source files must be in ./src and you must list each source file separately, one per line:
   source_files:        
     - "project.v"
+    - "adex_config.v"
     - "adex_block.v"
     - "adex_pair.v"
     - "adex_network.v"
@@ -46,10 +47,10 @@ pinout:
   uo[6]: ""                  # Spare
   uo[7]: ""                  # Spare
 
-  # Bidirectional pins (uio[7:0]) - Unused in the baseline; serial config loader deferred.
-  uio[0]: ""                 # Spare
-  uio[1]: ""                 # Spare
-  uio[2]: ""                 # Spare
+  # Bidirectional pins (uio[7:0]) - Inputs for write-only SPI configuration.
+  uio[0]: "SPI_CS_N"         # Active-low chip select
+  uio[1]: "SPI_SCLK"         # Mode-0 serial clock, synchronous to core timing limit
+  uio[2]: "SPI_MOSI"         # Serial configuration input
   uio[3]: ""                 # Spare
   uio[4]: ""                 # Spare
   uio[5]: ""                 # Spare

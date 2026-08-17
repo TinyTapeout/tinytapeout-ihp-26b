@@ -1,45 +1,45 @@
-134. Printing statistics.
+141. Printing statistics.
 
 === tt_um_dpi_adexp ===
 
         +----------Local Count, excluding submodules.
         |        +-Local Area, excluding submodules.
         |        | 
-     2915        - wires
-     2950        - wire bits
-      284        - public wires
-      319        - public wire bits
+     6649        - wires
+     6684        - wire bits
+      781        - public wires
+      816        - public wire bits
         8        - ports
        43        - port bits
-     2931 4.13E+04 cells
-       81 1.03E+03   sg13g2_a21o_1
-      287  2.6E+03   sg13g2_a21oi_1
-       14  203.213   sg13g2_a221oi_1
-       19  206.123   sg13g2_a22oi_1
-      138 1.25E+03   sg13g2_and2_1
-       34  431.827   sg13g2_and3_1
-        1   14.515   sg13g2_and4_1
-        4    29.03   sg13g2_buf_1
-      292 1.43E+04   sg13g2_dfrbpq_1
-      121  658.627   sg13g2_inv_1
-       20   362.88   sg13g2_mux2_1
-      294 2.13E+03   sg13g2_nand2_1
-      102  925.344   sg13g2_nand2b_1
-      134 1.22E+03   sg13g2_nand3_1
-       10  127.008   sg13g2_nand3b_1
-       16  174.182   sg13g2_nand4_1
-      243 1.76E+03   sg13g2_nor2_1
-       88  798.336   sg13g2_nor2b_1
-       31  281.232   sg13g2_nor3_1
-       15  163.296   sg13g2_nor4_1
-      217 1.97E+03   sg13g2_o21ai_1
-       62  562.464   sg13g2_or2_1
-       12   152.41   sg13g2_or3_1
-        4   58.061   sg13g2_or4_1
+     6665 9.82E+04 cells
+      186 2.36E+03   sg13g2_a21o_1
+      603 5.47E+03   sg13g2_a21oi_1
+       24  348.365   sg13g2_a221oi_1
+       91  987.223   sg13g2_a22oi_1
+      244 2.21E+03   sg13g2_and2_1
+       68  863.654   sg13g2_and3_1
+        4   58.061   sg13g2_and4_1
+        5   36.288   sg13g2_buf_1
+      751 3.68E+04   sg13g2_dfrbpq_1
+      286 1.56E+03   sg13g2_inv_1
+      279 5.06E+03   sg13g2_mux2_1
+      638 4.63E+03   sg13g2_nand2_1
+      204 1.85E+03   sg13g2_nand2b_1
+      212 1.92E+03   sg13g2_nand3_1
+       17  215.914   sg13g2_nand3b_1
+       35  381.024   sg13g2_nand4_1
+      673 4.88E+03   sg13g2_nor2_1
+      223 2.02E+03   sg13g2_nor2b_1
+      122 1.11E+03   sg13g2_nor3_1
+       50   544.32   sg13g2_nor4_1
+      520  4717.44   sg13g2_o21ai_1
+       73  662.256   sg13g2_or2_1
+       42  533.434   sg13g2_or3_1
+       14  203.213   sg13g2_or4_1
        19  137.894   sg13g2_tielo
-      403 5.85E+03   sg13g2_xnor2_1
-      270 3.92E+03   sg13g2_xor2_1
+      901 1.31E+04   sg13g2_xnor2_1
+      381 5.53E+03   sg13g2_xor2_1
 
-   Chip area for module '\tt_um_dpi_adexp': 41325.870600
-     of which used for sequential elements: 14304.729600 (34.61%)
+   Chip area for module '\tt_um_dpi_adexp': 98171.929800
+     of which used for sequential elements: 36790.588800 (37.48%)
 
