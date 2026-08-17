@@ -8,9 +8,9 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## 🧠 AdExp DPI Neuron Network (tt_um_dpi_adexp)
 
-A digital spiking-neuron network for the IHP SG13G2 shuttle (TTIHP-26b). It emulates Adaptive Exponential (AdEx) integrate-and-fire dynamics with Differential-Pair-Integrator (DPI) style synapses, built entirely from **shifts, adds and subtracts**: there is no multiplier, no divider and no lookup table anywhere in the RTL, which makes the design compact, fully synthesizable, and easy to audit. It is the work of Saptarshi Ghosh (publishing as Saptarshi Ghosh).
+A digital spiking-neuron network for the IHP SG13G2 shuttle (TTIHP-26b). The active source set emulates Adaptive Exponential (AdEx) integrate-and-fire dynamics with DPI-style synaptic coupling using **shifts, adds and subtracts** only: `project.v`, `adex_config.v`, `adex_block.v`, `adex_pair.v`, and `adex_network.v` contain no multiplier, divider, or lookup table. It is the work of Saptarshi Ghosh.
 
-The baseline configuration is a **population of four blocks forming two excitatory/inhibitory (E/I) pairs** with reciprocal inhibition. Each block is a self-contained "population primitive" (1 membrane prime + 2 fast-positive units + 3 slow-negative adaptation units, 6 state variables in total). The architecture is compositional: `adex_block` → `adex_pair` → `adex_network`.
+The baseline configuration is a **population of four blocks forming two excitatory/inhibitory (E/I) pairs** with reciprocal inhibition. Each block is a self-contained population primitive: 1 membrane prime, 2 fast-positive units, 3 slow-negative adaptation units, and 3 small slow-period counters. The architecture is compositional: `adex_block` -> `adex_pair` -> `adex_network`.
 
 ## How it works ⚙️
 
@@ -30,10 +30,16 @@ Fast-positive units (drive the upstroke; accumulate while `v > VTRIG`):
 f_i' = f_i - (f_i >> KF_i) + (v > VTRIG ? FINC_i : 0)
 ```
 
-Slow-negative units (adaptation; decay always, bump on the block's own spike):
+Slow-negative units use a 7-bit phase counter $p_i$ and their configured period $KS_i$:
 
 ```math
-w_i' = w_i - (w_i >> KS_i) + (v > VTH ? WBUMP_i : 0)
+p_i' = (p_i = KS_i - 1) ? 0 : p_i + 1
+```
+
+On a period tick, the unit relaxes toward zero by one eighth of its magnitude, with a minimum one-count change to avoid a quantisation dead zone. Otherwise it holds its value. Every slow unit receives the shared runtime `WBUMP_Q` on the block's own spike:
+
+```math
+w_i' = w_i + (p_i = KS_i - 1 ? relax(w_i) : 0) + (v > VTH ? WBUMP_Q : 0)
 ```
 
 On `v > VTH` the block emits a registered **spike** and performs a subtractive reset `v' = v - VSTEP` (classic AdEx spike-and-reset, without the exponential term: the fast units supply the upstroke instead). Drive contributions are
@@ -43,46 +49,47 @@ fast_drive = (f0 >> FSH0) + (f1 >> FSH1)
 slow_drive = (w0 >> SSH0) + (w1 >> SSH1) + (w2 >> SSH2)
 ```
 
-all values saturated to their widths. This is the "shift-only AdEx emulation" from `src/implementation_plan.md` (authoritative spec, kept in-repo).
+all state updates are saturated to their storage widths. This is the "shift-only AdEx emulation" described in `src/implementation_plan.md`; the synthesised RTL is definitive for fixed-point and shift semantics.
 
 ### The three slow units and coprime periods
 
-Each block carries **three** slow-negative units whose decay time constants are a coprime triple of powers of two (plan section 5). Distinct coprime period sets per block keep E and I populations from locking into identical rhythms:
+Each block carries **three** slow-negative units with distinct integer update periods. `KS_i` is the number of core cycles between relaxation updates, not a right-shift exponent. With the fixed one-eighth relaxation, the approximate exponential time constant is $8KS_i$ cycles at magnitudes above eight counts; the minimum one-count relaxation completes the return to zero at low magnitudes.
 
-| Pair | E slow periods (KS0, KS1, KS2) | I slow periods (KS0, KS1, KS2) |
+| Pair | E slow periods in cycles (KS0, KS1, KS2) | I slow periods in cycles (KS0, KS1, KS2) |
 | :--- | :--- | :--- |
 | pair 0 | (5, 7, 11) | (13, 17, 19) |
 | pair 1 | (23, 29, 31) | (37, 41, 43) |
 | pair 2 (stretch, N_PAIRS=3) | (47, 53, 59) | (61, 67, 71) |
 
-All three slow units bump on the block's own spike (`W += WBUMP` each); setting WBUMP1/WBUMP2 = 0 recovers the "one designated unit" variant. This produces measurable spike-frequency adaptation: the ISI grows as the slow units accumulate.
+All three slow units bump on the block's own spike (`W += WBUMP_Q` each). This produces spike-frequency adaptation: the slow units accumulate during a spike train and relax at their independently scheduled periods.
 
 ### Network structure
 
 * `adex_block` — the population primitive above (parameters in the next section).
-* `adex_pair` — one E block and one I block with **reciprocal inhibition**: E spikes inhibit I and vice versa (`inh_in` port, magnitude = 1.0 >> INH_SHIFT). E and I use different slow-period triples.
-* `adex_network` — two pairs (baseline, `N_PAIRS=2`), each pair isolated from the other; a three-pair stretch (`N_PAIRS=3`) adds an excitatory ring E0 → E1 → E2 → E0.
+* `adex_pair` — one E block and one I block with **reciprocal inhibition**: E spikes inhibit I and vice versa (`inh_in` port, magnitude = runtime `INH_AMT_Q`, default 512). E and I use different slow-period triples.
+* `adex_network` — two pairs (baseline, `N_PAIRS=2`), each pair isolated from the other. Its optional three-pair configuration (`N_PAIRS=3`) adds an excitatory ring E0 -> E1 -> E2 -> E0. The submitted top wrapper fixes `N_PAIRS=2`; using the stretch configuration also requires widening its wrapper ports.
 
-### Parameter table (compile-time, Verilog parameters)
+### Configuration controls
 
-All behavioural constants are parameters of `adex_block` with provisional defaults. Retuning means editing the parameter defaults and re-synthesising (the runtime serial config loader is deferred; see Known limitations).
+`adex_config` supplies a reset-defaulted active register bank. SPI writes first update a shadow bank; a separate `COMMIT` frame transfers every field to the active bank on one core-clock edge. The following controls are runtime configurable.
 
-| Group | Parameter | Default | Meaning |
+| Group | Runtime field | Default | Meaning |
 | :--- | :--- | :--- | :--- |
-| Prime | `VINIT_Q` | -2048 | reset value (-0.5) |
-| | `VTH_Q` | 4096 | spike threshold (1.0) |
-| | `VTRIG_Q` | 3072 | fast-unit trigger (0.75) |
-| | `VSTEP_Q` | 4096 | subtractive reset step (1.0) |
-| | `KV` | 4 | membrane leak shift (tau = 2^KV cycles) |
-| Fast | `KF0`, `KF1` | 1, 2 | decay shifts |
-| | `FINC0`, `FINC1` | 128, 192 | increments while v > VTRIG |
-| | `FSH0`, `FSH1` | 1, 1 | drive output shifts |
-| Slow | `KS0..2` | (per pair, see table above) | decay shifts; **7 bits wide, periods up to 71** |
-| | `WBUMP0..2` | 256 each | spike-triggered bump |
-| | `SSH0..2` | 3, 3, 3 | drive output shifts |
-| Drive | `IEXT_Q` | 1024 | external current (0.25) |
-| | `INH_SHIFT` | 3 | inhibition = 1.0 >> 3 |
-| | `EXC_SHIFT` | 3 | excitation = 1.0 >> 3 |
+| Per neuron | `VTH_Q` | 4096 | signed 14-bit spike threshold (max +8191; E0 test uses 5120) |
+| Per neuron | `IEXT_Q` | 1024 | signed 12-bit input-current magnitude (default 1024, tests <=1024) |
+| Global | `VTRIG_Q` | 3072 | signed 14-bit fast-unit trigger |
+| Global | `VSTEP_Q` | 4096 | signed 14-bit subtractive reset step |
+| Global | `FINC0`, `FINC1` | 128, 192 | unsigned 9-bit fast-unit increments |
+| Global | `WBUMP_Q` | 256 | unsigned 10-bit bump for each slow unit (default 256, tests <=600) |
+| Global | `INH_AMT_Q` | 512 | unsigned 12-bit reciprocal-inhibition magnitude (default 512, tests <=256) |
+
+The 14-bit V/VTRIG/VSTEP, 12-bit IEXT, and 12-bit INH_AMT field widths are the
+demonstrated operating ranges (see `src/adex_config.v` header); the 14-bit signed
+thresholds are required because the E0 phase-locked test raises `VTH_Q` to 5120
+(13-bit signed caps at +4095), and 12-bit signed IEXT is required for +1024
+(11-bit signed caps at +1023).
+
+`VINIT_Q`, `KV`, `KF0/1`, `FSH0/1`, `KS0..2`, `SSH0..2`, `SLOW_DECAY_SHIFT`, and the optional stretch-ring excitation magnitude remain compile-time constants. Keeping shift counts static avoids variable shifters in the neuron datapath.
 
 ## Pin map (baseline, N_PAIRS=2)
 
@@ -90,51 +97,71 @@ All behavioural constants are parameters of `adex_block` with provisional defaul
 | :--- | :--- | :--- |
 | `clk` | in | system clock |
 | `rst_n` | in | active-low reset |
-| `ena` | in | unused (tied off by harness) |
+| `ena` | in | unused |
 | `ui_in[0]` | in | PWM input current, E0 |
 | `ui_in[1]` | in | PWM input current, I0 |
 | `ui_in[2]` | in | PWM input current, E1 |
 | `ui_in[3]` | in | PWM input current, I1 |
-| `ui_in[7:4]` | in | unused (tie low) |
-| `uio_in[7:0]` | in | unused (tie low) |
-| `uo_out[0]` | out | spike E0 (1 cycle pulse) |
+| `ui_in[7:4]` | in | unused |
+| `uio_in[0]` | in | SPI `CS_N` |
+| `uio_in[1]` | in | SPI mode-0 `SCLK` |
+| `uio_in[2]` | in | SPI `MOSI` |
+| `uio_in[7:3]` | in | unused |
+| `uo_out[0]` | out | registered E0 spike indicator |
 | `uo_out[1]` | out | spike I0 |
 | `uo_out[2]` | out | spike E1 |
 | `uo_out[3]` | out | spike I1 |
 | `uo_out[4]` | out | any-spike aggregate (E0|I0|E1|I1) |
 | `uo_out[7:5]` | out | tied low |
-| `uio_out`, `uio_oe` | out | tied low (bidirectional unused) |
+| `uio_out`, `uio_oe` | out | tied low; this is a write-only SPI interface |
 
-`ui_in[7:4]` and `uio_in` must be driven low; a floating input keeps the PWM drives off, so the network simply stays silent.
+`ui_in[7:4]`, `uio_in[7:3]`, and `ena` are ignored by the RTL. The four active drive pins must be driven to known binary values. They are sampled once per clock and act as binary current enables; an external source may provide PWM, while a constant high level supplies the configured `IEXT_Q` every cycle. An unresolved active input can propagate an unknown value through the state update.
 
 ## How to test 🧪
 
 1. **Reset**: hold `rst_n` low for at least 5 clock cycles, then release.
 2. **Drive**: set some of `ui_in[3:0]` high (constant PWM = constant input current). E.g. drive all four high.
-3. **Observe**: `uo_out[0..3]` pulse for one cycle whenever the corresponding block crosses threshold; `uo_out[4]` pulses when any block fires.
+3. **Observe**: `uo_out[0..3]` is high after a clock edge when the corresponding block's pre-update `v` was greater than `VTH_Q`; it is not edge-detected. `uo_out[4]` is the OR of those four registered indicators.
+4. **Configure (optional)**: hold `CS_N` low, send one or more 32-bit MSB-first SPI mode-0 write frames, then send a `COMMIT` frame. `SCLK` must be no faster than `clk/8`; keep `CS_N` stable for at least two `clk` cycles before and after each frame.
 
-With all drives high and default parameters, measured behaviour (cocotb, RTL and gate-level):
+| Frame | Bits [31:28] | Bits [27:24] | Bits [23:20] | Bits [19:4] | Bits [3:0] |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Write | `0xA` | target 0=E0, 1=I0, 2=E1, 3=I1, F=global | field ID | 16-bit value | `0` |
+| Commit | `0xC` | `0` | `0` | `0` | `0` |
 
-* All four blocks spike; E blocks fire faster than I blocks (E0 ≈ 567 spikes vs I0 ≈ 222 per 60 000 cycles in a long run; E0 115 vs I0 49 in the first 1200 cycles).
-* **Adaptation**: E0's average ISI grows from ≈7 cycles (first spikes) to ≈10 cycles (steady state), ratio ≈1.4 — the slow units visibly slow the firing.
-* **Inhibition**: E0's spike count drops when I0 is driven (≈402 alone → ≈376 with I0 active) and recovers after.
-* **Pair isolation**: driving pair 0 only, pair 1 stays silent (baseline has no cross-pair coupling).
-* **No lock**: E and I spikes stay out of phase; coincident-spike fraction ≈0.03.
+Per-neuron fields are 0=`VTH_Q`, 1=`IEXT_Q`. Global fields are 0=`VTRIG_Q`, 1=`VSTEP_Q`, 2=`FINC0`, 3=`FINC1`, 4=`WBUMP_Q`, and 5=`INH_AMT_Q`. Unsigned fields use the least-significant 9, 11, or 15 bits of the value field as applicable.
 
-The automated suite is `test/test.py` (cocotb, 8 tests: reset state, exact block arithmetic vs a Python fixed-point reference, silence, spiking + aggregate OR, adaptation ratio, inhibition suppression, pair isolation, lock check). Run with `make -B` in `test/` (needs cocotb 1.9.2 + pytest 8.3.4; the user's `ccotb` mamba env has them). Two tests reach into internal hierarchy (`dut.net.pair0.e_block`); at gate level the netlist flattens that hierarchy, so those two log a warning and check only what is visible from the pins — the pin-level behaviour tests still run and pass on the gate netlist.
+With the default parameters, the intended pin-level checks are:
 
-## Verification status (2026-08-08)
+* All four blocks eventually spike when all four active drive pins are high.
+* **Adaptation**: E0's late inter-spike intervals exceed its early inter-spike intervals.
+* **Inhibition**: E0's firing rate decreases while I0 is driven and recovers after I0 stops.
+* **Pair isolation**: driving pair 0 does not create a direct input to pair 1 in the baseline configuration.
+* **No lock**: E0 and I0 do not sustain in-phase spiking under the default drive used by the testbench.
 
-* Block arithmetic exact-checked against an independent Python fixed-point reference (77/77 cases).
-* Old-vs-new `adex_block` differential equivalence: 5016/5016 states bit-identical after the lint-clean restructure.
-* Cocotb suite: 8/8 PASS at RTL; 6/8 behavioural tests PASS at gate level (2 internal-hierarchy tests guarded).
-* iverilog 13 compiles warning-free; Verilator lint is clean of WIDTHEXPAND/BLKSEQ (explicit sign-extension wires + combinational next-state logic).
+These are behavioural checks, not validated numerical characterisation. The RTL has been re-verified with the full 14-test suite (see Verification scope below).
+
+The automated suite is `test/test.py` (cocotb, **14 tests**: reset state, directed E0 block arithmetic against a Python fixed-point reference, SPI shadow/commit behavior, silence, spiking + aggregate OR, adaptation ratio, tonic f-I response, fast spiking, inhibition suppression, pair isolation, no-lock, phase-locked alternation, bursting pattern, and burst length vs WBUMP). The arithmetic test uses nine directed vectors and exercises period-counter wrap; the SPI test checks that a write has no effect before commit and reaches E0 after commit. Run with `make -B` in `test/`. Three tests reach into internal hierarchy (`dut.net.pair0.e_block` or `dut.u_config`); at gate level the netlist can flatten that hierarchy, so their internal checks log a warning and return. `test_reset_state` still checks that the visible outputs are zero in reset.
+
+## Verification scope (2026-08-16)
+
+* The active synthesis source list contains the wrapper, configuration bank, block, pair, and network modules; the legacy LUT core is excluded.
+* Cocotb **14/14 PASS** at RTL (iverilog 13.0 via the oss-cad-suite; `cd test && make -B MODULE=test`). Measured spike metrics (2026-08-16 run): E0=627, I0=376, E1=328, I1=329 over 6000 cycles; adaptation ISI head8=6.5, tail100=9.2; tonic f-I IEXT=512->241 spikes/ISI 8.28 vs IEXT=1024->424 spikes/ISI 4.71; fast spiking 997 spikes/ISI 2.00; inhibition alone=437, with-I0=419, after=435; coincidence fraction=0.42 (threshold 0.5); bursting 166 bursts/avg size 5.1, WBUMP=600 -> avg size 2.0.
+* Three tests (`test_reset_state`, `test_arith_block`, `test_spi_shadow_commit`) access internal hierarchy; at gate level these log a warning and return without checking internals.
+* `verilator --lint-only -Wall` on the five-source set is warning-clean for `adex_block.v`; the remaining WIDTHTRUNC warnings are confined to `adex_config.v`'s SPI frame-slice assignments (intentional truncation) and predate this revision.
+
+### RTL area-reduction edits (2026-08-16, behaviour-identical, verified by the 14-test suite)
+* Factored the duplicated `(spike_now ? wbump_14 : 0)` term into one shared `wbump_term_14` wire across the three slow-unit accumulators.
+* Narrowed the `sat16` helper input from 20-bit to 18-bit (the prime accumulator `v_sum` is 18-bit; the dropped bits were pure sign-extension).
+* Removed the dead, unreferenced `wbump_q16` widen wire.
+All three preserve every state the reference model drives; the arithmetic lock `test_arith_block` still passes and lint warning count dropped (36 -> 34). Base area remains ~78% of core (yosys estimate); see `src/AGENTS.md` for the area-feasibility analysis.
 
 ## Known limitations
 
-* **Parameters are compile-time only.** The old design's serial 8-parameter loader was dropped with the rewrite; runtime reconfiguration needs the deferred config loader (plan section 6 fallback) — see `src/implementation_plan.md`.
+* **SPI is write-only and clock-domain limited.** There is no MISO/readback path. The implementation synchronises SPI inputs into `clk`, so it is intended for slow configuration traffic only (`SCLK <= clk/8`), not a high-speed independent SPI clock.
+* **Runtime scope is intentionally lean.** Shift counts, slow periods, reset value, and ring-excitation strength remain compile-time to avoid barrel shifters and a larger configuration bank. The `N_PAIRS=3` stretch branch reuses E0/I0 runtime controls for pair 2; the submitted wrapper is fixed at `N_PAIRS=2`.
 * **Observability**: at gate level only the spike pins are visible; internal `v/f/w` states are not exposed (the old debug bus is gone).
-* `src/adex_neuron_system_tt_lut32.v` is the deprecated Q8.7 LUT-based core from the earlier iteration, kept on disk for reference; it is not in `info.yaml`'s source list and is not synthesised.
+* `src/adex_neuron_system_tt_lut32.v` is the deprecated Q8.7 LUT-based core from the earlier iteration. It contains LUT, multiplication, and division logic, is not in `info.yaml`'s source list, and is not synthesised.
 
 ## External hardware
 
