@@ -8,7 +8,7 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## 🧠 AdExp DPI Neuron Network (tt_um_dpi_adexp)
 
-A digital spiking-neuron network for the IHP SG13G2 shuttle (TTIHP-26b). The active source set emulates Adaptive Exponential (AdEx) integrate-and-fire dynamics with DPI-style synaptic coupling using **shifts, adds and subtracts** only: `project.v`, `adex_config.v`, `adex_block.v`, `adex_pair.v`, and `adex_network.v` contain no multiplier, divider, or lookup table. It is the work of Saptarshi Ghosh.
+A digital spiking-neuron network for the IHP SG13G2 shuttle (TTIHP-26b). The active source set emulates Adaptive Exponential (AdEx) integrate-and-fire dynamics with DPI-style synaptic coupling using **shifts, adds and subtracts** only: `project.v`, `adex_config.v`, `adex_block.v`, `adex_pair.v`, and `adex_network.v` contain no multiplier, divider, or lookup table. 
 
 The baseline configuration is a **population of four blocks forming two excitatory/inhibitory (E/I) pairs** with reciprocal inhibition. Each block is a self-contained population primitive: 1 membrane prime, 2 fast-positive units, 3 slow-negative adaptation units, and 3 small slow-period counters. The architecture is compositional: `adex_block` -> `adex_pair` -> `adex_network`.
 
