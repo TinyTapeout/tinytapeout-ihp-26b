@@ -1,0 +1,142 @@
+157. Printing statistics.
+
+=== clock_divider_stage ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+        5        - wires
+        5        - wire bits
+        3        - public wires
+        3        - public wire bits
+        3        - ports
+        3        - port bits
+        3    61.69 cells
+        1   48.989   sg13g2_dfrbpq_1
+        1    5.443   sg13g2_inv_1
+        1    7.258   sg13g2_tiehi
+
+   Chip area for module '\clock_divider_stage': 61.689600
+     of which used for sequential elements: 48.988800 (79.41%)
+
+=== inverter ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+        2        - wires
+        2        - wire bits
+        2        - public wires
+        2        - public wire bits
+        2        - ports
+        2        - port bits
+        1    5.443 cells
+        1    5.443   sg13g2_inv_1
+
+   Chip area for module '\inverter': 5.443200
+     of which used for sequential elements: 0.000000 (0.00%)
+
+=== tt_um_urish_simon ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+     1334        - wires
+     1369        - wire bits
+      193        - public wires
+      228        - public wire bits
+        8        - ports
+       43        - port bits
+     1324 1.84E+04 cells
+       15  190.512   sg13g2_a21o_1
+      183 1.66E+03   sg13g2_a21oi_1
+        8  116.122   sg13g2_a221oi_1
+       30  325.458   sg13g2_a22oi_1
+       26  235.872   sg13g2_and2_1
+        5   63.504   sg13g2_and3_1
+        1   14.515   sg13g2_and4_1
+        2   14.515   sg13g2_buf_1
+      169 8.28E+03   sg13g2_dfrbpq_1
+       73  397.354   sg13g2_inv_1
+        8  145.152   sg13g2_mux2_1
+       98  711.245   sg13g2_nand2_1
+       31  281.232   sg13g2_nand2b_1
+       35   317.52   sg13g2_nand3_1
+       10  127.008   sg13g2_nand3b_1
+       15  163.296   sg13g2_nand4_1
+      179  1299.11   sg13g2_nor2_1
+       20   181.44   sg13g2_nor2b_1
+       33  299.376   sg13g2_nor3_1
+       21  228.614   sg13g2_nor4_1
+      103  934.416   sg13g2_o21ai_1
+       15   136.08   sg13g2_or2_1
+        2   25.402   sg13g2_or3_1
+        2    29.03   sg13g2_or4_1
+      176 1.28E+03   sg13g2_tiehi
+        2   14.515   sg13g2_tielo
+       43  624.154   sg13g2_xnor2_1
+       19  275.789   sg13g2_xor2_1
+       26        - submodules
+       13        -   clock_divider_stage
+       13        -   inverter
+
+   Chip area for module '\tt_um_urish_simon': 18367.851600
+     of which used for sequential elements: 8279.107200 (45.07%)
+
+=== design hierarchy ===
+
+        +----------Count including submodules.
+        |        +-Area including submodules.
+        |        | 
+     1376 1.92E+04 tt_um_urish_simon
+        3    61.69 clock_divider_stage
+        1    5.443 inverter
+
+        +----------Count including submodules.
+        |        +-Area including submodules.
+        |        | 
+     1425        - wires
+     1460        - wire bits
+      258        - public wires
+      293        - public wire bits
+       73        - ports
+      108        - port bits
+        -        - memories
+        -        - memory bits
+        -        - processes
+     1376 1.92E+04 cells
+       15  190.512   sg13g2_a21o_1
+      183 1.66E+03   sg13g2_a21oi_1
+        8  116.122   sg13g2_a221oi_1
+       30  325.458   sg13g2_a22oi_1
+       26  235.872   sg13g2_and2_1
+        5   63.504   sg13g2_and3_1
+        1   14.515   sg13g2_and4_1
+        2   14.515   sg13g2_buf_1
+      182 8.92E+03   sg13g2_dfrbpq_1
+       99  538.877   sg13g2_inv_1
+        8  145.152   sg13g2_mux2_1
+       98  711.245   sg13g2_nand2_1
+       31  281.232   sg13g2_nand2b_1
+       35   317.52   sg13g2_nand3_1
+       10  127.008   sg13g2_nand3b_1
+       15  163.296   sg13g2_nand4_1
+      179  1299.11   sg13g2_nor2_1
+       20   181.44   sg13g2_nor2b_1
+       33  299.376   sg13g2_nor3_1
+       21  228.614   sg13g2_nor4_1
+      103  934.416   sg13g2_o21ai_1
+       15   136.08   sg13g2_or2_1
+        2   25.402   sg13g2_or3_1
+        2    29.03   sg13g2_or4_1
+      189 1.37E+03   sg13g2_tiehi
+        2   14.515   sg13g2_tielo
+       43  624.154   sg13g2_xnor2_1
+       19  275.789   sg13g2_xor2_1
+       26  872.726 submodules
+       13  801.965   clock_divider_stage
+       13   70.762   inverter
+
+   Chip area for top module '\tt_um_urish_simon': 19240.578000
+     of which used for sequential elements: 8915.961600 (46.34%)
+
