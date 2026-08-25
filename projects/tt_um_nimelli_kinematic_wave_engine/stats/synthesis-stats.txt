@@ -1,0 +1,43 @@
+153. Printing statistics.
+
+=== tt_um_nimelli_kinematic_wave_engine ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+      536        - wires
+      571        - wire bits
+       58        - public wires
+       93        - public wire bits
+        8        - ports
+       43        - port bits
+      552 7.72E+03 cells
+       12   152.41   sg13g2_a21o_1
+       46  417.312   sg13g2_a21oi_1
+        8  116.122   sg13g2_a221oi_1
+       15  162.729   sg13g2_a22oi_1
+       16  145.152   sg13g2_and2_1
+        5   63.504   sg13g2_and3_1
+        2    29.03   sg13g2_and4_1
+       60 2.94E+03   sg13g2_dfrbpq_1
+       31  168.739   sg13g2_inv_1
+        8  145.152   sg13g2_mux2_1
+       58  420.941   sg13g2_nand2_1
+       20   181.44   sg13g2_nand2b_1
+       20   181.44   sg13g2_nand3_1
+        2   25.402   sg13g2_nand3b_1
+        4   43.546   sg13g2_nand4_1
+       62  449.971   sg13g2_nor2_1
+        5    45.36   sg13g2_nor2b_1
+       18  163.296   sg13g2_nor3_1
+        5   54.432   sg13g2_nor4_1
+       50    453.6   sg13g2_o21ai_1
+        8   72.576   sg13g2_or2_1
+        1   12.701   sg13g2_or3_1
+       16  116.122   sg13g2_tielo
+       52   754.79   sg13g2_xnor2_1
+       28  406.426   sg13g2_xor2_1
+
+   Chip area for module '\tt_um_nimelli_kinematic_wave_engine': 7721.519400
+     of which used for sequential elements: 2939.328000 (38.07%)
+
