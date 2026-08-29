@@ -26,12 +26,17 @@ project:
     - "kwe_amp_scale.v"
     - "kwe_speed_rom.v"
     - "kwe_phase_gen.v"
+    - "spis_top.v"
+    - "spis_synchro.v"
+    - "spis_phy.v"
+    - "spis_app.v"
+    - "registers.v"
 
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
 # This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
 pinout:
   # Inputs
-  ui[0]: "rvd"
+  ui[0]: "MODE_SW"
   ui[1]: "SPEED[0]"
   ui[2]: "SPEED[1]"
   ui[3]: "SPEED[2]"
@@ -51,10 +56,10 @@ pinout:
   uo[7]: "SERVO_PWM[7]"
 
   # Bidirectional pins
-  uio[0]: ""
-  uio[1]: ""
-  uio[2]: ""
-  uio[3]: ""
+  uio[0]: "SPI_CS"
+  uio[1]: "SPI_SCK"
+  uio[2]: "SPI_MOSI"
+  uio[3]: "SPI_MISO"
   uio[4]: "MIRROR"
   uio[5]: "REVERSE[0]"
   uio[6]: "REVERSE[1]"
