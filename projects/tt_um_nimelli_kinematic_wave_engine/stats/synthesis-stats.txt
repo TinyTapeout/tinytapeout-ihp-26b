@@ -1,43 +1,43 @@
-153. Printing statistics.
+158. Printing statistics.
 
 === tt_um_nimelli_kinematic_wave_engine ===
 
         +----------Local Count, excluding submodules.
         |        +-Local Area, excluding submodules.
         |        | 
-      536        - wires
-      571        - wire bits
-       58        - public wires
-       93        - public wire bits
+      760        - wires
+      795        - wire bits
+      110        - public wires
+      145        - public wire bits
         8        - ports
        43        - port bits
-      552 7.72E+03 cells
-       12   152.41   sg13g2_a21o_1
+      776 1.23E+04 cells
+       21  266.717   sg13g2_a21o_1
        46  417.312   sg13g2_a21oi_1
-        8  116.122   sg13g2_a221oi_1
-       15  162.729   sg13g2_a22oi_1
-       16  145.152   sg13g2_and2_1
-        5   63.504   sg13g2_and3_1
-        2    29.03   sg13g2_and4_1
-       60 2.94E+03   sg13g2_dfrbpq_1
-       31  168.739   sg13g2_inv_1
-        8  145.152   sg13g2_mux2_1
-       58  420.941   sg13g2_nand2_1
-       20   181.44   sg13g2_nand2b_1
-       20   181.44   sg13g2_nand3_1
-        2   25.402   sg13g2_nand3b_1
-        4   43.546   sg13g2_nand4_1
-       62  449.971   sg13g2_nor2_1
-        5    45.36   sg13g2_nor2b_1
-       18  163.296   sg13g2_nor3_1
-        5   54.432   sg13g2_nor4_1
-       50    453.6   sg13g2_o21ai_1
-        8   72.576   sg13g2_or2_1
-        1   12.701   sg13g2_or3_1
-       16  116.122   sg13g2_tielo
-       52   754.79   sg13g2_xnor2_1
-       28  406.426   sg13g2_xor2_1
+       14  203.213   sg13g2_a221oi_1
+       32  347.155   sg13g2_a22oi_1
+       17  154.224   sg13g2_and2_1
+        8  101.606   sg13g2_and3_1
+        4    29.03   sg13g2_buf_1
+      119 5.83E+03   sg13g2_dfrbpq_1
+       54  293.933   sg13g2_inv_1
+       29  526.176   sg13g2_mux2_1
+       78  566.093   sg13g2_nand2_1
+       23  208.656   sg13g2_nand2b_1
+       29  263.088   sg13g2_nand3_1
+        4   50.803   sg13g2_nand3b_1
+        5   54.432   sg13g2_nand4_1
+       59  428.198   sg13g2_nor2_1
+       15   136.08   sg13g2_nor2b_1
+       20   181.44   sg13g2_nor3_1
+        8   87.091   sg13g2_nor4_1
+       75    680.4   sg13g2_o21ai_1
+       17  154.224   sg13g2_or2_1
+        2   25.402   sg13g2_or3_1
+       14  101.606   sg13g2_tielo
+       61  885.427   sg13g2_xnor2_1
+       22  319.334   sg13g2_xor2_1
 
-   Chip area for module '\tt_um_nimelli_kinematic_wave_engine': 7721.519400
-     of which used for sequential elements: 2939.328000 (38.07%)
+   Chip area for module '\tt_um_nimelli_kinematic_wave_engine': 12311.308800
+     of which used for sequential elements: 5829.667200 (47.35%)
 
