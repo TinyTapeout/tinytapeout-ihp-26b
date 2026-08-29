@@ -62,6 +62,8 @@ Note: Reference Clock Tap Value does not affect the DLL or the delay of the othe
 
 This is mixed-signal design, with the `hx_delay_bank` analog macro block being layout by hand, and the digital register control logic written in verilog. Place-and-route for the digital block, as well as integration of the hand-crafted analog macro block is done automatically.
 
+![Overall Architecture](overall_architecture.drawio.svg)
+
 The `hx_delay_bank` analog macro block consists of five identical delay lines, one of which is used within a Delay-Locked Loop (DLL). The DLL determines the control voltage required, so as to set the total delay of that delay line to exactly one clock period. This same control voltage is used to set the delay of the remaining four delay lines to one clock period as well (assuming the delay lines are well matched). The desired delay is selected by tapping the appropriate point along the delay line using a multiplexer.
 
 Here is the hierarchy for the analog macro block:
@@ -87,6 +89,8 @@ hx_delay_bank
     hx_delay_line_with_mux (reused)
 ```
 
+For more details, it is worthwhile to look into the Xschem schematics provided.
+
 ## Delay Line Design
 
 Each delay line consists of 32 delay cells. Each delay cell is built around a current-starved inverter, plus 2 additional inverters. The delay can be tuned by controlling the bias voltages (to be explained later). The additional inverters isolate the delay line from external loading effects, such as those from the mux. By making each delay cell inverting, any mismatches between rise and fall propagation delay is effectively canceled from one cell to the next, preventing them from accumulating over the entire delay line, as described in [1].
@@ -101,14 +105,16 @@ To make the delay digitally programmable, a 32 to 1 mux constructed out of a tre
 
 ## Delay Locked Loop (DLL) Design
 
-The DLL consists of a phase detector, charge pump (and current bias generator), loop filter capacitor, and voltage controlled delay line.
+The DLL consists of a phase detector, charge pump (and current bias generator), loop filter (just a capacitor in parallel at the output of the charge pump), and voltage controlled delay line.
 
 The DLL tries to make the phase error between the `REF_CLK` and its delayed version be 0. However, when using the conventional D flip flop phase detector, the DLL may lock to a multiple of T<sub>REF_CLK</sub> like 2<sub>TREF_CLK</sub> , 3<sub>TREF_CLK</sub> etc in a phenomenon called harmonic locking. Stuck/false locking is the special case when the DLL locks to the minimum delay possible which may occur when T<sub>initial</sub> is less than T<sub>REF_CLK</sub>.
 
 * The problem of harmonic locking can be avoided by initializing the loop filter capacitor at VDD, and thus achieving minimum delay initially.
 * The problem of stuck/false locking can be worked around by designing the phase detector to ignore the first rising edge of the reference clock.
 
-Both of these solutions require the system to start from a known state, and hence `DLL_RESET` is required. Note however, that if the DLL somehow locks to an unwanted state, it cannot recover on its own, more sophisticated designs may be able to handle this. A wide range of design ideas can be found in the literature, see [ ], [ ], [ ], and [ ].
+Both of these solutions require the system to start from a known state, and hence `DLL_RESET` is required. Note however, that if the DLL somehow locks to an unwanted state, it cannot recover on its own, more sophisticated designs may be able to handle this. A wide range of design ideas can be found in the literature, see [3, 4, 5, 6, 7, 8, 9].
+
+The current design does not implement a lock detection feature, that is, a feature to detect if the DLL has locked correctly to one clock period of the reference clock. Once again, a wide range of design ideas can be found in the literature, for example [10].
 
 ## DLL: Phase detector design
 
@@ -126,11 +132,39 @@ The register control logic is rudimentary but functional; on the rising edge of 
 
 I did not add any antenna diodes into the macro itself, but some wires are actually a little long, so it may not be a bad idea to add them.
 
-A real-world application of a delay line can be found in the SPI peripheral of the S32G Vehicle Network Processor [4].
+A real-world application of a delay line can be found in the SPI peripheral of the S32G Vehicle Network Processor [11].
+
+## Documentation
+
+Diagrams were drawn using `draw.io`, with some icons from the [Draw-io-ECE](https://github.com/NicklasVraa/Draw-io-ECE) project.
 
 ## References
 
-1. Heck, G., Heck, L. S., Singhvi, A., Moreira, M. T., Beerel, P. A., & Calazans, N. L. (2015). Analysis and Optimization of Programmable Delay Elements for 2-Phase Bundled-Data Circuits. 2015 28th International Conference on VLSI Design, 321–326. [https://doi.org/10.1109/vlsid.2015.60](https://doi.org/10.1109/vlsid.2015.60)
-2. Implementation and verification of decoder/de-multiplexer and encoder using logic gates. (n.d.). Virtual Labs. [https://de-iitr.vlabs.ac.in/exp/decoder-demultiplexer-encoder/theory.html](https://de-iitr.vlabs.ac.in/exp/decoder-demultiplexer-encoder/theory.html)
-3.
-4. SPI peripheral S32G QuadSPI Deep Dive. (n.d.). NXP Semiconductors. [https://www.nxp.com/docs/en/application-note/AN13563.pdf](https://www.nxp.com/docs/en/application-note/AN13563.pdf)
+1. Heck, G., Heck, L. S., Singhvi, A., Moreira, M. T., Beerel, P. A., & Calazans, N. L. (2015). Analysis and Optimization of Programmable Delay Elements for 2-Phase Bundled-Data Circuits. 2015 28th International Conference on VLSI Design, 321–326. https://doi.org/10.1109/vlsid.2015.60
+2. Implementation and verification of decoder/de-multiplexer and encoder using logic gates. (n.d.). Virtual Labs. https://de-iitr.vlabs.ac.in/exp/decoder-demultiplexer-encoder/theory.html
+3. Bae, Woorham. (2016). Delay-Locked Loops: False Locking Issues. https://doi.org/10.13140/RG.2.1.2798.1208
+4. Gs, Javed & Khatri, Vishal & Raja, Immanuel & Lenka, Manas & Banerjee, Gaurab. (2014). Differential multi-phase DLL for reconfigurable radio frequency synthesizer. IEEE CONECCT 2014 - 2014 IEEE International Conference on Electronics, Computing and Communication Technologies. 1-5. 10.1109/CONECCT.2014.6740334. https://doi.org/10.1109/CONECCT.2014.6740334
+5. Du, Q., Zhuang, J., & Kwasniewski, T. (2006). A Low-Phase noise, Anti-Harmonic programmable DLL frequency multiplier with period error compensation for spur reduction. IEEE Transactions on Circuits and Systems II Analog and Digital Signal Processing, 53(11), 1205–1209. https://doi.org/10.1109/TCSII.2006.883103
+6. Chang, H., Lin, J., Yang, C., & Liu, S. (2002). A wide-range delay-locked loop with a fixed latency of one clock cycle. IEEE Journal of Solid-State Circuits, 37(8), 1021–1027. https://doi.org/10.1109/jssc.2002.800922
+7. Song, E., Lee, S., Lee, J., Park, J., & Chae, S. (2004). A reset-free anti-harmonic delay-locked loop using a cycle period detector. IEEE Journal of Solid-State Circuits, 39(11), 2055–2061. https://doi.org/10.1109/jssc.2004.835840
+8. Design of Delay Locked Loop with Frequency Division Technique. (2016). Proceedings of 2016 the 6th International Workshop on Computer Science and Engineering. https://doi.org/10.18178/wcse.2016.06.095
+9. Cho, S., & Cho, Y. (2022). A 1.2 V 0.4 mW 20~200 MHz DLL Based on Phase Detector Measuring the Delay of VCDL. Electronics, 11(15), 2434. https://doi.org/10.3390/electronics11152434
+10. Sherafath, M. a. M., & Aziz, Z. a. A. (n.d.). A Novel High Accuracy Digital Lock Detector with False Lock Detection. Scientific & Academic Publishing. http://article.sapub.org/10.5923.j.ac.20130303.06.html
+11. SPI peripheral S32G QuadSPI Deep Dive. (n.d.). NXP Semiconductors. https://www.nxp.com/docs/en/application-note/AN13563.pdf
+
+## Additional References
+Design of a PLL: https://github.com/LegumeEmittingDiode/tt08-tiny-pll/blob/main/docs/info.md
+
+Excellent diagram of false and harmonic locking: https://www.semanticscholar.org/paper/A-2.2-mW-20%E2%80%93135-MHz-False-Lock-Free-DLL-for-Display-Moon-Kong/659ca674d31b180402f3ab807b3fcb037b88fa1e/figure/0
+
+Diagram of harmonic locking: https://www.researchgate.net/figure/Explanation-of-harmonic-lock-and-proposed-shot-pulse-reset-operation_fig10_258383043
+
+Diagram of DLL and delay line: https://www.researchgate.net/figure/Diagram-and-locations-of-IDELAY-and-IDELAYCTRL-modules_fig2_325562388
+
+Good and clear educational series of videos about Delay-Locked Loop by SSCD IIT Kanpur:
+- Lecture 3: Delay-locked loop, tunable delay line https://www.youtube.com/watch?v=GZT11SQSxH8
+- Lecture 7: Locking in a DLL https://www.youtube.com/watch?v=7_8qSAc9hiE
+- Lecture 8: Locking nonidealities in a DLL https://www.youtube.com/watch?v=vZTfCbJRciI
+- Lecture 10: Charge pumps - II https://www.youtube.com/watch?v=xUf4xchqS0o
+
+https://blog.eetop.cn/forum.php?mod=viewthread&tid=149458&page=1&mobile=no
