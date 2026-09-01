@@ -1,0 +1,61 @@
+# Tiny Tapeout project information
+project:
+  title:        "TinyInt"      # Project title
+  author:       "ECHO-HELLO-WORLD424"      # Your name
+  discord:      "patrick_echo_hello_world"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "Single-lane, signed/unsigned INT4 streaming dot-product peripheral with a 20-bit accumulator, bias loading, INT8 saturation"      # One line description of what your project does
+  language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz:     50000000 # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_echo_hello_world424_tinyint"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "int4_multiplier.v"
+    - "product_extender.v"
+    - "tiny_int_accumulator.v"
+    - "tiny_int_core.v"
+    - "tiny_int_protocol.v"
+    - "tt_um_echo_hello_world424_tinyint.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "multiplicand[0]"
+  ui[1]: "multiplicand[1]"
+  ui[2]: "multiplicand[2]"
+  ui[3]: "multiplicand[3]"
+  ui[4]: "multiplier[0]"
+  ui[5]: "multiplier[1]"
+  ui[6]: "multiplier[2]"
+  ui[7]: "multiplier[3]"
+
+  # Outputs
+  uo[0]: "response_data[0]"
+  uo[1]: "response_data[1]"
+  uo[2]: "response_data[2]"
+  uo[3]: "response_data[3]"
+  uo[4]: "response_data[4]"
+  uo[5]: "response_data[5]"
+  uo[6]: "response_data[6]"
+  uo[7]: "response_data[7]"
+
+  # Bidirectional pins
+  uio[0]: "cmd_valid"
+  uio[1]: "command[0]"
+  uio[2]: "command[1]"
+  uio[3]: "command[2]"
+  uio[4]: "signed_mode"
+  uio[5]: "ready"
+  uio[6]: "response_valid"
+  uio[7]: "busy"
+
+# Do not change!
+yaml_version: 6
