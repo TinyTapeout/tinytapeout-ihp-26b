@@ -1,0 +1,46 @@
+133. Printing statistics.
+
+=== tt_um_gyro_lockin ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+      794        - wires
+      829        - wire bits
+      152        - public wires
+      187        - public wire bits
+        8        - ports
+       43        - port bits
+      810 1.38E+04 cells
+       13   165.11   sg13g2_a21o_1
+       55   498.96   sg13g2_a21oi_1
+        8  116.122   sg13g2_a221oi_1
+       24  260.366   sg13g2_a22oi_1
+       25    226.8   sg13g2_and2_1
+        7   88.906   sg13g2_and3_1
+        4   58.061   sg13g2_and4_1
+        6   43.546   sg13g2_buf_1
+      152 7.45E+03   sg13g2_dfrbpq_1
+       54  293.933   sg13g2_inv_1
+       42  762.048   sg13g2_mux2_1
+       61  442.714   sg13g2_nand2_1
+        8   72.576   sg13g2_nand2b_1
+       24  217.728   sg13g2_nand3_1
+        1   12.701   sg13g2_nand3b_1
+       10  108.864   sg13g2_nand4_1
+       81  587.866   sg13g2_nor2_1
+       11   99.792   sg13g2_nor2b_1
+       37  335.664   sg13g2_nor3_1
+        8   87.091   sg13g2_nor4_1
+       96  870.912   sg13g2_o21ai_1
+        4   36.288   sg13g2_or2_1
+        3   38.102   sg13g2_or3_1
+        1   14.515   sg13g2_or4_1
+        1    7.258   sg13g2_tiehi
+       19  137.894   sg13g2_tielo
+       43  624.154   sg13g2_xnor2_1
+       12  174.182   sg13g2_xor2_1
+
+   Chip area for module '\tt_um_gyro_lockin': 13828.449600
+     of which used for sequential elements: 7446.297600 (53.85%)
+
