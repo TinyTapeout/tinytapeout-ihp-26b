@@ -1,0 +1,46 @@
+162. Printing statistics.
+
+=== tt_um_vperumal_l1_fabric ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+     5059        - wires
+     5094        - wire bits
+      772        - public wires
+      807        - public wire bits
+        8        - ports
+       43        - port bits
+     5075 7.86E+04 cells
+       39  495.331   sg13g2_a21o_1
+      230  2086.56   sg13g2_a21oi_1
+        5   72.576   sg13g2_a221oi_1
+      154 1.67E+03   sg13g2_a22oi_1
+       61  553.392   sg13g2_and2_1
+       30  381.024   sg13g2_and3_1
+       24  348.365   sg13g2_and4_1
+       11   79.834   sg13g2_buf_1
+      763 3.74E+04   sg13g2_dfrbpq_1
+       96  522.547   sg13g2_inv_1
+      154 2.79E+03   sg13g2_mux2_1
+       16  609.638   sg13g2_mux4_1
+      833 6.05E+03   sg13g2_nand2_1
+      246 2.23E+03   sg13g2_nand2b_1
+       55   498.96   sg13g2_nand3_1
+        4   50.803   sg13g2_nand3b_1
+       49  533.434   sg13g2_nand4_1
+      136  987.034   sg13g2_nor2_1
+       65   589.68   sg13g2_nor2b_1
+       41  371.952   sg13g2_nor3_1
+       23  250.387   sg13g2_nor4_1
+      969 8.79E+03   sg13g2_o21ai_1
+       40   362.88   sg13g2_or2_1
+       21  266.717   sg13g2_or3_1
+        7  101.606   sg13g2_or4_1
+      549 3.98E+03   sg13g2_tiehi
+      312 4.53E+03   sg13g2_xnor2_1
+      142 2.06E+03   sg13g2_xor2_1
+
+   Chip area for module '\tt_um_vperumal_l1_fabric': 78648.418800
+     of which used for sequential elements: 37378.454400 (47.53%)
+

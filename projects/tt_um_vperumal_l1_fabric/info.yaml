@@ -1,0 +1,49 @@
+# Tiny Tapeout project information
+project:
+  title:        "Scalable Banked L1 Memory Fabric for Edge AI"
+  author:       "Vishnukumar Varatharaja Perumal"
+  discord:      ""
+  description:  "DFF-based silicon demonstrator of a scalable banked L1 weight memory fabric with DMA streaming and GEMM MAC, ported to IHP sg13g2"
+  language:     "Verilog"
+  clock_hz:     40000000
+
+  tiles: "4x2"
+
+  top_module:  "tt_um_vperumal_l1_fabric"
+
+  source_files:
+    - "tt_um_vperumal_l1_fabric.v"
+    - "weight_scm_dff.v"
+    - "l1_arbiter.v"
+    - "dma_engine.v"
+    - "gemm_accelerator_hetero.v"
+
+pinout:
+  ui[0]: "mode[1] / bank_sel[1] / byte_sel[1] / word_sel[1]"
+  ui[1]: "mode[0] / bank_sel[0] / byte_sel[0] / word_sel[0]"
+  ui[2]: "bank_sel[1]"
+  ui[3]: "bank_sel[0]"
+  ui[4]: "byte_sel[1]"
+  ui[5]: "byte_sel[0]"
+  ui[6]: "word_sel[1]"
+  ui[7]: "word_sel[0]"
+
+  uo[0]: "gemm_result[0]"
+  uo[1]: "gemm_result[1]"
+  uo[2]: "gemm_result[2]"
+  uo[3]: "gemm_result[3]"
+  uo[4]: "cpu_grant"
+  uo[5]: "dma_grant"
+  uo[6]: "dma_done_irq"
+  uo[7]: "gemm_done_irq"
+
+  uio[0]: "data[0]"
+  uio[1]: "data[1]"
+  uio[2]: "data[2]"
+  uio[3]: "data[3]"
+  uio[4]: "data[4]"
+  uio[5]: "data[5]"
+  uio[6]: "data[6]"
+  uio[7]: "data[7]"
+
+yaml_version: 6
