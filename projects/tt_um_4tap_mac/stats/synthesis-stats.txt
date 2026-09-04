@@ -1,0 +1,40 @@
+129. Printing statistics.
+
+=== tt_um_4tap_mac ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+      582        - wires
+      617        - wire bits
+       40        - public wires
+       75        - public wire bits
+        8        - ports
+       43        - port bits
+      598 8.02E+03 cells
+       14  177.811   sg13g2_a21o_1
+       46  417.312   sg13g2_a21oi_1
+       10  108.486   sg13g2_a22oi_1
+       14  127.008   sg13g2_and2_1
+        1   12.701   sg13g2_and3_1
+        7  101.606   sg13g2_and4_1
+       40 1.96E+03   sg13g2_dfrbpq_1
+       19  103.421   sg13g2_inv_1
+       32  580.608   sg13g2_mux2_1
+       65  471.744   sg13g2_nand2_1
+       34  308.448   sg13g2_nand2b_1
+        9   81.648   sg13g2_nand3_1
+        5   54.432   sg13g2_nand4_1
+       44  319.334   sg13g2_nor2_1
+       29  263.088   sg13g2_nor2b_1
+        7   63.504   sg13g2_nor3_1
+       37  335.664   sg13g2_o21ai_1
+        7   63.504   sg13g2_or2_1
+        1   12.701   sg13g2_or3_1
+       16  116.122   sg13g2_tielo
+      113 1.64E+03   sg13g2_xnor2_1
+       48   696.73   sg13g2_xor2_1
+
+   Chip area for module '\tt_um_4tap_mac': 8015.641200
+     of which used for sequential elements: 1959.552000 (24.45%)
+
