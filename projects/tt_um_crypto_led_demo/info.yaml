@@ -1,0 +1,54 @@
+# Tiny Tapeout project information
+project:
+  title:        "QAMER CryptoUART: Encrypted UART with LED Status"
+  author:       "QAMER"
+  discord:      ""
+  description:  "UART echo with LFSR-based byte encryption and LED activity status."
+  language:     "Verilog"
+  clock_hz:     50000000
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x1"
+
+  # Your top module name must start with "tt_um_".
+  top_module:  "tt_um_crypto_led_demo"
+
+  # List your project's source files here.
+  source_files:
+    - "project.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names.
+pinout:
+  # Inputs
+  ui[0]: "UART_RXD"
+  ui[1]: "KEY_SEED[0]"
+  ui[2]: "KEY_SEED[1]"
+  ui[3]: "KEY_SEED[2]"
+  ui[4]: "KEY_SEED[3]"
+  ui[5]: "KEY_SEED[4]"
+  ui[6]: "KEY_SEED[5]"
+  ui[7]: "KEY_SEED[6]"
+
+  # Outputs
+  uo[0]: "UART_TXD"
+  uo[1]: "LED[0]"
+  uo[2]: "LED[1]"
+  uo[3]: "LED[2]"
+  uo[4]: "LED[3]"
+  uo[5]: "RX_VALID"
+  uo[6]: "TX_BUSY"
+  uo[7]: "CIPHER_VALID"
+
+  # Bidirectional pins
+  uio[0]: "CIPHERTEXT[0]"
+  uio[1]: "CIPHERTEXT[1]"
+  uio[2]: "CIPHERTEXT[2]"
+  uio[3]: "CIPHERTEXT[3]"
+  uio[4]: "CIPHERTEXT[4]"
+  uio[5]: "CIPHERTEXT[5]"
+  uio[6]: "CIPHERTEXT[6]"
+  uio[7]: "CIPHERTEXT[7]"
+
+# Do not change!
+yaml_version: 6
