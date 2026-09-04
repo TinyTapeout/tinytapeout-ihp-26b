@@ -1,0 +1,43 @@
+108. Printing statistics.
+
+=== tt_um_mac_engine ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+      662        - wires
+      697        - wire bits
+       50        - public wires
+       85        - public wire bits
+        8        - ports
+       43        - port bits
+      678 8.61E+03 cells
+       22  279.418   sg13g2_a21o_1
+       45   408.24   sg13g2_a21oi_1
+        3   43.546   sg13g2_a221oi_1
+       22  238.669   sg13g2_a22oi_1
+       24  217.728   sg13g2_and2_1
+        5   63.504   sg13g2_and3_1
+        5   72.576   sg13g2_and4_1
+       42  2057.53   sg13g2_dfrbpq_1
+       25   136.08   sg13g2_inv_1
+       16  290.304   sg13g2_mux2_1
+       99  718.502   sg13g2_nand2_1
+       31  281.232   sg13g2_nand2b_1
+       18  163.296   sg13g2_nand3_1
+        4   50.803   sg13g2_nand3b_1
+        6   65.318   sg13g2_nand4_1
+       40  290.304   sg13g2_nor2_1
+       16  145.152   sg13g2_nor2b_1
+        5    45.36   sg13g2_nor3_1
+       68  616.896   sg13g2_o21ai_1
+       17  154.224   sg13g2_or2_1
+        3   38.102   sg13g2_or3_1
+        1   14.515   sg13g2_or4_1
+       16  116.122   sg13g2_tielo
+       94 1.36E+03   sg13g2_xnor2_1
+       51  740.275   sg13g2_xor2_1
+
+   Chip area for module '\tt_um_mac_engine': 8612.125200
+     of which used for sequential elements: 2057.529600 (23.89%)
+
