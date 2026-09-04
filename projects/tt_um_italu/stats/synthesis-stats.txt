@@ -1,0 +1,45 @@
+225. Printing statistics.
+
+=== tt_um_italu ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+     1066        - wires
+     1101        - wire bits
+      163        - public wires
+      198        - public wire bits
+        8        - ports
+       43        - port bits
+     1082 1.73E+04 cells
+       30  381.024   sg13g2_a21o_1
+      107  970.704   sg13g2_a21oi_1
+       49  711.245   sg13g2_a221oi_1
+       45  488.187   sg13g2_a22oi_1
+       39  353.808   sg13g2_and2_1
+        2   25.402   sg13g2_and3_1
+        3   43.546   sg13g2_and4_1
+        1    7.258   sg13g2_buf_1
+      165 8.08E+03   sg13g2_dfrbpq_1
+       75   408.24   sg13g2_inv_1
+       58 1.05E+03   sg13g2_mux2_1
+        6  228.614   sg13g2_mux4_1
+       59  428.198   sg13g2_nand2_1
+       57  517.104   sg13g2_nand2b_1
+       32  290.304   sg13g2_nand3_1
+        5   63.504   sg13g2_nand3b_1
+       12  130.637   sg13g2_nand4_1
+       94  682.214   sg13g2_nor2_1
+       32  290.304   sg13g2_nor2b_1
+       22  199.584   sg13g2_nor3_1
+        3   32.659   sg13g2_nor4_1
+      113 1.03E+03   sg13g2_o21ai_1
+       14  127.008   sg13g2_or2_1
+        4   50.803   sg13g2_or3_1
+        8   58.061   sg13g2_tiehi
+       32  464.486   sg13g2_xnor2_1
+       15  217.728   sg13g2_xor2_1
+
+   Chip area for module '\tt_um_italu': 17331.262200
+     of which used for sequential elements: 8083.152000 (46.64%)
+
