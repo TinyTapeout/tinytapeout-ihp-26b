@@ -1,0 +1,53 @@
+# Tiny Tapeout project information
+project:
+  title:        "iTALU: Interactive Testable Arithmetic Logic Unit"
+  author:       "Your Name"
+  discord:      ""
+  description:  "8-bit ALU with DFT features including BIST and scan chain"
+  language:     "Verilog"
+  clock_hz:     50000000       # No specific clock frequency requirement
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x1"
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_italu"
+
+  # List your project's source files here.
+  source_files:
+    - "project.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+pinout:
+  # Inputs
+  ui[0]: "DATA_IN"
+  ui[1]: "LOAD_EN"
+  ui[2]: "EXECUTE"
+  ui[3]: ""
+  ui[4]: ""
+  ui[5]: ""
+  ui[6]: "SCAN_EN"
+  ui[7]: "BIST_START"
+
+  # Outputs
+  uo[0]: "RESULT_0"
+  uo[1]: "RESULT_1"
+  uo[2]: "RESULT_2"
+  uo[3]: "RESULT_3"
+  uo[4]: "RESULT_4"
+  uo[5]: "RESULT_5"
+  uo[6]: "RESULT_6"
+  uo[7]: "RESULT_7"
+
+  # Bidirectional pins
+  uio[0]: "ZERO_FLAG"
+  uio[1]: "CARRY_FLAG"
+  uio[2]: "NEG_FLAG"
+  uio[3]: "OVF_FLAG"
+  uio[4]: "BIST_DONE"
+  uio[5]: "TEST_PASS"
+  uio[6]: "SCAN_OUT"
+  uio[7]: ""
+
+# Do not change!
+yaml_version: 6
