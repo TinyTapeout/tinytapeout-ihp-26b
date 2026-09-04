@@ -1,0 +1,53 @@
+# Tiny Tapeout project information
+project:
+  title:        "4-Input Signed Neuron / Perceptron"
+  author:       "Mohammad Musharaf Qureshi"
+  discord:      ""
+  description:  "Compact 4-input signed perceptron accelerator with ReLU activation and 8-bit output saturation."
+  language:     "Verilog"
+  clock_hz:     50000000
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x1"
+
+  # Your top module name must start with "tt_um_".
+  top_module:  "tt_um_neuron"
+
+  # List your project's source files here.
+  source_files:
+    - "project.v"
+
+# The pinout of your project. Leave unused pins blank.
+pinout:
+  # Inputs
+  ui[0]: "DATA[0]"
+  ui[1]: "DATA[1]"
+  ui[2]: "DATA[2]"
+  ui[3]: "DATA[3]"
+  ui[4]: "DATA[4]"
+  ui[5]: "DATA[5]"
+  ui[6]: ""
+  ui[7]: ""
+
+  # Outputs
+  uo[0]: "RESULT[0]"
+  uo[1]: "RESULT[1]"
+  uo[2]: "RESULT[2]"
+  uo[3]: "RESULT[3]"
+  uo[4]: "RESULT[4]"
+  uo[5]: "RESULT[5]"
+  uo[6]: "RESULT[6]"
+  uo[7]: "RESULT[7]"
+
+  # Bidirectional pins
+  uio[0]: "BUSY"
+  uio[1]: "DONE"
+  uio[2]: ""
+  uio[3]: "ADDR[0]"
+  uio[4]: "ADDR[1]"
+  uio[5]: "ADDR[2]"
+  uio[6]: "ADDR[3]"
+  uio[7]: ""
+
+# Do not change!
+yaml_version: 6
