@@ -1,0 +1,62 @@
+# Tiny Tapeout project information
+project:
+  title:        "Timing-Prediction Test Vehicle"
+  author:       "ECHO-HELLO-WORLD424"
+  discord:      ""
+  description:  "Self-checking arithmetic timing-failure test vehicle with ring-oscillator delay canaries (pre/post-silicon timing-prediction study on IHP SG13G2)"
+  language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz:     50000000
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_echoworld424_tpv"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "tt_um_echoworld424_tpv.v"
+    - "tpv_cells.v"
+    - "tpv_delay_line.v"
+    - "tpv_rca16.v"
+    - "tpv_checker.v"
+    - "tpv_pattern_gen.v"
+    - "tpv_ro_canary.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "cfg_seg0[0] (reset) / unused (run)"
+  ui[1]: "cfg_seg0[1] (reset) / unused (run)"
+  ui[2]: "cfg_seg1[0] (reset) / unused (run)"
+  ui[3]: "cfg_seg1[1] (reset) / unused (run)"
+  ui[4]: "cfg_seg2[0] (reset) / unused (run)"
+  ui[5]: "cfg_seg2[1] (reset) / unused (run)"
+  ui[6]: "cfg_seg3[0] (reset) / unused (run)"
+  ui[7]: "cfg_seg3[1] (reset) / FREEZE (run, active high)"
+
+  # Outputs
+  uo[0]: "ro_ptr[0]"
+  uo[1]: "ro_ptr[1]"
+  uo[2]: "ro_ptr[2]"
+  uo[3]: "ro_ptr[3]"
+  uo[4]: "dut_err (live)"
+  uo[5]: "gen_ro_dead"
+  uo[6]: "mat_ro_dead"
+  uo[7]: "frame_strobe"
+
+  # Bidirectional pins
+  uio[0]: "cfg[8] (reset in) / status[0] (run out)"
+  uio[1]: "cfg[9] (reset in) / status[1] (run out)"
+  uio[2]: "cfg[10] (reset in) / status[2] (run out)"
+  uio[3]: "cfg[11] (reset in) / status[3] (run out)"
+  uio[4]: "cfg[12] (reset in) / status[4] (run out)"
+  uio[5]: "cfg[13] (reset in) / status[5] (run out)"
+  uio[6]: "cfg[14] (reset in) / status[6] (run out)"
+  uio[7]: "cfg[15] (reset in) / status[7] (run out)"
+
+# Do not change!
+yaml_version: 6
