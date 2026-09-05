@@ -1,0 +1,43 @@
+144. Printing statistics.
+
+=== tt_um_layernorm ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+     1460        - wires
+     1495        - wire bits
+      171        - public wires
+      206        - public wire bits
+        8        - ports
+       43        - port bits
+     1476 2.02E+04 cells
+       28  355.622   sg13g2_a21o_1
+      181 1.64E+03   sg13g2_a21oi_1
+        6   87.091   sg13g2_a221oi_1
+       63  683.462   sg13g2_a22oi_1
+       37  335.664   sg13g2_and2_1
+       17  215.914   sg13g2_and3_1
+       10  145.152   sg13g2_and4_1
+      163 7.99E+03   sg13g2_dfrbpq_1
+       74  402.797   sg13g2_inv_1
+        1   18.144   sg13g2_mux2_1
+      118  856.397   sg13g2_nand2_1
+       42  381.024   sg13g2_nand2b_1
+       31  281.232   sg13g2_nand3_1
+       13  141.523   sg13g2_nand4_1
+       82  595.123   sg13g2_nor2_1
+       33  299.376   sg13g2_nor2b_1
+       20   181.44   sg13g2_nor3_1
+        3   32.659   sg13g2_nor4_1
+      197 1.79E+03   sg13g2_o21ai_1
+       18  163.296   sg13g2_or2_1
+       17  215.914   sg13g2_or3_1
+      163 1.18E+03   sg13g2_tiehi
+       16  116.122   sg13g2_tielo
+       75  1088.64   sg13g2_xnor2_1
+       68  987.034   sg13g2_xor2_1
+
+   Chip area for module '\tt_um_layernorm': 20181.004200
+     of which used for sequential elements: 7985.174400 (39.57%)
+
