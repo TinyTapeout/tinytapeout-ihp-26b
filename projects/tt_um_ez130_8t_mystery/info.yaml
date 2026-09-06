@@ -1,0 +1,57 @@
+# Tiny Tapeout project information
+project:
+  title:        "EZ130 8T Mystery Circuit"      # Project title
+  author:       "Oscar Castaneda"      # Your name
+  discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "A mystery circuit implemented with EZ130 8T cells"      # One line description of what your project does
+  language:     "Verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 200x150 uM.
+  tiles: "1x2"          # Valid values for analog projects: 1x2, 2x2
+
+  # How many analog pins does your project use?
+  analog_pins: 0        # Valid values: 0 to 6
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_ez130_8t_mystery"
+
+  # List your project's source files here. Source files must be in ./src and you must list each source file separately, one per line:
+  source_files:        
+    - "project.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "A0"
+  ui[1]: "A1"
+  ui[2]: "A2"
+  ui[3]: "A3"
+  ui[4]: "B0"
+  ui[5]: "B1"
+  ui[6]: "B2"
+  ui[7]: "B3"
+
+  # Outputs
+  uo[0]: "Y0"
+  uo[1]: "Y1"
+  uo[2]: "Y2"
+  uo[3]: "Y3"
+  uo[4]: "Y4"
+  uo[5]: "Y5"
+  uo[6]: "Y6"
+  uo[7]: "Y7"
+
+  # Bidirectional pins
+  uio[0]: ""
+  uio[1]: ""
+  uio[2]: ""
+  uio[3]: ""
+  uio[4]: ""
+  uio[5]: ""
+  uio[6]: ""
+  uio[7]: ""
+
+# Do not change!
+yaml_version: 6
