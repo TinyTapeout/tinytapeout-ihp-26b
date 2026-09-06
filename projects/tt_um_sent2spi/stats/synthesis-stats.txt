@@ -1,0 +1,46 @@
+131. Printing statistics.
+
+=== tt_um_sent2spi ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+     1464        - wires
+     1499        - wire bits
+      161        - public wires
+      196        - public wire bits
+        8        - ports
+       43        - port bits
+     1480 2.03E+04 cells
+       54  685.843   sg13g2_a21o_1
+      131 1.19E+03   sg13g2_a21oi_1
+       15  217.728   sg13g2_a221oi_1
+       67  726.856   sg13g2_a22oi_1
+       50    453.6   sg13g2_and2_1
+       31  393.725   sg13g2_and3_1
+        3   43.546   sg13g2_and4_1
+        1    7.258   sg13g2_buf_1
+      138 6.76E+03   sg13g2_dfrbpq_1
+       72   391.91   sg13g2_inv_1
+       61 1.11E+03   sg13g2_mux2_1
+      120  870.912   sg13g2_nand2_1
+       60   544.32   sg13g2_nand2b_1
+       46  417.312   sg13g2_nand3_1
+       12   152.41   sg13g2_nand3b_1
+       19  206.842   sg13g2_nand4_1
+      122  885.427   sg13g2_nor2_1
+       34  308.448   sg13g2_nor2b_1
+       48  435.456   sg13g2_nor3_1
+       13  141.523   sg13g2_nor4_1
+      150   1360.8   sg13g2_o21ai_1
+       30   272.16   sg13g2_or2_1
+       23  292.118   sg13g2_or3_1
+       10  145.152   sg13g2_or4_1
+        1    7.258   sg13g2_tiehi
+       22  159.667   sg13g2_tielo
+      110  1.6E+03   sg13g2_xnor2_1
+       37  537.062   sg13g2_xor2_1
+
+   Chip area for module '\tt_um_sent2spi': 20309.675400
+     of which used for sequential elements: 6760.454400 (33.29%)
+
