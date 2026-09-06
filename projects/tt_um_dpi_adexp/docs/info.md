@@ -143,18 +143,19 @@ These are behavioural checks, not validated numerical characterisation. The RTL 
 
 The automated suite is `test/test.py` (cocotb, **14 tests**: reset state, directed E0 block arithmetic against a Python fixed-point reference, SPI shadow/commit behavior, silence, spiking + aggregate OR, adaptation ratio, tonic f-I response, fast spiking, inhibition suppression, pair isolation, no-lock, phase-locked alternation, bursting pattern, and burst length vs WBUMP). The arithmetic test uses nine directed vectors and exercises period-counter wrap; the SPI test checks that a write has no effect before commit and reaches E0 after commit. Run with `make -B` in `test/`. Three tests reach into internal hierarchy (`dut.net.pair0.e_block` or `dut.u_config`); at gate level the netlist can flatten that hierarchy, so their internal checks log a warning and return. `test_reset_state` still checks that the visible outputs are zero in reset.
 
-## Verification scope (2026-08-16)
+## Verification scope (final pre-tapeout run, 2026-08-20)
 
 * The active synthesis source list contains the wrapper, configuration bank, block, pair, and network modules; the legacy LUT core is excluded.
-* Cocotb **14/14 PASS** at RTL (iverilog 13.0 via the oss-cad-suite; `cd test && make -B MODULE=test`). Measured spike metrics (2026-08-16 run): E0=627, I0=376, E1=328, I1=329 over 6000 cycles; adaptation ISI head8=6.5, tail100=9.2; tonic f-I IEXT=512->241 spikes/ISI 8.28 vs IEXT=1024->424 spikes/ISI 4.71; fast spiking 997 spikes/ISI 2.00; inhibition alone=437, with-I0=419, after=435; coincidence fraction=0.42 (threshold 0.5); bursting 166 bursts/avg size 5.1, WBUMP=600 -> avg size 2.0.
-* Three tests (`test_reset_state`, `test_arith_block`, `test_spi_shadow_commit`) access internal hierarchy; at gate level these log a warning and return without checking internals.
-* `verilator --lint-only -Wall` on the five-source set is warning-clean for `adex_block.v`; the remaining WIDTHTRUNC warnings are confined to `adex_config.v`'s SPI frame-slice assignments (intentional truncation) and predate this revision.
+* **Toolchain:** Icarus Verilog 13.0 (stable) with cocotb 2.0.1 on Python 3.11 (the `tt` mamba environment), driven by `make -B` in `test/`.
+* Cocotb **14/14 PASS** at RTL (`TESTS=14 PASS=14 FAIL=0 SKIP=0`). Measured spike metrics from this run: basic spiking E0=627, I0=376, E1=328, I1=329 over 6000 cycles with the aggregate-OR check clean; adaptation ISI head8=6.5 -> tail100=9.2 (E0 fired 872 times); tonic f-I IEXT=512->241 spikes/ISI 8.28 vs IEXT=1024->424 spikes/ISI 4.71; fast spiking 997 spikes/ISI 2.00 with max high-run 1 (pulse-clean); inhibition E0 alone=437, with-I0=419, after=435 while I0 fired 252; pair isolation drove pair 0 giving [E0,I0,E1,I1]=[315,191,0,0]; no-lock coincidence fraction=0.42 (threshold 0.5); phase-locked alternation E=399/I=400 at ISI (5.00, 5.00) with disjoint alternating one-cycle pulses; bursting 852 spikes/166 bursts, avg burst size 5.1, avg inter-burst gap 73.9 vs intra-burst ISI 4.1; WBUMP sweep avg burst size 5.1 (WBUMP=200) -> 2.0 (WBUMP=600).
+* Three tests (`test_reset_state`, `test_arith_block`, `test_spi_shadow_commit`) access internal hierarchy; at gate level these log a warning and return without checking internals. The cocotb run emits deprecation warnings from the testbench's use of the older `units=`/`binstr`/`signed_integer` APIs under cocotb 2.0.1; they are cosmetic and do not affect any assertion.
+* `verilator --lint-only -Wall` (Verilator 5.050) on the full five-source set (`project.v`, `adex_config.v`, `adex_block.v`, `adex_pair.v`, `adex_network.v`) is **warning-clean — zero warnings, exit 0**.
 
-### RTL area-reduction edits (2026-08-16, behaviour-identical, verified by the 14-test suite)
+### RTL area-reduction edits (behaviour-identical, verified by the 14-test suite)
 * Factored the duplicated `(spike_now ? wbump_14 : 0)` term into one shared `wbump_term_14` wire across the three slow-unit accumulators.
 * Narrowed the `sat16` helper input from 20-bit to 18-bit (the prime accumulator `v_sum` is 18-bit; the dropped bits were pure sign-extension).
-* Removed the dead, unreferenced `wbump_q16` widen wire.
-All three preserve every state the reference model drives; the arithmetic lock `test_arith_block` still passes and lint warning count dropped (36 -> 34). Base area remains ~78% of core (yosys estimate); see `src/AGENTS.md` for the area-feasibility analysis.
+* Removed the dead, unreferenced `wbump_q16` widen wire, and dropped the unreachable negative branch of `slow_relax` (the slow units start at 0 and only ever relax toward zero, so their state is provably non-negative).
+All of these preserve every state the reference model drives; the arithmetic lock `test_arith_block` still passes and the full five-source set now lints `-Wall` clean with zero warnings. Base area is roughly 78% of the 2x2 core by local yosys estimate (behaviour-identical to the pre-reduction baseline); final density is settled by the shuttle's OpenROAD place-and-route run, not by further RTL shaving.
 
 ## Known limitations
 
