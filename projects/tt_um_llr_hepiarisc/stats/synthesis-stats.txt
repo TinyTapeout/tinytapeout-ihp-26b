@@ -1,0 +1,45 @@
+166. Printing statistics.
+
+=== tt_um_llr_hepiarisc ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+     1879        - wires
+     1914        - wire bits
+      441        - public wires
+      476        - public wire bits
+        8        - ports
+       43        - port bits
+     1895 3.82E+04 cells
+       22  279.418   sg13g2_a21o_1
+       74  671.328   sg13g2_a21oi_1
+       49  711.245   sg13g2_a221oi_1
+      185 2.01E+03   sg13g2_a22oi_1
+       53  480.816   sg13g2_and2_1
+       14  177.811   sg13g2_and3_1
+        9  130.637   sg13g2_and4_1
+        6   43.546   sg13g2_buf_1
+      434 2.13E+04   sg13g2_dfrbpq_1
+       49  266.717   sg13g2_inv_1
+      350   6350.4   sg13g2_mux2_1
+      117  849.139   sg13g2_nand2_1
+       25    226.8   sg13g2_nand2b_1
+       45   408.24   sg13g2_nand3_1
+        4   50.803   sg13g2_nand3b_1
+       41  446.342   sg13g2_nand4_1
+      104   754.79   sg13g2_nor2_1
+       11   99.792   sg13g2_nor2b_1
+       51  462.672   sg13g2_nor3_1
+        9   97.978   sg13g2_nor4_1
+      121  1.1E+03   sg13g2_o21ai_1
+       20   181.44   sg13g2_or2_1
+        2   25.402   sg13g2_or3_1
+       32  232.243   sg13g2_tiehi
+       18  130.637   sg13g2_tielo
+       36  522.547   sg13g2_xnor2_1
+       14  203.213   sg13g2_xor2_1
+
+   Chip area for module '\tt_um_llr_hepiarisc': 38169.797400
+     of which used for sequential elements: 21261.139200 (55.70%)
+
