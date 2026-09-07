@@ -9,9 +9,11 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-This project implements a simplified LayerNorm accelerator for eight signed 8-bit integer samples. It calculates an integer mean and variance, then scales each sample’s deviation from the mean using a reciprocal square-root lookup table.
+This project implements a simplified LayerNorm accelerator for eight signed 8-bit integer samples. It calculates an integer mean and variance, then scales each sample's deviation from the mean using a reciprocal square-root lookup table.
 
-The lookup table supports integer variances from 1 to 5. Other values produce zero outputs. Results are signed 8-bit integers truncated toward zero. The design doesn't implement epsilon, learnable scale or bias, or overflow protection.
+The reciprocal square-root lookup table supports integer variances from 1 to 15 and uses Q0.9 fixed-point coefficients. A variance of 0 or a variance greater than 15 produces zero outputs. Results are signed 8-bit integers truncated toward zero.
+
+The design does not implement epsilon, learnable scale or bias, or overflow protection.
 
 
 ### Interface
