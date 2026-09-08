@@ -1,0 +1,51 @@
+---
+project:
+  title:         "Oscillator Ising Machine"
+  author:        "Ryan Hasenfratz / Hasi Industries"
+  discord:       ""
+  description:   "Eight coupled ring oscillators that solve MAX-CUT by phase relaxation"
+  # Ziel-Shuttle: TTIHP26b (IHP SG13G2), Einsendeschluss 21.09.2026,
+  # gefoerdert durch SwissChips. Kachelgroesse ggf. an den IHP-Durchlauf
+  # anpassen, sobald die Action die tatsaechliche Flaeche meldet.
+  language:      "Verilog"
+  clock_hz:      50000000
+
+  tiles: "1x2"
+
+  top_module: "tt_um_hasi_ising"
+
+  source_files:
+    - "prim.v"
+    - "tuned_ring.v"
+    - "ising_core.v"
+    - "project.v"
+
+pinout:
+  ui[0]: "J matrix serial data in"
+  ui[1]: "J matrix shift enable"
+  ui[2]: "mode bit 0"
+  ui[3]: "mode bit 1"
+  ui[4]: "anneal rate bit 0"
+  ui[5]: "anneal rate bit 1"
+  ui[6]: "anneal rate bit 2"
+  ui[7]: "start"
+
+  uo[0]: "spin 0 (always 1, reference)"
+  uo[1]: "spin 1"
+  uo[2]: "spin 2"
+  uo[3]: "spin 3"
+  uo[4]: "spin 4"
+  uo[5]: "spin 5"
+  uo[6]: "spin 6"
+  uo[7]: "spin 7"
+
+  uio[0]: "OUT selected ring oscillator, divided by 256"
+  uio[1]: "OUT 2f reference, divided by 256"
+  uio[2]: "OUT running"
+  uio[3]: "IN  ring select bit 0"
+  uio[4]: "IN  ring select bit 1"
+  uio[5]: "IN  ring select bit 2"
+  uio[6]: "unused"
+  uio[7]: "unused"
+
+yaml_version: 6
