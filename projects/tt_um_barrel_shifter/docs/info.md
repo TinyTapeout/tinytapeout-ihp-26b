@@ -9,10 +9,10 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-ai accelerator
+A barrel shifter shifting input but 1 bit, 2 bit, or 4 bit based on the control signal. 
 ## How to test
+Input Bits and a control signal and watch the output shifts by a certain bits based on the control signal.
 
-input weights
 ## External hardware
 
-no external hardware needed
+You may use LEDs for visualization.
