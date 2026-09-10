@@ -1,44 +1,45 @@
-152. Printing statistics.
+145. Printing statistics.
 
 === tt_um_layernorm ===
 
         +----------Local Count, excluding submodules.
         |        +-Local Area, excluding submodules.
         |        | 
-     1531        - wires
-     1566        - wire bits
-      173        - public wires
-      208        - public wire bits
+     1162        - wires
+     1197        - wire bits
+      156        - public wires
+      191        - public wire bits
         8        - ports
        43        - port bits
-     1547 2.08E+04 cells
-       35  444.528   sg13g2_a21o_1
-      183 1.66E+03   sg13g2_a21oi_1
-        8  116.122   sg13g2_a221oi_1
-       63  683.462   sg13g2_a22oi_1
-       33  299.376   sg13g2_and2_1
-       20  254.016   sg13g2_and3_1
-       17  246.758   sg13g2_and4_1
-      165 8.08E+03   sg13g2_dfrbpq_1
-       76  413.683   sg13g2_inv_1
+     1178 1.64E+04 cells
+       10  127.008   sg13g2_a21o_1
+      133 1.21E+03   sg13g2_a21oi_1
+       10  145.152   sg13g2_a221oi_1
+       53  574.976   sg13g2_a22oi_1
+       26  235.872   sg13g2_and2_1
+       10  127.008   sg13g2_and3_1
+        7  101.606   sg13g2_and4_1
+        3   21.773   sg13g2_buf_1
+      148 7.25E+03   sg13g2_dfrbpq_1
+       77  419.126   sg13g2_inv_1
         1   18.144   sg13g2_mux2_1
-      118  856.397   sg13g2_nand2_1
-       33  299.376   sg13g2_nand2b_1
-       44  399.168   sg13g2_nand3_1
-        6   76.205   sg13g2_nand3b_1
-       14   152.41   sg13g2_nand4_1
-      131  950.746   sg13g2_nor2_1
-       27  244.944   sg13g2_nor2b_1
-       24  217.728   sg13g2_nor3_1
-        1   10.886   sg13g2_nor4_1
-      209  1.9E+03   sg13g2_o21ai_1
-       13  117.936   sg13g2_or2_1
-       21  266.717   sg13g2_or3_1
-      165  1.2E+03   sg13g2_tiehi
+       98  711.245   sg13g2_nand2_1
+       18  163.296   sg13g2_nand2b_1
+       33  299.376   sg13g2_nand3_1
+       16  174.182   sg13g2_nand4_1
+       79   573.35   sg13g2_nor2_1
+       20   181.44   sg13g2_nor2b_1
+       14  127.008   sg13g2_nor3_1
+        2   21.773   sg13g2_nor4_1
+      169 1.53E+03   sg13g2_o21ai_1
+       11   99.792   sg13g2_or2_1
+       12   152.41   sg13g2_or3_1
+        2    29.03   sg13g2_or4_1
+      148 1.07E+03   sg13g2_tiehi
        16  116.122   sg13g2_tielo
-       70 1.02E+03   sg13g2_xnor2_1
-       54  783.821   sg13g2_xor2_1
+       34  493.517   sg13g2_xnor2_1
+       28  406.426   sg13g2_xor2_1
 
-   Chip area for module '\tt_um_layernorm': 20821.487400
-     of which used for sequential elements: 8083.152000 (38.82%)
+   Chip area for module '\tt_um_layernorm': 16383.843000
+     of which used for sequential elements: 7250.342400 (44.25%)
 
