@@ -1,0 +1,259 @@
+123. Printing statistics.
+
+=== $paramod$7bcccbb0198662db3fd5a07460d03b1cbde630db\async_glitch_filter_bank ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+        3        - wires
+       13        - wire bits
+        3        - public wires
+       13        - public wire bits
+        3        - ports
+       13        - port bits
+        6        - submodules
+        6        -   $paramod\async_glitch_filter\STAGES=s32'00000000000000000000000000000011
+
+   Chip area for module '$paramod$7bcccbb0198662db3fd5a07460d03b1cbde630db\async_glitch_filter_bank': 0.000000
+     of which used for sequential elements: 0.000000 (-nan%)
+
+=== $paramod$e94eeefcc212d26d82cae5c7e8e4a375a06e8816\async_glitch_filter_bank ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+        3        - wires
+       27        - wire bits
+        3        - public wires
+       27        - public wire bits
+        3        - ports
+       27        - port bits
+       13        - submodules
+       13        -   $paramod\async_glitch_filter\STAGES=s32'00000000000000000000000000000011
+
+   Chip area for module '$paramod$e94eeefcc212d26d82cae5c7e8e4a375a06e8816\async_glitch_filter_bank': 0.000000
+     of which used for sequential elements: 0.000000 (-nan%)
+
+=== $paramod\async_glitch_filter\STAGES=s32'00000000000000000000000000000011 ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+       19        - wires
+       19        - wire bits
+       18        - public wires
+       18        - public wire bits
+        3        - ports
+        3        - port bits
+        3   32.659 cells
+        1   14.515   sg13g2_and4_1
+        1    9.072   sg13g2_nor2b_1
+        1    9.072   sg13g2_nor3_1
+       14        - submodules
+        1        -   and2_1
+        1        -   async_latch_cell
+        6        -   buf_4
+        6        -   inv_1
+
+   Chip area for module '$paramod\async_glitch_filter\STAGES=s32'00000000000000000000000000000011': 32.659200
+     of which used for sequential elements: 0.000000 (0.00%)
+
+=== and2_1 ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+        3        - wires
+        3        - wire bits
+        3        - public wires
+        3        - public wire bits
+        3        - ports
+        3        - port bits
+        1    9.072 cells
+        1    9.072   sg13g2_and2_1
+
+   Chip area for module '\and2_1': 9.072000
+     of which used for sequential elements: 0.000000 (0.00%)
+
+=== async_latch_cell ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+        6        - wires
+        6        - wire bits
+        5        - public wires
+        5        - public wire bits
+        4        - ports
+        4        - port bits
+        3    29.03 cells
+        1   12.701   sg13g2_and3_1
+        1    7.258   sg13g2_buf_1
+        1    9.072   sg13g2_or2_1
+
+   Chip area for module '\async_latch_cell': 29.030400
+     of which used for sequential elements: 0.000000 (0.00%)
+
+=== buf_4 ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+        2        - wires
+        2        - wire bits
+        2        - public wires
+        2        - public wire bits
+        2        - ports
+        2        - port bits
+        1   14.515 cells
+        1   14.515   sg13g2_buf_4
+
+   Chip area for module '\buf_4': 14.515200
+     of which used for sequential elements: 0.000000 (0.00%)
+
+=== c061618g2 ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+       40        - wires
+       75        - wire bits
+       40        - public wires
+       75        - public wire bits
+        8        - ports
+       43        - port bits
+       35  293.933 cells
+        5    45.36   sg13g2_and2_1
+        1   12.701   sg13g2_and3_1
+       14  127.008   sg13g2_nand2b_1
+       15  108.864   sg13g2_tielo
+        2        - submodules
+        1        -   $paramod$e94eeefcc212d26d82cae5c7e8e4a375a06e8816\async_glitch_filter_bank
+        1        -   mmu_core
+
+   Chip area for module '\c061618g2': 293.932800
+     of which used for sequential elements: 0.000000 (0.00%)
+
+=== inv_1 ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+        2        - wires
+        2        - wire bits
+        2        - public wires
+        2        - public wire bits
+        2        - ports
+        2        - port bits
+        1    5.443 cells
+        1    5.443   sg13g2_inv_1
+
+   Chip area for module '\inv_1': 5.443200
+     of which used for sequential elements: 0.000000 (0.00%)
+
+=== mmu_core ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+       34        - wires
+       47        - wire bits
+       20        - public wires
+       33        - public wire bits
+        8        - ports
+       21        - port bits
+       28  250.387 cells
+        1   12.701   sg13g2_a21o_1
+        1    9.072   sg13g2_a21oi_1
+        1    9.072   sg13g2_and2_1
+        1   12.701   sg13g2_and3_1
+        4   21.773   sg13g2_inv_1
+        1    7.258   sg13g2_nand2_1
+        7   63.504   sg13g2_nand2b_1
+        4   43.546   sg13g2_nand4_1
+        1    7.258   sg13g2_nor2_1
+        2   18.144   sg13g2_nor3_1
+        2   18.144   sg13g2_o21ai_1
+        1   12.701   sg13g2_or3_1
+        1    7.258   sg13g2_tiehi
+        1    7.258   sg13g2_tielo
+        1        - submodules
+        1        -   $paramod$7bcccbb0198662db3fd5a07460d03b1cbde630db\async_glitch_filter_bank
+
+   Chip area for module '\mmu_core': 250.387200
+     of which used for sequential elements: 0.000000 (0.00%)
+
+=== tt_um_c061618g2 ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+        8        - wires
+       43        - wire bits
+        8        - public wires
+       43        - public wire bits
+        8        - ports
+       43        - port bits
+        1        - submodules
+        1        -   c061618g2
+
+   Chip area for module '\tt_um_c061618g2': 0.000000
+     of which used for sequential elements: 0.000000 (-nan%)
+
+=== design hierarchy ===
+
+        +----------Count including submodules.
+        |        +-Area including submodules.
+        |        | 
+      424 4.16E+03 tt_um_c061618g2
+       35  293.933 c061618g2
+        3   32.659     $paramod\async_glitch_filter\STAGES=s32'00000000000000000000000000000011
+        1    9.072       and2_1
+        3    29.03       async_latch_cell
+        1   14.515       buf_4
+        1    5.443       inv_1
+       28  250.387   mmu_core
+        3   32.659       $paramod\async_glitch_filter\STAGES=s32'00000000000000000000000000000011
+        1    9.072         and2_1
+        3    29.03         async_latch_cell
+        1   14.515         buf_4
+        1    5.443         inv_1
+
+        +----------Count including submodules.
+        |        +-Area including submodules.
+        |        | 
+     1076        - wires
+     1193        - wire bits
+     1024        - public wires
+     1141        - public wire bits
+      676        - ports
+      793        - port bits
+        -        - memories
+        -        - memory bits
+        -        - processes
+      424 4.16E+03 cells
+        1   12.701   sg13g2_a21o_1
+        1    9.072   sg13g2_a21oi_1
+       25    226.8   sg13g2_and2_1
+       21  266.717   sg13g2_and3_1
+       19  275.789   sg13g2_and4_1
+       19  137.894   sg13g2_buf_1
+      114 1.65E+03   sg13g2_buf_4
+      118  642.298   sg13g2_inv_1
+        1    7.258   sg13g2_nand2_1
+       21  190.512   sg13g2_nand2b_1
+        4   43.546   sg13g2_nand4_1
+        1    7.258   sg13g2_nor2_1
+       19  172.368   sg13g2_nor2b_1
+       21  190.512   sg13g2_nor3_1
+        2   18.144   sg13g2_o21ai_1
+       19  172.368   sg13g2_or2_1
+        1   12.701   sg13g2_or3_1
+        1    7.258   sg13g2_tiehi
+       16  116.122   sg13g2_tielo
+        1 4.16E+03 submodules
+        1 4.16E+03   c061618g2
+
+   Chip area for top module '\tt_um_c061618g2': 4164.048000
+     of which used for sequential elements: 0.000000 (0.00%)
+

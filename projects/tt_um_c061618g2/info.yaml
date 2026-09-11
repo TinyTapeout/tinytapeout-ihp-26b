@@ -1,0 +1,58 @@
+# Tiny Tapeout project information
+project:
+  title:        "c061618g2"      # Project title
+  author:       "circuitli"      # Your name
+  discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "A clockless MMU with an integrated anti-glitch filter network for 8-bit processors with a 16-bit address bus."
+  language:     "SystemVerilog"
+  #clock_hz:     215000000  # Nominal clock speed target (215 MHz) to comply with hardware limits
+  clock_hz: 0          # Tells Tiny Tapeout this is a clockless/asynchronous design
+
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_c061618g2"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "project.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "A11"
+  ui[1]: "A12"
+  ui[2]: "A13"
+  ui[3]: "A14"
+  ui[4]: "A15"
+  ui[5]: "MAP_L"
+  ui[6]: "RD4"
+  ui[7]: "RD5"
+
+  # Outputs
+  uo[0]: "REN"
+  uo[1]: "REF_L"
+  uo[2]: "MPD_L"
+  uo[3]: "BE_L"
+  uo[4]: ""
+  uo[5]: "TRIGGER_OUT_L"
+  uo[6]: "FLG_IN_L"
+  uo[7]: ""
+
+  # Bidirectional pins
+  uio[0]: "S5_L"
+  uio[1]: "BASIC_L"
+  uio[2]: "OS_L"
+  uio[3]: "CI_L"
+  uio[4]: "IO_L"
+  uio[5]: "S4_L"
+  uio[6]: "FLG_L"
+  uio[7]: ""
+
+# Do not change!
+yaml_version: 6
