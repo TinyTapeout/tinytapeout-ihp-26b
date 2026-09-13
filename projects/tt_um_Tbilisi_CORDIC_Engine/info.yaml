@@ -1,0 +1,69 @@
+# Tiny Tapeout project information
+project:
+  title:        "Tbilisi CORDIC Engine"  # Project title
+  author:       "Levan Chagelishvili"    # Your name
+  discord:      "levanchagelishvili"    # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "A fixed-point CORDIC engine that calculates sine and cosine using iterative shift-and-add operations."      # One line description of what your project does
+  language:     "SystemVerilog"  # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz:     25000000         # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x2"  # TODO Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_Tbilisi_CORDIC_Engine"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "config.svh"
+    - "cordic.sv"
+    - "counter_with_enable.sv"
+    - "lab_specific_board_config.svh"
+    - "lab_top.sv"
+    - "layer_between_project_and_lab_top.sv"
+    - "project.v"
+    - "project.vlt"
+    - "seven_segment_display.sv"
+    - "strobe_gen.sv"
+    - "swap_bits.svh"
+    - "tm1638_board.sv"
+    - "tm1638_registers.sv"
+    - "vga.sv"   
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "switch [0]"
+  ui[1]: "switch [1]"
+  ui[2]: "switch [2]"
+  ui[3]: "switch [3]"
+  ui[4]: "switch [4]"
+  ui[5]: "switch [5]"
+  ui[6]: "switch [6]"
+  ui[7]: "UART rx"
+
+  # Outputs
+  uo[0]: "VGA red [1]"
+  uo[1]: "VGA green [1]"
+  uo[2]: "VGA blue [1]"
+  uo[3]: "VGA vsync"
+  uo[4]: "VGA red [0]"
+  uo[5]: "VGA green [0]"
+  uo[6]: "VGA blue [0]"
+  uo[7]: "VGA hsync"
+
+  # Bidirectional pins
+  uio[0]: ""
+  uio[1]: ""
+  uio[2]: ""
+  uio[3]: ""
+  uio[4]: "output sticky_failure"
+  uio[5]: "TM1638 inout dio"
+  uio[6]: "TM1638 output clk"
+  uio[7]: "TM1638 output stb"
+
+# Do not change!
+yaml_version: 6
