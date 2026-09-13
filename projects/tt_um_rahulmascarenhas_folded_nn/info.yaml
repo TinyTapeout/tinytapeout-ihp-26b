@@ -1,0 +1,54 @@
+# Tiny Tapeout project information
+project:
+  title: "Frozen ternary backbone + loadable head" # Project title
+  author: "Rahul Mascarenhas" # Your name
+  discord: "" # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description: "8x8 image classifier. Frozen ternary feature layer compiled into
+    logic; 6-class head reloaded over SPI." # One line description of what your project does
+  language: "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz: 10000000 # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "3x2" # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module: "tt_um_rahulmascarenhas_folded_nn"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "backbone.v"
+    - "head.v"
+    - "tt_um_rahulmascarenhas_folded_nn.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  ui[0]: "img_bit"
+  ui[1]: "img_shift"
+  ui[2]: "go"
+  ui[3]: "head_bit"
+  ui[4]: "head_shift"
+  ui[5]: "feat_shift"
+  ui[6]: "unused"
+  ui[7]: "unused"
+  uo[0]: "score[0] / class[0]"
+  uo[1]: "score[1] / class[1]"
+  uo[2]: "score[2] / class[2]"
+  uo[3]: "score[3]"
+  uo[4]: "score[4]"
+  uo[5]: "score[5]"
+  uo[6]: "score[6]"
+  uo[7]: "score[7]"
+  uio[0]: "score_valid"
+  uio[1]: "done"
+  uio[2]: "busy"
+  uio[3]: "class[0]"
+  uio[4]: "class[1]"
+  uio[5]: "class[2]"
+  uio[6]: "feat_bit"
+  uio[7]: "feat_wrap"
+
+# Do not change!
+yaml_version: 6
