@@ -1,0 +1,40 @@
+project:
+  title: Tiny Dual-Channel DRAM-PIM Controller + PU
+  author: Corey Lammie
+  discord: ""
+  description: Standard-cell DRAM-like controller with a shared near-bank PU
+  language: SystemVerilog
+  clock_hz: 10000000
+  tiles: "1x1"
+  top_module: tt_um_tiny_dram_pim
+  source_files:
+    - "command_decoder.sv"
+    - "spi_frontend.sv"
+    - "pim_channel.sv"
+    - "tt_um_tiny_dram_pim.sv"
+pinout:
+  ui[0]: spi_sclk
+  ui[1]: spi_cs_n
+  ui[2]: spi_mosi
+  ui[3]: unused
+  ui[4]: unused
+  ui[5]: unused
+  ui[6]: unused
+  ui[7]: unused
+  uo[0]: spi_miso
+  uo[1]: unused
+  uo[2]: unused
+  uo[3]: unused
+  uo[4]: unused
+  uo[5]: unused
+  uo[6]: unused
+  uo[7]: unused
+  uio[0]: unused
+  uio[1]: unused
+  uio[2]: unused
+  uio[3]: unused
+  uio[4]: unused
+  uio[5]: unused
+  uio[6]: unused
+  uio[7]: unused
+yaml_version: 6
