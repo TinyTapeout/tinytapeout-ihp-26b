@@ -1,0 +1,52 @@
+# Tiny Tapeout project information. Adapted from the official Verilog template
+# pinned in reports/TARGET.md.
+project:
+  title:        "D00RSH"
+  author:       "Koło Naukowe BAZA — ZT, PN, MK, JT, KK"
+  discord:      ""
+  description:  "PIN-authorized SIMON64/128 challenge-response authenticator with a 4x4 keypad"
+  language:     "Verilog"
+  clock_hz:     1000000
+  tiles:        "1x1"
+  top_module:   "tt_um_rumcajs"
+  source_files:
+    - "sync2.v"
+    - "reset_release.v"
+    - "timebase.v"
+    - "kb.v"
+    - "regs.v"
+    - "szymon.v"
+    - "szymon_fixed.v"
+    - "serial_link.v"
+    - "auth_ctrl.v"
+    - "buzzer.v"
+    - "rumcajs.v"
+    - "project.v"
+
+pinout:
+  ui[0]: "keypad column 0, active low"
+  ui[1]: "keypad column 1, active low"
+  ui[2]: "keypad column 2, active low"
+  ui[3]: "keypad column 3, active low"
+  ui[4]: "SHIFT64 SDI"
+  ui[5]: "SHIFT64 SCLK"
+  ui[6]: "SHIFT64 CS_n"
+  ui[7]: "unused"
+  uo[0]: "CHALLENGE_READY after correct PIN"
+  uo[1]: "unused, tied low"
+  uo[2]: "SHIFT64 SDO"
+  uo[3]: "buzzer"
+  uo[4]: "unused, tied low"
+  uo[5]: "unused, tied low"
+  uo[6]: "unused, tied low"
+  uo[7]: "unused, tied low"
+  uio[0]: "keypad row 0 open-drain enable"
+  uio[1]: "keypad row 1 open-drain enable"
+  uio[2]: "keypad row 2 open-drain enable"
+  uio[3]: "keypad row 3 open-drain enable"
+  uio[4]: "unused"
+  uio[5]: "unused"
+  uio[6]: "unused"
+  uio[7]: "unused"
+
+yaml_version: 6
