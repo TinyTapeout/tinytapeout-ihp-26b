@@ -14,7 +14,7 @@ You can also include images in this folder and reference them in the markdown. E
 This is an implementation of the **HEPIARISC** ISA used by [HEPIA](https://hepia.hesge.ch/) to teach basic CPU architecture.
 [Here are a summary of the specs](HEPIA-RISC_ISA.md)
 
-You can find a [customasm](https://hlorenzi.github.io/customasm/web/) base file at customasm_sample.s
+You can find a [customasm](https://hlorenzi.github.io/customasm/web/) base file at [customasm_sample.s](../customasm_sample.s)
 
 ### MMIO Periherals
 TBD

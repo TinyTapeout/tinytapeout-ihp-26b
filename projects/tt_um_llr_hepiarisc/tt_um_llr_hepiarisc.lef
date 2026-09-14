@@ -6,7 +6,7 @@ MACRO tt_um_llr_hepiarisc
   CLASS BLOCK ;
   FOREIGN tt_um_llr_hepiarisc ;
   ORIGIN 0.000 0.000 ;
-  SIZE 202.080 BY 313.740 ;
+  SIZE 419.520 BY 313.740 ;
   PIN VGND
     DIRECTION INOUT ;
     USE GROUND ;
@@ -29,6 +29,30 @@ MACRO tt_um_llr_hepiarisc
     PORT
       LAYER TopMetal1 ;
         RECT 177.060 3.150 179.260 310.180 ;
+    END
+    PORT
+      LAYER TopMetal1 ;
+        RECT 215.930 3.150 218.130 310.180 ;
+    END
+    PORT
+      LAYER TopMetal1 ;
+        RECT 254.800 3.150 257.000 310.180 ;
+    END
+    PORT
+      LAYER TopMetal1 ;
+        RECT 293.670 3.150 295.870 310.180 ;
+    END
+    PORT
+      LAYER TopMetal1 ;
+        RECT 332.540 3.150 334.740 310.180 ;
+    END
+    PORT
+      LAYER TopMetal1 ;
+        RECT 371.410 3.150 373.610 310.180 ;
+    END
+    PORT
+      LAYER TopMetal1 ;
+        RECT 410.280 3.150 412.480 310.180 ;
     END
   END VGND
   PIN VPWR
@@ -53,6 +77,30 @@ MACRO tt_um_llr_hepiarisc
     PORT
       LAYER TopMetal1 ;
         RECT 170.860 3.560 173.060 310.590 ;
+    END
+    PORT
+      LAYER TopMetal1 ;
+        RECT 209.730 3.560 211.930 310.590 ;
+    END
+    PORT
+      LAYER TopMetal1 ;
+        RECT 248.600 3.560 250.800 310.590 ;
+    END
+    PORT
+      LAYER TopMetal1 ;
+        RECT 287.470 3.560 289.670 310.590 ;
+    END
+    PORT
+      LAYER TopMetal1 ;
+        RECT 326.340 3.560 328.540 310.590 ;
+    END
+    PORT
+      LAYER TopMetal1 ;
+        RECT 365.210 3.560 367.410 310.590 ;
+    END
+    PORT
+      LAYER TopMetal1 ;
+        RECT 404.080 3.560 406.280 310.590 ;
     END
   END VPWR
   PIN clk
@@ -118,6 +166,7 @@ MACRO tt_um_llr_hepiarisc
   PIN ui_in[4]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.180700 ;
     PORT
       LAYER Metal4 ;
         RECT 164.010 312.740 164.310 313.740 ;
@@ -126,6 +175,7 @@ MACRO tt_um_llr_hepiarisc
   PIN ui_in[5]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.180700 ;
     PORT
       LAYER Metal4 ;
         RECT 160.170 312.740 160.470 313.740 ;
@@ -134,6 +184,7 @@ MACRO tt_um_llr_hepiarisc
   PIN ui_in[6]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.180700 ;
     PORT
       LAYER Metal4 ;
         RECT 156.330 312.740 156.630 313.740 ;
@@ -142,6 +193,7 @@ MACRO tt_um_llr_hepiarisc
   PIN ui_in[7]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.180700 ;
     PORT
       LAYER Metal4 ;
         RECT 152.490 312.740 152.790 313.740 ;
@@ -182,6 +234,7 @@ MACRO tt_um_llr_hepiarisc
   PIN uio_in[4]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.180700 ;
     PORT
       LAYER Metal4 ;
         RECT 133.290 312.740 133.590 313.740 ;
@@ -190,6 +243,7 @@ MACRO tt_um_llr_hepiarisc
   PIN uio_in[5]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.180700 ;
     PORT
       LAYER Metal4 ;
         RECT 129.450 312.740 129.750 313.740 ;
@@ -198,6 +252,7 @@ MACRO tt_um_llr_hepiarisc
   PIN uio_in[6]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.180700 ;
     PORT
       LAYER Metal4 ;
         RECT 125.610 312.740 125.910 313.740 ;
@@ -206,6 +261,7 @@ MACRO tt_um_llr_hepiarisc
   PIN uio_in[7]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.180700 ;
     PORT
       LAYER Metal4 ;
         RECT 121.770 312.740 122.070 313.740 ;
@@ -250,7 +306,8 @@ MACRO tt_um_llr_hepiarisc
   PIN uio_oe[4]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.299200 ;
+    ANTENNAGATEAREA 0.351000 ;
+    ANTENNADIFFAREA 0.632400 ;
     PORT
       LAYER Metal4 ;
         RECT 41.130 312.740 41.430 313.740 ;
@@ -259,7 +316,8 @@ MACRO tt_um_llr_hepiarisc
   PIN uio_oe[5]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.299200 ;
+    ANTENNAGATEAREA 0.351000 ;
+    ANTENNADIFFAREA 0.632400 ;
     PORT
       LAYER Metal4 ;
         RECT 37.290 312.740 37.590 313.740 ;
@@ -268,7 +326,8 @@ MACRO tt_um_llr_hepiarisc
   PIN uio_oe[6]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.299200 ;
+    ANTENNAGATEAREA 0.351000 ;
+    ANTENNADIFFAREA 0.632400 ;
     PORT
       LAYER Metal4 ;
         RECT 33.450 312.740 33.750 313.740 ;
@@ -277,7 +336,8 @@ MACRO tt_um_llr_hepiarisc
   PIN uio_oe[7]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.299200 ;
+    ANTENNAGATEAREA 0.351000 ;
+    ANTENNADIFFAREA 0.632400 ;
     PORT
       LAYER Metal4 ;
         RECT 29.610 312.740 29.910 313.740 ;
@@ -322,7 +382,8 @@ MACRO tt_um_llr_hepiarisc
   PIN uio_out[4]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.299200 ;
+    ANTENNAGATEAREA 0.351000 ;
+    ANTENNADIFFAREA 0.632400 ;
     PORT
       LAYER Metal4 ;
         RECT 71.850 312.740 72.150 313.740 ;
@@ -331,7 +392,8 @@ MACRO tt_um_llr_hepiarisc
   PIN uio_out[5]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.299200 ;
+    ANTENNAGATEAREA 0.351000 ;
+    ANTENNADIFFAREA 0.632400 ;
     PORT
       LAYER Metal4 ;
         RECT 68.010 312.740 68.310 313.740 ;
@@ -340,7 +402,8 @@ MACRO tt_um_llr_hepiarisc
   PIN uio_out[6]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.299200 ;
+    ANTENNAGATEAREA 0.351000 ;
+    ANTENNADIFFAREA 0.632400 ;
     PORT
       LAYER Metal4 ;
         RECT 64.170 312.740 64.470 313.740 ;
@@ -349,7 +412,8 @@ MACRO tt_um_llr_hepiarisc
   PIN uio_out[7]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.299200 ;
+    ANTENNAGATEAREA 0.351000 ;
+    ANTENNADIFFAREA 0.632400 ;
     PORT
       LAYER Metal4 ;
         RECT 60.330 312.740 60.630 313.740 ;
@@ -385,7 +449,7 @@ MACRO tt_um_llr_hepiarisc
   PIN uo_out[3]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.708600 ;
+    ANTENNADIFFAREA 0.299200 ;
     PORT
       LAYER Metal4 ;
         RECT 106.410 312.740 106.710 313.740 ;
@@ -394,7 +458,8 @@ MACRO tt_um_llr_hepiarisc
   PIN uo_out[4]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.708600 ;
+    ANTENNAGATEAREA 0.351000 ;
+    ANTENNADIFFAREA 0.632400 ;
     PORT
       LAYER Metal4 ;
         RECT 102.570 312.740 102.870 313.740 ;
@@ -403,7 +468,8 @@ MACRO tt_um_llr_hepiarisc
   PIN uo_out[5]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.708600 ;
+    ANTENNAGATEAREA 0.351000 ;
+    ANTENNADIFFAREA 0.632400 ;
     PORT
       LAYER Metal4 ;
         RECT 98.730 312.740 99.030 313.740 ;
@@ -412,7 +478,8 @@ MACRO tt_um_llr_hepiarisc
   PIN uo_out[6]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.299200 ;
+    ANTENNAGATEAREA 0.351000 ;
+    ANTENNADIFFAREA 0.632400 ;
     PORT
       LAYER Metal4 ;
         RECT 94.890 312.740 95.190 313.740 ;
@@ -421,7 +488,8 @@ MACRO tt_um_llr_hepiarisc
   PIN uo_out[7]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.299200 ;
+    ANTENNAGATEAREA 0.351000 ;
+    ANTENNADIFFAREA 0.632400 ;
     PORT
       LAYER Metal4 ;
         RECT 91.050 312.740 91.350 313.740 ;
@@ -429,15 +497,15 @@ MACRO tt_um_llr_hepiarisc
   END uo_out[7]
   OBS
       LAYER GatPoly ;
-        RECT 2.880 3.630 199.200 310.110 ;
+        RECT 2.880 3.630 416.640 310.110 ;
       LAYER Metal1 ;
-        RECT 2.880 3.560 199.200 310.180 ;
+        RECT 2.880 3.560 416.640 310.180 ;
       LAYER Metal2 ;
-        RECT 6.135 3.635 200.745 311.785 ;
+        RECT 1.335 3.215 418.185 310.105 ;
       LAYER Metal3 ;
-        RECT 6.095 3.680 200.785 311.745 ;
+        RECT 1.295 3.260 418.225 310.060 ;
       LAYER Metal4 ;
-        RECT 8.060 312.530 29.400 312.740 ;
+        RECT 3.260 312.530 29.400 312.740 ;
         RECT 30.120 312.530 33.240 312.740 ;
         RECT 33.960 312.530 37.080 312.740 ;
         RECT 37.800 312.530 40.920 312.740 ;
@@ -480,12 +548,12 @@ MACRO tt_um_llr_hepiarisc
         RECT 179.880 312.530 183.000 312.740 ;
         RECT 183.720 312.530 186.840 312.740 ;
         RECT 187.560 312.530 190.680 312.740 ;
-        RECT 191.400 312.530 197.380 312.740 ;
-        RECT 8.060 3.635 197.380 312.530 ;
+        RECT 191.400 312.530 415.785 312.740 ;
+        RECT 3.260 3.635 415.785 312.530 ;
       LAYER Metal5 ;
-        RECT 12.815 3.470 193.105 310.270 ;
+        RECT 7.055 3.470 415.825 310.900 ;
       LAYER TopMetal1 ;
-        RECT 128.500 71.000 130.140 123.460 ;
+        RECT 338.260 119.720 339.900 130.600 ;
   END
 END tt_um_llr_hepiarisc
 END LIBRARY
