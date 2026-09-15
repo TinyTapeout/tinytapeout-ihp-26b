@@ -1,0 +1,54 @@
+106. Printing statistics.
+
+=== tt_um_miniMAC ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+     1257        - wires
+     1292        - wire bits
+      745        - public wires
+      780        - public wire bits
+        8        - ports
+       43        - port bits
+     1199 1.86E+04 cells
+       12   152.41   sg13g2_a21o_1
+       34  308.448   sg13g2_a21oi_1
+        1   14.515   sg13g2_a21oi_2
+       12  174.182   sg13g2_a221oi_1
+       10  108.486   sg13g2_a22oi_1
+       34  308.448   sg13g2_and2_1
+        3   32.659   sg13g2_and2_2
+        5   63.504   sg13g2_and3_1
+        3   43.546   sg13g2_and4_1
+       12   87.091   sg13g2_buf_1
+        1        -   sg13g2_dfrbp_2
+       34 1.67E+03   sg13g2_dfrbpq_1
+       45  244.944   sg13g2_inv_1
+      129 2.57E+03   sg13g2_mux2_2
+       63  457.229   sg13g2_nand2_1
+       31  281.232   sg13g2_nand2b_1
+       17  154.224   sg13g2_nand3_1
+        4   50.803   sg13g2_nand3b_1
+        5   54.432   sg13g2_nand4_1
+       45  326.592   sg13g2_nor2_1
+       30   272.16   sg13g2_nor2b_1
+        8   72.576   sg13g2_nor3_1
+        7   76.205   sg13g2_nor4_1
+       57  517.104   sg13g2_o21ai_1
+       21  190.512   sg13g2_or2_1
+        3   32.659   sg13g2_or2_2
+        9  114.307   sg13g2_or3_1
+       73        -   sg13g2_sdfbbp_1
+       75   4762.8   sg13g2_sdfrbpq_1
+       77  558.835   sg13g2_tiehi
+        8   58.061   sg13g2_tielo
+      109 1.58E+03   sg13g2_xnor2_1
+      222 3.22E+03   sg13g2_xor2_1
+
+   Area for cell type \sg13g2_dfrbp_2 is unknown!
+   Area for cell type \sg13g2_sdfbbp_1 is unknown!
+
+   Chip area for module '\tt_um_miniMAC': 18562.748400
+     of which used for sequential elements: 6428.419200 (34.63%)
+
