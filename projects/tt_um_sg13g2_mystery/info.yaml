@@ -1,0 +1,57 @@
+# Tiny Tapeout project information
+project:
+  title:        "SG13G2 Mystery Circuit"      # Project title
+  author:       "Oscar Castaneda and Thomas Herzog" # Your name
+  discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "A reference SG13G2 implementation for the EZ130 mystery circuit" # One line description of what your project does
+  language:     "Verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 200x150 uM.
+  tiles: "1x2"          # Valid values for analog projects: 1x2, 2x2
+
+  # How many analog pins does your project use?
+  analog_pins: 0        # Valid values: 0 to 6
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_sg13g2_mystery"
+
+  # List your project's source files here. Source files must be in ./src and you must list each source file separately, one per line:
+  source_files:        
+    - "project.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "SerialIn0"
+  ui[1]: "SerialIn1"
+  ui[2]: "SerialIn2"
+  ui[3]: "SerialIn3"
+  ui[4]: "SerialEn"
+  ui[5]: "InvertIn"
+  ui[6]: "MaskIn"
+  ui[7]: "WrEnIn"
+
+  # Outputs
+  uo[0]: "Sum0"
+  uo[1]: "Sum1"
+  uo[2]: "Sum2"
+  uo[3]: "Sum3"
+  uo[4]: "Sum4"
+  uo[5]: "Sum5"
+  uo[6]: "Sum6"
+  uo[7]: "Sum7"
+
+  # Bidirectional pins
+  uio[0]: "Sum8"
+  uio[1]: "Sum9"
+  uio[2]: "Sum10"
+  uio[3]: "HI"
+  uio[4]: "LO"
+  uio[5]: "HI"
+  uio[6]: "SerialOut0"
+  uio[7]: "RegOut0"
+
+# Do not change!
+yaml_version: 6
