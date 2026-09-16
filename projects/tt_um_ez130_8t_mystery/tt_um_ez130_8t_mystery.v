@@ -6,8 +6,8 @@
 `default_nettype none
 
 module tt_um_ez130_8t_mystery (
-    input  wire       VGND,
-    input  wire       VPWR,    // 1.8v power supply
+//    input  wire       VGND,
+//    input  wire       VPWR,    // 1.8v power supply
 //    input  wire       VAPWR,    // 3.3v power supply
     input  wire [7:0] ui_in,    // Dedicated inputs
     output wire [7:0] uo_out,   // Dedicated outputs
