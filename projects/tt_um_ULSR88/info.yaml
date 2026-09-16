@@ -1,0 +1,57 @@
+# Tiny Tapeout project information
+project:
+  title:        "ULSR demo"
+  author:       "Yann Guidon"
+  discord:      "the_yasep"
+  description:  "Ultracompact 2-pin scan chain"
+  language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz:     1    # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_ULSR88"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "project.v"
+    - "FullAdder_sg13.v"
+    - "ULSR_modules.v"
+    - "sg13_cells_sg13g2.v" # change to target techno
+
+pinout:
+  # Inputs
+  ui[0]: "I0"
+  ui[1]: "I1"
+  ui[2]: "I2"
+  ui[3]: "I3"
+  ui[4]: "I4"
+  ui[5]: "I5"
+  ui[6]: "I6"
+  ui[7]: "I7"
+
+  # Outputs
+  uo[0]: "O0"
+  uo[1]: "O1"
+  uo[2]: "O2"
+  uo[3]: "O3"
+  uo[4]: "O4"
+  uo[5]: "O5"
+  uo[6]: "O6"
+  uo[7]: "O7"
+
+  # Bidirectional pins
+  uio[0]: "SD"
+  uio[1]: "SC"
+  uio[2]: "DO"
+  uio[3]: "FA1"
+  uio[4]: "FA2"
+  uio[5]: "FA3"
+  uio[6]: "FAS"
+  uio[7]: "FAC"
+
+# Do not change!
+yaml_version: 6
