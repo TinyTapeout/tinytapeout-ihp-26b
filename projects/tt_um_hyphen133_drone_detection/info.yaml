@@ -1,0 +1,43 @@
+# Tiny Tapeout project information
+project:
+  title:        "Acoustic Drone Detector"
+  author:       "Jedrzej Hasiura"
+  discord:      ""
+  description:  "Self-contained acoustic drone detector: PDM microphone in, detection signal out."
+  language:     "SystemVerilog"
+  clock_hz:     50000000
+  tiles:        "1x1"
+  top_module:   "tt_um_hyphen133_drone_detection"
+
+  source_files:
+    - "tt_um_hyphen133_drone_detection.sv"
+
+pinout:
+  ui[0]: "PDM microphone data input"
+  ui[1]: "Threshold trim bit 0 (LSB)"
+  ui[2]: "Threshold trim bit 1"
+  ui[3]: "Threshold trim bit 2"
+  ui[4]: "Threshold trim bit 3"
+  ui[5]: "Threshold trim bit 4"
+  ui[6]: "Threshold trim bit 5"
+  ui[7]: "Threshold trim bit 6 (MSB)"
+
+  uo[0]: "PDM microphone clock (1.5625 MHz)"
+  uo[1]: "Drone detected"
+  uo[2]: "Drone detected (mirror)"
+  uo[3]: "Drone detected (mirror)"
+  uo[4]: "Band level bit 0"
+  uo[5]: "Band level bit 1"
+  uo[6]: "Band level bit 2"
+  uo[7]: "Band level bit 3"
+
+  uio[0]: "Frame index bit 0"
+  uio[1]: "Frame index bit 1"
+  uio[2]: "Frame index bit 2"
+  uio[3]: "Frame index bit 3"
+  uio[4]: "Drone detected (debug)"
+  uio[5]: "FSM state bit 0"
+  uio[6]: "FSM state bit 1"
+  uio[7]: "Microphone tick"
+
+yaml_version: 6
