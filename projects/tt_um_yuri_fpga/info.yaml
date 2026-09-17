@@ -1,0 +1,64 @@
+# Tiny Tapeout project information
+project:
+  title:        "Tiny FPGA"      # Project title
+  author:       "Yuri Honegger"  # Your name
+  discord:      "recursive_tree" # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "A simple FPGA"      # One line description of what your project does
+  language:     "SystemVerilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz:     50000000       # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_yuri_fpga"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "project.sv"
+    - "tt-fpga/fpga_pkg.sv"
+    - "tt-fpga/input_mux.sv"
+    - "tt-fpga/lutN.sv"
+    - "tt-fpga/fpga_grid.sv"
+    - "tt-fpga/fpga_building_block.sv"
+    - "tt-fpga/configurable_logic_block.sv"
+    - "tt-fpga/fabric_switch.sv"
+    - "tt-fpga/config_sc_register.sv"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "config_mode/input0"
+  ui[1]: "input1"
+  ui[2]: "input2"
+  ui[3]: "input3"
+  ui[4]: "input4"
+  ui[5]: "input5"
+  ui[6]: "input6"
+  ui[7]: "input7"
+
+  # Outputs
+  uo[0]: "output0"
+  uo[1]: "output1"
+  uo[2]: "output2"
+  uo[3]: "output3"
+  uo[4]: "output4"
+  uo[5]: "output5"
+  uo[6]: "output6"
+  uo[7]: "output7"
+
+  # Bidirectional pins
+  uio[0]: "unused"
+  uio[1]: "unused"
+  uio[2]: "unused"
+  uio[3]: "unused"
+  uio[4]: "unused"
+  uio[5]: "unused"
+  uio[6]: "unused"
+  uio[7]: "unused"
+
+# Do not change!
+yaml_version: 6
