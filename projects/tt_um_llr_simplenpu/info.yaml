@@ -1,0 +1,57 @@
+# Tiny Tapeout project information
+project:
+  title:        "simple SPI flash streaming NPU"      # Project title
+  author:       "Léon Romanens"      # Your name
+  discord:      "leonllrmc"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "A simple NPU streaming weights form a SPI flash"      # One line description of what your project does
+  language:     "SystemVerilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz:     50000000       # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_llr_simplenpu"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "project.sv"
+    - "spi_master.v"
+    - "neuron.sv"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "initial_activation[0]"
+  ui[1]: "initial_activation[1]"
+  ui[2]: "initial_activation[2]"
+  ui[3]: "initial_activation[3]"
+  ui[4]: "activation_index[0]"
+  ui[5]: "activation_index[1]"
+  ui[6]: "activation_index[2]"
+  ui[7]: "save_activation"
+  # Outputs
+  uo[0]: "activation_out[0]"
+  uo[1]: "activation_out[1]"
+  uo[2]: "activation_out[2]"
+  uo[3]: "activation_out[3]"
+  uo[4]: "intermediary_activation_out[0]"
+  uo[5]: "intermediary_activation_out[1]"
+  uo[6]: "intermediary_activation_out[2]"
+  uo[7]: "intermediary_activation_out[3]"
+
+  # Bidirectional pins
+  uio[0]: "project_extflash_spi_sck"
+  uio[1]: "project_extflash_spi_mosi"
+  uio[2]: "project_extflash_spi_cs"
+  uio[3]: "extflash_spi_miso"
+  uio[4]: ""
+  uio[5]: ""
+  uio[6]: ""
+  uio[7]: ""
+
+# Do not change!
+yaml_version: 6
