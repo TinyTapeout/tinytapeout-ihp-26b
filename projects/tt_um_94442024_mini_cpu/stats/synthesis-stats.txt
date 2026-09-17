@@ -1,0 +1,45 @@
+130. Printing statistics.
+
+=== tt_um_94442024_mini_cpu ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+      926        - wires
+      961        - wire bits
+      116        - public wires
+      151        - public wire bits
+        8        - ports
+       43        - port bits
+      942 1.55E+04 cells
+        5   63.504   sg13g2_a21o_1
+       98  889.056   sg13g2_a21oi_1
+       15  217.728   sg13g2_a221oi_1
+      114  1236.74   sg13g2_a22oi_1
+       24  217.728   sg13g2_and2_1
+        6   76.205   sg13g2_and3_1
+        8  116.122   sg13g2_and4_1
+        4    29.03   sg13g2_buf_1
+      159 7.79E+03   sg13g2_dfrbpq_1
+       57  310.262   sg13g2_inv_1
+       70  1270.08   sg13g2_mux2_1
+       73  529.805   sg13g2_nand2_1
+       14  127.008   sg13g2_nand2b_1
+       14  127.008   sg13g2_nand3_1
+        1   12.701   sg13g2_nand3b_1
+       18  195.955   sg13g2_nand4_1
+      104   754.79   sg13g2_nor2_1
+       10    90.72   sg13g2_nor2b_1
+       16  145.152   sg13g2_nor3_1
+       11   119.75   sg13g2_nor4_1
+       85   771.12   sg13g2_o21ai_1
+       12  108.864   sg13g2_or2_1
+        1   12.701   sg13g2_or3_1
+        1   14.515   sg13g2_or4_1
+        8   58.061   sg13g2_tiehi
+       11  159.667   sg13g2_xnor2_1
+        3   43.546   sg13g2_xor2_1
+
+   Chip area for module '\tt_um_94442024_mini_cpu': 15487.038000
+     of which used for sequential elements: 7789.219200 (50.30%)
+
