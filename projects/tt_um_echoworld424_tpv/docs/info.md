@@ -1,7 +1,7 @@
 > **Submitted normal operation: 10 MHz**, 50% duty (100 ns period). The 10–50 MHz
 > research sweep deliberately exceeds that timing-safe specification. The design is
 > verified: local hardening, RTL, GL and precheck pass, and canonical CI is all green
-> (GDS run `34158224984`); verification is tracked in
+> (GDS run `35034979531`); verification is tracked in
 > [the attempt log](ci-timing-closure-attempts.md). Earlier physical results below
 > remain historical evidence; fresh results are in `data/safe10/`.
 
@@ -29,8 +29,13 @@ A timing-prediction test vehicle for the IHP SG13G2 open PDK. It contains:
   for 19 cycles; the deliberately delayed DUT is captured much earlier.
 - **Canaries**: two ring-oscillator delay proxies - a generic inverter-line RO and a
   structure-matched RO (looping through delay-bank + full-adder segments like the DUT) -
-  each with a 16-bit ripple edge counter over a configurable window (2^8..2^14 cycles),
-  providing continuous delay telemetry rather than a binary flag.
+  each with a 16-bit ripple edge counter over a configurable window (2^8..2^14 cycles).
+  The window is **one-shot per reset**: `win_done` is cleared only by `rst_n`, so the
+  ring stops when the window closes and the counter holds its value until the next
+  reset. Take one canary sample per reset rather than treating the count as continuous
+  telemetry. The effective gate-open interval is `(window cycles - 3)` external clock
+  periods - the three boot cycles before the configuration commits do not count - i.e.
+  25.3 us at 10 MHz and 5.06 us at 50 MHz for the 2^8 window.
 - **Measurement**: one timed operation per 19-cycle frame, 16-bit error and op counters
   (both saturating), first-error DUT byte capture, serial byte readout with an
   auto-incrementing pointer, a freeze input, and FORCE_ERR/FORCE_CAN DFT bits that make
@@ -52,20 +57,45 @@ falling-edge capture even if FREEZE rises during the high phase. Keep clocking f
 two complete cycles after asserting FREEZE before reading. Resume never repeats a
 capture. Maintain the normal clock waveform through the pending falling edge.
 
+`ui[7]` has **no on-chip synchronizer**, so the host must transition it as if it were
+synchronous: assert or release FREEZE during the clock **HIGH** phase. That leaves
+between half and one full clock period of settling ahead of the edge that samples it -
+50-100 ns at 10 MHz, 10-20 ns at 50 MHz - comfortably beyond the 4 ns input-path budget
+`src/pnr.sdc` already assumes with `set_input_delay 4.0000` on `ui_in[7]`. A host that
+can only act in the LOW phase must still land the transition at least 20 ns (10 MHz) or
+10 ns (50 MHz) before the next rising edge, and prove it on a scope. FREEZE must be
+generated in the chip's clock domain (host FPGA register, PIO, or equivalent hardware);
+an OS-scheduled software GPIO write does not bound its own jitter to that window and is
+not an acceptable source. A transition landing inside the setup/hold aperture of a
+rising edge can make `update_en` resolve differently per register, which corrupts the
+19-cycle frame alignment and can count a fabricated error. The normative rule, its scope
+check, and the exclusion policy are in
+[the post-silicon protocol](post-silicon-protocol.md).
+
 ## How to test
 
 1. Hold `rst_n` low and drive the config word on `ui[7:0]` (LSB) and `uio[7:0]` (MSB).
    Release `rst_n` during the clock LOW phase before the first counted rising edge.
-   Keep the config word stable until three clock cycles after releasing `rst_n`
-   (the on-chip boot counter commits it then), then set `ui[7]` low.
+   Keep the config word stable through the third rising edge after releasing `rst_n`
+   (the on-chip boot counter commits it at that edge), then set `ui[7]` low - obeying
+   the FREEZE transition rule above - and release your `uio` drivers **within the
+   following clock period**. The chip takes
+   over the `uio` bus on the fourth rising edge; holding your drivers past it makes
+   both sides drive the pads, causing bus contention. Configuration is already
+   latched at that point; subsequent `uio` values do not update it.
 2. Run the experiment at the target clock frequency/voltage/temperature for a known
    number of operations (19 cycles each). Start at 1.20 V/ambient and a low
    clock frequency. Record the clock high time as well as frequency.
-3. Set `ui[7]` high, allow two complete clocks for pending capture and ripple
-   settling, then read the 16 status bytes: `uio[7:0]`
+3. Set `ui[7]` high during the clock HIGH phase (the FREEZE transition rule above),
+   allow two complete clocks for pending capture and
+   ripple settling, then read the 16 status bytes: `uio[7:0]`
    is the data byte selected by `uo[3:0]` (auto-incrementing pointer). Byte map:
    0-1 = DUT error count (saturating), 2-3/4-5 = generic/matched RO edge counts
-   (16-bit, wrap mod 65536 -- telemetry, not saturating), 6-7 = op count (saturating),
+   (16-bit, wrap mod 65536 -- telemetry, not saturating), 6-7 = operation count
+   (saturating; it counts *launches*, so completed comparisons are
+   `max(ops_cnt - 1, 0)` and using the raw count as the denominator biases every
+   error rate low; once saturated, the true count is `>= 65535` and no longer
+   recoverable from this byte),
    8 = segment-tap echo `{seg3, seg2, seg1, seg0}`; 9 = status flags
    `{1, mat_ro_dead, gen_ro_dead, err_seen, can_sel[1:0], win_sel[1:0]}`
    (`can_sel` is bits 3:2, `win_sel` is bits 1:0, and bit 7 is 1); 10 = low
