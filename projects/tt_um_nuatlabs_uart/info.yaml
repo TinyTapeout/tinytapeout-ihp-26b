@@ -1,0 +1,58 @@
+# Tiny Tapeout project information
+project:
+  title:        "8N1 UART Transceiver"
+  author:       "NUAT Labs"
+  discord:      "nuatlabs"
+  description:  "Full-duplex 8N1 UART transceiver (TX + RX) with runtime bidirectional data bus and mid-bit sampling"
+  language:     "Verilog"
+  clock_hz:     0
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x1"
+
+  # Your top module name must start with "tt_um_".
+  top_module:  "tt_um_nuatlabs_uart"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "project.v"
+    - "uart_tx.v"
+    - "uart_rx.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "rxd (serial input)"
+  ui[1]: "tx_start (transmit start pulse)"
+  ui[2]: "uio_load_mode (1=load tx_data, 0=show rx_data)"
+  ui[3]: ""
+  ui[4]: ""
+  ui[5]: ""
+  ui[6]: ""
+  ui[7]: ""
+
+  # Outputs
+  uo[0]: "txd (serial output)"
+  uo[1]: "tx_busy (transmitter busy flag)"
+  uo[2]: "rx_valid (receiver valid pulse)"
+  uo[3]: ""
+  uo[4]: ""
+  uo[5]: ""
+  uo[6]: ""
+  uo[7]: ""
+
+  # Bidirectional pins
+  uio[0]: "tx_data[0] (in) / rx_data[0] (out)"
+  uio[1]: "tx_data[1] (in) / rx_data[1] (out)"
+  uio[2]: "tx_data[2] (in) / rx_data[2] (out)"
+  uio[3]: "tx_data[3] (in) / rx_data[3] (out)"
+  uio[4]: "tx_data[4] (in) / rx_data[4] (out)"
+  uio[5]: "tx_data[5] (in) / rx_data[5] (out)"
+  uio[6]: "tx_data[6] (in) / rx_data[6] (out)"
+  uio[7]: "tx_data[7] (in) / rx_data[7] (out)"
+
+# Do not change!
+yaml_version: 6
