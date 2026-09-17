@@ -1,0 +1,45 @@
+145. Printing statistics.
+
+=== tt_um_hyphen133_drone_detection ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+     1221        - wires
+     1256        - wire bits
+      206        - public wires
+      241        - public wire bits
+        8        - ports
+       43        - port bits
+     1237 2.09E+04 cells
+       29  368.323   sg13g2_a21o_1
+      111 1.01E+03   sg13g2_a21oi_1
+       10  145.152   sg13g2_a221oi_1
+       30  325.458   sg13g2_a22oi_1
+       33  299.376   sg13g2_and2_1
+        9  114.307   sg13g2_and3_1
+        2    29.03   sg13g2_and4_1
+       10   72.576   sg13g2_buf_1
+      202  9.9E+03   sg13g2_dfrbpq_1
+       63  342.922   sg13g2_inv_1
+      125     2268   sg13g2_mux2_1
+       97  703.987   sg13g2_nand2_1
+       38  344.736   sg13g2_nand2b_1
+       32  290.304   sg13g2_nand3_1
+        4   50.803   sg13g2_nand3b_1
+        8   87.091   sg13g2_nand4_1
+       94  682.214   sg13g2_nor2_1
+       24  217.728   sg13g2_nor2b_1
+       22  199.584   sg13g2_nor3_1
+        6   65.318   sg13g2_nor4_1
+      105   952.56   sg13g2_o21ai_1
+       25    226.8   sg13g2_or2_1
+        5   63.504   sg13g2_or3_1
+        1   14.515   sg13g2_or4_1
+        8   58.061   sg13g2_tiehi
+       86 1.25E+03   sg13g2_xnor2_1
+       58  841.882   sg13g2_xor2_1
+
+   Chip area for module '\tt_um_hyphen133_drone_detection': 20915.269200
+     of which used for sequential elements: 9895.737600 (47.31%)
+
