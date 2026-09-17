@@ -2,9 +2,9 @@ VERSION 5.7 ;
   NOWIREEXTENSIONATPIN ON ;
   DIVIDERCHAR "/" ;
   BUSBITCHARS "[]" ;
-MACRO tt_um_barrel_shifter
+MACRO tt_um_tinynpu4
   CLASS BLOCK ;
-  FOREIGN tt_um_barrel_shifter ;
+  FOREIGN tt_um_tinynpu4 ;
   ORIGIN 0.000 0.000 ;
   SIZE 202.080 BY 154.980 ;
   PIN VGND
@@ -58,6 +58,7 @@ MACRO tt_um_barrel_shifter
   PIN clk
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 1.450800 ;
     PORT
       LAYER Metal4 ;
         RECT 187.050 153.980 187.350 154.980 ;
@@ -66,6 +67,7 @@ MACRO tt_um_barrel_shifter
   PIN ena
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.180700 ;
     PORT
       LAYER Metal4 ;
         RECT 190.890 153.980 191.190 154.980 ;
@@ -74,6 +76,7 @@ MACRO tt_um_barrel_shifter
   PIN rst_n
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.180700 ;
     PORT
       LAYER Metal4 ;
         RECT 183.210 153.980 183.510 154.980 ;
@@ -226,7 +229,7 @@ MACRO tt_um_barrel_shifter
   PIN uio_oe[0]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.708600 ;
+    ANTENNADIFFAREA 0.299200 ;
     PORT
       LAYER Metal4 ;
         RECT 56.490 153.980 56.790 154.980 ;
@@ -235,7 +238,7 @@ MACRO tt_um_barrel_shifter
   PIN uio_oe[1]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.708600 ;
+    ANTENNADIFFAREA 0.299200 ;
     PORT
       LAYER Metal4 ;
         RECT 52.650 153.980 52.950 154.980 ;
@@ -244,7 +247,7 @@ MACRO tt_um_barrel_shifter
   PIN uio_oe[2]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.708600 ;
+    ANTENNADIFFAREA 0.299200 ;
     PORT
       LAYER Metal4 ;
         RECT 48.810 153.980 49.110 154.980 ;
@@ -253,7 +256,7 @@ MACRO tt_um_barrel_shifter
   PIN uio_oe[3]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.708600 ;
+    ANTENNADIFFAREA 0.299200 ;
     PORT
       LAYER Metal4 ;
         RECT 44.970 153.980 45.270 154.980 ;
@@ -262,7 +265,7 @@ MACRO tt_um_barrel_shifter
   PIN uio_oe[4]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.708600 ;
+    ANTENNADIFFAREA 0.299200 ;
     PORT
       LAYER Metal4 ;
         RECT 41.130 153.980 41.430 154.980 ;
@@ -271,7 +274,7 @@ MACRO tt_um_barrel_shifter
   PIN uio_oe[5]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.708600 ;
+    ANTENNADIFFAREA 0.299200 ;
     PORT
       LAYER Metal4 ;
         RECT 37.290 153.980 37.590 154.980 ;
@@ -280,7 +283,7 @@ MACRO tt_um_barrel_shifter
   PIN uio_oe[6]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.708600 ;
+    ANTENNADIFFAREA 0.299200 ;
     PORT
       LAYER Metal4 ;
         RECT 33.450 153.980 33.750 154.980 ;
@@ -289,8 +292,7 @@ MACRO tt_um_barrel_shifter
   PIN uio_oe[7]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 1.264900 ;
-    ANTENNADIFFAREA 0.662000 ;
+    ANTENNADIFFAREA 0.299200 ;
     PORT
       LAYER Metal4 ;
         RECT 29.610 153.980 29.910 154.980 ;
@@ -371,7 +373,8 @@ MACRO tt_um_barrel_shifter
   PIN uo_out[0]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.708600 ;
+    ANTENNAGATEAREA 0.109200 ;
+    ANTENNADIFFAREA 0.632400 ;
     PORT
       LAYER Metal4 ;
         RECT 117.930 153.980 118.230 154.980 ;
@@ -380,7 +383,8 @@ MACRO tt_um_barrel_shifter
   PIN uo_out[1]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.708600 ;
+    ANTENNAGATEAREA 0.109200 ;
+    ANTENNADIFFAREA 0.632400 ;
     PORT
       LAYER Metal4 ;
         RECT 114.090 153.980 114.390 154.980 ;
@@ -389,7 +393,8 @@ MACRO tt_um_barrel_shifter
   PIN uo_out[2]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.708600 ;
+    ANTENNAGATEAREA 0.109200 ;
+    ANTENNADIFFAREA 0.632400 ;
     PORT
       LAYER Metal4 ;
         RECT 110.250 153.980 110.550 154.980 ;
@@ -398,7 +403,8 @@ MACRO tt_um_barrel_shifter
   PIN uo_out[3]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.708600 ;
+    ANTENNAGATEAREA 0.109200 ;
+    ANTENNADIFFAREA 0.632400 ;
     PORT
       LAYER Metal4 ;
         RECT 106.410 153.980 106.710 154.980 ;
@@ -446,9 +452,9 @@ MACRO tt_um_barrel_shifter
       LAYER Metal1 ;
         RECT 2.880 3.560 199.200 151.420 ;
       LAYER Metal2 ;
-        RECT 15.560 3.635 181.065 152.185 ;
+        RECT 5.175 3.635 198.825 153.025 ;
       LAYER Metal3 ;
-        RECT 15.515 3.680 181.105 152.145 ;
+        RECT 5.135 3.680 198.865 153.825 ;
       LAYER Metal4 ;
         RECT 15.560 153.770 29.400 153.980 ;
         RECT 30.120 153.770 33.240 153.980 ;
@@ -490,10 +496,14 @@ MACRO tt_um_barrel_shifter
         RECT 168.360 153.770 171.480 153.980 ;
         RECT 172.200 153.770 175.320 153.980 ;
         RECT 176.040 153.770 179.160 153.980 ;
-        RECT 15.560 3.635 179.620 153.770 ;
+        RECT 179.880 153.770 183.000 153.980 ;
+        RECT 183.720 153.770 186.840 153.980 ;
+        RECT 187.560 153.770 190.680 153.980 ;
+        RECT 191.400 153.770 194.500 153.980 ;
+        RECT 15.560 3.635 194.500 153.770 ;
       LAYER Metal5 ;
         RECT 15.515 3.470 179.125 151.510 ;
   END
-END tt_um_barrel_shifter
+END tt_um_tinynpu4
 END LIBRARY
 
