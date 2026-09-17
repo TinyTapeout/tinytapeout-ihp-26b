@@ -1,0 +1,69 @@
+102. Printing statistics.
+
+=== tt_um_wokwi_475369131246576641 ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+       12        - wires
+       47        - wire bits
+       12        - public wires
+       47        - public wire bits
+        8        - ports
+       43        - port bits
+       24  174.182 cells
+        7   50.803   sg13g2_buf_1
+       17  123.379   sg13g2_tielo
+        4        - submodules
+        4        -   xor_cell
+
+   Chip area for module '\tt_um_wokwi_475369131246576641': 174.182400
+     of which used for sequential elements: 0.000000 (0.00%)
+
+=== xor_cell ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+        3        - wires
+        3        - wire bits
+        3        - public wires
+        3        - public wire bits
+        3        - ports
+        3        - port bits
+        1   14.515 cells
+        1   14.515   sg13g2_xor2_1
+
+   Chip area for module '\xor_cell': 14.515200
+     of which used for sequential elements: 0.000000 (0.00%)
+
+=== design hierarchy ===
+
+        +----------Count including submodules.
+        |        +-Area including submodules.
+        |        | 
+       28  232.243 tt_um_wokwi_475369131246576641
+        1   14.515 xor_cell
+
+        +----------Count including submodules.
+        |        +-Area including submodules.
+        |        | 
+       24        - wires
+       59        - wire bits
+       24        - public wires
+       59        - public wire bits
+       20        - ports
+       55        - port bits
+        -        - memories
+        -        - memory bits
+        -        - processes
+       28  232.243 cells
+        7   50.803   sg13g2_buf_1
+       17  123.379   sg13g2_tielo
+        4   58.061   sg13g2_xor2_1
+        4   58.061 submodules
+        4   58.061   xor_cell
+
+   Chip area for top module '\tt_um_wokwi_475369131246576641': 232.243200
+     of which used for sequential elements: 0.000000 (0.00%)
+
