@@ -1,0 +1,55 @@
+# info.yaml
+# Tiny Tapeout project information
+project:
+  title:        "ALU CASS PUCV"
+  author:       "CASS PUCV"
+  discord:      "oryan01"
+  description:  "ALU de 8 bits con interfaz serial de 24 pines (FSM de 3 estados); soporta operaciones aritméticas, lógicas y de desplazamiento vía opcode de control."
+  language:     "Verilog"
+  clock_hz:     10000000
+
+  tiles: "1x1"
+
+  top_module:  "tt_um_oryan01_alu"
+
+  source_files:
+    - "project.v"
+    - "decoder_alu.v"
+    - "alu_top.v"
+    - "arithmetic.v"
+    - "logic.v"
+    - "barrel_shifter.v"
+
+pinout:
+  # Inputs
+  ui[0]: "in[0] - bus serie (instruccion/A/B)"
+  ui[1]: "in[1] - bus serie (instruccion/A/B)"
+  ui[2]: "in[2] - bus serie (instruccion/A/B)"
+  ui[3]: "in[3] - bus serie (instruccion/A/B)"
+  ui[4]: "in[4] - bus serie (instruccion/A/B)"
+  ui[5]: "in[5] - bus serie (instruccion/A/B)"
+  ui[6]: "in[6] - bus serie (instruccion/A/B)"
+  ui[7]: "in[7] - bus serie (instruccion/A/B)"
+
+  # Outputs
+  uo[0]: "out[0] - resultado ALU"
+  uo[1]: "out[1] - resultado ALU"
+  uo[2]: "out[2] - resultado ALU"
+  uo[3]: "out[3] - resultado ALU"
+  uo[4]: "out[4] - resultado ALU"
+  uo[5]: "out[5] - resultado ALU"
+  uo[6]: "out[6] - resultado ALU"
+  uo[7]: "out[7] - resultado ALU"
+
+  # Bidirectional pins
+  uio[0]: "carry_flag"
+  uio[1]: "negative_flag"
+  uio[2]: "overflow_flag"
+  uio[3]: "zeros_flag"
+  uio[4]: ""
+  uio[5]: ""
+  uio[6]: ""
+  uio[7]: ""
+
+# Do not change!
+yaml_version: 6
