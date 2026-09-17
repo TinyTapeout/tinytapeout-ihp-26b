@@ -1,0 +1,57 @@
+# Tiny Tapeout project information
+project:
+  title: "AION" # Project title
+  author: "Filippo Quadri" # Your name
+  discord: "" # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description: "32-bit and 16-bit posit arithmetic unit behind a byte-wide register interface" # One line description of what your project does
+  language: "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz: 25000000 # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  # Must stay 4x2: the GDS in gds/ is built for this tile, and the precheck picks its template DEF by it.
+  tiles: "4x2" # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module: "tt_um_aion"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # project.v is a port list only: the design is the pre-built GDS from ../aion_chip.
+  source_files:
+    - "project.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "ADDR[0]"
+  ui[1]: "ADDR[1]"
+  ui[2]: "ADDR[2]"
+  ui[3]: "ADDR[3]"
+  ui[4]: ""
+  ui[5]: ""
+  ui[6]: ""
+  ui[7]: "WRITE (1) / READ (0)"
+
+  # Outputs
+  uo[0]: "RDATA[0]"
+  uo[1]: "RDATA[1]"
+  uo[2]: "RDATA[2]"
+  uo[3]: "RDATA[3]"
+  uo[4]: "RDATA[4]"
+  uo[5]: "RDATA[5]"
+  uo[6]: "RDATA[6]"
+  uo[7]: "RDATA[7]"
+
+  # Bidirectional pins (all inputs: uio_oe is tied to 0)
+  uio[0]: "WDATA[0]"
+  uio[1]: "WDATA[1]"
+  uio[2]: "WDATA[2]"
+  uio[3]: "WDATA[3]"
+  uio[4]: "WDATA[4]"
+  uio[5]: "WDATA[5]"
+  uio[6]: "WDATA[6]"
+  uio[7]: "WDATA[7]"
+
+# Do not change!
+yaml_version: 6
