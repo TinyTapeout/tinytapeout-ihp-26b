@@ -1,8 +1,9 @@
 {
   "app": "custom_gds action",
   "repo": "https://github.com/youssef0000oooo/ieee_LDO",
-  "commit": "91e4b346e31aa00aaa9cd78a88588ce39935d13f",
-  "workflow_url": "https://github.com/youssef0000oooo/ieee_LDO/actions/runs/33317016614",
+  "commit": "3c8c7611c05f1705b1fca1e0250df2e6343e1bbf",
+  "workflow_url": "https://github.com/youssef0000oooo/ieee_LDO/actions/runs/35239942663",
   "project_id": 5660,
-  "sort_id": 1788039030500
+  "sort_id": 1788039030500,
+  "analog": true
 }
