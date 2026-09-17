@@ -1,0 +1,55 @@
+# Tiny Tapeout project information
+project:
+  title:        "CRC-8 Serial LFSR"                              # Project title
+  author:       "Mena Emil"                                      # Your name
+  discord:      ""                                                # optional - your Discord username
+  description:  "8-bit serial LFSR-based CRC generator/checker, seed 8'hD8, LSB-first data shift-in"
+  language:     "Verilog"
+  clock_hz:     10000000                                         # 10 MHz, per assignment spec
+
+  # A single tile is about 167x108 uM. This design is a single 8-bit LFSR
+  # + a 5-bit counter, so it comfortably fits in one tile.
+  tiles: "1x1"                                                   # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Top module name. Must start with "tt_um_" and be unique across the
+  # shuttle. MUST match the module name in src/tt_um_crc8_lfsr.v and the
+  # instantiation in test/tb.v.
+  top_module:  "tt_um_crc8_lfsr"
+
+  # List your project's source files here. Must be in ./src, one per line.
+  source_files:
+    - "tt_um_crc8_lfsr.v"
+    - "CRC.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+pinout:
+  # Inputs
+  ui[0]: "DATA - serial input data bit (LSB first)"
+  ui[1]: "ACTIVE - high while DATA is being shifted in"
+  ui[2]: ""
+  ui[3]: ""
+  ui[4]: ""
+  ui[5]: ""
+  ui[6]: ""
+  ui[7]: ""
+  # Outputs
+  uo[0]: "CRC - serial CRC output bit"
+  uo[1]: "Valid - high while CRC bits are being shifted out"
+  uo[2]: ""
+  uo[3]: ""
+  uo[4]: ""
+  uo[5]: ""
+  uo[6]: ""
+  uo[7]: ""
+  # Bidirectional pins
+  uio[0]: ""
+  uio[1]: ""
+  uio[2]: ""
+  uio[3]: ""
+  uio[4]: ""
+  uio[5]: ""
+  uio[6]: ""
+  uio[7]: ""
+
+# Do not change!
+yaml_version: 6
