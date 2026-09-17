@@ -50,6 +50,14 @@ And it's still bloated by the toolchain with
 
 But can you do something this compact with the JTAG standard? And since each bit/stage does not require absolute synchronism or a tight timing, the clock network is relaxed and each register uses less space than a standard DFF.
 
+## Asynchronous design
+
+Asynchronous circuits are frowned upon and notoriously prone to weird errors. After all, synchronous designs are much easier to analyse and get right. However the latter relies on the asumption of a magically simultaneous clock pulse that arrives everywhere at the same time. The ULSR does not assume this, in particular to make implementation more convenient: no clock tree synthesis, saving power and area. The ULSR runs slower the JTAG and requires more timing margin, but that's only a fair compromise.
+
+One consequence is that a clock signal can drive only one of the synchronous gates like DFF, which must be chained, like below. This lets the Place&Route tools optimise for density without consideration for timing. Since only one DFF gets a clock signal, the setup & hold only depends on the host toggling the SD and SC pins slow enough, though there is ample margin at 1Mbps.
+
+![](Ripple_counter.png)
+
 ## Protocol
 
 You can find these operations in the ```test/test.py``` script.
