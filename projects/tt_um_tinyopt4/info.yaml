@@ -1,0 +1,56 @@
+# Tiny Tapeout project information
+project:
+  title:        "ieee_tt_tinyopt4"      # Project title
+  author:       "Berthyn Rodrigo Tinini Chuquimia"      # Your name
+  discord:      "tiberthyn"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "4-tap LMS adaptive update engine for FIR system identification"      # One line description of what your project does
+  language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz:     10000000       # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_tinyopt4"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "project.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "Data input bit 0 (x / d / cfg_mu)"
+  ui[1]: "Data input bit 1"
+  ui[2]: "Data input bit 2"
+  ui[3]: "Data input bit 3"
+  ui[4]: "Data input bit 4"
+  ui[5]: "Data input bit 5"
+  ui[6]: "Data input bit 6"
+  ui[7]: "Data input bit 7"
+
+  # Outputs
+  uo[0]: "Multiplexed output bit 0 (y_hat / e / w0-w3)"
+  uo[1]: "Multiplexed output bit 1"
+  uo[2]: "Multiplexed output bit 2"
+  uo[3]: "Multiplexed output bit 3"
+  uo[4]: "Multiplexed output bit 4"
+  uo[5]: "Multiplexed output bit 5"
+  uo[6]: "Multiplexed output bit 6"
+  uo[7]: "Multiplexed output bit 7"
+
+  # Bidirectional pins (control inputs and status outputs)
+  uio[0]: "In: start"
+  uio[1]: "In: data_sel (0=x, 1=d)"
+  uio[2]: "In: cfg_sel (1=config mu)"
+  uio[3]: "In: unused / tied low"
+  uio[4]: "Out: busy"
+  uio[5]: "Out: done"
+  uio[6]: "Out: overflow flag"
+  uio[7]: "Out: weight saturation flag"
+
+# Do not change!
+yaml_version: 6
