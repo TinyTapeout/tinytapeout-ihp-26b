@@ -74,6 +74,14 @@ jobs:
       - name: Copy macros
         run: python ./tt/configure.py --copy-macros
 
+      # KLayout 0.30.2 (from the pinned LibreLane's nix-eda) intermittently segfaults in a
+      # worker thread of its hierarchical DRC processor when checking the full chip with
+      # several threads.
+      - name: Patch tt-multiplexer to run the KLayout DRC single-threaded
+        run: |
+          sed -i 's|^\(\s*\)"KLAYOUT_DRC_RUNSET":|\1"KLAYOUT_DRC_THREADS": 1,\n\1"KLAYOUT_DRC_RUNSET":|' tt-multiplexer/ol2/tt_top/build.py
+          grep -n 'KLAYOUT_DRC_THREADS' tt-multiplexer/ol2/tt_top/build.py
+
       - name: Harden tt_top
         working-directory: tt-multiplexer/ol2/tt_top
         run: nix-shell $GITHUB_WORKSPACE/librelane/shell.nix --run "python build.py"
