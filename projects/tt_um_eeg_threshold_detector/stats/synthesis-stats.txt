@@ -1,0 +1,44 @@
+129. Printing statistics.
+
+=== tt_um_eeg_threshold_detector ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+      271        - wires
+      306        - wire bits
+       48        - public wires
+       83        - public wire bits
+        8        - ports
+       43        - port bits
+      287 4.78E+03 cells
+        3   38.102   sg13g2_a21o_1
+       21  190.512   sg13g2_a21oi_1
+        3   43.546   sg13g2_a221oi_1
+        7    75.94   sg13g2_a22oi_1
+        6   54.432   sg13g2_and2_1
+        3   38.102   sg13g2_and3_1
+        1   14.515   sg13g2_and4_1
+        1    7.258   sg13g2_buf_1
+       51  2.5E+03   sg13g2_dfrbpq_1
+       12   65.318   sg13g2_inv_1
+       20   362.88   sg13g2_mux2_1
+       14  101.606   sg13g2_nand2_1
+       18  163.296   sg13g2_nand2b_1
+        2   18.144   sg13g2_nand3_1
+        5   54.432   sg13g2_nand4_1
+       30  217.728   sg13g2_nor2_1
+       15   136.08   sg13g2_nor2b_1
+       10    90.72   sg13g2_nor3_1
+        3   32.659   sg13g2_nor4_1
+       28  254.016   sg13g2_o21ai_1
+        5    45.36   sg13g2_or2_1
+        1   12.701   sg13g2_or3_1
+        1   14.515   sg13g2_or4_1
+       20  145.152   sg13g2_tielo
+        4   58.061   sg13g2_xnor2_1
+        3   43.546   sg13g2_xor2_1
+
+   Chip area for module '\tt_um_eeg_threshold_detector': 4777.050600
+     of which used for sequential elements: 2498.428800 (52.30%)
+
