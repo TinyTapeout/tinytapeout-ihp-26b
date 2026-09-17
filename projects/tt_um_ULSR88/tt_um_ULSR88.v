@@ -93,8 +93,8 @@ module tt_um_ULSR88 (clk,
  wire \ob3.tn ;
  wire \octrl.DFF1.D ;
  wire \octrl.DFF1.Q ;
- wire \octrl.DFF1.Q_N ;
  wire \octrl.DFF1.RESET_B ;
+ wire \octrl.DFF2.D ;
  wire \octrl.DFF2.Q ;
  wire net1;
  wire net2;
@@ -109,18 +109,18 @@ module tt_um_ULSR88 (clk,
  wire net11;
  wire net12;
  wire net13;
- wire net26;
  wire net27;
- wire net36;
  wire net28;
+ wire net37;
  wire net29;
  wire net30;
- wire net37;
  wire net31;
+ wire net38;
  wire net32;
  wire net33;
  wire net34;
  wire net35;
+ wire net36;
  wire net14;
  wire net15;
  wire net16;
@@ -133,6 +133,7 @@ module tt_um_ULSR88 (clk,
  wire net23;
  wire net24;
  wire net25;
+ wire net26;
  wire net;
 
  sg13g2_a22oi_1 \FA.a.ihp  (.Y(\FA.a.Y ),
@@ -1728,28 +1729,31 @@ module tt_um_ULSR88 (clk,
  sg13g2_decap_8 FILLER_33_21 ();
  sg13g2_decap_8 FILLER_33_210 ();
  sg13g2_decap_8 FILLER_33_217 ();
- sg13g2_decap_8 FILLER_33_224 ();
- sg13g2_decap_8 FILLER_33_231 ();
- sg13g2_decap_4 FILLER_33_238 ();
- sg13g2_fill_2 FILLER_33_247 ();
- sg13g2_fill_1 FILLER_33_249 ();
- sg13g2_fill_2 FILLER_33_255 ();
+ sg13g2_decap_8 FILLER_33_229 ();
+ sg13g2_decap_8 FILLER_33_236 ();
+ sg13g2_decap_8 FILLER_33_248 ();
+ sg13g2_decap_4 FILLER_33_255 ();
+ sg13g2_fill_1 FILLER_33_264 ();
  sg13g2_decap_8 FILLER_33_28 ();
- sg13g2_decap_8 FILLER_33_291 ();
- sg13g2_decap_4 FILLER_33_298 ();
- sg13g2_fill_1 FILLER_33_302 ();
- sg13g2_decap_8 FILLER_33_332 ();
- sg13g2_decap_8 FILLER_33_339 ();
- sg13g2_decap_8 FILLER_33_346 ();
+ sg13g2_decap_8 FILLER_33_294 ();
+ sg13g2_decap_8 FILLER_33_301 ();
+ sg13g2_decap_8 FILLER_33_308 ();
+ sg13g2_decap_8 FILLER_33_315 ();
+ sg13g2_decap_8 FILLER_33_322 ();
+ sg13g2_decap_8 FILLER_33_329 ();
+ sg13g2_decap_8 FILLER_33_336 ();
+ sg13g2_decap_8 FILLER_33_343 ();
  sg13g2_decap_8 FILLER_33_35 ();
- sg13g2_decap_8 FILLER_33_353 ();
- sg13g2_decap_8 FILLER_33_360 ();
- sg13g2_decap_8 FILLER_33_367 ();
- sg13g2_decap_8 FILLER_33_374 ();
- sg13g2_decap_8 FILLER_33_381 ();
- sg13g2_decap_8 FILLER_33_388 ();
- sg13g2_decap_8 FILLER_33_395 ();
- sg13g2_decap_8 FILLER_33_402 ();
+ sg13g2_decap_8 FILLER_33_350 ();
+ sg13g2_decap_8 FILLER_33_357 ();
+ sg13g2_decap_8 FILLER_33_364 ();
+ sg13g2_decap_8 FILLER_33_371 ();
+ sg13g2_decap_8 FILLER_33_378 ();
+ sg13g2_decap_8 FILLER_33_385 ();
+ sg13g2_decap_8 FILLER_33_392 ();
+ sg13g2_decap_8 FILLER_33_399 ();
+ sg13g2_fill_2 FILLER_33_406 ();
+ sg13g2_fill_1 FILLER_33_408 ();
  sg13g2_decap_8 FILLER_33_42 ();
  sg13g2_decap_8 FILLER_33_49 ();
  sg13g2_decap_8 FILLER_33_56 ();
@@ -1779,11 +1783,11 @@ module tt_um_ULSR88 (clk,
  sg13g2_decap_8 FILLER_34_203 ();
  sg13g2_decap_8 FILLER_34_21 ();
  sg13g2_decap_8 FILLER_34_210 ();
- sg13g2_fill_2 FILLER_34_227 ();
- sg13g2_fill_2 FILLER_34_259 ();
+ sg13g2_fill_1 FILLER_34_262 ();
  sg13g2_decap_8 FILLER_34_28 ();
- sg13g2_fill_1 FILLER_34_296 ();
- sg13g2_decap_8 FILLER_34_330 ();
+ sg13g2_decap_8 FILLER_34_298 ();
+ sg13g2_fill_2 FILLER_34_305 ();
+ sg13g2_fill_1 FILLER_34_307 ();
  sg13g2_decap_8 FILLER_34_337 ();
  sg13g2_decap_8 FILLER_34_344 ();
  sg13g2_decap_8 FILLER_34_35 ();
@@ -1825,30 +1829,29 @@ module tt_um_ULSR88 (clk,
  sg13g2_decap_8 FILLER_35_203 ();
  sg13g2_decap_8 FILLER_35_21 ();
  sg13g2_fill_2 FILLER_35_210 ();
+ sg13g2_fill_1 FILLER_35_212 ();
+ sg13g2_decap_4 FILLER_35_223 ();
  sg13g2_decap_8 FILLER_35_231 ();
- sg13g2_decap_8 FILLER_35_238 ();
+ sg13g2_fill_2 FILLER_35_238 ();
  sg13g2_decap_4 FILLER_35_254 ();
- sg13g2_fill_1 FILLER_35_263 ();
- sg13g2_fill_2 FILLER_35_268 ();
+ sg13g2_fill_2 FILLER_35_258 ();
+ sg13g2_fill_1 FILLER_35_265 ();
+ sg13g2_decap_8 FILLER_35_279 ();
  sg13g2_decap_8 FILLER_35_28 ();
- sg13g2_fill_2 FILLER_35_284 ();
- sg13g2_fill_1 FILLER_35_295 ();
- sg13g2_decap_8 FILLER_35_305 ();
- sg13g2_fill_2 FILLER_35_316 ();
- sg13g2_fill_1 FILLER_35_318 ();
- sg13g2_decap_8 FILLER_35_330 ();
- sg13g2_decap_8 FILLER_35_337 ();
- sg13g2_decap_8 FILLER_35_344 ();
+ sg13g2_decap_4 FILLER_35_286 ();
+ sg13g2_fill_1 FILLER_35_294 ();
+ sg13g2_decap_8 FILLER_35_343 ();
  sg13g2_decap_8 FILLER_35_35 ();
- sg13g2_decap_8 FILLER_35_351 ();
- sg13g2_decap_8 FILLER_35_358 ();
- sg13g2_decap_8 FILLER_35_365 ();
- sg13g2_decap_8 FILLER_35_372 ();
- sg13g2_decap_8 FILLER_35_379 ();
- sg13g2_decap_8 FILLER_35_386 ();
- sg13g2_decap_8 FILLER_35_393 ();
- sg13g2_decap_8 FILLER_35_400 ();
- sg13g2_fill_2 FILLER_35_407 ();
+ sg13g2_decap_8 FILLER_35_350 ();
+ sg13g2_decap_8 FILLER_35_357 ();
+ sg13g2_decap_8 FILLER_35_364 ();
+ sg13g2_decap_8 FILLER_35_371 ();
+ sg13g2_decap_8 FILLER_35_378 ();
+ sg13g2_decap_8 FILLER_35_385 ();
+ sg13g2_decap_8 FILLER_35_392 ();
+ sg13g2_decap_8 FILLER_35_399 ();
+ sg13g2_fill_2 FILLER_35_406 ();
+ sg13g2_fill_1 FILLER_35_408 ();
  sg13g2_decap_8 FILLER_35_42 ();
  sg13g2_decap_8 FILLER_35_49 ();
  sg13g2_decap_8 FILLER_35_56 ();
@@ -1876,27 +1879,31 @@ module tt_um_ULSR88 (clk,
  sg13g2_decap_8 FILLER_36_189 ();
  sg13g2_decap_8 FILLER_36_196 ();
  sg13g2_decap_4 FILLER_36_203 ();
- sg13g2_fill_2 FILLER_36_207 ();
+ sg13g2_fill_1 FILLER_36_207 ();
  sg13g2_decap_8 FILLER_36_21 ();
- sg13g2_decap_8 FILLER_36_229 ();
- sg13g2_fill_2 FILLER_36_236 ();
- sg13g2_fill_1 FILLER_36_238 ();
- sg13g2_fill_2 FILLER_36_249 ();
- sg13g2_decap_4 FILLER_36_264 ();
+ sg13g2_decap_8 FILLER_36_228 ();
+ sg13g2_decap_4 FILLER_36_235 ();
+ sg13g2_fill_1 FILLER_36_249 ();
+ sg13g2_fill_1 FILLER_36_260 ();
  sg13g2_decap_8 FILLER_36_28 ();
- sg13g2_fill_2 FILLER_36_295 ();
- sg13g2_decap_8 FILLER_36_332 ();
- sg13g2_decap_8 FILLER_36_339 ();
- sg13g2_decap_8 FILLER_36_346 ();
+ sg13g2_fill_1 FILLER_36_294 ();
+ sg13g2_fill_1 FILLER_36_312 ();
+ sg13g2_fill_2 FILLER_36_317 ();
+ sg13g2_fill_2 FILLER_36_324 ();
+ sg13g2_fill_1 FILLER_36_326 ();
+ sg13g2_decap_8 FILLER_36_336 ();
+ sg13g2_decap_8 FILLER_36_343 ();
  sg13g2_decap_8 FILLER_36_35 ();
- sg13g2_decap_8 FILLER_36_353 ();
- sg13g2_decap_8 FILLER_36_360 ();
- sg13g2_decap_8 FILLER_36_367 ();
- sg13g2_decap_8 FILLER_36_374 ();
- sg13g2_decap_8 FILLER_36_381 ();
- sg13g2_decap_8 FILLER_36_388 ();
- sg13g2_decap_8 FILLER_36_395 ();
- sg13g2_decap_8 FILLER_36_402 ();
+ sg13g2_decap_8 FILLER_36_350 ();
+ sg13g2_decap_8 FILLER_36_357 ();
+ sg13g2_decap_8 FILLER_36_364 ();
+ sg13g2_decap_8 FILLER_36_371 ();
+ sg13g2_decap_8 FILLER_36_378 ();
+ sg13g2_decap_8 FILLER_36_385 ();
+ sg13g2_decap_8 FILLER_36_392 ();
+ sg13g2_decap_8 FILLER_36_399 ();
+ sg13g2_fill_2 FILLER_36_406 ();
+ sg13g2_fill_1 FILLER_36_408 ();
  sg13g2_decap_8 FILLER_36_42 ();
  sg13g2_decap_8 FILLER_36_49 ();
  sg13g2_decap_8 FILLER_36_56 ();
@@ -1921,25 +1928,17 @@ module tt_um_ULSR88 (clk,
  sg13g2_decap_8 FILLER_37_168 ();
  sg13g2_decap_8 FILLER_37_175 ();
  sg13g2_decap_4 FILLER_37_182 ();
- sg13g2_decap_4 FILLER_37_190 ();
- sg13g2_fill_1 FILLER_37_194 ();
+ sg13g2_fill_1 FILLER_37_186 ();
+ sg13g2_decap_4 FILLER_37_191 ();
  sg13g2_decap_8 FILLER_37_199 ();
- sg13g2_decap_8 FILLER_37_206 ();
  sg13g2_decap_8 FILLER_37_21 ();
- sg13g2_fill_1 FILLER_37_213 ();
- sg13g2_fill_1 FILLER_37_219 ();
- sg13g2_fill_1 FILLER_37_249 ();
- sg13g2_fill_1 FILLER_37_255 ();
+ sg13g2_fill_2 FILLER_37_236 ();
+ sg13g2_fill_1 FILLER_37_238 ();
+ sg13g2_fill_2 FILLER_37_249 ();
+ sg13g2_fill_1 FILLER_37_263 ();
  sg13g2_decap_8 FILLER_37_28 ();
- sg13g2_fill_2 FILLER_37_281 ();
- sg13g2_fill_1 FILLER_37_283 ();
- sg13g2_fill_2 FILLER_37_289 ();
- sg13g2_fill_1 FILLER_37_296 ();
- sg13g2_fill_1 FILLER_37_302 ();
- sg13g2_fill_1 FILLER_37_307 ();
- sg13g2_fill_2 FILLER_37_318 ();
- sg13g2_fill_1 FILLER_37_320 ();
- sg13g2_decap_8 FILLER_37_338 ();
+ sg13g2_fill_1 FILLER_37_285 ();
+ sg13g2_fill_1 FILLER_37_300 ();
  sg13g2_decap_8 FILLER_37_345 ();
  sg13g2_decap_8 FILLER_37_35 ();
  sg13g2_decap_8 FILLER_37_352 ();
@@ -1976,18 +1975,21 @@ module tt_um_ULSR88 (clk,
  sg13g2_decap_8 FILLER_38_180 ();
  sg13g2_decap_8 FILLER_38_187 ();
  sg13g2_decap_8 FILLER_38_194 ();
- sg13g2_fill_1 FILLER_38_205 ();
+ sg13g2_fill_2 FILLER_38_205 ();
  sg13g2_decap_8 FILLER_38_21 ();
- sg13g2_fill_2 FILLER_38_232 ();
- sg13g2_fill_1 FILLER_38_234 ();
- sg13g2_fill_2 FILLER_38_257 ();
+ sg13g2_fill_2 FILLER_38_215 ();
+ sg13g2_decap_4 FILLER_38_221 ();
+ sg13g2_fill_2 FILLER_38_225 ();
+ sg13g2_decap_4 FILLER_38_231 ();
+ sg13g2_fill_1 FILLER_38_256 ();
+ sg13g2_fill_2 FILLER_38_279 ();
  sg13g2_decap_8 FILLER_38_28 ();
- sg13g2_fill_2 FILLER_38_281 ();
- sg13g2_fill_1 FILLER_38_283 ();
- sg13g2_fill_2 FILLER_38_289 ();
+ sg13g2_fill_1 FILLER_38_281 ();
+ sg13g2_fill_1 FILLER_38_300 ();
+ sg13g2_fill_2 FILLER_38_318 ();
+ sg13g2_fill_1 FILLER_38_320 ();
  sg13g2_decap_8 FILLER_38_35 ();
- sg13g2_fill_2 FILLER_38_350 ();
- sg13g2_decap_4 FILLER_38_356 ();
+ sg13g2_fill_1 FILLER_38_359 ();
  sg13g2_decap_4 FILLER_38_364 ();
  sg13g2_decap_8 FILLER_38_372 ();
  sg13g2_decap_8 FILLER_38_379 ();
@@ -2461,21 +2463,23 @@ module tt_um_ULSR88 (clk,
     .X(net20));
  sg13g2_buf_1 fanout21 (.A(net9),
     .X(net21));
- sg13g2_buf_1 fanout22 (.A(net10),
+ sg13g2_buf_1 fanout22 (.A(net26),
     .X(net22));
- sg13g2_buf_1 fanout23 (.A(net10),
+ sg13g2_buf_1 fanout23 (.A(net26),
     .X(net23));
- sg13g2_buf_1 fanout24 (.A(net25),
+ sg13g2_buf_1 fanout24 (.A(net26),
     .X(net24));
- sg13g2_buf_1 fanout25 (.A(net10),
+ sg13g2_buf_1 fanout25 (.A(net26),
     .X(net25));
+ sg13g2_buf_1 fanout26 (.A(net10),
+    .X(net26));
  sg13g2_a221oi_1 \ib10.u1.rs_neg.ihp  (.B2(CaptureStrobe),
     .C1(\ib10.t ),
     .B1(net7),
     .A1(net19),
     .Y(\ib10.tn ),
     .A2(\ib10.D ));
- sg13g2_a21oi_1 \ib10.u1.rs_pos.ihp  (.A1(net20),
+ sg13g2_a21oi_1 \ib10.u1.rs_pos.ihp  (.A1(net19),
     .A2(\ib10.D_N ),
     .Y(\ib10.t ),
     .B1(\ib10.tn ));
@@ -2497,11 +2501,11 @@ module tt_um_ULSR88 (clk,
     .A2(\ib10.Q_N ),
     .Y(\ib11.t ),
     .B1(\ib11.tn ));
- sg13g2_a21oi_1 \ib11.u2.rs_neg.ihp  (.A1(net25),
+ sg13g2_a21oi_1 \ib11.u2.rs_neg.ihp  (.A1(net24),
     .A2(\ib11.t ),
     .Y(\ib11.Q_N ),
     .B1(DO));
- sg13g2_a21oi_1 \ib11.u2.rs_pos.ihp  (.A1(net25),
+ sg13g2_a21oi_1 \ib11.u2.rs_pos.ihp  (.A1(net24),
     .A2(\ib11.tn ),
     .Y(DO),
     .B1(\ib11.Q_N ));
@@ -2515,11 +2519,11 @@ module tt_um_ULSR88 (clk,
     .A2(\ib8.D_N ),
     .Y(\ib8.t ),
     .B1(\ib8.tn ));
- sg13g2_a21oi_1 \ib8.u2.rs_neg.ihp  (.A1(net24),
+ sg13g2_a21oi_1 \ib8.u2.rs_neg.ihp  (.A1(net25),
     .A2(\ib8.t ),
     .Y(\ib8.Q_N ),
     .B1(\ib8.Q ));
- sg13g2_a21oi_1 \ib8.u2.rs_pos.ihp  (.A1(net24),
+ sg13g2_a21oi_1 \ib8.u2.rs_pos.ihp  (.A1(net25),
     .A2(\ib8.tn ),
     .Y(\ib8.Q ),
     .B1(\ib8.Q_N ));
@@ -2533,11 +2537,11 @@ module tt_um_ULSR88 (clk,
     .A2(\ib8.Q_N ),
     .Y(\ib9.t ),
     .B1(\ib9.tn ));
- sg13g2_a21oi_1 \ib9.u2.rs_neg.ihp  (.A1(net24),
+ sg13g2_a21oi_1 \ib9.u2.rs_neg.ihp  (.A1(net25),
     .A2(\ib9.t ),
     .Y(\ib10.D_N ),
     .B1(\ib10.D ));
- sg13g2_a21oi_1 \ib9.u2.rs_pos.ihp  (.A1(net24),
+ sg13g2_a21oi_1 \ib9.u2.rs_pos.ihp  (.A1(net25),
     .A2(\ib9.tn ),
     .Y(\ib10.D ),
     .B1(\ib10.D_N ));
@@ -2555,9 +2559,9 @@ module tt_um_ULSR88 (clk,
     .B1(\ictl.DFF2.Q ),
     .B2(\ictl.D ),
     .A2(net19),
-    .A1(net25));
+    .A1(net24));
  sg13g2_inv_2 \ictl.i1.ihp  (.Y(\ictl.DFF1.RESET_B ),
-    .A(net22));
+    .A(net23));
  sg13g2_inv_2 \ictl.i2.ihp  (.Y(UpdateStrobe),
     .A(\ictl.a.Y ));
  sg13g2_buf_1 input1 (.A(ui_in[0]),
@@ -2600,7 +2604,7 @@ module tt_um_ULSR88 (clk,
     .A2(\iob4.t ),
     .Y(\iob4.Q_N ),
     .B1(\iob4.Q ));
- sg13g2_a21oi_1 \iob4.u2.rs_pos.ihp  (.A1(net23),
+ sg13g2_a21oi_1 \iob4.u2.rs_pos.ihp  (.A1(net22),
     .A2(\iob4.tn ),
     .Y(\iob4.Q ),
     .B1(\iob4.Q_N ));
@@ -2641,18 +2645,18 @@ module tt_um_ULSR88 (clk,
  sg13g2_a221oi_1 \iob6.u1.rs_neg.ihp  (.B2(CaptureStrobe),
     .C1(\iob6.t ),
     .B1(net3),
-    .A1(net19),
+    .A1(net18),
     .Y(\iob6.tn ),
     .A2(\iob5.Q ));
- sg13g2_a21oi_1 \iob6.u1.rs_pos.ihp  (.A1(net19),
+ sg13g2_a21oi_1 \iob6.u1.rs_pos.ihp  (.A1(net18),
     .A2(\iob5.Q_N ),
     .Y(\iob6.t ),
     .B1(\iob6.tn ));
- sg13g2_a21oi_1 \iob6.u2.rs_neg.ihp  (.A1(net25),
+ sg13g2_a21oi_1 \iob6.u2.rs_neg.ihp  (.A1(net23),
     .A2(\iob6.t ),
     .Y(\iob6.Q_N ),
     .B1(\iob6.Q ));
- sg13g2_a21oi_1 \iob6.u2.rs_pos.ihp  (.A1(net25),
+ sg13g2_a21oi_1 \iob6.u2.rs_pos.ihp  (.A1(net24),
     .A2(\iob6.tn ),
     .Y(\iob6.Q ),
     .B1(\iob6.Q_N ));
@@ -2667,18 +2671,18 @@ module tt_um_ULSR88 (clk,
  sg13g2_a221oi_1 \iob7.u1.rs_neg.ihp  (.B2(CaptureStrobe),
     .C1(\iob7.t ),
     .B1(net4),
-    .A1(net20),
+    .A1(net19),
     .Y(\iob7.tn ),
     .A2(\iob6.Q ));
  sg13g2_a21oi_1 \iob7.u1.rs_pos.ihp  (.A1(net19),
     .A2(\iob6.Q_N ),
     .Y(\iob7.t ),
     .B1(\iob7.tn ));
- sg13g2_a21oi_1 \iob7.u2.rs_neg.ihp  (.A1(net25),
+ sg13g2_a21oi_1 \iob7.u2.rs_neg.ihp  (.A1(net24),
     .A2(\iob7.t ),
     .Y(\ib8.D_N ),
     .B1(\ib8.D ));
- sg13g2_a21oi_1 \iob7.u2.rs_pos.ihp  (.A1(net25),
+ sg13g2_a21oi_1 \iob7.u2.rs_pos.ihp  (.A1(net24),
     .A2(\iob7.tn ),
     .Y(\ib8.D ),
     .B1(\ib8.D_N ));
@@ -2789,20 +2793,19 @@ module tt_um_ULSR88 (clk,
  sg13g2_dfrbp_1 \octrl.DFF1.ihp  (.RESET_B(\octrl.DFF1.RESET_B ),
     .D(\octrl.DFF1.D ),
     .Q(\octrl.DFF1.Q ),
-    .Q_N(\octrl.DFF1.Q_N ),
-    .CLK(net24));
- sg13g2_dfrbp_1 \octrl.DFF2.ihp  (.RESET_B(\octrl.DFF1.RESET_B ),
-    .D(\octrl.DFF1.Q ),
-    .Q(\octrl.DFF2.Q ),
     .Q_N(\octrl.DFF1.D ),
-    .CLK(net24));
- sg13g2_and2_2 \octrl.a.ihp  (.A(\octrl.DFF1.Q_N ),
+    .CLK(net25));
+ sg13g2_dfrbp_1 \octrl.DFF2.ihp  (.RESET_B(\octrl.DFF1.RESET_B ),
+    .D(\octrl.DFF2.D ),
+    .Q(\octrl.DFF2.Q ),
+    .Q_N(\octrl.DFF2.D ),
+    .CLK(\octrl.DFF1.D ));
+ sg13g2_and2_2 \octrl.a.ihp  (.A(\octrl.DFF1.Q ),
     .B(\octrl.DFF2.Q ),
     .X(CaptureStrobe));
  sg13g2_inv_2 \octrl.i1.ihp  (.Y(\octrl.DFF1.RESET_B ),
     .A(net20));
  sg13g2_tielo tt_um_ULSR88 (.L_LO(net));
- sg13g2_tielo tt_um_ULSR88_26 (.L_LO(net26));
  sg13g2_tielo tt_um_ULSR88_27 (.L_LO(net27));
  sg13g2_tielo tt_um_ULSR88_28 (.L_LO(net28));
  sg13g2_tielo tt_um_ULSR88_29 (.L_LO(net29));
@@ -2811,20 +2814,21 @@ module tt_um_ULSR88 (clk,
  sg13g2_tielo tt_um_ULSR88_32 (.L_LO(net32));
  sg13g2_tielo tt_um_ULSR88_33 (.L_LO(net33));
  sg13g2_tielo tt_um_ULSR88_34 (.L_LO(net34));
- sg13g2_tiehi tt_um_ULSR88_35 (.L_HI(net35));
+ sg13g2_tielo tt_um_ULSR88_35 (.L_LO(net35));
  sg13g2_tiehi tt_um_ULSR88_36 (.L_HI(net36));
  sg13g2_tiehi tt_um_ULSR88_37 (.L_HI(net37));
+ sg13g2_tiehi tt_um_ULSR88_38 (.L_HI(net38));
  assign uio_oe[0] = net;
- assign uio_oe[1] = net26;
- assign uio_oe[2] = net35;
- assign uio_oe[3] = net27;
- assign uio_oe[4] = net28;
- assign uio_oe[5] = net29;
- assign uio_oe[6] = net36;
- assign uio_oe[7] = net37;
- assign uio_out[0] = net30;
- assign uio_out[1] = net31;
- assign uio_out[3] = net32;
- assign uio_out[4] = net33;
- assign uio_out[5] = net34;
+ assign uio_oe[1] = net27;
+ assign uio_oe[2] = net36;
+ assign uio_oe[3] = net28;
+ assign uio_oe[4] = net29;
+ assign uio_oe[5] = net30;
+ assign uio_oe[6] = net37;
+ assign uio_oe[7] = net38;
+ assign uio_out[0] = net31;
+ assign uio_out[1] = net32;
+ assign uio_out[3] = net33;
+ assign uio_out[4] = net34;
+ assign uio_out[5] = net35;
 endmodule
