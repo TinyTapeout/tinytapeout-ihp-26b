@@ -1,0 +1,56 @@
+# Tiny Tapeout project information
+project:
+  title:        "Mini 8-bit Accumulator CPU"      # Project title
+  author:       "Rodgers Odiwuor"      # Your name
+  discord:      ""      # Your discord username (optional)
+  description:  "A tiny Von Neumann 8-bit accumulator CPU with a 16-instruction ISA (load/store, add/sub, bitwise logic, jump/jump-if-zero/jump-if-carry, output, halt)."      # One line description of what your project does
+  language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz:     10000000       # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x2"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_94442024_mini_cpu"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "tt_um_mini_cpu.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: ""
+  ui[1]: ""
+  ui[2]: ""
+  ui[3]: ""
+  ui[4]: ""
+  ui[5]: ""
+  ui[6]: ""
+  ui[7]: ""
+
+  # Outputs
+  uo[0]: "acc bit 0 (OUT register)"
+  uo[1]: "acc bit 1 (OUT register)"
+  uo[2]: "acc bit 2 (OUT register)"
+  uo[3]: "acc bit 3 (OUT register)"
+  uo[4]: "acc bit 4 (OUT register)"
+  uo[5]: "acc bit 5 (OUT register)"
+  uo[6]: "acc bit 6 (OUT register)"
+  uo[7]: "acc bit 7 (OUT register)"
+
+  # Bidirectional pins
+  uio[0]: "debug: pc bit 0"
+  uio[1]: "debug: pc bit 1"
+  uio[2]: "debug: pc bit 2"
+  uio[3]: "debug: pc bit 3"
+  uio[4]: "debug: FSM state"
+  uio[5]: "debug: zero flag"
+  uio[6]: "debug: carry flag"
+  uio[7]: "debug: halted flag"
+
+# Do not change!
+yaml_version: 6
