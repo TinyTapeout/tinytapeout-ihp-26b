@@ -1,0 +1,47 @@
+123. Printing statistics.
+
+=== tt_um_vga_ca ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+     1430        - wires
+     1465        - wire bits
+      678        - public wires
+      713        - public wire bits
+        8        - ports
+       43        - port bits
+     1446 2.16E+04 cells
+       15  190.512   sg13g2_a21o_1
+      111 1.01E+03   sg13g2_a21oi_1
+        5   72.576   sg13g2_a221oi_1
+      157  1703.23   sg13g2_a22oi_1
+       10    90.72   sg13g2_and2_1
+        5   63.504   sg13g2_and3_1
+        2    29.03   sg13g2_and4_1
+        2   14.515   sg13g2_buf_1
+       30 1.47E+03   sg13g2_dfrbpq_1
+      320 9.87E+03   sg13g2_dlhq_1
+       19  103.421   sg13g2_inv_1
+        1   18.144   sg13g2_mux2_1
+       62  449.971   sg13g2_nand2_1
+       13  117.936   sg13g2_nand2b_1
+       54  489.888   sg13g2_nand3_1
+        7   88.906   sg13g2_nand3b_1
+       20  217.728   sg13g2_nand4_1
+      201 1.46E+03   sg13g2_nor2_1
+       15   136.08   sg13g2_nor2b_1
+      189 1.71E+03   sg13g2_nor3_1
+       16  174.182   sg13g2_nor4_1
+       60   544.32   sg13g2_o21ai_1
+       12  108.864   sg13g2_or2_1
+        4   50.803   sg13g2_or3_1
+        1   14.515   sg13g2_or4_1
+       22  159.667   sg13g2_tiehi
+       16  116.122   sg13g2_tielo
+       57  827.366   sg13g2_xnor2_1
+       20  290.304   sg13g2_xor2_1
+
+   Chip area for module '\tt_um_vga_ca': 21592.683000
+     of which used for sequential elements: 1469.664000 (6.81%)
+
