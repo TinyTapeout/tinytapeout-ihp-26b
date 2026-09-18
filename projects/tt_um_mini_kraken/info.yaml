@@ -1,0 +1,68 @@
+# Tiny Tapeout project information
+project:
+  title:        "Kraken IO Subprocessor"      # Project title
+  author:       "Matthias Musch"      # Your name
+  discord:      "matztron"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "A PIO-like state machine that runs short pioasm scripts" # One line description of what your project does
+  language:     "SystemVerilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x2"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_mini_kraken"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "project.v"
+    - "kraken_pkg.sv"
+    - "kraken_alu.sv"
+    - "kraken_decode.sv"
+    - "kraken_fifo.sv"
+    - "kraken_imem.sv"
+    - "kraken_pc.sv"
+    - "kraken_pins.sv"
+    - "kraken_regfile.sv"
+    - "kraken_sm.sv"
+    - "kraken_tt_cfg.sv"
+    - "kraken_tt_loader.sv"
+    - "tt_um_kraken_mini.sv"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "gpio_in (also LSBs of TX byte when pushing) / TX byte for UART programs"
+  ui[1]: "gpio_in (also LSBs of TX byte when pushing) / TX byte for UART programs"
+  ui[2]: "TX byte for UART programs"
+  ui[3]: "TX byte for UART programs"
+  ui[4]: "TX byte for UART programs"
+  ui[5]: "TX byte for UART programs"
+  ui[6]: "TX byte for UART programs"
+  ui[7]: "TX byte for UART programs"
+
+  # Outputs
+  uo[0]: "PIO GPIO out"
+  uo[1]: "PIO GPIO out"
+  uo[2]: "tx_full"
+  uo[3]: "rx_empty"
+  uo[4]: "irq_flags[3:0]  (or full uo[7:0]=rx byte when rx_hold_valid)"
+  uo[5]: "irq_flags[3:0]  (or full uo[7:0]=rx byte when rx_hold_valid)"
+  uo[6]: "irq_flags[3:0]  (or full uo[7:0]=rx byte when rx_hold_valid)"
+  uo[7]: "irq_flags[3:0]  (or full uo[7:0]=rx byte when rx_hold_valid)"
+
+  # Bidirectional pins
+  uio[0]: "tx_push (rising edge)"
+  uio[1]: "sm_enable (level, with ena)"
+  uio[2]: "sm_restart (rising edge)"
+  uio[3]: "rx_pop (rising edge)"
+  uio[4]: "rx_hold ack (clear latched RX byte on uo)"
+  uio[5]: "config-mode select"
+  uio[6]: "config-mode select"
+  uio[7]: "config-mode select"
+
+# Do not change!
+yaml_version: 6
