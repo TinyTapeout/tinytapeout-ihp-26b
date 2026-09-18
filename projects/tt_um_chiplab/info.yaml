@@ -5,7 +5,7 @@ project:
   discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
   description:  "Educational digital logic experiments"      # One line description of what your project does
   language:     "SystemVerilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
-  clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
+  clock_hz:     50000000       # 50 MHz
 
   # How many tiles your design occupies? A single tile is about 167x108 uM.
   tiles: "1x2"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
@@ -20,6 +20,8 @@ project:
     - "tt_um_chiplab.sv"
     - "chiplab_01_basic_boolean.sv"
     - "chiplab_02_selection_coding.sv"
+    - "chiplab_03_arithmetic_data.sv"
+    - "chiplab_04_storage_memory.sv"
 
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
 # This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
@@ -51,8 +53,8 @@ pinout:
   uio[3]: "Experiment select 3"
   uio[4]: "Experiment select 4"
   uio[5]: "Experiment select 5"
-  uio[6]: "Experiment select 6"
-  uio[7]: "Experiment select 7"
+  uio[6]: "Operation select 0"
+  uio[7]: "Operation select 1"
 
 # Do not change!
 yaml_version: 6
