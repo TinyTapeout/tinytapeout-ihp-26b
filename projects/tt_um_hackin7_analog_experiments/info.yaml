@@ -1,0 +1,54 @@
+# Tiny Tapeout project information
+project:
+  title:        "TinyAnalogExperiments"      # Project title
+  author:       "Hackin7"      # Your name
+  discord:      "Hackin7"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "Mixed-signal ring oscillator and 64-bit counter"      # One line description of what your project does
+  language:     "Verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  clock_hz:     50000000 # External clock used for digital timing
+
+  # How many tiles your design occupies? A single tile is about 200x150 uM.
+  tiles: "1x1"          # IHP SG13G2 1x1 tile
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_hackin7_analog_experiments"
+
+  # List your project's source files here. Source files must be in ./src and you must list each source file separately, one per line:
+  source_files:        
+    - "project.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "counter_enable"
+  ui[1]: "clock_select_ring"
+  ui[2]: "counter_byte_select[0]"
+  ui[3]: "counter_byte_select[1]"
+  ui[4]: "counter_byte_select[2]"
+  ui[5]: ""
+  ui[6]: ""
+  ui[7]: ""
+
+  # Outputs
+  uo[0]: "counter_byte[0]"
+  uo[1]: "counter_byte[1]"
+  uo[2]: "counter_byte[2]"
+  uo[3]: "counter_byte[3]"
+  uo[4]: "counter_byte[4]"
+  uo[5]: "counter_byte[5]"
+  uo[6]: "counter_byte[6]"
+  uo[7]: "counter_byte[7]"
+
+  # Bidirectional pins
+  uio[0]: ""
+  uio[1]: ""
+  uio[2]: ""
+  uio[3]: ""
+  uio[4]: ""
+  uio[5]: ""
+  uio[6]: ""
+  uio[7]: ""
+
+# Do not change!
+yaml_version: 6
