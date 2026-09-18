@@ -1,50 +1,50 @@
-161. Printing statistics.
+152. Printing statistics.
 
 === tt_um_multi_seg_monitor ===
 
         +----------Local Count, excluding submodules.
         |        +-Local Area, excluding submodules.
         |        | 
-     1062        - wires
-     1097        - wire bits
-      205        - public wires
-      240        - public wire bits
+     1074        - wires
+     1109        - wire bits
+      209        - public wires
+      244        - public wire bits
         8        - ports
        43        - port bits
-     1071  1.6E+04 cells
+     1083 1.63E+04 cells
         1        -   RM_IHPSG13_1P_1024x8_c2_bm_bist
-       10  127.008   sg13g2_a21o_1
-      137 1.24E+03   sg13g2_a21oi_1
+        7   88.906   sg13g2_a21o_1
+      130  1179.36   sg13g2_a21oi_1
         4   58.061   sg13g2_a221oi_1
-        2   21.697   sg13g2_a22oi_1
-       38  344.736   sg13g2_and2_1
+        5   54.243   sg13g2_a22oi_1
+       34  308.448   sg13g2_and2_1
        10  127.008   sg13g2_and3_1
-        9  130.637   sg13g2_and4_1
+        4   58.061   sg13g2_and4_1
        10   72.576   sg13g2_buf_1
-      165 8.08E+03   sg13g2_dfrbpq_1
-       79  430.013   sg13g2_inv_1
-       13  235.872   sg13g2_mux2_1
-        4   152.41   sg13g2_mux4_1
-       41  297.562   sg13g2_nand2_1
-       13  117.936   sg13g2_nand2b_1
-       12  108.864   sg13g2_nand3_1
-        6   76.205   sg13g2_nand3b_1
-        3   32.659   sg13g2_nand4_1
-       73  529.805   sg13g2_nor2_1
-       12  108.864   sg13g2_nor2b_1
-       43  390.096   sg13g2_nor3_1
-       11   119.75   sg13g2_nor4_1
-      108  979.776   sg13g2_o21ai_1
-       11   99.792   sg13g2_or2_1
-        3   38.102   sg13g2_or3_1
-        2    29.03   sg13g2_or4_1
-      180 1.31E+03   sg13g2_tiehi
+      169 8.28E+03   sg13g2_dfrbpq_1
+       71  386.467   sg13g2_inv_1
+       17  308.448   sg13g2_mux2_1
+        5  190.512   sg13g2_mux4_1
+       44  319.334   sg13g2_nand2_1
+        6   54.432   sg13g2_nand2b_1
+       16  145.152   sg13g2_nand3_1
+        4   50.803   sg13g2_nand3b_1
+        7   76.205   sg13g2_nand4_1
+       88  638.669   sg13g2_nor2_1
+       16  145.152   sg13g2_nor2b_1
+       41  371.952   sg13g2_nor3_1
+        9   97.978   sg13g2_nor4_1
+      113 1.03E+03   sg13g2_o21ai_1
+       10    90.72   sg13g2_or2_1
+        4   50.803   sg13g2_or3_1
+        3   43.546   sg13g2_or4_1
+      184 1.34E+03   sg13g2_tiehi
        35  254.016   sg13g2_tielo
-       20  290.304   sg13g2_xnor2_1
-       16  232.243   sg13g2_xor2_1
+       25   362.88   sg13g2_xnor2_1
+       11  159.667   sg13g2_xor2_1
 
    Area for cell type \RM_IHPSG13_1P_1024x8_c2_bm_bist is unknown!
 
-   Chip area for module '\tt_um_multi_seg_monitor': 16037.406000
-     of which used for sequential elements: 8083.152000 (50.40%)
+   Chip area for module '\tt_um_multi_seg_monitor': 16333.039800
+     of which used for sequential elements: 8279.107200 (50.69%)
 

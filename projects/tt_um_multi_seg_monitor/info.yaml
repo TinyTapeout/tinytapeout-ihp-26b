@@ -18,7 +18,6 @@ project:
     - VgaSyncGen.v
     - line_buffer.v
     - seg7_rom.v
-    - gamma.v
     - stream_in.v
     # IHP foundry SRAM behavioural model. Blackboxed for synthesis via the lib in
     # src/config.json; line_buffer.v only instantiates it when IHP_SRAM is defined,
