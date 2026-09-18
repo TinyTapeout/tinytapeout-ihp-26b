@@ -1,0 +1,58 @@
+# Tiny Tapeout project information
+project:
+  title:        "ChipLab"      # Project title
+  author:       "Jörn Hoffmann"      # Your name
+  discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "Educational digital logic experiments"      # One line description of what your project does
+  language:     "SystemVerilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x2"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_chiplab"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "tt_um_chiplab.sv"
+    - "chiplab_01_basic_boolean.sv"
+    - "chiplab_02_selection_coding.sv"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "Data 0"
+  ui[1]: "Data 1"
+  ui[2]: "Data 2"
+  ui[3]: "Data 3"
+  ui[4]: "Data 4"
+  ui[5]: "Data 5"
+  ui[6]: "Data 6"
+  ui[7]: "Data 7"
+
+  # Outputs
+  uo[0]: "Result 0"
+  uo[1]: "Result 1"
+  uo[2]: "Result 2"
+  uo[3]: "Result 3"
+  uo[4]: "Result 4"
+  uo[5]: "Result 5"
+  uo[6]: "Result 6"
+  uo[7]: "Result 7"
+
+  # Bidirectional pins
+  uio[0]: "Experiment select 0"
+  uio[1]: "Experiment select 1"
+  uio[2]: "Experiment select 2"
+  uio[3]: "Experiment select 3"
+  uio[4]: "Experiment select 4"
+  uio[5]: "Experiment select 5"
+  uio[6]: "Experiment select 6"
+  uio[7]: "Experiment select 7"
+
+# Do not change!
+yaml_version: 6
