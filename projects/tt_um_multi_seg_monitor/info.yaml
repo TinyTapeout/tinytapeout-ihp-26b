@@ -15,6 +15,7 @@ project:
   source_files:
     - tt_um_multi_seg_monitor.v
     - multi_seg_monitor.v
+    - palette.v
     - VgaSyncGen.v
     - line_buffer.v
     - seg7_rom.v
@@ -25,36 +26,48 @@ project:
     - RM_IHPSG13_1P_1024x8_c2_bm_bist.v
 
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+#
+# ui[2:0] are also a reset-time-only config strap: sampled every cycle rst_n
+# is low, latched once it rises, then revert to plain stream data for the
+# rest of the chip's life. ui[0] picks the Pmod (0=Digilent PmodVGA,
+# 1=Tiny VGA); ui[2:1] pick one of palette.v's 4 colour palettes. See
+# src/tt_um_multi_seg_monitor.v.
 pinout:
   # Inputs
-  ui[0]: "stream data 0"
-  ui[1]: "stream data 1"
-  ui[2]: "stream data 2"
+  ui[0]: "stream data 0 / reset strap: 0=Digilent PmodVGA, 1=Tiny VGA Pmod"
+  ui[1]: "stream data 1 / reset strap: palette select bit 0"
+  ui[2]: "stream data 2 / reset strap: palette select bit 1"
   ui[3]: "stream data 3"
   ui[4]: "stream data 4"
   ui[5]: "stream data 5"
   ui[6]: "stream data 6"
   ui[7]: "stream data 7"
 
-  # Outputs (Digilent PmodVGA, R/B nibbles)
-  uo[0]: "R0"
-  uo[1]: "R1"
-  uo[2]: "R2"
-  uo[3]: "R3"
-  uo[4]: "B0"
-  uo[5]: "B1"
-  uo[6]: "B2"
-  uo[7]: "B3"
+  # Outputs. Digilent PmodVGA (4 bits/channel, R/B nibbles) unless the reset
+  # strap above selects Tiny VGA (2 bits/channel, all on uo_out -- see
+  # src/tt_um_multi_seg_monitor.v for the exact bit order, reconstructed from
+  # this project's original Tiny VGA prototype).
+  uo[0]: "Digilent: R0 / Tiny VGA: R1"
+  uo[1]: "Digilent: R1 / Tiny VGA: G1"
+  uo[2]: "Digilent: R2 / Tiny VGA: B1"
+  uo[3]: "Digilent: R3 / Tiny VGA: vsync"
+  uo[4]: "Digilent: B0 / Tiny VGA: R0"
+  uo[5]: "Digilent: B1 / Tiny VGA: G0"
+  uo[6]: "Digilent: B2 / Tiny VGA: B0"
+  uo[7]: "Digilent: B3 / Tiny VGA: hsync"
 
-  # Bidirectional pins (PmodVGA G nibble + sync; strobe/mode use PmodVGA's NC pins)
-  uio[0]: "G0"
-  uio[1]: "G1"
-  uio[2]: "G2"
-  uio[3]: "G3"
-  uio[4]: "hsync"
-  uio[5]: "vsync"
-  uio[6]: "stream strobe"
-  uio[7]: "stream mode select"
+  # Bidirectional pins. Digilent PmodVGA only (G nibble + sync); Tiny VGA is a
+  # uo_out-only Pmod and leaves uio[0:5] unused -- uio_oe goes all-input in
+  # that mode. uio[6:7] (stream strobe/mode select) are the same pins in
+  # both modes; PmodVGA's second connector leaves them not-connected either way.
+  uio[0]: "Digilent: G0 (unused, Tiny VGA)"
+  uio[1]: "Digilent: G1 (unused, Tiny VGA)"
+  uio[2]: "Digilent: G2 (unused, Tiny VGA)"
+  uio[3]: "Digilent: G3 (unused, Tiny VGA)"
+  uio[4]: "Digilent: hsync (unused, Tiny VGA)"
+  uio[5]: "Digilent: vsync (unused, Tiny VGA)"
+  uio[6]: "stream strobe (same pin in both Pmod modes)"
+  uio[7]: "stream mode select (same pin in both Pmod modes)"
 
 # Do not change!
 yaml_version: 6
