@@ -1,0 +1,47 @@
+153. Printing statistics.
+
+=== tt_um_kush1434_proof ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+     1007        - wires
+     1042        - wire bits
+      177        - public wires
+      212        - public wire bits
+        8        - ports
+       43        - port bits
+     1023 1.75E+04 cells
+       49  622.339   sg13g2_a21o_1
+      123 1.12E+03   sg13g2_a21oi_1
+       16  232.243   sg13g2_a221oi_1
+       16  173.578   sg13g2_a22oi_1
+       34  308.448   sg13g2_and2_1
+        4   50.803   sg13g2_and3_1
+        1   14.515   sg13g2_and4_1
+        3   21.773   sg13g2_buf_1
+      168 8.23E+03   sg13g2_dfrbpq_1
+       49  266.717   sg13g2_inv_1
+      113 2.05E+03   sg13g2_mux2_1
+       10  381.024   sg13g2_mux4_1
+       69  500.774   sg13g2_nand2_1
+       13  117.936   sg13g2_nand2b_1
+       16  145.152   sg13g2_nand3_1
+        2   25.402   sg13g2_nand3b_1
+       12  130.637   sg13g2_nand4_1
+       75   544.32   sg13g2_nor2_1
+       13  117.936   sg13g2_nor2b_1
+       15   136.08   sg13g2_nor3_1
+        5   54.432   sg13g2_nor4_1
+      126 1.14E+03   sg13g2_o21ai_1
+       15   136.08   sg13g2_or2_1
+        1   12.701   sg13g2_or3_1
+        3   43.546   sg13g2_or4_1
+        3   21.773   sg13g2_tiehi
+       10   72.576   sg13g2_tielo
+       46  667.699   sg13g2_xnor2_1
+       13  188.698   sg13g2_xor2_1
+
+   Chip area for module '\tt_um_kush1434_proof': 17526.499200
+     of which used for sequential elements: 8230.118400 (46.96%)
+
