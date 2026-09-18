@@ -3,7 +3,7 @@ project:
   title:        "Preinception: Simple Compute Accelerator"      # Project title
   author:       "Aakash KT"      # Your name
   discord:      "aakashkt"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  "Simple Arithmetic Logic Unit (ALU), connected via USB and driven with a C++ API"      # One line description of what your project does
+  description:  "Simple compute accelerator, connected via USB and driven with a C++ API and code on the host PC."      # One line description of what your project does
   language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
   clock_hz:     50000000       # Clock frequency in Hz (or 0 if not applicable)
 

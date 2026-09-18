@@ -6,22 +6,13 @@ sections.
 You can also include images in this folder and reference them in the markdown. Each image must be less than
 512 kb in size, and the combined size of all images must be less than 1 MB.
 -->
-<b>Preinception</b> is a simple compute accelerator. Simple since it only supports four ```int32``` operations:
-- Add
-- Subtract
-- Multiply by powers of 2: ```a * 2^b```
-- Divide by powers of 2: ```a / 2^b```
-
-Why call it a "compute accelerator" and not "ALU"? Three reasons:
-- A host PC can interact with it via a USB connection and a [C++ API](https://github.com/AakashKT/presm/blob/main/driver/matrix/include/matrix.h). This is the driver (named matrix), and is how commands are sent to the device.
-- It is meant to be a supplement to the main host CPU - in the same way GPUs are. Hence the term "accelerator", although it is unlikely that operations are faster than the host CPU!
-- The values for the above operations are fetched from the host PC memory. Furthermore, the result of these operations is also written to the host PC memory. The coordination from memory fetch and memory write is done by the [C++ API](https://github.com/AakashKT/presm/blob/main/driver/matrix/include/matrix.h).
-
-The name "Preinception" is so since its a proof-of-concept release using the [PRESM](https://github.com/AakashKT/presm) pre-silicon modelling & testing framework. Its not the "inception", but rather a stepping stone towards it.
 
 ## How it works
+The C++ driver API, build instructions and hardware models for "Preinception" can be found in the [PRESM](https://github.com/AakashKT/presm/blob/main/device/preinception/README.md) repository.
+
 
 ### Architecture
+All commands are sent via the C++ driver.
 ```
 +------------------------------------------------+
 |               driver (C++ API)                 | 
@@ -60,6 +51,16 @@ The name "Preinception" is so since its a proof-of-concept release using the [PR
 
 ## How to test
 
+<b>Prerequisits</b>
+- A Linux PC with a spare USB port
+- The demo board from Tiny Tapeout
+
+<b>Notes</b>
+- The code is officially tested on Ubuntu
+- You can also use Ubuntu under WSL.
+- With WSL however, the underlying port to which the demo board is connected will have to be exposed to WSL
+
+
 Clone [PRESM](https://github.com/AakashKT/presm) and navigate to the cloned directory.
 
 Build the Tiny Tapeout config for Preinception:
@@ -70,12 +71,17 @@ python scripts/build.py --config hw_configs/preinception/serial_tapeout_tt_ihp26
 Next, we need to connect the chip to the PC.
 
 The chip can be connected in two ways:
-- Connect the demo board to the PC with USB
-- With an exteral UART module attached to the demo board, and the UART module connected to the PC with USB
+- Connect the demo board to the PC with USB.
+- With an exteral UART module attached to the demo board. The UART module is connected to the PC with USB.
 
 As of now, not sure which one will work, so give both a go when chips become available.
 
-### Direct Demo Board
+You may need to run the following command to activate the FTDI drivers:
+```
+sudo modprobe ftdi_sio
+```
+
+### Direct Demo Board Connection
 This is straightforward. Testing is done by running verification apps:
 ```python
 python scripts/verify.py --config hw_configs/preinception/serial_tapeout_tt_ihp26b.json
@@ -125,7 +131,7 @@ You should see an output like so:
 .....
 ```
 
-### External UART module
+### Via External UART module
 On the demo board:
 - Connect output pin 6 ```uo[6]``` (```PIN_HI``` in datasheet) to input pin 0 ```ui[0]``` (```SEL_RX_TX``` in datasheet).
   - This changes the UART RX and TX pins from the default to two other free pins

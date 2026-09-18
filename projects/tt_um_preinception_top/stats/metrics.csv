@@ -110,8 +110,8 @@ flow__warnings__count,1
 flow__errors__count,0
 flow__warnings__type_count,1
 flow__warnings__count:ORD-0039,1
-design__power_grid_violation__count__net:VPWR,0
 design__power_grid_violation__count__net:VGND,0
+design__power_grid_violation__count__net:VPWR,0
 design__power_grid_violation__count,0
 flow__warnings__count:GPL-0302,1
 timing__drv__floating__nets,0
