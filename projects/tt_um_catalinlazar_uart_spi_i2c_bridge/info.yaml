@@ -1,0 +1,61 @@
+# Tiny Tapeout project information
+project:
+  title:        "UART-SPI-I2C Bridge"
+  author:       "Catalin Lazar"
+  discord:      ""
+  description:  "UART-controlled protocol bridge with an SPI master (4x CS, configurable CPOL/CPHA) and an I2C master (clock stretching), driven by a command interpreter with FIFO buffering and a memory-mapped register file. Fully testable standalone via UART commands, with a built-in loopback self-test mode."
+  language:     "Verilog"
+  clock_hz:     10000000
+
+  # How many tiles your design occupies
+  tiles: "1x2"
+
+  # Top level module name
+  top_module:  "tt_um_catalinlazar_uart_spi_i2c_bridge"
+
+  # List of source files, in build order
+  source_files:
+    - "fifo_sync.v"
+    - "baud_gen.v"
+    - "uart_rx.v"
+    - "uart_tx.v"
+    - "spi_master.v"
+    - "i2c_master.v"
+    - "regfile.v"
+    - "cmd_interp.v"
+    - "tt_um_catalinlazar_uart_spi_i2c_bridge.v"
+
+# The pinout of your project. Leave unused pins blank.
+pinout:
+  # Inputs
+  ui[0]: "uart_rx"
+  ui[1]: "spi_miso"
+  ui[2]: "loopback_test_en"
+  ui[3]: ""
+  ui[4]: ""
+  ui[5]: ""
+  ui[6]: ""
+  ui[7]: ""
+
+  # Outputs
+  uo[0]: "uart_tx"
+  uo[1]: "spi_sclk"
+  uo[2]: "spi_mosi"
+  uo[3]: "spi_cs_n[0]"
+  uo[4]: "spi_cs_n[1]"
+  uo[5]: "spi_cs_n[2]"
+  uo[6]: "spi_cs_n[3]"
+  uo[7]: "heartbeat_led"
+
+  # Bidirectional pins
+  uio[0]: "i2c_scl"
+  uio[1]: "i2c_sda"
+  uio[2]: ""
+  uio[3]: ""
+  uio[4]: ""
+  uio[5]: ""
+  uio[6]: ""
+  uio[7]: ""
+
+# Do not change!
+yaml_version: 6
