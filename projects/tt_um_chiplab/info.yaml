@@ -18,10 +18,15 @@ project:
   # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
   source_files:
     - "tt_um_chiplab.sv"
+    - "chiplab_experiments.svh"
     - "chiplab_01_basic_boolean.sv"
     - "chiplab_02_selection_coding.sv"
     - "chiplab_03_arithmetic_data.sv"
     - "chiplab_04_storage_memory.sv"
+    - "chiplab_05_shift_counters.sv"
+    - "chiplab_06_input_timing.sv"
+    - "chiplab_07_state_machines.sv"
+    - "chiplab_08_fsm_datapaths.sv"
 
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
 # This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).

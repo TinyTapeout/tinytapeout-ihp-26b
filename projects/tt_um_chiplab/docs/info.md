@@ -1,7 +1,7 @@
 # ChipLab
 
 ChipLab is an educational digital logic chip for Tiny Tapeout IHP26b.
-Sections 1–4 are implemented: logic, coding, arithmetic, storage, and memory.
+Sections 1–8 are implemented, from basic logic to FSM-controlled datapaths.
 
 ## How it works
 
@@ -46,10 +46,30 @@ are unused. Results appear on `uo_out[7:0]`. Section 2 uses the mappings below.
 | `0x1F` | Register with load, hold, and clear |
 | `0x20` | 4 × 4-bit read/write memory |
 | `0x21` | Accumulator |
+| `0x22` | Shift register |
+| `0x23` | Universal shift register |
+| `0x24` | Binary counter |
+| `0x25` | Up/down counter |
+| `0x26` | Modulo-6 counter |
+| `0x27` | BCD counter |
+| `0x28` | Ring counter |
+| `0x29` | Johnson counter |
+| `0x2A` | LFSR |
+| `0x2B` | Edge detection |
+| `0x2C` | Input synchronizer |
+| `0x2D` | Push-button debouncer |
+| `0x2E` | Clock enable divider |
+| `0x2F` | PWM |
+| `0x30` | Moore release control |
+| `0x31` | Mealy release control |
+| `0x32` | Traffic light controller |
+| `0x33` | Handshake controller |
+| `0x34` | Parking lot occupancy counter |
+| `0x35` | Sequential multiplier |
 | All other codes | All outputs zero |
 
-Experiments 1–22 are combinational. Experiments 23–33 store state and use
-`clk` or latch controls. `rst_n` clears their state. Allow signals to settle
+Experiments 1–22 are combinational. Experiments 23–53 store state and use
+`clk` or latch controls. `rst_n` resets their state. Allow signals to settle
 before sampling.
 
 | Output bit | Basic gates (`0x01`) | Boolean identities (`0x02`) |
@@ -155,6 +175,138 @@ feeds its low four bits back into the same ALU used by experiment 22.
 `uio_in[7:6]` selects add, subtract, AND, or OR.
 
 ## How to test
+
+### Shift registers and counters
+
+Experiments 34–42 use four bits, shown on `uo_out[3:0]`; bits 7–4 are zero.
+They update on rising clock edges only while selected. Switching experiments
+preserves their state. Active-low `rst_n` resets all of them asynchronously:
+ring counter and LFSR start at `0001`, the others at `0000`.
+
+| Code | Inputs and behavior |
+|---|---|
+| `0x22` | Shift left; serial input `ui_in[0]`, enable `ui_in[4]` |
+| `0x23` | Universal shift register; operation 0 hold, 1 left, 2 right, 3 parallel load |
+| `0x24` | Binary counter: 0–15, then 0 |
+| `0x25` | Up/down counter; `ui_in[0]` = 0 up, 1 down; wraps at 0 and 15 |
+| `0x26` | Modulo-6 counter: 0–5, then 0 |
+| `0x27` | BCD counter: 0–9, then 0 |
+| `0x28` | Ring counter: 1, 2, 4, 8, 1 |
+| `0x29` | Johnson counter: 0, 1, 3, 7, 15, 14, 12, 8, 0 |
+| `0x2A` | LFSR: left shift with XOR feedback from bits 3 and 2; 15 nonzero states |
+
+The LFSR tap polynomial is **x⁴ + x³ + 1**, numbering stages 1–4
+from bit 0 to bit 3. With this left-shift convention, the forward sequence
+obeys `s[n+4] = s[n+1] XOR s[n]`, whose characteristic polynomial is
+the reciprocal **x⁴ + x + 1**. The all-zero state remains locked at zero;
+reset therefore seeds `0001`.
+
+Counters and LFSR use `ui_in[4]` as enable. The universal shift register uses
+`uio_in[7:6]` as operation, `ui_in[3:0]` for parallel load and `ui_in[0]`
+as serial input. Other input bits are ignored.
+
+For example, select `0x26`, set `ui_in = 0x10`, reset, then apply clock
+pulses. The output counts 1, 2, 3, 4, 5, 0. Set `ui_in = 0` to hold.
+
+### Input synchronization and timing
+
+Experiments 43–47 update on rising edges while selected. Reset is asynchronous
+and active low. State holds while deselected. Unlisted output bits are zero.
+
+| Code | Input | Output |
+|---|---|---|
+| `0x2B` | Synchronous signal `[0]` | Rising pulse `[0]`, falling pulse `[1]`, sampled level `[2]` |
+| `0x2C` | Asynchronous signal `[0]` | Second synchronizer stage `[0]` |
+| `0x2D` | Button `[0]` | Debounced level `[0]`, synchronized level `[1]`, stable count `[3:2]` |
+| `0x2E` | Period minus one `[3:0]`, enable `[4]` | Tick `[0]`, counter `[4:1]` |
+| `0x2F` | Duty `[4:0]`, enable `[5]` | PWM `[0]`, phase `[4:1]` |
+
+The edge detector expects an input already synchronous to the clock. It emits
+one pulse per sampled transition. The synchronizer uses two stages; RTL tests
+check their latency but cannot model metastability.
+
+The debouncer first synchronizes the button, then accepts a changed level after
+four consecutive samples. Use a slow external clock for a physical button:
+400 Hz gives a 10 ms confirmation window plus synchronizer latency.
+At 50 MHz this is only a logic demonstration, not mechanical debouncing.
+
+The divider emits one clock-enable tick every 1–16 enabled edges. Disabling it
+clears the tick and holds the count. Reducing the period below the current count
+causes a tick on the next enabled edge. No derived clock is generated.
+
+PWM has a 16-clock period. Duty 0 is always low; 16–31 is always high.
+Disabling forces the output low and holds the phase. Duty changes apply
+immediately, so change duty at a period boundary for clean complete periods.
+
+### State machines
+
+Experiments 48–52 use `ui_in[4]` as enable. They advance only while selected
+and enabled. Reset restores the initial state even while deselected.
+Inputs must be synchronous to `clk`.
+
+| Code | Input | Output |
+|---|---|---|
+| `0x30` | Start `[0]`, stop `[1]`, enable `[4]` | Moore release `[0]`, state `[1]` |
+| `0x31` | Start `[0]`, stop `[1]`, request `[2]`, enable `[4]` | Mealy release `[0]`, state `[1]` |
+| `0x32` | Phase tick `[0]`, enable `[4]` | Red `[0]`, amber `[1]`, green `[2]`, state `[4:3]` |
+| `0x33` | Request `[0]`, complete `[1]`, enable `[4]` | Ack `[0]`, busy `[1]`, state `[3:2]` |
+
+Both controllers have two states: **IDLE (0)** and **ACTIVE (1)**.
+Start enters ACTIVE and stop returns to IDLE on an enabled rising edge.
+Stop has priority if both inputs are high. Reset returns to IDLE.
+
+Moore release is high whenever the state is ACTIVE. Mealy release is high
+only when the state is ACTIVE and request is high. Toggle request with the
+clock stopped to see the difference: the Mealy output follows immediately,
+while the Moore output stays high. Request is unused in the Moore experiment.
+Enable controls state updates only; it does not suppress either output.
+
+The traffic light starts red (state 0). Each phase tick advances to red+amber
+(1), green (2), amber (3), then red. An external controller supplies the phase
+timing; holding the tick high advances on every enabled edge.
+
+The handshake starts idle (0). A request enters busy (1); complete enters ack
+(2). Keep request high until ack, then lower it to return to idle. Holding
+request high in ack cannot start another transaction.
+
+### Parking lot occupancy counter
+
+Select `0x34`. Sensor A is `ui_in[0]`, sensor B is `ui_in[1]`, and enable is
+`ui_in[4]`. Sensor value 1 means occupied. Supply synchronous sensor inputs.
+
+- Enter: A/B = `00 → 10 → 11 → 01 → 00`.
+- Exit: A/B = `00 → 01 → 11 → 10 → 00`.
+- Repeated samples hold the state. Reversing follows the path back without counting.
+- Skipped steps discard the crossing; both sensors must be clear before restarting.
+
+Output: occupancy `[3:0]`, entered `[4]`, exited `[5]`, crossing/recovery active
+`[6]`, invalid-sequence recovery `[7]`. Occupancy saturates at 0 and 15.
+The event outputs still report crossings at these limits and last one clock.
+Selection and enable pause the state and count; event pulses still clear.
+Reset clears the count and returns to idle. A sensor sequence already in progress
+at reset cannot reliably identify a complete crossing.
+
+### Sequential multiplier
+
+Select `0x35`. Inputs `ui_in[3:0]` and `ui_in[7:4]` are unsigned operands
+A and B. `uio_in[6]` is start and `uio_in[7]` selects the output view:
+
+| View | Output |
+|---|---|
+| 0 | 8-bit product |
+| 1 | Busy `[0]`, done `[1]`, state `[3:2]`, completed steps `[6:4]` |
+
+States are idle (0), run (1), and done (2). Assert start for an idle clock edge
+to capture the operands. Four more selected edges complete the calculation.
+The datapath reuses two 4-bit adders from group 3. During run, operand changes
+and start are ignored; the product view shows the partial sum.
+Done holds while start is high. A selected edge with start low returns to idle,
+retaining the product. Deselecting pauses the calculation; reset aborts it.
+
+For 7 × 15, apply `ui_in = 0xF7`, pulse start, and wait four more edges.
+The product is 105 (`0x69`).
+
+### Basic checks
 
 Select `0x01` and try all four combinations of A and B. Select `0x02` and try all
 eight combinations of A, B, and C; each adjacent output pair must agree.
