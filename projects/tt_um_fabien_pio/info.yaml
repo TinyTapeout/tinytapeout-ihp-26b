@@ -1,0 +1,60 @@
+# Tiny Tapeout project information
+project:
+  title:        "AstraPIO"
+  author:       "Fabien" # Confirm public attribution before publishing.
+  discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "General-purpose programmable IO prototype; not ready for tapeout"
+  language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz:     50000000 # Exploratory target, not verified.
+
+  # Two-tile area target; final fit must be measured with the IHP flow.
+  tiles: "1x2"
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_fabien_pio" # Provisional; confirm uniqueness before submission.
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "project.v"
+    - "pio_spi.v"
+    - "pio_core.v"
+    - "pio_sram.v"
+    - "pio_stream.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "HOST_SCK"
+  ui[1]: "HOST_MOSI"
+  ui[2]: "HOST_CS_N"
+  ui[3]: "PIO_IN0"
+  ui[4]: "PIO_IN1"
+  ui[5]: "PIO_IN2"
+  ui[6]: "PIO_IN3"
+  ui[7]: "PIO_IN4"
+
+  # Outputs
+  uo[0]: "HOST_MISO"
+  uo[1]: "HOST_IRQ"
+  uo[2]: "PIO_OUT0"
+  uo[3]: "PIO_OUT1"
+  uo[4]: "PIO_OUT2"
+  uo[5]: "PIO_OUT3"
+  uo[6]: "PIO_OUT4"
+  uo[7]: "PIO_OUT5"
+
+  # Bidirectional pins
+  uio[0]: "PIO_IO0"
+  uio[1]: "PIO_IO1"
+  uio[2]: "PIO_IO2"
+  uio[3]: "PIO_IO3"
+  uio[4]: "PIO_IO4"
+  uio[5]: "PIO_IO5"
+  uio[6]: "PIO_IO6"
+  uio[7]: "PIO_IO7"
+
+# Do not change!
+yaml_version: 6

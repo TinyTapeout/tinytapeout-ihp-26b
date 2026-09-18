@@ -1,0 +1,51 @@
+159. Printing statistics.
+
+=== tt_um_fabien_pio ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+     2284        - wires
+     2319        - wire bits
+      341        - public wires
+      376        - public wire bits
+        8        - ports
+       43        - port bits
+     2293 3.37E+04 cells
+        1        -   RM_IHPSG13_1P_256x8_c3_bm_bist
+       32  406.426   sg13g2_a21o_1
+      222 2.01E+03   sg13g2_a21oi_1
+       48   696.73   sg13g2_a221oi_1
+      141 1.53E+03   sg13g2_a22oi_1
+       66  598.752   sg13g2_and2_1
+       25   317.52   sg13g2_and3_1
+        5   72.576   sg13g2_and4_1
+        1    7.258   sg13g2_buf_1
+       16  232.243   sg13g2_buf_4
+      293 1.44E+04   sg13g2_dfrbpq_1
+      109  593.309   sg13g2_inv_1
+      125     2268   sg13g2_mux2_1
+        1   38.102   sg13g2_mux4_1
+      208 1.51E+03   sg13g2_nand2_1
+       65   589.68   sg13g2_nand2b_1
+       86  780.192   sg13g2_nand3_1
+        8  101.606   sg13g2_nand3b_1
+       35  381.024   sg13g2_nand4_1
+      198 1.44E+03   sg13g2_nor2_1
+       37  335.664   sg13g2_nor2b_1
+       75    680.4   sg13g2_nor3_1
+       35  381.024   sg13g2_nor4_1
+      271 2.46E+03   sg13g2_o21ai_1
+       21  190.512   sg13g2_or2_1
+       11  139.709   sg13g2_or3_1
+        3   43.546   sg13g2_or4_1
+       65  471.744   sg13g2_tiehi
+       29   210.47   sg13g2_tielo
+       34  493.517   sg13g2_xnor2_1
+       27   391.91   sg13g2_xor2_1
+
+   Area for cell type \RM_IHPSG13_1P_256x8_c3_bm_bist is unknown!
+
+   Chip area for module '\tt_um_fabien_pio': 33724.366200
+     of which used for sequential elements: 14353.718400 (42.56%)
+
