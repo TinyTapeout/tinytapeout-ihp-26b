@@ -1,0 +1,94 @@
+# Tiny Tapeout project information file
+yaml_version: 6
+
+project:
+  title:        "nanoPIO"
+  author:       "catalinlazar"
+  discord:      ""
+  description:  "A tiny bit-banged programmable I/O engine (RP2040 PIO-inspired) with a reprogrammable 16-word instruction store, used to emulate UART/SPI/I2C timing."
+  language:     "Verilog"
+  clock_hz:     10000000
+
+  # how many tiles your design occupies
+  tiles:        "1x1"
+
+  # top level module name
+  top_module:   "tt_um_catalinlazar_nanopio"
+
+  # list all source files used in the project, in compilation order
+  source_files:
+    - "nanopio_defs.vh"
+    - "nanopio_progmem.v"
+    - "nanopio_loader.v"
+    - "nanopio_core.v"
+    - "tt_um_catalinlazar_nanopio.v"
+
+# How the project works. See docs/info.md for the long-form writeup.
+how_it_works: |
+  nanoPIO is a tiny Harvard-architecture engine that executes a 5-instruction
+  ISA (JMP / WAIT / IN / OUT / SET) out of a 16-word, 13-bit-wide instruction
+  memory made of per-word latches (gated by a shared write-address decoder)
+  so it can be reprogrammed after fabrication.
+
+  Instructions operate on one 8-bit scratch register X and a program counter:
+    SET X, imm7        X <= imm7
+    IN                 X <= ui_in
+    OUT PINS|UIO, X    uo_out/uio_out <= X
+    WAIT pol PIN n      stall until ui_in[n] == pol
+    JMP cond, addr      ALWAYS / X==0 / X!=0 / DEC (decrement-and-branch)
+
+  Every instruction also carries a 3-bit post-execution delay (0-7 cycles),
+  so simple protocol timing (UART bit periods, SPI/I2C clock halves) can be
+  encoded directly in the program without extra NOP instructions.
+
+  The chip is reprogrammed by holding ui_in[7] (LOAD_EN) high and bit-banging
+  17-bit frames (4-bit address + 13-bit instruction, MSB first) into
+  ui_in[5] (LOAD_DATA), clocked by ui_in[6] (LOAD_CLK). Execution starts from
+  address 0 as soon as LOAD_EN is released.
+
+how_to_test: |
+  1. Hold ui_in[7] high and bit-bang a small test program into progmem using
+     the LOAD_CLK/LOAD_DATA protocol described above (see
+     tools/nanopio_asm.py --frames for the exact bit patterns of an
+     assembled program).
+  2. Release ui_in[7] to start execution from address 0.
+  3. Program something simple first, e.g. SET X,0x2A ; OUT PINS,X ; JMP
+     ALWAYS 1, and confirm uo_out reads 0x2A.
+  4. To exercise WAIT, program WAIT 1 PIN 0 followed by an OUT, then toggle
+     ui_in[0] and confirm the output only updates after the pin goes high.
+  See test/test.py for a full cocotb testbench covering SET/OUT, WAIT, and
+  the JMP DEC loop primitive.
+
+# Blank for now -- fill in if you add an external PCB/protocol analyzer, etc.
+external_hw: ""
+
+pinout:
+  # Inputs
+  ui[0]: "PIO in[0] / WAIT PIN 0 source"
+  ui[1]: "PIO in[1] / WAIT PIN 1 source"
+  ui[2]: "PIO in[2] / WAIT PIN 2 source"
+  ui[3]: "PIO in[3] / WAIT PIN 3 source"
+  ui[4]: "PIO in[4] / WAIT PIN 4 source"
+  ui[5]: "LOAD_DATA (reprogramming serial data in)"
+  ui[6]: "LOAD_CLK (reprogramming bit clock)"
+  ui[7]: "LOAD_EN (1 = reprogramming mode, core halted)"
+
+  # Outputs
+  uo[0]: "PIO out[0]"
+  uo[1]: "PIO out[1]"
+  uo[2]: "PIO out[2]"
+  uo[3]: "PIO out[3]"
+  uo[4]: "PIO out[4]"
+  uo[5]: "PIO out[5]"
+  uo[6]: "PIO out[6]"
+  uo[7]: "PIO out[7]"
+
+  # Bidirectional pins (driven as outputs only in v1)
+  uio[0]: "PIO out[8] (uio, output only)"
+  uio[1]: "PIO out[9] (uio, output only)"
+  uio[2]: "PIO out[10] (uio, output only)"
+  uio[3]: "PIO out[11] (uio, output only)"
+  uio[4]: "PIO out[12] (uio, output only)"
+  uio[5]: "PIO out[13] (uio, output only)"
+  uio[6]: "PIO out[14] (uio, output only)"
+  uio[7]: "PIO out[15] (uio, output only)"
