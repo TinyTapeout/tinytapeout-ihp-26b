@@ -66,9 +66,11 @@ are unused. Results appear on `uo_out[7:0]`. Section 2 uses the mappings below.
 | `0x33` | Handshake controller |
 | `0x34` | Parking lot occupancy counter |
 | `0x35` | Sequential multiplier |
+| `0x36` | 4 × 4-bit FIFO |
+| `0x37` | 4 × 4-bit stack |
 | All other codes | All outputs zero |
 
-Experiments 1–22 are combinational. Experiments 23–53 store state and use
+Experiments 1–22 are combinational. Experiments 23–55 store state and use
 `clk` or latch controls. `rst_n` resets their state. Allow signals to settle
 before sampling.
 
@@ -173,6 +175,31 @@ subtract, AND, and OR for operation values 0–3.
 The control values for `0x1F` are hold, load, clear, and load. The accumulator
 feeds its low four bits back into the same ALU used by experiment 22.
 `uio_in[7:6]` selects add, subtract, AND, or OR.
+
+### FIFO and stack
+
+Experiments 54 (`0x36`, FIFO) and 55 (`0x37`, stack) each store four 4-bit values.
+FIFO returns the oldest entry; stack returns the newest entry.
+
+`ui_in[3:0]` supplies write data. `uio_in[7:6]` selects the command:
+
+| Command | Action on a selected rising edge |
+|---|---|
+| `00` | Hold |
+| `01` | Push: store the input value |
+| `10` | Pop: remove the next entry |
+| `11` | Hold (reserved) |
+
+| Output bits | Meaning |
+|---|---|
+| `[3:0]` | Next entry; zero when empty |
+| `[6:4]` | Fill count (0–4); bit `[6]` also indicates full |
+| `[7]` | Empty |
+
+Read the next entry **before** the pop edge; after it, the following entry appears.
+The fill count is `uo_out[6:4]` (0–4).
+Push on full and pop on empty are ignored. A held command repeats each clock.
+Deselecting holds the buffer. Reset empties it even while deselected.
 
 ## How to test
 
