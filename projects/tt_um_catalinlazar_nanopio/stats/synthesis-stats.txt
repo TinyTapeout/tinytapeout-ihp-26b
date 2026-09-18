@@ -1,0 +1,45 @@
+134. Printing statistics.
+
+=== tt_um_catalinlazar_nanopio ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+      673        - wires
+      708        - wire bits
+      288        - public wires
+      323        - public wire bits
+        8        - ports
+       43        - port bits
+      689 1.44E+04 cells
+        7   88.906   sg13g2_a21o_1
+       25    226.8   sg13g2_a21oi_1
+        7  101.606   sg13g2_a221oi_1
+       99 1.07E+03   sg13g2_a22oi_1
+       26  235.872   sg13g2_and2_1
+       13  188.698   sg13g2_and4_1
+       72 3.53E+03   sg13g2_dfrbpq_1
+      208 6.42E+03   sg13g2_dlhq_1
+        9   48.989   sg13g2_inv_1
+       55   997.92   sg13g2_mux2_1
+        1   38.102   sg13g2_mux4_1
+       18  130.637   sg13g2_nand2_1
+       17  154.224   sg13g2_nand2b_1
+        7   63.504   sg13g2_nand3_1
+        2   25.402   sg13g2_nand3b_1
+       12  130.637   sg13g2_nand4_1
+       27  195.955   sg13g2_nor2_1
+       23  208.656   sg13g2_nor2b_1
+       16  145.152   sg13g2_nor3_1
+        4   43.546   sg13g2_nor4_1
+       20   181.44   sg13g2_o21ai_1
+        4   36.288   sg13g2_or2_1
+        1   12.701   sg13g2_or3_1
+        1   14.515   sg13g2_or4_1
+        8   58.061   sg13g2_tiehi
+        4   58.061   sg13g2_xnor2_1
+        3   43.546   sg13g2_xor2_1
+
+   Chip area for module '\tt_um_catalinlazar_nanopio': 14446.139400
+     of which used for sequential elements: 3527.193600 (24.42%)
+
