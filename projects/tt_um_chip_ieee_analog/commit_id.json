@@ -1,0 +1,9 @@
+{
+  "app": "custom_gds action",
+  "repo": "https://github.com/magnetoField/ieee-sep-2026-analog-ihp",
+  "commit": "4decddcafe889558ea44bbedeacbec3012c1d6d0",
+  "workflow_url": "https://github.com/magnetoField/ieee-sep-2026-analog-ihp/actions/runs/35370664333",
+  "project_id": 5700,
+  "sort_id": 1789750629894,
+  "analog": true
+}
