@@ -1,0 +1,46 @@
+160. Printing statistics.
+
+=== tt_um_catalinlazar_uart_spi_i2c_bridge ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+     2002        - wires
+     2037        - wire bits
+      477        - public wires
+      512        - public wire bits
+        8        - ports
+       43        - port bits
+     2018 3.98E+04 cells
+       30  381.024   sg13g2_a21o_1
+      157 1.42E+03   sg13g2_a21oi_1
+       31  449.971   sg13g2_a221oi_1
+       75  813.645   sg13g2_a22oi_1
+       58  526.176   sg13g2_and2_1
+       15  190.512   sg13g2_and3_1
+        8  116.122   sg13g2_and4_1
+        7   50.803   sg13g2_buf_1
+      472 2.31E+04   sg13g2_dfrbpq_1
+       72   391.91   sg13g2_inv_1
+      268 4.86E+03   sg13g2_mux2_1
+        1   38.102   sg13g2_mux4_1
+      145 1.05E+03   sg13g2_nand2_1
+       43  390.096   sg13g2_nand2b_1
+       80   725.76   sg13g2_nand3_1
+        9  114.307   sg13g2_nand3b_1
+       27  293.933   sg13g2_nand4_1
+      139 1.01E+03   sg13g2_nor2_1
+       53  480.816   sg13g2_nor2b_1
+       69  625.968   sg13g2_nor3_1
+       27  293.933   sg13g2_nor4_1
+      140  1270.08   sg13g2_o21ai_1
+       18  163.296   sg13g2_or2_1
+        1   12.701   sg13g2_or3_1
+        6   87.091   sg13g2_or4_1
+       14  101.606   sg13g2_tielo
+       38  551.578   sg13g2_xnor2_1
+       15  217.728   sg13g2_xor2_1
+
+   Chip area for module '\tt_um_catalinlazar_uart_spi_i2c_bridge': 39757.926600
+     of which used for sequential elements: 23122.713600 (58.16%)
+
