@@ -43,7 +43,7 @@ jobs:
       PDK: ihp-sg13g2
       PDK_ROOT: /home/runner/pdk
       PDK_NAME: ihp-sg13g2
-      PDK_VERSION: c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c
+      PDK_VERSION: 22f43352dd8219f9007eb659e422e0d5fe28c5fb
       TECH: ihp-sg13g2
     steps:
       - name: checkout repo
