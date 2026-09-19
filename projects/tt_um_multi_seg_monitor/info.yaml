@@ -16,6 +16,8 @@ project:
     - tt_um_multi_seg_monitor.v
     - multi_seg_monitor.v
     - palette.v
+    - palette_presets.v
+    - config_port.v
     - VgaSyncGen.v
     - line_buffer.v
     - seg7_rom.v
@@ -27,17 +29,18 @@ project:
 
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
 #
-# ui[2:0] are also a reset-time-only config strap: sampled every cycle rst_n
+# ui[3:0] are also a reset-time-only config strap: sampled every cycle rst_n
 # is low, latched once it rises, then revert to plain stream data for the
 # rest of the chip's life. ui[0] picks the Pmod (0=Digilent PmodVGA,
-# 1=Tiny VGA); ui[2:1] pick one of palette.v's 4 colour palettes. See
-# src/tt_um_multi_seg_monitor.v.
+# 1=Tiny VGA); ui[3:1] pick one of 8 built-in colour palettes. A config
+# packet strobed in while uio[7] is low can override both. See
+# src/config_port.v.
 pinout:
   # Inputs
   ui[0]: "stream data 0 / reset strap: 0=Digilent PmodVGA, 1=Tiny VGA Pmod"
-  ui[1]: "stream data 1 / reset strap: palette select bit 0"
-  ui[2]: "stream data 2 / reset strap: palette select bit 1"
-  ui[3]: "stream data 3"
+  ui[1]: "stream data 1 / reset strap: palette preset bit 0"
+  ui[2]: "stream data 2 / reset strap: palette preset bit 1"
+  ui[3]: "stream data 3 / reset strap: palette preset bit 2"
   ui[4]: "stream data 4"
   ui[5]: "stream data 5"
   ui[6]: "stream data 6"
@@ -66,8 +69,8 @@ pinout:
   uio[3]: "Digilent: G3 (unused, Tiny VGA)"
   uio[4]: "Digilent: hsync (unused, Tiny VGA)"
   uio[5]: "Digilent: vsync (unused, Tiny VGA)"
-  uio[6]: "stream strobe (same pin in both Pmod modes)"
-  uio[7]: "stream mode select (same pin in both Pmod modes)"
+  uio[6]: "stream strobe; config strobe while uio[7] is low (same pin in both Pmod modes)"
+  uio[7]: "1 = stream data, 0 = internal generator + config packets (same pin in both Pmod modes)"
 
 # Do not change!
 yaml_version: 6
