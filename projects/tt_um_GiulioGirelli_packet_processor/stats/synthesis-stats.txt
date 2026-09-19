@@ -1,0 +1,44 @@
+152. Printing statistics.
+
+=== tt_um_GiulioGirelli_packet_processor ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+     2132        - wires
+     2167        - wire bits
+      390        - public wires
+      425        - public wire bits
+        8        - ports
+       43        - port bits
+     2148 3.37E+04 cells
+       32  406.426   sg13g2_a21o_1
+      106  961.632   sg13g2_a21oi_1
+       33  479.002   sg13g2_a221oi_1
+      148 1.61E+03   sg13g2_a22oi_1
+       60   544.32   sg13g2_and2_1
+       21  266.717   sg13g2_and3_1
+       13  188.698   sg13g2_and4_1
+      342 1.68E+04   sg13g2_dfrbpq_1
+       79  430.013   sg13g2_inv_1
+      266 1.93E+03   sg13g2_nand2_1
+       26  235.872   sg13g2_nand2b_1
+       36  326.592   sg13g2_nand3_1
+       22  279.418   sg13g2_nand3b_1
+       88  958.003   sg13g2_nand4_1
+      170 1.23E+03   sg13g2_nor2_1
+       25    226.8   sg13g2_nor2b_1
+       88  798.336   sg13g2_nor3_1
+       18  195.955   sg13g2_nor4_1
+      398 3.61E+03   sg13g2_o21ai_1
+       16  145.152   sg13g2_or2_1
+       86 1.09E+03   sg13g2_or3_1
+       14  203.213   sg13g2_or4_1
+        3   21.773   sg13g2_tiehi
+       10   72.576   sg13g2_tielo
+       25   362.88   sg13g2_xnor2_1
+       23   333.85   sg13g2_xor2_1
+
+   Chip area for module '\tt_um_GiulioGirelli_packet_processor': 33664.226400
+     of which used for sequential elements: 16754.169600 (49.77%)
+
