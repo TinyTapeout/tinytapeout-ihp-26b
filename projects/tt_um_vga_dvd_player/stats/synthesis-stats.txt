@@ -1,0 +1,45 @@
+140. Printing statistics.
+
+=== tt_um_vga_dvd_player ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+      587        - wires
+      622        - wire bits
+       69        - public wires
+      104        - public wire bits
+        8        - ports
+       43        - port bits
+      603 8.22E+03 cells
+        6   76.205   sg13g2_a21o_1
+       40   362.88   sg13g2_a21oi_1
+        8  116.122   sg13g2_a221oi_1
+       21  227.821   sg13g2_a22oi_1
+       22  199.584   sg13g2_and2_1
+        6   76.205   sg13g2_and3_1
+        4    29.03   sg13g2_buf_1
+       65 3.18E+03   sg13g2_dfrbpq_1
+       24  130.637   sg13g2_inv_1
+        4   72.576   sg13g2_mux2_1
+       46   333.85   sg13g2_nand2_1
+       18  163.296   sg13g2_nand2b_1
+       20   181.44   sg13g2_nand3_1
+        6   76.205   sg13g2_nand3b_1
+       11   119.75   sg13g2_nand4_1
+       43  312.077   sg13g2_nor2_1
+       36  326.592   sg13g2_nor2b_1
+       12  108.864   sg13g2_nor3_1
+       11   119.75   sg13g2_nor4_1
+       49  444.528   sg13g2_o21ai_1
+        7   63.504   sg13g2_or2_1
+        6   76.205   sg13g2_or3_1
+        5   72.576   sg13g2_or4_1
+       65  471.744   sg13g2_tiehi
+       16  116.122   sg13g2_tielo
+       38  551.578   sg13g2_xnor2_1
+       14  203.213   sg13g2_xor2_1
+
+   Chip area for module '\tt_um_vga_dvd_player': 8216.623800
+     of which used for sequential elements: 3184.272000 (38.75%)
+
