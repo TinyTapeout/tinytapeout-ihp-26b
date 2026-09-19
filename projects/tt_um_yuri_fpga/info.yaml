@@ -31,14 +31,14 @@ project:
 # This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
 pinout:
   # Inputs
-  ui[0]: "config_mode/input0"
+  ui[0]: "input0"
   ui[1]: "input1"
   ui[2]: "input2"
   ui[3]: "input3"
   ui[4]: "input4"
   ui[5]: "input5"
-  ui[6]: "input6"
-  ui[7]: "input7"
+  ui[6]: "unused"
+  ui[7]: "config_mode"
 
   # Outputs
   uo[0]: "output0"
@@ -47,8 +47,8 @@ pinout:
   uo[3]: "output3"
   uo[4]: "output4"
   uo[5]: "output5"
-  uo[6]: "output6"
-  uo[7]: "output7"
+  uo[6]: "unused"
+  uo[7]: "unused"
 
   # Bidirectional pins
   uio[0]: "unused"
