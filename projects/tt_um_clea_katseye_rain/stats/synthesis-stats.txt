@@ -1,0 +1,45 @@
+123. Printing statistics.
+
+=== tt_um_clea_katseye_rain ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+      766        - wires
+      801        - wire bits
+       50        - public wires
+       85        - public wire bits
+        8        - ports
+       43        - port bits
+      782 9.15E+03 cells
+       22  279.418   sg13g2_a21o_1
+       76  689.472   sg13g2_a21oi_1
+       21  304.819   sg13g2_a221oi_1
+       18  195.275   sg13g2_a22oi_1
+       29  263.088   sg13g2_and2_1
+        4   50.803   sg13g2_and3_1
+        4   58.061   sg13g2_and4_1
+        2   14.515   sg13g2_buf_1
+       42  2057.53   sg13g2_dfrbpq_1
+       28   152.41   sg13g2_inv_1
+       10   181.44   sg13g2_mux2_1
+       92  667.699   sg13g2_nand2_1
+       20   181.44   sg13g2_nand2b_1
+       40   362.88   sg13g2_nand3_1
+       12  130.637   sg13g2_nand4_1
+       91  660.442   sg13g2_nor2_1
+        5    45.36   sg13g2_nor2b_1
+       28  254.016   sg13g2_nor3_1
+       12  130.637   sg13g2_nor4_1
+       81  734.832   sg13g2_o21ai_1
+       15   136.08   sg13g2_or2_1
+        3   38.102   sg13g2_or3_1
+        5   72.576   sg13g2_or4_1
+       23  166.925   sg13g2_tiehi
+       16  116.122   sg13g2_tielo
+       61  885.427   sg13g2_xnor2_1
+       22  319.334   sg13g2_xor2_1
+
+   Chip area for module '\tt_um_clea_katseye_rain': 9149.338800
+     of which used for sequential elements: 2057.529600 (22.49%)
+
