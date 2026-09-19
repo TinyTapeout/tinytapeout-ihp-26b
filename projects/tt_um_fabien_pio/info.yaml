@@ -19,10 +19,10 @@ project:
   source_files:
     - "project.v"
     - "pio_spi.v"
-    - "pio_core.v"
+    - "pio_single_core.v"
     - "pio_program.v"
-    - "pio_queues.v"
     - "pio_fifo.v"
+    - "pio_timed.v"
 
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
 # This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
