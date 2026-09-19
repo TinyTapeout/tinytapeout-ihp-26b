@@ -68,9 +68,10 @@ are unused. Results appear on `uo_out[7:0]`. Section 2 uses the mappings below.
 | `0x35` | Sequential multiplier |
 | `0x36` | 4 × 4-bit FIFO |
 | `0x37` | 4 × 4-bit stack |
+| `0x38` | Programmable sound generator |
 | All other codes | All outputs zero |
 
-Experiments 1–22 are combinational. Experiments 23–55 store state and use
+Experiments 1–22 are combinational. Experiments 23–56 store state and use
 `clk` or latch controls. `rst_n` resets their state. Allow signals to settle
 before sampling.
 
@@ -332,6 +333,64 @@ retaining the product. Deselecting pauses the calculation; reset aborts it.
 
 For 7 × 15, apply `ui_in = 0xF7`, pulse start, and wait four more edges.
 The product is 105 (`0x69`).
+
+### Programmable sound generator
+
+Experiment 56 (`0x38`) combines a register bank, square-wave generator, LFSR,
+falling envelope, and PWM output. It has one voice: tone or noise.
+
+| `uio_in[7:6]` | Action |
+|---|---|
+| `00` | Play; no register write |
+| `01` | Latch the register address from `ui_in` on the rising edge |
+| `10` | Write `ui_in` to the selected register on the rising edge |
+| `11` | Read the selected register on `uo_out` |
+
+| Address | Register |
+|---|---|
+| `0x00` | Tone period, low byte |
+| `0x01` | Tone period, high byte |
+| `0x02` | Volume `[3:0]`, 0–15 |
+| `0x03` | Enable `[0]`, noise mode `[1]`, envelope mode `[2]` |
+| `0x04` | Envelope decay rate, 0–255 |
+| `0x05` | Writing bit `[0]` = 1 starts/restarts the envelope; reads return zero |
+
+Unused addresses read zero and ignore writes; unused register bits read zero.
+Reset clears all registers and silences the voice. A held write repeats on every
+edge, so return to `00` after a trigger write. Period bytes are independent;
+write both while disabled for a clean note change. Each period write restarts
+the tone divider and noise seed. Other writes do not stop playback.
+
+Outside read mode the output is:
+
+| Bits | Meaning |
+|---|---|
+| `[0]` | PWM audio |
+| `[1]` | Raw square wave or noise, gated by enable |
+| `[5:2]` | Current amplitude: volume or envelope level |
+| `[6]` | Envelope has not finished |
+| `[7]` | Sound enabled |
+
+The tone frequency is `f_clk / (32 * (period + 1))`. At 50 MHz, period 3550
+(`0x0DDE`) gives about 440 Hz. The PWM carrier is `f_clk / 16`; amplitude 15
+uses 15 of 16 PWM slots. Zero amplitude or disabled sound produces a low audio
+output. Route PWM through an external low-pass filter and amplifier.
+Read mode replaces the audio pins with register data; it interrupts the physical
+audio output even though the generator keeps running.
+
+Noise advances at `f_clk / (16 * (period + 1))`. The 16-bit LFSR shifts left,
+XORs bits 15, 14, 12, and 3, and starts at 1. Tap polynomial:
+`x^16 + x^15 + x^13 + x^4 + 1`, with 65535 nonzero states.
+The taps follow [AMD/Xilinx XAPP052, table 3](https://docs.amd.com/v/u/en-US/xapp052).
+
+A trigger loads the envelope from volume. With sound and envelope mode enabled,
+it drops by one every `4096 * (rate + 1)` clocks, stopping at zero.
+Disabling sound or envelope mode pauses decay. Changing volume does not reload
+an active envelope. Deselecting the PSG pauses all its state; reset still works.
+
+Example at 50 MHz: write period low `0xDE`, period high `0x0D`, volume `0x0F`,
+decay rate `0xFF`, control `0x05`, then trigger `0x01`. Return to operation `00`.
+This plays a roughly 440 Hz note whose amplitude falls to zero in about 0.315 s.
 
 ### Basic checks
 
