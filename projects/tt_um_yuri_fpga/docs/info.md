@@ -9,15 +9,22 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-This is a tiny FPGA. It has LUTs and a routing fabric!
+This is a tiny FPGA. It has 4-input LUTs and a routing fabric!
+
+This project was a spontaneous submission. I did not have the time to 
+properly validate, document or optimize the design.
 
 ## How to test
+If you are still undeterred:
 
-1. Generate a bitstream using the bitstream tools
-2. enable the configmode pin
+1. Generate a bitstream using the [bitstream tools](https://github.com/recursivetree/fpga/tree/main/bitstream)
+2. enable the configmode pin (ui_in[7])
 3. shift the bitstream in
 4. test the fpga using the io pins
 
+It might be advisable to read the testbenches in https://github.
+com/recursivetree/fpga/ to see how it works.
+
 ## External hardware
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+None required
