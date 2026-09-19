@@ -1,6 +1,6 @@
 # Tiny Tapeout project information
 project:
-  title:        "Acoustic Drone Detector"
+  title:        "IEEE Acoustic Drone Detector"
   author:       "Jedrzej Hasiura"
   discord:      ""
   description:  "Self-contained acoustic drone detector: PDM microphone in, detection signal out."
