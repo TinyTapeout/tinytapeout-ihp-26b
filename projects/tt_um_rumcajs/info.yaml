@@ -1,10 +1,10 @@
 # Tiny Tapeout project information. Adapted from the official Verilog template
 # pinned in reports/TARGET.md.
 project:
-  title:        "D00RSH"
-  author:       "Koło Naukowe BAZA — ZT, PN, MK, JT, KK"
+  title:        "IEEE DOORSH"
+  author:       "Koło Naukowe BAZA, Politechnika Warszawska — ZT, PN, MK, JT, KK"
   discord:      ""
-  description:  "PIN-authorized SIMON64/128 challenge-response authenticator with a 4x4 keypad"
+  description:  "PIN-authorized SIMON64/128 challenge-response authenticator with a 4x4 keypad and passive buzzer"
   language:     "Verilog"
   clock_hz:     1000000
   tiles:        "1x1"
@@ -35,7 +35,7 @@ pinout:
   uo[0]: "CHALLENGE_READY after correct PIN"
   uo[1]: "unused, tied low"
   uo[2]: "SHIFT64 SDO"
-  uo[3]: "buzzer"
+  uo[3]: "2 kHz passive buzzer drive"
   uo[4]: "unused, tied low"
   uo[5]: "unused, tied low"
   uo[6]: "unused, tied low"
