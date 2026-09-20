@@ -1,0 +1,47 @@
+138. Printing statistics.
+
+=== tt_um_omega_infinity_kaoru ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+     1395        - wires
+     1430        - wire bits
+      209        - public wires
+      244        - public wire bits
+        8        - ports
+       43        - port bits
+     1411 2.23E+04 cells
+       29  368.323   sg13g2_a21o_1
+       50    453.6   sg13g2_a21oi_1
+       19  275.789   sg13g2_a221oi_1
+       25  271.215   sg13g2_a22oi_1
+       35   317.52   sg13g2_and2_1
+       23  292.118   sg13g2_and3_1
+       32  464.486   sg13g2_and4_1
+        1    7.258   sg13g2_buf_1
+      201 9.85E+03   sg13g2_dfrbpq_1
+       77  419.126   sg13g2_inv_1
+      141 2.56E+03   sg13g2_mux2_1
+        1   38.102   sg13g2_mux4_1
+      101  733.018   sg13g2_nand2_1
+       44  399.168   sg13g2_nand2b_1
+       94  852.768   sg13g2_nand3_1
+       14  177.811   sg13g2_nand3b_1
+       90  979.776   sg13g2_nand4_1
+      103  747.533   sg13g2_nor2_1
+       59  535.248   sg13g2_nor2b_1
+       77  698.544   sg13g2_nor3_1
+       19  206.842   sg13g2_nor4_1
+      111 1.01E+03   sg13g2_o21ai_1
+       14  127.008   sg13g2_or2_1
+       10  127.008   sg13g2_or3_1
+       12  174.182   sg13g2_or4_1
+        2   14.515   sg13g2_tiehi
+       19  137.894   sg13g2_tielo
+        5   72.576   sg13g2_xnor2_1
+        3   43.546   sg13g2_xor2_1
+
+   Chip area for module '\tt_um_omega_infinity_kaoru': 22347.019800
+     of which used for sequential elements: 9846.748800 (44.06%)
+
