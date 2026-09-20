@@ -1,42 +1,42 @@
-108. Printing statistics.
+110. Printing statistics.
 
 === tt_um_hackin7_analog_experiments ===
 
         +----------Local Count, excluding submodules.
         |        +-Local Area, excluding submodules.
         |        | 
-      324        - wires
-      359        - wire bits
-       72        - public wires
-      107        - public wire bits
+      328        - wires
+      363        - wire bits
+       74        - public wires
+      109        - public wire bits
         8        - ports
        43        - port bits
-      340 5.87E+03 cells
-        1   12.701   sg13g2_a21o_1
-       53  480.816   sg13g2_a21oi_1
-        3   32.546   sg13g2_a22oi_1
-        7   63.504   sg13g2_and2_1
-       10  127.008   sg13g2_and3_1
-        4   58.061   sg13g2_and4_1
+      344 5.85E+03 cells
+        1        -   ring_oscillator
+        5   63.504   sg13g2_a21o_1
+       50    453.6   sg13g2_a21oi_1
+        4   43.394   sg13g2_a22oi_1
+       12  108.864   sg13g2_and2_1
+        4   50.803   sg13g2_and3_1
+        5   72.576   sg13g2_and4_1
        64 3.14E+03   sg13g2_dfrbpq_1
-       22   119.75   sg13g2_inv_1
+       30  163.296   sg13g2_inv_1
        10   181.44   sg13g2_mux2_1
-        5   36.288   sg13g2_nand2_1
-        7   63.504   sg13g2_nand2b_1
-       13  117.936   sg13g2_nand3_1
-        1   12.701   sg13g2_nand3b_1
+        2   14.515   sg13g2_nand2_1
+        8   72.576   sg13g2_nand2b_1
+       11   99.792   sg13g2_nand3_1
        13  141.523   sg13g2_nand4_1
-       26  188.698   sg13g2_nor2_1
-       10    90.72   sg13g2_nor2b_1
-        9   81.648   sg13g2_nor3_1
-        1   10.886   sg13g2_nor4_1
-       24  217.728   sg13g2_o21ai_1
-        2   18.144   sg13g2_or2_1
-        1   12.701   sg13g2_or3_1
+       27  195.955   sg13g2_nor2_1
+       11   99.792   sg13g2_nor2b_1
+        4   36.288   sg13g2_nor3_1
+        4   43.546   sg13g2_nor4_1
+       28  254.016   sg13g2_o21ai_1
        16  116.122   sg13g2_tielo
-       19  275.789   sg13g2_xnor2_1
-       19  275.789   sg13g2_xor2_1
+       17  246.758   sg13g2_xnor2_1
+       18  261.274   sg13g2_xor2_1
 
-   Chip area for module '\tt_um_hackin7_analog_experiments': 5871.285000
-     of which used for sequential elements: 3135.283200 (53.40%)
+   Area for cell type \ring_oscillator is unknown!
+
+   Chip area for module '\tt_um_hackin7_analog_experiments': 5854.917600
+     of which used for sequential elements: 3135.283200 (53.55%)
 

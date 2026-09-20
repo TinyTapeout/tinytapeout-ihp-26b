@@ -9,12 +9,24 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-it's an analog testbed with a digital frontend
+Hierarchical Tiny Tapeout top with two leaves:
+
+- Analog ring oscillator (`ring_oscillator` GDS macro). CMOS output `out` is
+  auto-routed as `clk_ring`.
+- 64-bit digital counter (`digital_counter` RTL). `ui_in[0]` enables counting,
+  `ui_in[4:2]` selects which counter byte drives `uo_out`.
+
+`ui_in[1]` selects the counter clock: `0` = Tiny Tapeout `clk`, `1` = ring.
+Change that select only while `rst_n` is low. Ring-clock mode is not timing
+qualified.
+
+How to add more analog or digital leaves: see `docs/hierarchy.md`.
 
 ## How to test
 
-test it lmao
+Hold reset, set `ui_in[1]` for the clock source, release reset, set `ui_in[0]`
+to enable the counter, and read `uo_out` while sweeping `ui_in[4:2]`.
 
 ## External hardware
 
-use the board
+None beyond the Tiny Tapeout board clock and GPIO.
