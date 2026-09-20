@@ -1,0 +1,46 @@
+143. Printing statistics.
+
+=== tt_um_kibo_leak_inspect ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+      408        - wires
+      443        - wire bits
+       58        - public wires
+       93        - public wire bits
+        8        - ports
+       43        - port bits
+      424 6.04E+03 cells
+        4   50.803   sg13g2_a21o_1
+       19  172.368   sg13g2_a21oi_1
+        5   72.576   sg13g2_a221oi_1
+        2   21.697   sg13g2_a22oi_1
+       33  299.376   sg13g2_and2_1
+        4   50.803   sg13g2_and3_1
+        4   58.061   sg13g2_and4_1
+        5   36.288   sg13g2_buf_1
+       56 2.74E+03   sg13g2_dfrbpq_1
+       21  114.307   sg13g2_inv_1
+        2   76.205   sg13g2_mux4_1
+       27  195.955   sg13g2_nand2_1
+       14  127.008   sg13g2_nand2b_1
+       21  190.512   sg13g2_nand3_1
+        3   38.102   sg13g2_nand3b_1
+       14   152.41   sg13g2_nand4_1
+       29   210.47   sg13g2_nor2_1
+       10    90.72   sg13g2_nor2b_1
+       26  235.872   sg13g2_nor3_1
+       12  130.637   sg13g2_nor4_1
+       28  254.016   sg13g2_o21ai_1
+        6   54.432   sg13g2_or2_1
+        1   12.701   sg13g2_or3_1
+        1   14.515   sg13g2_or4_1
+       62  449.971   sg13g2_tiehi
+        4    29.03   sg13g2_tielo
+        8  116.122   sg13g2_xnor2_1
+        3   43.546   sg13g2_xor2_1
+
+   Chip area for module '\tt_um_kibo_leak_inspect': 6041.876400
+     of which used for sequential elements: 2743.372800 (45.41%)
+
