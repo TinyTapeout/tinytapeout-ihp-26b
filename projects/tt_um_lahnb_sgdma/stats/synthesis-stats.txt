@@ -1,0 +1,47 @@
+152. Printing statistics.
+
+=== tt_um_lahnb_sgdma ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+     1366        - wires
+     1401        - wire bits
+      193        - public wires
+      228        - public wire bits
+        8        - ports
+       43        - port bits
+     1382    2E+04 cells
+       13   165.11   sg13g2_a21o_1
+      230  2086.56   sg13g2_a21oi_1
+       20  290.304   sg13g2_a221oi_1
+       66  716.008   sg13g2_a22oi_1
+       21  190.512   sg13g2_and2_1
+        5   63.504   sg13g2_and3_1
+        2    29.03   sg13g2_and4_1
+       11   79.834   sg13g2_buf_1
+      189 9.26E+03   sg13g2_dfrbpq_1
+       66  359.251   sg13g2_inv_1
+       17  308.448   sg13g2_mux2_1
+        4   152.41   sg13g2_mux4_1
+       73  529.805   sg13g2_nand2_1
+       15   136.08   sg13g2_nand2b_1
+       22  199.584   sg13g2_nand3_1
+       10  127.008   sg13g2_nand3b_1
+        8   87.091   sg13g2_nand4_1
+      108  783.821   sg13g2_nor2_1
+       41  371.952   sg13g2_nor2b_1
+       33  299.376   sg13g2_nor3_1
+       13  141.523   sg13g2_nor4_1
+      178 1.61E+03   sg13g2_o21ai_1
+       10    90.72   sg13g2_or2_1
+        2   25.402   sg13g2_or3_1
+        3   43.546   sg13g2_or4_1
+      190 1.38E+03   sg13g2_tiehi
+        6   43.546   sg13g2_tielo
+       19  275.789   sg13g2_xnor2_1
+        7  101.606   sg13g2_xor2_1
+
+   Chip area for module '\tt_um_lahnb_sgdma': 19950.462000
+     of which used for sequential elements: 9258.883200 (46.41%)
+
