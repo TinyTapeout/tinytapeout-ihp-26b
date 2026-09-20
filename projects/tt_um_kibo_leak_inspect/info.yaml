@@ -1,0 +1,44 @@
+# Tiny Tapeout project information
+project:
+  title: "KIBO Leak-Inspection Target Controller (VGA)"
+  author: "Your Name"
+  discord: ""
+  description: "8-state leak-inspection approach/align/inspect FSM with a live 640x480 VGA status display and a latched safety abort."
+  language: "Verilog"
+  clock_hz: 25175000
+  tiles: "1x1"
+  top_module: "tt_um_kibo_leak_inspect"
+  source_files:
+    - "project.v"
+
+# Pin names shown in the datasheet
+pinout:
+  ui[0]: "target_detected"
+  ui[1]: "target_reached"
+  ui[2]: "position_aligned"
+  ui[3]: "orientation_aligned"
+  ui[4]: "inspection_done"
+  ui[5]: "obstacle_detected"
+  ui[6]: "system_fault"
+  ui[7]: "new_target"
+
+  uo[0]: "R1"
+  uo[1]: "G1"
+  uo[2]: "B1"
+  uo[3]: "vsync"
+  uo[4]: "R0"
+  uo[5]: "G0"
+  uo[6]: "B0"
+  uo[7]: "hsync"
+
+  uio[0]: "state[0]"
+  uio[1]: "state[1]"
+  uio[2]: "state[2]"
+  uio[3]: "inspect_enable"
+  uio[4]: "abort_cmd"
+  uio[5]: "target_locked"
+  uio[6]: ""
+  uio[7]: "fast_step (1 = step every clock, for simulation)"
+
+# Do not change
+yaml_version: 6
