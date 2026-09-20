@@ -1,0 +1,42 @@
+138. Printing statistics.
+
+=== tt_um_jet_seq8b ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+      688        - wires
+      723        - wire bits
+      147        - public wires
+      182        - public wire bits
+        8        - ports
+       43        - port bits
+      704 1.31E+04 cells
+        3   38.102   sg13g2_a21o_1
+       51  462.672   sg13g2_a21oi_1
+       25    226.8   sg13g2_and2_1
+        4   50.803   sg13g2_and3_1
+        3   43.546   sg13g2_and4_1
+      150  7348.32   sg13g2_dfrbpq_1
+       17   92.534   sg13g2_inv_1
+       94 1.71E+03   sg13g2_mux2_1
+       10  381.024   sg13g2_mux4_1
+       12   87.091   sg13g2_nand2_1
+       19  172.368   sg13g2_nand2b_1
+        9   81.648   sg13g2_nand3_1
+        1   10.886   sg13g2_nand4_1
+       40  290.304   sg13g2_nor2_1
+       16  145.152   sg13g2_nor2b_1
+       16  145.152   sg13g2_nor3_1
+        1   10.886   sg13g2_nor4_1
+       59  535.248   sg13g2_o21ai_1
+        1   12.701   sg13g2_or3_1
+        1   14.515   sg13g2_or4_1
+      150  1088.64   sg13g2_tiehi
+       16  116.122   sg13g2_tielo
+        3   43.546   sg13g2_xnor2_1
+        3   43.546   sg13g2_xor2_1
+
+   Chip area for module '\tt_um_jet_seq8b': 13147.142400
+     of which used for sequential elements: 7348.320000 (55.89%)
+
