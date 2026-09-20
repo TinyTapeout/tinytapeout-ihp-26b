@@ -20,7 +20,7 @@ project:
     - config_port.v
     - VgaSyncGen.v
     - line_buffer.v
-    - seg7_rom.v
+    - zoneplate.v
     - stream_in.v
     # IHP foundry SRAM behavioural model. Blackboxed for synthesis via the lib in
     # src/config.json; line_buffer.v only instantiates it when IHP_SRAM is defined,
@@ -29,21 +29,25 @@ project:
 
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
 #
-# ui[3:0] are also a reset-time-only config strap: sampled every cycle rst_n
-# is low, latched once it rises, then revert to plain stream data for the
-# rest of the chip's life. ui[0] picks the Pmod (0=Digilent PmodVGA,
-# 1=Tiny VGA); ui[3:1] pick one of 8 built-in colour palettes. A config
-# packet strobed in while uio[7] is low can override both. See
-# src/config_port.v.
+# ui[3:0] are also a reset-time config strap: sampled every cycle rst_n is
+# low and latched once it rises. ui[0] picks the Pmod (0=Digilent PmodVGA,
+# 1=Tiny VGA); ui[3:1] pick one of 8 built-in colour palettes.
+#
+# After reset ui carries stream data while uio[7] is high. While it is low
+# the internal generator draws the picture and ui[6:1] are read as live DIP
+# switches instead (all off = the default attract mode), until the first
+# valid config packet header hands the pins to the host for good. A packet
+# strobed in while uio[7] is low can override the Pmod and the palette.
+# See src/config_port.v.
 pinout:
   # Inputs
   ui[0]: "stream data 0 / reset strap: 0=Digilent PmodVGA, 1=Tiny VGA Pmod"
-  ui[1]: "stream data 1 / reset strap: palette preset bit 0"
-  ui[2]: "stream data 2 / reset strap: palette preset bit 1"
-  ui[3]: "stream data 3 / reset strap: palette preset bit 2"
-  ui[4]: "stream data 4"
-  ui[5]: "stream data 5"
-  ui[6]: "stream data 6"
+  ui[1]: "stream data 1 / strap+switch: palette bit 0"
+  ui[2]: "stream data 2 / strap+switch: palette bit 1"
+  ui[3]: "stream data 3 / strap+switch: palette bit 2"
+  ui[4]: "stream data 4 / switch: 1 = hold palette ui[3:1], 0 = change every 512 frames"
+  ui[5]: "stream data 5 / switch: 1 = steady ring speed, 0 = let it wander"
+  ui[6]: "stream data 6 / switch: 1 = steady source drift, 0 = let it wander"
   ui[7]: "stream data 7"
 
   # Outputs. Digilent PmodVGA (4 bits/channel, R/B nibbles) unless the reset
