@@ -1,0 +1,44 @@
+146. Printing statistics.
+
+=== tt_um_vga_snake ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+     1278        - wires
+     1313        - wire bits
+      193        - public wires
+      228        - public wire bits
+        8        - ports
+       43        - port bits
+     1294 1.89E+04 cells
+        6   76.205   sg13g2_a21o_1
+      168 1.52E+03   sg13g2_a21oi_1
+       21  304.819   sg13g2_a221oi_1
+       48  520.733   sg13g2_a22oi_1
+       15   136.08   sg13g2_and2_1
+        6   76.205   sg13g2_and3_1
+        9  130.637   sg13g2_and4_1
+        5   36.288   sg13g2_buf_1
+      182 8.92E+03   sg13g2_dfrbpq_1
+      149  811.037   sg13g2_inv_1
+       43  312.077   sg13g2_nand2_1
+       14  127.008   sg13g2_nand2b_1
+       23  208.656   sg13g2_nand3_1
+       23  250.387   sg13g2_nand4_1
+       37  268.531   sg13g2_nor2_1
+        8   72.576   sg13g2_nor2b_1
+       23  208.656   sg13g2_nor3_1
+       19  206.842   sg13g2_nor4_1
+      186 1.69E+03   sg13g2_o21ai_1
+        7   63.504   sg13g2_or2_1
+        1   12.701   sg13g2_or3_1
+        6   87.091   sg13g2_or4_1
+      182 1.32E+03   sg13g2_tiehi
+       17  123.379   sg13g2_tielo
+       37  537.062   sg13g2_xnor2_1
+       59  856.397   sg13g2_xor2_1
+
+   Chip area for module '\tt_um_vga_snake': 18875.203200
+     of which used for sequential elements: 8915.961600 (47.24%)
+
