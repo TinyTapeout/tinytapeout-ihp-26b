@@ -3,7 +3,7 @@ project:
   title:        "snake game"      # Project title
   author:       "Valeria Molano, Luisa Fernanda Avendaño, Juan David Guerrero"      # Your name
   discord:      "divadnauj-GB"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  "snake videogame on led matrices"      # One line description of what your project does
+  description:  "This is a simple snake game project selected as the best course project from the 'Digital Asic Design' 2025-2 course at Universidad Pedagogica y Tecnologica de Colombia"      # One line description of what your project does
   language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
   clock_hz:     10000000       # Clock frequency in Hz (or 0 if not applicable)
 
