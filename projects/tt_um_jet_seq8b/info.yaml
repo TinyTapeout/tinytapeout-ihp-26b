@@ -1,0 +1,54 @@
+# Tiny Tapeout project information
+project:
+  title:        "SEQ8 Programmable Sequencer"
+  author:       "JET"
+  discord:      ""
+  description:  "8-instruction programmable sequencer driving 8 output pins"
+  language:     "Verilog"
+  clock_hz:     10000000
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x1"
+
+  # Your top module name must start with "tt_um_".
+  top_module:  "tt_um_jet_seq8b"
+
+  # List your source files here. Source files must be in ./src and you
+  # must list each one separately, one per line.
+  source_files:
+    - "project.v"
+
+# The pinout of your project. Leave unused pins blank.
+pinout:
+  # Inputs
+  ui[0]: "SCK - program load clock"
+  ui[1]: "MOSI - program load data"
+  ui[2]: "CS_N - program load select, active low"
+  ui[3]: "RUN - high to execute, low to reset the core"
+  ui[4]: "IN0 - branch input 0"
+  ui[5]: "IN1 - branch input 1"
+  ui[6]: "TICK0 - tick speed select, low bit"
+  ui[7]: "TICK1 - tick speed select, high bit"
+
+  # Outputs
+  uo[0]: "OUT0"
+  uo[1]: "OUT1"
+  uo[2]: "OUT2"
+  uo[3]: "OUT3"
+  uo[4]: "OUT4"
+  uo[5]: "OUT5"
+  uo[6]: "OUT6"
+  uo[7]: "OUT7"
+
+  # Bidirectional pins (not used)
+  uio[0]: ""
+  uio[1]: ""
+  uio[2]: ""
+  uio[3]: ""
+  uio[4]: ""
+  uio[5]: ""
+  uio[6]: ""
+  uio[7]: ""
+
+# Do not change!
+yaml_version: 6
