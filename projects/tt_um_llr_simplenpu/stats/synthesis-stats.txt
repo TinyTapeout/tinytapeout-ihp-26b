@@ -5,41 +5,40 @@
         +----------Local Count, excluding submodules.
         |        +-Local Area, excluding submodules.
         |        | 
-     1268        - wires
-     1303        - wire bits
+     1399        - wires
+     1434        - wire bits
       171        - public wires
       206        - public wire bits
         8        - ports
        43        - port bits
-     1284 1.94E+04 cells
-       35  444.528   sg13g2_a21o_1
-       98  889.056   sg13g2_a21oi_1
-       17  246.758   sg13g2_a221oi_1
-       82  889.585   sg13g2_a22oi_1
-       32  290.304   sg13g2_and2_1
-        8  101.606   sg13g2_and3_1
-       14  203.213   sg13g2_and4_1
+     1415 2.07E+04 cells
+       37   469.93   sg13g2_a21o_1
+      127 1.15E+03   sg13g2_a21oi_1
+        2    29.03   sg13g2_a221oi_1
+       49  531.581   sg13g2_a22oi_1
+       23  208.656   sg13g2_and2_1
+        4   50.803   sg13g2_and3_1
+        1   14.515   sg13g2_and4_1
         3   21.773   sg13g2_buf_1
       168 8.23E+03   sg13g2_dfrbpq_1
-       85  462.672   sg13g2_inv_1
-       46  834.624   sg13g2_mux2_1
-      172 1.25E+03   sg13g2_nand2_1
-       33  299.376   sg13g2_nand2b_1
-       37  335.664   sg13g2_nand3_1
-        3   38.102   sg13g2_nand3b_1
-       12  130.637   sg13g2_nand4_1
-       63  457.229   sg13g2_nor2_1
-       13  117.936   sg13g2_nor2b_1
-       26  235.872   sg13g2_nor3_1
-        1   10.886   sg13g2_nor4_1
-      130  1179.36   sg13g2_o21ai_1
-       10    90.72   sg13g2_or2_1
-        7   88.906   sg13g2_or3_1
-       22  159.667   sg13g2_tiehi
+       97   527.99   sg13g2_inv_1
+       55   997.92   sg13g2_mux2_1
+      171  1241.05   sg13g2_nand2_1
+       60   544.32   sg13g2_nand2b_1
+       46  417.312   sg13g2_nand3_1
+        2   25.402   sg13g2_nand3b_1
+       10  108.864   sg13g2_nand4_1
+       67  486.259   sg13g2_nor2_1
+       60   544.32   sg13g2_nor2b_1
+       19  172.368   sg13g2_nor3_1
+        2   21.773   sg13g2_nor4_1
+      143  1.3E+03   sg13g2_o21ai_1
+       13  117.936   sg13g2_or2_1
+       20  145.152   sg13g2_tiehi
        10   72.576   sg13g2_tielo
-      114 1.65E+03   sg13g2_xnor2_1
-       43  624.154   sg13g2_xor2_1
+      166 2.41E+03   sg13g2_xnor2_1
+       60  870.912   sg13g2_xor2_1
 
-   Chip area for module '\tt_um_llr_simplenpu': 19358.362800
-     of which used for sequential elements: 8230.118400 (42.51%)
+   Chip area for module '\tt_um_llr_simplenpu': 20709.523800
+     of which used for sequential elements: 8230.118400 (39.74%)
 
