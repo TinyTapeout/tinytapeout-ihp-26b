@@ -2,7 +2,7 @@
 project:
   title:        "Ring oscillator frequency meter"      # Project title
   author:       "Maxwell Pauly"      # Your name
-  discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  discord:      "maxwell4022"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
   description:  "Reciprocal frequency counter that measures any of eight on-chip ring oscillators (incl. a trimmable one) and reports the count over the pins"      # One line description of what your project does
   language:     "Verilog" # other examples include Verilog, Amaranth, VHDL, etc
   clock_hz:     50000000       # Clock frequency in Hz (or 0 if not applicable)
@@ -27,6 +27,7 @@ project:
   source_files:
     - "project.v"
     - "regfile.v"
+    - "stats_observer.v"
     - "measure_core.v"
     - "cdc_sync.v"
     - "ring_divider.v"
@@ -49,7 +50,7 @@ pinout:
   ui[4]: "RSEL[0] - read select"
   ui[5]: "RSEL[1] - read select"
   ui[6]: "RSEL[2] - read select"
-  ui[7]: ""
+  ui[7]: "STATS - 1 shows the statistics byte indexed by uio[4:0] on uo"
 
   # Outputs
   uo[0]: "RDATA[0] - byte selected by RSEL"

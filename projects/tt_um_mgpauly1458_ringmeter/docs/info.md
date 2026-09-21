@@ -40,6 +40,12 @@ accurate source; 50 MHz assumed below.
 5. Read `RESULT` bytes with `ui_in[6:4]` = 1..4. A 350 MHz ring gives
    about 229; `f = 200 * 8 * 50 MHz / RESULT`.
 6. Repeat over `RING_SEL` 0..7 and `TRIM_CODE` (addr 0) 0..255.
+7. Optional, statistics: repeat step 3..4 N times without changing any
+   register, then set `ui_in[7]` = 1, put an index on `uio_in[4:0]`, and
+   read `uo_out`: 0..1 `COUNT`, 2..3 `MIN`, 4..5 `MAX`, 6..9 `SUM` of
+   `RESULT` (little-endian) since the last register write. `SUM / COUNT`
+   is the average, `MAX - MIN` the peak-to-peak spread. Index 10 is a
+   random byte, 11 reads `0x5A`, 12..25 spell a message.
 
 Rules:
 
