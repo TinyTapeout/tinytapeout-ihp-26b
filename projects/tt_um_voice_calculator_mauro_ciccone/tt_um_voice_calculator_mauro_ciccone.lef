@@ -6,7 +6,7 @@ MACRO tt_um_voice_calculator_mauro_ciccone
   CLASS BLOCK ;
   FOREIGN tt_um_voice_calculator_mauro_ciccone ;
   ORIGIN 0.000 0.000 ;
-  SIZE 854.400 BY 313.740 ;
+  SIZE 1289.280 BY 313.740 ;
   PIN VGND
     DIRECTION INOUT ;
     USE GROUND ;
@@ -97,6 +97,50 @@ MACRO tt_um_voice_calculator_mauro_ciccone
     PORT
       LAYER TopMetal1 ;
         RECT 837.850 3.150 840.050 310.180 ;
+    END
+    PORT
+      LAYER TopMetal1 ;
+        RECT 876.720 3.150 878.920 310.180 ;
+    END
+    PORT
+      LAYER TopMetal1 ;
+        RECT 915.590 3.150 917.790 310.180 ;
+    END
+    PORT
+      LAYER TopMetal1 ;
+        RECT 954.460 3.150 956.660 310.180 ;
+    END
+    PORT
+      LAYER TopMetal1 ;
+        RECT 993.330 3.150 995.530 310.180 ;
+    END
+    PORT
+      LAYER TopMetal1 ;
+        RECT 1032.200 3.150 1034.400 310.180 ;
+    END
+    PORT
+      LAYER TopMetal1 ;
+        RECT 1071.070 3.150 1073.270 310.180 ;
+    END
+    PORT
+      LAYER TopMetal1 ;
+        RECT 1109.940 3.150 1112.140 310.180 ;
+    END
+    PORT
+      LAYER TopMetal1 ;
+        RECT 1148.810 3.150 1151.010 310.180 ;
+    END
+    PORT
+      LAYER TopMetal1 ;
+        RECT 1187.680 3.150 1189.880 310.180 ;
+    END
+    PORT
+      LAYER TopMetal1 ;
+        RECT 1226.550 3.150 1228.750 310.180 ;
+    END
+    PORT
+      LAYER TopMetal1 ;
+        RECT 1265.420 3.150 1267.620 310.180 ;
     END
   END VGND
   PIN VPWR
@@ -189,6 +233,50 @@ MACRO tt_um_voice_calculator_mauro_ciccone
     PORT
       LAYER TopMetal1 ;
         RECT 831.650 3.560 833.850 310.590 ;
+    END
+    PORT
+      LAYER TopMetal1 ;
+        RECT 870.520 3.560 872.720 310.590 ;
+    END
+    PORT
+      LAYER TopMetal1 ;
+        RECT 909.390 3.560 911.590 310.590 ;
+    END
+    PORT
+      LAYER TopMetal1 ;
+        RECT 948.260 3.560 950.460 310.590 ;
+    END
+    PORT
+      LAYER TopMetal1 ;
+        RECT 987.130 3.560 989.330 310.590 ;
+    END
+    PORT
+      LAYER TopMetal1 ;
+        RECT 1026.000 3.560 1028.200 310.590 ;
+    END
+    PORT
+      LAYER TopMetal1 ;
+        RECT 1064.870 3.560 1067.070 310.590 ;
+    END
+    PORT
+      LAYER TopMetal1 ;
+        RECT 1103.740 3.560 1105.940 310.590 ;
+    END
+    PORT
+      LAYER TopMetal1 ;
+        RECT 1142.610 3.560 1144.810 310.590 ;
+    END
+    PORT
+      LAYER TopMetal1 ;
+        RECT 1181.480 3.560 1183.680 310.590 ;
+    END
+    PORT
+      LAYER TopMetal1 ;
+        RECT 1220.350 3.560 1222.550 310.590 ;
+    END
+    PORT
+      LAYER TopMetal1 ;
+        RECT 1259.220 3.560 1261.420 310.590 ;
     END
   END VPWR
   PIN clk
@@ -577,13 +665,13 @@ MACRO tt_um_voice_calculator_mauro_ciccone
   END uo_out[7]
   OBS
       LAYER GatPoly ;
-        RECT 2.880 3.630 851.520 310.110 ;
+        RECT 2.880 3.630 1286.400 310.110 ;
       LAYER Metal1 ;
-        RECT 2.880 3.560 851.520 310.180 ;
+        RECT 2.880 3.560 1286.400 310.180 ;
       LAYER Metal2 ;
-        RECT 15.560 3.635 839.870 310.945 ;
+        RECT 15.560 3.635 1267.440 312.205 ;
       LAYER Metal3 ;
-        RECT 15.515 3.680 839.915 310.905 ;
+        RECT 15.515 3.680 1267.485 312.165 ;
       LAYER Metal4 ;
         RECT 15.560 312.530 29.400 312.740 ;
         RECT 30.120 312.530 33.240 312.740 ;
@@ -628,10 +716,10 @@ MACRO tt_um_voice_calculator_mauro_ciccone
         RECT 179.880 312.530 183.000 312.740 ;
         RECT 183.720 312.530 186.840 312.740 ;
         RECT 187.560 312.530 190.680 312.740 ;
-        RECT 191.400 312.530 839.870 312.740 ;
-        RECT 15.560 3.635 839.870 312.530 ;
+        RECT 191.400 312.530 1267.440 312.740 ;
+        RECT 15.560 3.635 1267.440 312.530 ;
       LAYER Metal5 ;
-        RECT 15.515 3.470 839.915 310.270 ;
+        RECT 15.515 3.470 1267.485 310.270 ;
   END
 END tt_um_voice_calculator_mauro_ciccone
 END LIBRARY
