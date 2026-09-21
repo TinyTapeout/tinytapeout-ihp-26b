@@ -1,37 +1,39 @@
-104. Printing statistics.
+105. Printing statistics.
 
 === tt_um_S4xU4 ===
 
         +----------Local Count, excluding submodules.
         |        +-Local Area, excluding submodules.
         |        | 
-      103        - wires
-      138        - wire bits
-      103        - public wires
-      138        - public wire bits
+      351        - wires
+      386        - wire bits
+      320        - public wires
+      355        - public wire bits
         8        - ports
        43        - port bits
-      115 1.87E+03 cells
-        1   12.701   sg13g2_a21o_1
-        2   18.144   sg13g2_a21oi_1
-        1   14.515   sg13g2_a221oi_1
-        8   86.789   sg13g2_a22oi_1
-        9   81.648   sg13g2_and2_1
-        1   12.701   sg13g2_and3_1
-        8   58.061   sg13g2_buf_1
-        8   391.91   sg13g2_dfrbpq_1
-       11   59.875   sg13g2_inv_1
-        9   65.318   sg13g2_nand2_1
-        4    29.03   sg13g2_nor2_1
-        2   18.144   sg13g2_nor3_1
-        2   18.144   sg13g2_o21ai_1
-        1    9.072   sg13g2_or2_1
-        4  275.789   sg13g2_sdfrbp_1
-        4  254.016   sg13g2_sdfrbpq_1
-       16  116.122   sg13g2_tielo
-        3   43.546   sg13g2_xnor2_1
-       21  304.819   sg13g2_xor2_1
+      355 5.36E+03 cells
+        3   38.102   sg13g2_a21o_1
+        9   81.648   sg13g2_a21oi_1
+        4   58.061   sg13g2_a221oi_1
+       32  347.155   sg13g2_a22oi_1
+       31  281.232   sg13g2_and2_1
+        3   38.102   sg13g2_and3_1
+       10   72.576   sg13g2_buf_1
+       10  489.888   sg13g2_dfrbpq_1
+       42  228.614   sg13g2_inv_1
+       32  232.243   sg13g2_nand2_1
+        2   18.144   sg13g2_nand2b_1
+       19  137.894   sg13g2_nor2_1
+        6   54.432   sg13g2_nor3_1
+        8   72.576   sg13g2_o21ai_1
+        4   36.288   sg13g2_or2_1
+       12  827.366   sg13g2_sdfrbp_1
+       12  762.048   sg13g2_sdfrbpq_1
+        2   14.515   sg13g2_tiehi
+       12   87.091   sg13g2_tielo
+       16  232.243   sg13g2_xnor2_1
+       86 1.25E+03   sg13g2_xor2_1
 
-   Chip area for module '\tt_um_S4xU4': 1870.344000
-     of which used for sequential elements: 921.715200 (49.28%)
+   Chip area for module '\tt_um_S4xU4': 5358.528000
+     of which used for sequential elements: 2079.302400 (38.80%)
 
