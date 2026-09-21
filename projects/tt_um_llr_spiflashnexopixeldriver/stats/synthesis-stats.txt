@@ -1,0 +1,45 @@
+164. Printing statistics.
+
+=== tt_um_llr_spiflashnexopixeldriver ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+     1059        - wires
+     1094        - wire bits
+      238        - public wires
+      273        - public wire bits
+        8        - ports
+       43        - port bits
+     1075 1.97E+04 cells
+       22  279.418   sg13g2_a21o_1
+       98  889.056   sg13g2_a21oi_1
+        4   58.061   sg13g2_a221oi_1
+       40  433.944   sg13g2_a22oi_1
+       51  462.672   sg13g2_and2_1
+        3   38.102   sg13g2_and3_1
+        3   43.546   sg13g2_and4_1
+        4    29.03   sg13g2_buf_1
+      230 1.13E+04   sg13g2_dfrbpq_1
+       62  337.478   sg13g2_inv_1
+       95  1723.68   sg13g2_mux2_1
+       62  449.971   sg13g2_nand2_1
+       16  145.152   sg13g2_nand2b_1
+       34  308.448   sg13g2_nand3_1
+        3   38.102   sg13g2_nand3b_1
+        7   76.205   sg13g2_nand4_1
+       99  718.502   sg13g2_nor2_1
+       11   99.792   sg13g2_nor2b_1
+       22  199.584   sg13g2_nor3_1
+        6   65.318   sg13g2_nor4_1
+       56  508.032   sg13g2_o21ai_1
+        8   72.576   sg13g2_or2_1
+        3   38.102   sg13g2_or3_1
+       62  449.971   sg13g2_tiehi
+       16  116.122   sg13g2_tielo
+       34  493.517   sg13g2_xnor2_1
+       24  348.365   sg13g2_xor2_1
+
+   Chip area for module '\tt_um_llr_spiflashnexopixeldriver': 19690.171200
+     of which used for sequential elements: 11267.424000 (57.22%)
+
