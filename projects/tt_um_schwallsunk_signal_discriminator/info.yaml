@@ -29,8 +29,8 @@ pinout:
   ui[3]: "addr MUX delay 1"
   ui[4]: "latch to buff"
   ui[5]: "MUX IO to countr 0"
-  ui[6]: "MUX IO to countr 0"
-  ui[7]: ""
+  ui[6]: "MUX IO to countr 1"
+  ui[7]: "counter enable"
 
   # Outputs
   uo[0]: "event out"
