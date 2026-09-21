@@ -44,6 +44,14 @@ MACRO tt_um_hackin7_analog_experiments
     USE GROUND ;
     PORT
       LAYER TopMetal1 ;
+        RECT 60.450 3.150 62.650 151.420 ;
+    END
+  END VGND
+  PIN VGND
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER TopMetal1 ;
         RECT 21.580 3.150 23.780 151.420 ;
     END
   END VGND
@@ -90,7 +98,7 @@ MACRO tt_um_hackin7_analog_experiments
   PIN clk
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.226200 ;
+    ANTENNAGATEAREA 0.241800 ;
     ANTENNADIFFAREA 2.015400 ;
     PORT
       LAYER Metal4 ;
@@ -170,6 +178,8 @@ MACRO tt_um_hackin7_analog_experiments
   PIN ui_in[5]
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.180700 ;
+    ANTENNADIFFAREA 2.015400 ;
     PORT
       LAYER Metal4 ;
         RECT 160.170 153.980 160.470 154.980 ;
@@ -402,7 +412,7 @@ MACRO tt_um_hackin7_analog_experiments
   PIN uo_out[0]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.662000 ;
+    ANTENNADIFFAREA 0.958400 ;
     PORT
       LAYER Metal4 ;
         RECT 117.930 153.980 118.230 154.980 ;
@@ -411,7 +421,7 @@ MACRO tt_um_hackin7_analog_experiments
   PIN uo_out[1]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.662000 ;
+    ANTENNADIFFAREA 0.958400 ;
     PORT
       LAYER Metal4 ;
         RECT 114.090 153.980 114.390 154.980 ;
@@ -420,7 +430,7 @@ MACRO tt_um_hackin7_analog_experiments
   PIN uo_out[2]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.662000 ;
+    ANTENNADIFFAREA 0.958400 ;
     PORT
       LAYER Metal4 ;
         RECT 110.250 153.980 110.550 154.980 ;
@@ -438,7 +448,7 @@ MACRO tt_um_hackin7_analog_experiments
   PIN uo_out[4]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.662000 ;
+    ANTENNADIFFAREA 0.958400 ;
     PORT
       LAYER Metal4 ;
         RECT 102.570 153.980 102.870 154.980 ;
@@ -456,7 +466,7 @@ MACRO tt_um_hackin7_analog_experiments
   PIN uo_out[6]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.662000 ;
+    ANTENNADIFFAREA 0.958400 ;
     PORT
       LAYER Metal4 ;
         RECT 94.890 153.980 95.190 154.980 ;
@@ -477,9 +487,9 @@ MACRO tt_um_hackin7_analog_experiments
       LAYER Metal1 ;
         RECT 2.880 3.560 199.200 151.420 ;
       LAYER Metal2 ;
-        RECT 15.560 3.635 198.825 152.185 ;
+        RECT 15.560 3.635 193.545 152.185 ;
       LAYER Metal3 ;
-        RECT 15.515 3.680 198.865 152.145 ;
+        RECT 15.515 3.680 193.585 152.145 ;
       LAYER Metal4 ;
         RECT 15.560 153.770 29.400 153.980 ;
         RECT 30.120 153.770 33.240 153.980 ;
@@ -524,12 +534,13 @@ MACRO tt_um_hackin7_analog_experiments
         RECT 179.880 153.770 183.000 153.980 ;
         RECT 183.720 153.770 186.840 153.980 ;
         RECT 187.560 153.770 190.680 153.980 ;
-        RECT 191.400 153.770 195.945 153.980 ;
-        RECT 15.560 3.635 195.945 153.770 ;
+        RECT 15.560 3.635 191.140 153.770 ;
       LAYER Metal5 ;
-        RECT 15.515 3.470 195.985 151.510 ;
+        RECT 15.515 3.470 179.125 151.510 ;
       LAYER TopMetal1 ;
-        RECT 57.120 3.150 62.650 151.830 ;
+        RECT 57.120 3.560 58.810 151.830 ;
+        RECT 64.290 3.560 65.570 151.830 ;
+        RECT 71.050 3.560 87.580 151.830 ;
   END
 END tt_um_hackin7_analog_experiments
 END LIBRARY

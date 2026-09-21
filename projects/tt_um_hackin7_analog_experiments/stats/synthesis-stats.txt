@@ -1,42 +1,34 @@
-110. Printing statistics.
+112. Printing statistics.
 
 === tt_um_hackin7_analog_experiments ===
 
         +----------Local Count, excluding submodules.
         |        +-Local Area, excluding submodules.
         |        | 
-      328        - wires
-      363        - wire bits
-       74        - public wires
-      109        - public wire bits
+      272        - wires
+      307        - wire bits
+       75        - public wires
+      110        - public wire bits
         8        - ports
        43        - port bits
-      344 5.85E+03 cells
+      289 4.96E+03 cells
+        1        -   chips_art
         1        -   ring_oscillator
-        5   63.504   sg13g2_a21o_1
-       50    453.6   sg13g2_a21oi_1
-        4   43.394   sg13g2_a22oi_1
-       12  108.864   sg13g2_and2_1
-        4   50.803   sg13g2_and3_1
-        5   72.576   sg13g2_and4_1
+        1        -   ring_oscillator_500mhz
+       17  154.224   sg13g2_a21oi_1
+        9   97.637   sg13g2_a22oi_1
        64 3.14E+03   sg13g2_dfrbpq_1
-       30  163.296   sg13g2_inv_1
-       10   181.44   sg13g2_mux2_1
-        2   14.515   sg13g2_nand2_1
-        8   72.576   sg13g2_nand2b_1
-       11   99.792   sg13g2_nand3_1
-       13  141.523   sg13g2_nand4_1
-       27  195.955   sg13g2_nor2_1
-       11   99.792   sg13g2_nor2b_1
-        4   36.288   sg13g2_nor3_1
-        4   43.546   sg13g2_nor4_1
-       28  254.016   sg13g2_o21ai_1
+      129  702.173   sg13g2_inv_1
+       32  580.608   sg13g2_mux2_1
+        1    7.258   sg13g2_nand2_1
+       17  154.224   sg13g2_nand2b_1
        16  116.122   sg13g2_tielo
-       17  246.758   sg13g2_xnor2_1
-       18  261.274   sg13g2_xor2_1
+        1   14.515   sg13g2_xnor2_1
 
    Area for cell type \ring_oscillator is unknown!
+   Area for cell type \ring_oscillator_500mhz is unknown!
+   Area for cell type \chips_art is unknown!
 
-   Chip area for module '\tt_um_hackin7_analog_experiments': 5854.917600
-     of which used for sequential elements: 3135.283200 (53.55%)
+   Chip area for module '\tt_um_hackin7_analog_experiments': 4962.043800
+     of which used for sequential elements: 3135.283200 (63.19%)
 
