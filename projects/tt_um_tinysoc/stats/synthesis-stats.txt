@@ -1,0 +1,47 @@
+146. Printing statistics.
+
+=== tt_um_tinysoc ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+     1220        - wires
+     1255        - wire bits
+      207        - public wires
+      242        - public wire bits
+        8        - ports
+       43        - port bits
+     1236 2.15E+04 cells
+       16  203.213   sg13g2_a21o_1
+       92  834.624   sg13g2_a21oi_1
+       36  522.547   sg13g2_a221oi_1
+       50   542.43   sg13g2_a22oi_1
+       21  190.512   sg13g2_and2_1
+        3   38.102   sg13g2_and3_1
+        3   43.546   sg13g2_and4_1
+        3   21.773   sg13g2_buf_1
+      225  1.1E+04   sg13g2_dfrbpq_1
+       63  342.922   sg13g2_inv_1
+      122 2.21E+03   sg13g2_mux2_1
+        1   38.102   sg13g2_mux4_1
+      113  820.109   sg13g2_nand2_1
+       39  353.808   sg13g2_nand2b_1
+       31  281.232   sg13g2_nand3_1
+        2   25.402   sg13g2_nand3b_1
+       17  185.069   sg13g2_nand4_1
+       97  703.987   sg13g2_nor2_1
+       24  217.728   sg13g2_nor2b_1
+       31  281.232   sg13g2_nor3_1
+       22  239.501   sg13g2_nor4_1
+      148 1.34E+03   sg13g2_o21ai_1
+       13  117.936   sg13g2_or2_1
+        7   88.906   sg13g2_or3_1
+        4   58.061   sg13g2_or4_1
+        2   14.515   sg13g2_tiehi
+        2   14.515   sg13g2_tielo
+       36  522.547   sg13g2_xnor2_1
+       13  188.698   sg13g2_xor2_1
+
+   Chip area for module '\tt_um_tinysoc': 21469.719600
+     of which used for sequential elements: 11022.480000 (51.34%)
+

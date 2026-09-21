@@ -1,0 +1,52 @@
+# Tiny Tapeout project information
+project:
+  title:        "TinySoC"
+  author:       "Maadesh"
+  discord:      ""
+  description:  "An 8-bit Harvard Architecture microcontroller with UART, GPIO, and PWM"
+  language:     "Verilog"
+  clock_hz:     50000000
+
+  tiles: "1x1"
+
+  top_module:  "tt_um_tinysoc"
+
+  source_files:
+    - "tt_um_tinysoc.v"
+    - "cpu_core.v"
+    - "uart.v"
+
+pinout:
+  # Inputs
+  ui[0]: "Instruction Bus IN 0"
+  ui[1]: "Instruction Bus IN 1"
+  ui[2]: "Instruction Bus IN 2"
+  ui[3]: "Instruction Bus IN 3"
+  ui[4]: "Instruction Bus IN 4"
+  ui[5]: "Instruction Bus IN 5"
+  ui[6]: "Instruction Bus IN 6"
+  ui[7]: "Instruction Bus IN 7"
+
+  # Outputs
+  uo[0]: "Program Counter Address OUT 0"
+  uo[1]: "Program Counter Address OUT 1"
+  uo[2]: "Program Counter Address OUT 2"
+  uo[3]: "Program Counter Address OUT 3"
+  uo[4]: "Program Counter Address OUT 4"
+  uo[5]: "Program Counter Address OUT 5"
+  uo[6]: "Program Counter Address OUT 6"
+  uo[7]: "Program Counter Address OUT 7"
+
+  # Bidirectional pins
+  uio[0]: "GPIO 0"
+  uio[1]: "GPIO 1"
+  uio[2]: "GPIO 2"
+  uio[3]: "GPIO 3"
+  uio[4]: "GPIO 4"
+  uio[5]: "UART TX"
+  uio[6]: "UART RX"
+  uio[7]: "PWM OUT"
+
+# Do not change!
+yaml_version: 6
+ 
