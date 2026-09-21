@@ -1,0 +1,46 @@
+188. Printing statistics.
+
+=== tt_um_lkhanh_cordic ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+     5907        - wires
+     5942        - wire bits
+     1034        - public wires
+     1069        - public wire bits
+        8        - ports
+       43        - port bits
+     5923 9.62E+04 cells
+       51  647.741   sg13g2_a21o_1
+      485  4399.92   sg13g2_a21oi_1
+       63  914.458   sg13g2_a221oi_1
+      198 2.15E+03   sg13g2_a22oi_1
+      144 1.31E+03   sg13g2_and2_1
+       26  330.221   sg13g2_and3_1
+       14  203.213   sg13g2_and4_1
+       14  101.606   sg13g2_buf_1
+     1021    5E+04   sg13g2_dfrbpq_1
+      190 1.03E+03   sg13g2_inv_1
+      246 4.46E+03   sg13g2_mux2_1
+       46  1752.71   sg13g2_mux4_1
+      511 3.71E+03   sg13g2_nand2_1
+      114 1.03E+03   sg13g2_nand2b_1
+      157 1.42E+03   sg13g2_nand3_1
+       12   152.41   sg13g2_nand3b_1
+       54  587.866   sg13g2_nand4_1
+      476 3.45E+03   sg13g2_nor2_1
+       91  825.552   sg13g2_nor2b_1
+      148 1.34E+03   sg13g2_nor3_1
+       37  402.797   sg13g2_nor4_1
+      520  4717.44   sg13g2_o21ai_1
+       51  462.672   sg13g2_or2_1
+       17  215.914   sg13g2_or3_1
+        1   14.515   sg13g2_or4_1
+     1024 7.43E+03   sg13g2_tiehi
+      137 1.99E+03   sg13g2_xnor2_1
+       75  1088.64   sg13g2_xor2_1
+
+   Chip area for module '\tt_um_lkhanh_cordic': 96172.045200
+     of which used for sequential elements: 50017.564800 (52.01%)
+

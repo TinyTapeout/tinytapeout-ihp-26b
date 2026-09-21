@@ -1,0 +1,67 @@
+# Tiny Tapeout project information
+project:
+  title:        "TinyQV SoC (Dual Memory Backend)"      # Project title
+  author:       "LKhanh"      # Your name
+  discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "TinyQV RISC-V SoC supporting both QSPI PMOD and RP2040 spi-ram-emu"      # One line description of what your project does
+  language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz:     64000000       # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "3x2"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_lkhanh_cordic"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "project.v"
+    - "tinyqv.v"
+    - "cpu/core.v"
+    - "cpu/decode.v"
+    - "cpu/alu.v"
+    - "cpu/register.v"
+    - "cpu/counter.v"
+    - "cpu/cpu.v"
+    - "cpu/mem_ctrl.v"
+    - "cpu/qspi_ctrl.v"
+    - "cpu/spi_mem_ctrl.v"
+    - "peri/uart/uart_tx.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "strap_mode (0=SPI emu, 1=QSPI PMOD)"
+  ui[1]: "spare"
+  ui[2]: "spare"
+  ui[3]: "irq[0]"
+  ui[4]: "irq[1]"
+  ui[5]: "irq[2]"
+  ui[6]: "irq[3]"
+  ui[7]: "timer_irq"
+
+  # Outputs
+  uo[0]: "uart_tx"
+  uo[1]: "strap_mode_out"
+  uo[2]: "gpio[2]"
+  uo[3]: "gpio[3]"
+  uo[4]: "gpio[4]"
+  uo[5]: "gpio[5]"
+  uo[6]: "gpio[6]"
+  uo[7]: "gpio[7]"
+
+  # Bidirectional pins
+  uio[0]: "CS0 / SPI_CS"
+  uio[1]: "SD0 / MOSI"
+  uio[2]: "SD1 / MISO"
+  uio[3]: "SCK"
+  uio[4]: "SD2"
+  uio[5]: "SD3"
+  uio[6]: "CS1 (RAM A)"
+  uio[7]: "CS2 (RAM B)"
+
+# Do not change!
+yaml_version: 6
