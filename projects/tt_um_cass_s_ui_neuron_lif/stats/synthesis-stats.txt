@@ -1,0 +1,41 @@
+140. Printing statistics.
+
+=== tt_um_cass_s_ui_neuron_lif ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+      159        - wires
+      194        - wire bits
+       25        - public wires
+       60        - public wire bits
+        8        - ports
+       43        - port bits
+      175 2.61E+03 cells
+        6   76.205   sg13g2_a21o_1
+        5    45.36   sg13g2_a21oi_1
+        4   58.061   sg13g2_a221oi_1
+        2   18.144   sg13g2_and2_1
+        3   38.102   sg13g2_and3_1
+        1   14.515   sg13g2_and4_1
+        1    7.258   sg13g2_buf_1
+       23 1.13E+03   sg13g2_dfrbpq_1
+       12   65.318   sg13g2_inv_1
+        1   18.144   sg13g2_mux2_1
+       12   87.091   sg13g2_nand2_1
+        4   36.288   sg13g2_nand2b_1
+        6   54.432   sg13g2_nand3_1
+        1   10.886   sg13g2_nand4_1
+        5   36.288   sg13g2_nor2_1
+       10    90.72   sg13g2_nor2b_1
+        6   54.432   sg13g2_nor3_1
+       10  108.864   sg13g2_nor4_1
+       18  163.296   sg13g2_o21ai_1
+        6   54.432   sg13g2_or2_1
+       17  123.379   sg13g2_tielo
+       15  217.728   sg13g2_xnor2_1
+        7  101.606   sg13g2_xor2_1
+
+   Chip area for module '\tt_um_cass_s_ui_neuron_lif': 2607.292800
+     of which used for sequential elements: 1126.742400 (43.22%)
+
