@@ -2,9 +2,9 @@ VERSION 5.7 ;
   NOWIREEXTENSIONATPIN ON ;
   DIVIDERCHAR "/" ;
   BUSBITCHARS "[]" ;
-MACRO tt_um_4kbyte_uart_hello
+MACRO tt_um_romd_uart_hello
   CLASS BLOCK ;
-  FOREIGN tt_um_4kbyte_uart_hello ;
+  FOREIGN tt_um_romd_uart_hello ;
   ORIGIN 0.000 0.000 ;
   SIZE 202.080 BY 154.980 ;
   PIN VGND
@@ -431,9 +431,9 @@ MACRO tt_um_4kbyte_uart_hello
       LAYER Metal1 ;
         RECT 2.880 3.560 199.200 151.420 ;
       LAYER Metal2 ;
-        RECT 15.560 3.635 198.825 152.185 ;
+        RECT 15.560 3.635 198.825 151.345 ;
       LAYER Metal3 ;
-        RECT 15.515 3.680 198.865 152.145 ;
+        RECT 15.515 3.680 198.865 151.300 ;
       LAYER Metal4 ;
         RECT 15.560 153.770 29.400 153.980 ;
         RECT 30.120 153.770 33.240 153.980 ;
@@ -477,11 +477,10 @@ MACRO tt_um_4kbyte_uart_hello
         RECT 176.040 153.770 179.160 153.980 ;
         RECT 179.880 153.770 183.000 153.980 ;
         RECT 183.720 153.770 186.840 153.980 ;
-        RECT 187.560 153.770 187.780 153.980 ;
-        RECT 15.560 3.635 187.780 153.770 ;
+        RECT 15.560 3.635 187.300 153.770 ;
       LAYER Metal5 ;
-        RECT 15.515 3.470 179.125 151.510 ;
+        RECT 15.515 3.470 182.065 151.510 ;
   END
-END tt_um_4kbyte_uart_hello
+END tt_um_romd_uart_hello
 END LIBRARY
 
