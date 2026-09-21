@@ -1,0 +1,46 @@
+158. Printing statistics.
+
+=== tt_um_snn_voice_calculator_mauro_ciccone ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+     2826        - wires
+     2861        - wire bits
+      293        - public wires
+      328        - public wire bits
+        8        - ports
+       43        - port bits
+     2842 3.92E+04 cells
+       65  825.552   sg13g2_a21o_1
+      269 2.44E+03   sg13g2_a21oi_1
+       21  304.819   sg13g2_a221oi_1
+       20  216.972   sg13g2_a22oi_1
+       93  843.696   sg13g2_and2_1
+       32  406.426   sg13g2_and3_1
+       11  159.667   sg13g2_and4_1
+        7   50.803   sg13g2_buf_1
+      287 1.41E+04   sg13g2_dfrbpq_1
+      124  674.957   sg13g2_inv_1
+       27  489.888   sg13g2_mux2_1
+      248  1.8E+03   sg13g2_nand2_1
+       98  889.056   sg13g2_nand2b_1
+       98  889.056   sg13g2_nand3_1
+       22  279.418   sg13g2_nand3b_1
+       16  174.182   sg13g2_nand4_1
+      344  2.5E+03   sg13g2_nor2_1
+      104  943.488   sg13g2_nor2b_1
+      104  943.488   sg13g2_nor3_1
+       19  206.842   sg13g2_nor4_1
+      281 2.55E+03   sg13g2_o21ai_1
+       52  471.744   sg13g2_or2_1
+       21  266.717   sg13g2_or3_1
+        2    29.03   sg13g2_or4_1
+        8   58.061   sg13g2_tiehi
+        4    29.03   sg13g2_tielo
+      289 4.19E+03   sg13g2_xnor2_1
+      176 2.55E+03   sg13g2_xor2_1
+
+   Chip area for module '\tt_um_snn_voice_calculator_mauro_ciccone': 39248.344800
+     of which used for sequential elements: 14059.785600 (35.82%)
+
