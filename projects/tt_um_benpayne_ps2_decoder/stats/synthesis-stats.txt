@@ -1,0 +1,47 @@
+149. Printing statistics.
+
+=== tt_um_benpayne_ps2_decoder ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+      616        - wires
+      651        - wire bits
+      161        - public wires
+      196        - public wire bits
+        8        - ports
+       43        - port bits
+      632 1.32E+04 cells
+       14  177.811   sg13g2_a21o_1
+       35   317.52   sg13g2_a21oi_1
+        2    29.03   sg13g2_a221oi_1
+       24  260.366   sg13g2_a22oi_1
+        8   72.576   sg13g2_and2_1
+        8  101.606   sg13g2_and3_1
+        1   14.515   sg13g2_and4_1
+       15  108.864   sg13g2_buf_1
+      175  8573.04   sg13g2_dfrbpq_1
+       40  217.728   sg13g2_inv_1
+       53  961.632   sg13g2_mux2_1
+        2   76.205   sg13g2_mux4_1
+       29   210.47   sg13g2_nand2_1
+       17  154.224   sg13g2_nand2b_1
+       11   99.792   sg13g2_nand3_1
+        1   12.701   sg13g2_nand3b_1
+        5   54.432   sg13g2_nand4_1
+       42  304.819   sg13g2_nor2_1
+        9   81.648   sg13g2_nor2b_1
+        8   72.576   sg13g2_nor3_1
+        4   43.546   sg13g2_nor4_1
+       51  462.672   sg13g2_o21ai_1
+        4   36.288   sg13g2_or2_1
+        4   50.803   sg13g2_or3_1
+        1   14.515   sg13g2_or4_1
+       32  232.243   sg13g2_tiehi
+        8   58.061   sg13g2_tielo
+       21  304.819   sg13g2_xnor2_1
+        8  116.122   sg13g2_xor2_1
+
+   Chip area for module '\tt_um_benpayne_ps2_decoder': 13220.625600
+     of which used for sequential elements: 8573.040000 (64.85%)
+
