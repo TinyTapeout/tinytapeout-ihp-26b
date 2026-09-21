@@ -1,0 +1,42 @@
+project:
+  title: "4x4NPU: Dual-Lane INT4 Neural Accelerator"
+  author: "Maadeshwar"
+  discord: ""
+  description: "Host-controlled IHP SG13G2 INT4 neural accelerator with two parallel MAC lanes, saturation, ReLU, and accumulator readback."
+  language: "SystemVerilog"
+  clock_hz: 50000000
+  tiles: "1x1"
+  top_module: "tt_um_4x4npu"
+  source_files:
+    - "tt_um_4x4npu.v"
+    - "npu4_core.v"
+    - "int4_multiplier.sv"
+    - "int4_quantizer.sv"
+
+pinout:
+  ui[0]: "activation[0] / lane select"
+  ui[1]: "activation[1]"
+  ui[2]: "activation[2]"
+  ui[3]: "activation[3]"
+  ui[4]: "weight lane 0 bit 0"
+  ui[5]: "weight lane 0 bit 1"
+  ui[6]: "weight lane 0 bit 2"
+  ui[7]: "weight lane 0 bit 3"
+  uo[0]: "INT4 result bit 0"
+  uo[1]: "INT4 result bit 1"
+  uo[2]: "INT4 result bit 2"
+  uo[3]: "INT4 result bit 3"
+  uo[4]: "DONE"
+  uo[5]: "OVERFLOW"
+  uo[6]: "accumulator negative"
+  uo[7]: "RESULT_VALID"
+  uio[0]: "command bit 0"
+  uio[1]: "command bit 1"
+  uio[2]: "command bit 2"
+  uio[3]: "command valid"
+  uio[4]: "weight lane 1 / parameter bit 0"
+  uio[5]: "weight lane 1 / parameter bit 1"
+  uio[6]: "weight lane 1 / parameter bit 2"
+  uio[7]: "weight lane 1 / parameter bit 3"
+
+yaml_version: 6
