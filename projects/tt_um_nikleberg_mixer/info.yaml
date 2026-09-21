@@ -21,20 +21,20 @@ project:
 # This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
 pinout:
   # Inputs
-  ui[0]: ""
-  ui[1]: ""
-  ui[2]: ""
-  ui[3]: ""
-  ui[4]: ""
-  ui[5]: ""
-  ui[6]: ""
-  ui[7]: ""
+  ui[0]: "DAC[0]"
+  ui[1]: "DAC[1]"
+  ui[2]: "DAC[2]"
+  ui[3]: "DAC[3]"
+  ui[4]: "DAC[4]"
+  ui[5]: "DAC[5]"
+  ui[6]: "DAC[6]"
+  ui[7]: "DAC[7]"
 
   # Outputs
-  uo[0]: ""
-  uo[1]: ""
-  uo[2]: ""
-  uo[3]: ""
+  uo[0]: "trigger1v1"
+  uo[1]: "trigger2v1"
+  uo[2]: "trigger4v1"
+  uo[3]: "trigger8v1"
   uo[4]: ""
   uo[5]: ""
   uo[6]: ""
