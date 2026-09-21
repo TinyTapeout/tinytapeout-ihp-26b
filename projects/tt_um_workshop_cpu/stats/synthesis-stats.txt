@@ -1,0 +1,45 @@
+168. Printing statistics.
+
+=== tt_um_workshop_cpu ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+     1812        - wires
+     1847        - wire bits
+      439        - public wires
+      474        - public wire bits
+        8        - ports
+       43        - port bits
+     1828 3.75E+04 cells
+       33  419.126   sg13g2_a21o_1
+       98  889.056   sg13g2_a21oi_1
+       33  479.002   sg13g2_a221oi_1
+      190 2.06E+03   sg13g2_a22oi_1
+       31  281.232   sg13g2_and2_1
+       11  139.709   sg13g2_and3_1
+        2   14.515   sg13g2_buf_1
+      451 2.21E+04   sg13g2_dfrbpq_1
+       95  517.104   sg13g2_inv_1
+      287 5.21E+03   sg13g2_mux2_1
+      111  805.594   sg13g2_nand2_1
+       33  299.376   sg13g2_nand2b_1
+       28  254.016   sg13g2_nand3_1
+        5   63.504   sg13g2_nand3b_1
+       44  479.002   sg13g2_nand4_1
+       95  689.472   sg13g2_nor2_1
+       23  208.656   sg13g2_nor2b_1
+       67  607.824   sg13g2_nor3_1
+       32  348.365   sg13g2_nor4_1
+       93  843.696   sg13g2_o21ai_1
+        6   54.432   sg13g2_or2_1
+        8  101.606   sg13g2_or3_1
+        2    29.03   sg13g2_or4_1
+        2   14.515   sg13g2_tiehi
+       13   94.349   sg13g2_tielo
+       24  348.365   sg13g2_xnor2_1
+       11  159.667   sg13g2_xor2_1
+
+   Chip area for module '\tt_um_workshop_cpu': 37503.723600
+     of which used for sequential elements: 22093.948800 (58.91%)
+
