@@ -1,0 +1,44 @@
+# Tiny Tapeout IHP project information
+project:
+  title: "Izhikevich event bridge (4 contexts)"
+  author: "Austin Biaselli"
+  discord: ""
+  description: "Four-context time-multiplexed fixed-point Izhikevich neuron bank with programmable synapses and external digital spike capture"
+  language: "Verilog"
+  clock_hz: 10000000
+  tiles: "3x2"
+  top_module: "tt_um_abiaselli_izh_bridge_3x2"
+  source_files:
+    - "serial_mul.v"
+    - "neuron_bank.v"
+    - "project.v"
+
+pinout:
+  ui[0]: "command_data[0]"
+  ui[1]: "command_data[1]"
+  ui[2]: "command_data[2]"
+  ui[3]: "command_data[3]"
+  ui[4]: "command_data[4]"
+  ui[5]: "command_data[5]"
+  ui[6]: "command_data[6]"
+  ui[7]: "command_data[7]"
+
+  uo[0]: "response_data[0]"
+  uo[1]: "response_data[1]"
+  uo[2]: "response_data[2]"
+  uo[3]: "response_data[3]"
+  uo[4]: "response_data[4]"
+  uo[5]: "response_data[5]"
+  uo[6]: "response_data[6]"
+  uo[7]: "response_data[7]"
+
+  uio[0]: "command_valid"
+  uio[1]: "command_ready"
+  uio[2]: "response_ready"
+  uio[3]: "response_valid"
+  uio[4]: "spike_in0"
+  uio[5]: "spike_in1"
+  uio[6]: "spike_in2"
+  uio[7]: "spike_in3"
+
+yaml_version: 6

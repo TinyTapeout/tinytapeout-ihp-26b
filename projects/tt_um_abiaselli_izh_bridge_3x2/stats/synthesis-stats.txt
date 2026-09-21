@@ -1,0 +1,46 @@
+167. Printing statistics.
+
+=== tt_um_abiaselli_izh_bridge_3x2 ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+     7605        - wires
+     7640        - wire bits
+     1111        - public wires
+     1146        - public wire bits
+        8        - ports
+       43        - port bits
+     7621  1.2E+05 cells
+       90 1.14E+03   sg13g2_a21o_1
+      603 5.47E+03   sg13g2_a21oi_1
+       75  1088.64   sg13g2_a221oi_1
+      615 6.67E+03   sg13g2_a22oi_1
+      133 1.21E+03   sg13g2_and2_1
+       35  444.528   sg13g2_and3_1
+        8  116.122   sg13g2_and4_1
+     1107 5.42E+04   sg13g2_dfrbpq_1
+      616 3.35E+03   sg13g2_inv_1
+       17  308.448   sg13g2_mux2_1
+      252  9.6E+03   sg13g2_mux4_1
+      666 4.83E+03   sg13g2_nand2_1
+       84  762.048   sg13g2_nand2b_1
+      146 1.32E+03   sg13g2_nand3_1
+        8  101.606   sg13g2_nand3b_1
+       32  348.365   sg13g2_nand4_1
+      531 3.85E+03   sg13g2_nor2_1
+      105   952.56   sg13g2_nor2b_1
+       83  752.976   sg13g2_nor3_1
+       14   152.41   sg13g2_nor4_1
+      633 5.74E+03   sg13g2_o21ai_1
+       40   362.88   sg13g2_or2_1
+       21  266.717   sg13g2_or3_1
+        1   14.515   sg13g2_or4_1
+     1109 8.05E+03   sg13g2_tiehi
+       12   87.091   sg13g2_tielo
+      369 5.36E+03   sg13g2_xnor2_1
+      216 3.14E+03   sg13g2_xor2_1
+
+   Chip area for module '\tt_um_abiaselli_izh_bridge_3x2': 119730.781800
+     of which used for sequential elements: 54230.601600 (45.29%)
+
