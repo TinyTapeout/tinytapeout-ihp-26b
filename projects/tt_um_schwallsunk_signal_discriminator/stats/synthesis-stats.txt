@@ -5,23 +5,24 @@
         +----------Local Count, excluding submodules.
         |        +-Local Area, excluding submodules.
         |        | 
-       66        - wires
-      101        - wire bits
-       63        - public wires
-       98        - public wire bits
+      161        - wires
+      196        - wire bits
+      158        - public wires
+      193        - public wire bits
         8        - ports
        43        - port bits
-       82  1.1E+03 cells
+      145 4.59E+03 cells
         2   18.144   sg13g2_and2_1
         1    7.258   sg13g2_buf_1
-        3  157.853   sg13g2_dfrbp_1
+       35 1.84E+03   sg13g2_dfrbp_1
+       32 1.57E+03   sg13g2_dfrbpq_1
        45  653.184   sg13g2_dlygate4sd2_1
-        3   21.773   sg13g2_inv_2
+        2   14.515   sg13g2_inv_2
         1   18.144   sg13g2_mux2_1
-        1   38.102   sg13g2_mux4_1
-       19  137.894   sg13g2_tiehi
+        9  342.922   sg13g2_mux4_1
+       11   79.834   sg13g2_tiehi
         7   50.803   sg13g2_tielo
 
-   Chip area for module '\tt_um_schwallsunk_signal_discriminator': 1103.155200
-     of which used for sequential elements: 157.852800 (14.31%)
+   Chip area for module '\tt_um_schwallsunk_signal_discriminator': 4594.060800
+     of which used for sequential elements: 3409.257600 (74.21%)
 
