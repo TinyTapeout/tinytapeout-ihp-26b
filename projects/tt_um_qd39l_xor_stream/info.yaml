@@ -1,0 +1,60 @@
+# Tiny Tapeout project information
+project:
+  title:        "Fixed-ROM XOR Stream Engine"
+  author:       "Owen Deng"
+  discord:      "owenooool"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "Ready/valid byte-stream XOR engine backed by a fixed 160-byte ROM"
+  language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz:     50000000       # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies?
+  tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_qd39l_xor_stream"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "project.v"
+    - "silicon_art.v"
+    - "otp_decrypt.v"
+    - "encrypted_rom.v"
+    - "generated_sample_rom.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "KEY_DATA[0]"
+  ui[1]: "KEY_DATA[1]"
+  ui[2]: "KEY_DATA[2]"
+  ui[3]: "KEY_DATA[3]"
+  ui[4]: "KEY_DATA[4]"
+  ui[5]: "KEY_DATA[5]"
+  ui[6]: "KEY_DATA[6]"
+  ui[7]: "KEY_DATA[7]"
+
+  # Outputs
+  uo[0]: "OUT_DATA[0]"
+  uo[1]: "OUT_DATA[1]"
+  uo[2]: "OUT_DATA[2]"
+  uo[3]: "OUT_DATA[3]"
+  uo[4]: "OUT_DATA[4]"
+  uo[5]: "OUT_DATA[5]"
+  uo[6]: "OUT_DATA[6]"
+  uo[7]: "OUT_DATA[7]"
+
+  # Bidirectional pins
+  uio[0]: "KEY_VALID"
+  uio[1]: "START"
+  uio[2]: "OUT_READY"
+  uio[3]: "ABORT"
+  uio[4]: "KEY_READY"
+  uio[5]: "BUSY"
+  uio[6]: "OUT_VALID"
+  uio[7]: "DONE"
+
+# Do not change!
+yaml_version: 6

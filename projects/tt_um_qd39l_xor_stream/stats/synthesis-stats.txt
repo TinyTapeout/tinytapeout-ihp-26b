@@ -1,0 +1,49 @@
+149. Printing statistics.
+
+=== tt_um_qd39l_xor_stream ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+      441        - wires
+      476        - wire bits
+       38        - public wires
+       73        - public wire bits
+        8        - ports
+       43        - port bits
+      458 5.42E+03 cells
+       24  304.819   sg13g2_a21o_1
+       58  526.176   sg13g2_a21oi_1
+       20  290.304   sg13g2_a221oi_1
+       15  162.729   sg13g2_a22oi_1
+       22  199.584   sg13g2_and2_1
+        5   63.504   sg13g2_and3_1
+        1   14.515   sg13g2_and4_1
+        4    29.03   sg13g2_buf_1
+       29 1.42E+03   sg13g2_dfrbpq_1
+       16   87.091   sg13g2_inv_1
+        1   18.144   sg13g2_mux2_1
+       39  283.046   sg13g2_nand2_1
+       15   136.08   sg13g2_nand2b_1
+       30   272.16   sg13g2_nand3_1
+       11  139.709   sg13g2_nand3b_1
+       10  108.864   sg13g2_nand4_1
+       26  188.698   sg13g2_nor2_1
+        5    45.36   sg13g2_nor2b_1
+        5    45.36   sg13g2_nor3_1
+        6   65.318   sg13g2_nor4_1
+       61  553.392   sg13g2_o21ai_1
+        3   27.216   sg13g2_or2_1
+        3   38.102   sg13g2_or3_1
+        1   14.515   sg13g2_or4_1
+       33  239.501   sg13g2_tiehi
+        8   58.061   sg13g2_tielo
+        5   72.576   sg13g2_xnor2_1
+        1   14.515   sg13g2_xor2_1
+        1        -   topmetal_art
+
+   Area for cell type \topmetal_art is unknown!
+
+   Chip area for module '\tt_um_qd39l_xor_stream': 5419.045800
+     of which used for sequential elements: 1420.675200 (26.22%)
+
