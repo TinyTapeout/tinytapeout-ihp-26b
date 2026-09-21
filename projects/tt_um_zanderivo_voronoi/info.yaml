@@ -1,0 +1,42 @@
+# Tiny Tapeout project information
+project:
+  title: "Four-Metric VGA Nearest-Prototype Visualizer"
+  author: "zanderivo"
+  discord: ""
+  description: "640x480 VGA nearest-prototype visualizer with four selectable distance metrics, manual prototype moves, and online training."
+  language: "Verilog"
+  clock_hz: 25175000
+  tiles: "1x2"
+  top_module: "tt_um_zanderivo_voronoi"
+  source_files:
+    - "project.v"
+
+pinout:
+  ui[0]: "Metric request bit 0 (00 L1, 01 Linf, 10 octagonal L2, 11 Hamming)"
+  ui[1]: "Metric request bit 1"
+  ui[2]: "Training enable request"
+  ui[3]: "Manual centroid select bit 0"
+  ui[4]: "Manual centroid select bit 1"
+  ui[5]: "Manual axis (0 X, 1 Y)"
+  ui[6]: "Manual direction (0 decrement, 1 increment)"
+  ui[7]: "Manual step transaction strobe"
+
+  uo[0]: "TinyVGA red MSB (R1)"
+  uo[1]: "TinyVGA green MSB (G1)"
+  uo[2]: "TinyVGA blue MSB (B1)"
+  uo[3]: "TinyVGA active-low vertical sync"
+  uo[4]: "TinyVGA red LSB (R0)"
+  uo[5]: "TinyVGA green LSB (G0)"
+  uo[6]: "TinyVGA blue LSB (B0)"
+  uo[7]: "TinyVGA active-low horizontal sync"
+
+  uio[0]: "Unused (input only)"
+  uio[1]: "Unused (input only)"
+  uio[2]: "Unused (input only)"
+  uio[3]: "Unused (input only)"
+  uio[4]: "Unused (input only)"
+  uio[5]: "Unused (input only)"
+  uio[6]: "Unused (input only)"
+  uio[7]: "Unused (input only)"
+
+yaml_version: 6
