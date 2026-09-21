@@ -1,0 +1,44 @@
+142. Printing statistics.
+
+=== tt_um_TscherterJunior_stapel_geraet ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+     1226        - wires
+     1261        - wire bits
+      157        - public wires
+      192        - public wire bits
+        8        - ports
+       43        - port bits
+     1242  1.8E+04 cells
+       10  127.008   sg13g2_a21o_1
+      169 1.53E+03   sg13g2_a21oi_1
+      110  1.6E+03   sg13g2_a221oi_1
+      153 1.66E+03   sg13g2_a22oi_1
+       28  254.016   sg13g2_and2_1
+        5   63.504   sg13g2_and3_1
+        6   87.091   sg13g2_and4_1
+        1    7.258   sg13g2_buf_1
+      150  7348.32   sg13g2_dfrbpq_1
+      103   560.65   sg13g2_inv_1
+       33  598.752   sg13g2_mux2_1
+       77  558.835   sg13g2_nand2_1
+       22  199.584   sg13g2_nand2b_1
+       37  335.664   sg13g2_nand3_1
+       25   272.16   sg13g2_nand4_1
+       85  616.896   sg13g2_nor2_1
+       38  344.736   sg13g2_nor2b_1
+       18  163.296   sg13g2_nor3_1
+        3   32.659   sg13g2_nor4_1
+      126 1.14E+03   sg13g2_o21ai_1
+        8   72.576   sg13g2_or2_1
+        2   25.402   sg13g2_or3_1
+        8   58.061   sg13g2_tiehi
+        1    7.258   sg13g2_tielo
+       13  188.698   sg13g2_xnor2_1
+       11  159.667   sg13g2_xor2_1
+
+   Chip area for module '\tt_um_TscherterJunior_stapel_geraet': 18014.837400
+     of which used for sequential elements: 7348.320000 (40.79%)
+
