@@ -1,0 +1,46 @@
+129. Printing statistics.
+
+=== tt_um_vga_hypno_spiral ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+     1277        - wires
+     1312        - wire bits
+      112        - public wires
+      147        - public wire bits
+        8        - ports
+       43        - port bits
+     1293  1.6E+04 cells
+       31  393.725   sg13g2_a21o_1
+       99  898.128   sg13g2_a21oi_1
+       19  275.789   sg13g2_a221oi_1
+       30  325.458   sg13g2_a22oi_1
+       46  417.312   sg13g2_and2_1
+       10  127.008   sg13g2_and3_1
+       15  217.728   sg13g2_and4_1
+        6   43.546   sg13g2_buf_1
+       76 3.72E+03   sg13g2_dfrbpq_1
+       41  223.171   sg13g2_inv_1
+       20   362.88   sg13g2_mux2_1
+      133  965.261   sg13g2_nand2_1
+       53  480.816   sg13g2_nand2b_1
+       45   408.24   sg13g2_nand3_1
+        7   88.906   sg13g2_nand3b_1
+       20  217.728   sg13g2_nand4_1
+       84  609.638   sg13g2_nor2_1
+       40   362.88   sg13g2_nor2b_1
+       32  290.304   sg13g2_nor3_1
+       12  130.637   sg13g2_nor4_1
+      114 1.03E+03   sg13g2_o21ai_1
+       26  235.872   sg13g2_or2_1
+       13   165.11   sg13g2_or3_1
+        4   58.061   sg13g2_or4_1
+       76  551.578   sg13g2_tiehi
+       16  116.122   sg13g2_tielo
+      156 2.26E+03   sg13g2_xnor2_1
+       69    1E+03   sg13g2_xor2_1
+
+   Chip area for module '\tt_um_vga_hypno_spiral': 15989.173200
+     of which used for sequential elements: 3723.148800 (23.29%)
+
