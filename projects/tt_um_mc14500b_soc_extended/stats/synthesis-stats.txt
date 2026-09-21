@@ -1,0 +1,45 @@
+145. Printing statistics.
+
+=== tt_um_mc14500b_soc_extended ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+     1750        - wires
+     1785        - wire bits
+      556        - public wires
+      591        - public wire bits
+        8        - ports
+       43        - port bits
+     1766 4.36E+04 cells
+       14  177.811   sg13g2_a21o_1
+        8   72.576   sg13g2_a21oi_1
+        4   58.061   sg13g2_a221oi_1
+      260 2.82E+03   sg13g2_a22oi_1
+       11   99.792   sg13g2_and2_1
+        2   25.402   sg13g2_and3_1
+        1   14.515   sg13g2_and4_1
+        8   58.061   sg13g2_buf_1
+      557 2.73E+04   sg13g2_dfrbpq_1
+       28   152.41   sg13g2_inv_1
+      531 9.63E+03   sg13g2_mux2_1
+        1   38.102   sg13g2_mux4_1
+       31  224.986   sg13g2_nand2_1
+       18  163.296   sg13g2_nand2b_1
+       17  154.224   sg13g2_nand3_1
+        3   38.102   sg13g2_nand3b_1
+       68  740.275   sg13g2_nand4_1
+       78  566.093   sg13g2_nor2_1
+       10    90.72   sg13g2_nor2b_1
+       72  653.184   sg13g2_nor3_1
+       20  217.728   sg13g2_nor4_1
+        9   81.648   sg13g2_o21ai_1
+        3   27.216   sg13g2_or2_1
+        1   12.701   sg13g2_or3_1
+        1    7.258   sg13g2_tielo
+        4   58.061   sg13g2_xnor2_1
+        6   87.091   sg13g2_xor2_1
+
+   Chip area for module '\tt_um_mc14500b_soc_extended': 43561.173600
+     of which used for sequential elements: 27286.761600 (62.64%)
+
