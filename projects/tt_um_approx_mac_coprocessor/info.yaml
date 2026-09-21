@@ -1,0 +1,45 @@
+# SPDX-FileCopyrightText: © 2026 Your Name
+# SPDX-License-Identifier: Apache-2.0
+
+project:
+  title:        "Approximate DSP: Time-Multiplexed MAC Coprocessor"
+  author:       "praneel"
+  discord:      ""
+  description:  "An 8-bit SPI-programmable approximate DSP block featuring a 4-tap time-multiplexed approximate MAC for Smart Dust Edge AI."
+  language:     "Verilog"
+  clock_hz:     50000000
+  tiles:        "1x1"
+  top_module:   "tt_um_approx_mac_coprocessor"
+  
+  source_files:
+    - "project.v"
+
+pinout:
+  ui[0]: "SCLK (SPI Clock)"
+  ui[1]: "MOSI (SPI Data In)"
+  ui[2]: "CS_N (SPI Chip Select)"
+  ui[3]: "unused"
+  ui[4]: "unused"
+  ui[5]: "unused"
+  ui[6]: "unused"
+  ui[7]: "unused"
+
+  uo[0]: "MISO (SPI Data Out)"
+  uo[1]: "DEBUG_STATE_LOAD"
+  uo[2]: "DEBUG_STATE_STREAM"
+  uo[3]: "unused"
+  uo[4]: "unused"
+  uo[5]: "unused"
+  uo[6]: "unused"
+  uo[7]: "unused"
+
+  uio[0]: "unused"
+  uio[1]: "unused"
+  uio[2]: "unused"
+  uio[3]: "unused"
+  uio[4]: "unused"
+  uio[5]: "unused"
+  uio[6]: "unused"
+  uio[7]: "unused"
+
+yaml_version: 6
