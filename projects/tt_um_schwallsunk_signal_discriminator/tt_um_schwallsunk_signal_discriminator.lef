@@ -438,9 +438,9 @@ MACRO tt_um_schwallsunk_signal_discriminator
       LAYER Metal1 ;
         RECT 2.880 3.560 199.200 151.420 ;
       LAYER Metal2 ;
-        RECT 7.575 3.635 198.825 153.865 ;
+        RECT 8.055 3.635 198.825 154.705 ;
       LAYER Metal3 ;
-        RECT 7.535 3.680 198.865 153.825 ;
+        RECT 8.015 3.680 198.865 154.660 ;
       LAYER Metal4 ;
         RECT 15.560 153.770 29.400 153.980 ;
         RECT 30.120 153.770 33.240 153.980 ;
