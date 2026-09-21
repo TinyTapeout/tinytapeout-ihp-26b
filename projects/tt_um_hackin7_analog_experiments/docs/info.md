@@ -11,8 +11,8 @@ You can also include images in this folder and reference them in the markdown. E
 
 Hierarchical Tiny Tapeout top with two leaves:
 
-- Analog ring oscillator (`ring_oscillator` GDS macro). CMOS output `out` is
-  auto-routed as `clk_ring`.
+- Analog ring oscillator (`ring_oscillator` GDS macro, 5-stage discrete
+  SG13G2 MOS, ~100 MHz). CMOS output `out` is auto-routed as `clk_ring`.
 - 64-bit digital counter (`digital_counter` RTL). `ui_in[0]` enables counting,
   `ui_in[4:2]` selects which counter byte drives `uo_out`.
 
