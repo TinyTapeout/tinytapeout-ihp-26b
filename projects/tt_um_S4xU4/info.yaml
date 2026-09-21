@@ -5,7 +5,7 @@ project:
   discord:      "the_yasep"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
   description:  "4×4 bit multiplier with Tiny Tapeout in Verilog on IHP SG13G2"      # One line description of what your project does
   language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
-  clock_hz:     100000000       # Clock frequency in Hz (or 0 if not applicable)
+  clock_hz:     200000000       # Clock frequency in Hz (or 0 if not applicable)
 
   # How many tiles your design occupies? A single tile is about 167x108 uM.
   tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
@@ -19,6 +19,7 @@ project:
   source_files:
     - "project.v"
     - "mulS4xU4.v"
+    - "Add8x3.v"
     - "FullAdder_sg13.v"
     - "sg13_cells_sg13g2.v" # change to target techno
 
@@ -26,24 +27,24 @@ project:
 # This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
 pinout:
   # Inputs
-  ui[0]: "S0"
-  ui[1]: "S1"
-  ui[2]: "S2"
-  ui[3]: "S3"
-  ui[4]: "U0"
-  ui[5]: "U1"
-  ui[6]: "U2"
-  ui[7]: "U3"
+  ui[0]: "Signed operand bit 0"
+  ui[1]: "Signed operand bit 1"
+  ui[2]: "Signed operand bit 2"
+  ui[3]: "Signed operand bit 3"
+  ui[4]: "Unsigned operand bit 0"
+  ui[5]: "Unsigned operand bit 1"
+  ui[6]: "Unsigned operand bit 2"
+  ui[7]: "Unsigned operand bit 3"
 
   # Outputs
-  uo[0]: "P0"
-  uo[1]: "P1"
-  uo[2]: "P2"
-  uo[3]: "P3"
-  uo[4]: "P4"
-  uo[5]: "P5"
-  uo[6]: "P6"
-  uo[7]: "P7"
+  uo[0]: "Sum bit 0"
+  uo[1]: "Sum bit 1"
+  uo[2]: "Sum bit 2"
+  uo[3]: "Sum bit 3"
+  uo[4]: "Sum bit 4"
+  uo[5]: "Sum bit 5"
+  uo[6]: "Sum bit 6"
+  uo[7]: "Sum bit 7"
 
   # Bidirectional pins
   uio[0]: "Sen0"
@@ -52,8 +53,8 @@ pinout:
   uio[3]: "Uen0"
   uio[4]: "Uen1"
   uio[5]: "Uen2"
-  uio[6]: ""
-  uio[7]: ""
+  uio[6]: "Sum bit 8"
+  uio[7]: "Sum bit 9"
 
 # Do not change!
 yaml_version: 6
