@@ -1,47 +1,47 @@
-165. Printing statistics.
+173. Printing statistics.
 
 === tt_um_romd_uart_loader ===
 
         +----------Local Count, excluding submodules.
         |        +-Local Area, excluding submodules.
         |        | 
-     5695        - wires
-     5730        - wire bits
-      684        - public wires
-      719        - public wire bits
+     5869        - wires
+     5904        - wire bits
+      683        - public wires
+      718        - public wire bits
         8        - ports
        43        - port bits
-     5711  8.1E+04 cells
-       73  927.158   sg13g2_a21o_1
-      579 5.25E+03   sg13g2_a21oi_1
-      118 1.71E+03   sg13g2_a221oi_1
-      536  5814.85   sg13g2_a22oi_1
-       99  898.128   sg13g2_and2_1
-       18  228.614   sg13g2_and3_1
-       14  203.213   sg13g2_and4_1
+     5885 8.25E+04 cells
+       78  990.662   sg13g2_a21o_1
+      692 6.28E+03   sg13g2_a21oi_1
+      138    2E+03   sg13g2_a221oi_1
+      419 4.55E+03   sg13g2_a22oi_1
+      105   952.56   sg13g2_and2_1
+       17  215.914   sg13g2_and3_1
+       23   333.85   sg13g2_and4_1
         4    29.03   sg13g2_buf_1
-      726 3.56E+04   sg13g2_dfrbpq_1
-      326 1.77E+03   sg13g2_inv_1
-       50    907.2   sg13g2_mux2_1
-       12  457.229   sg13g2_mux4_1
-      621  4506.97   sg13g2_nand2_1
-      109  988.848   sg13g2_nand2b_1
-      139 1.26E+03   sg13g2_nand3_1
-        9  114.307   sg13g2_nand3b_1
-       64   696.73   sg13g2_nand4_1
-      388 2.82E+03   sg13g2_nor2_1
-       58  526.176   sg13g2_nor2b_1
-      145  1315.44   sg13g2_nor3_1
-       57  620.525   sg13g2_nor4_1
-      934 8.47E+03   sg13g2_o21ai_1
-       47  426.384   sg13g2_or2_1
-       10  127.008   sg13g2_or3_1
-        4   58.061   sg13g2_or4_1
-      404  2932.07   sg13g2_tiehi
+      723 3.54E+04   sg13g2_dfrbpq_1
+      341 1.86E+03   sg13g2_inv_1
+       51  925.344   sg13g2_mux2_1
+        8  304.819   sg13g2_mux4_1
+      624 4.53E+03   sg13g2_nand2_1
+      104  943.488   sg13g2_nand2b_1
+      143  1.3E+03   sg13g2_nand3_1
+       16  203.213   sg13g2_nand3b_1
+      135 1.47E+03   sg13g2_nand4_1
+      426 3.09E+03   sg13g2_nor2_1
+       53  480.816   sg13g2_nor2b_1
+      179 1.62E+03   sg13g2_nor3_1
+       69  751.162   sg13g2_nor4_1
+      885  8028.72   sg13g2_o21ai_1
+       40   362.88   sg13g2_or2_1
+       17  215.914   sg13g2_or3_1
+        6   87.091   sg13g2_or4_1
+      403 2.92E+03   sg13g2_tiehi
        10   72.576   sg13g2_tielo
-       81 1.18E+03   sg13g2_xnor2_1
-       76  1.1E+03   sg13g2_xor2_1
+      112 1.63E+03   sg13g2_xnor2_1
+       64  928.973   sg13g2_xor2_1
 
-   Chip area for module '\tt_um_romd_uart_loader': 80985.441600
-     of which used for sequential elements: 35565.868800 (43.92%)
+   Chip area for module '\tt_um_romd_uart_loader': 82490.373000
+     of which used for sequential elements: 35418.902400 (42.94%)
 
