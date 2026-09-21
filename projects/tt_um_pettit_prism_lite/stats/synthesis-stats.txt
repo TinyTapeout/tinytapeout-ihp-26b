@@ -1,0 +1,53 @@
+210. Printing statistics.
+
+=== tt_um_pettit_prism_lite ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+    21373        - wires
+    21408        - wire bits
+     4666        - public wires
+     4701        - public wire bits
+        8        - ports
+       43        - port bits
+    21141 3.22E+05 cells
+        4        -   CFGMEM_IHP16
+        4        -   CFGMEM_IHP_LEFT16
+      377 4.79E+03   sg13g2_a21o_1
+     1983  1.8E+04   sg13g2_a21oi_1
+      450  6531.84   sg13g2_a221oi_1
+     1811 1.96E+04   sg13g2_a22oi_1
+      581 5.27E+03   sg13g2_and2_1
+       68  863.654   sg13g2_and3_1
+       70 1.02E+03   sg13g2_and4_1
+       42  304.819   sg13g2_buf_1
+     1978 9.69E+04   sg13g2_dfrbpq_1
+     1778 5.48E+04   sg13g2_dlhq_1
+      802 4.37E+03   sg13g2_inv_1
+      601 1.09E+04   sg13g2_mux2_1
+      132 5.03E+03   sg13g2_mux4_1
+     1638 1.19E+04   sg13g2_nand2_1
+      505  4581.36   sg13g2_nand2b_1
+      514 4.66E+03   sg13g2_nand3_1
+       49  622.339   sg13g2_nand3b_1
+      362 3.94E+03   sg13g2_nand4_1
+     1500  10886.4   sg13g2_nor2_1
+      436 3.96E+03   sg13g2_nor2b_1
+      686 6.22E+03   sg13g2_nor3_1
+      255 2.78E+03   sg13g2_nor4_1
+     1984  1.8E+04   sg13g2_o21ai_1
+      196 1.78E+03   sg13g2_or2_1
+      156  1.7E+03   sg13g2_or2_2
+       47  596.938   sg13g2_or3_1
+       27   391.91   sg13g2_or4_1
+     1208 8.77E+03   sg13g2_tiehi
+      665 9.65E+03   sg13g2_xnor2_1
+      232 3.37E+03   sg13g2_xor2_1
+
+   Area for cell type \CFGMEM_IHP_LEFT16 is unknown!
+   Area for cell type \CFGMEM_IHP16 is unknown!
+
+   Chip area for module '\tt_um_pettit_prism_lite': 322241.560200
+     of which used for sequential elements: 96899.846400 (30.07%)
+
