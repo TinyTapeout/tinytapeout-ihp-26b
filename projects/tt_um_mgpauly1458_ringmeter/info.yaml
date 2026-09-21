@@ -1,0 +1,83 @@
+# Tiny Tapeout project information
+project:
+  title:        "Ring oscillator frequency meter"      # Project title
+  author:       "Maxwell Pauly"      # Your name
+  discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "Reciprocal frequency counter that measures any of eight on-chip ring oscillators (incl. a trimmable one) and reports the count over the pins"      # One line description of what your project does
+  language:     "Verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  clock_hz:     50000000       # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? On ihp-sg13g2 a 1x1 tile is 202.08 x 154.98 uM.
+  # 1x2 is the two-tile option: 202.08 x 313.74 uM (one wide, two tall).
+  tiles: "1x2"          # Valid values for analog projects: 1x2, 2x2
+
+  # How many analog pins does your project use? Must be used sequentially
+  # from ua[0]; only the pins declared here get connected to the pads.
+  #
+  # Zero: this is a DIGITAL submission. The analog ring (slot 7) will be a
+  # hard macro inside the tile; nothing reaches a ua[] pad.
+  analog_pins: 0
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_mgpauly1458_ringmeter"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "project.v"
+    - "regfile.v"
+    - "measure_core.v"
+    - "cdc_sync.v"
+    - "ring_divider.v"
+    - "ring_mux.v"
+    - "rings/ring_bank.v"
+    - "rings/ring_21_min.v"
+    - "rings/ring_21_hd.v"
+    - "rings/ring_11_min.v"
+    - "rings/ring_tap.v"
+    - "rings/tt_analog_ring.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "ADDR[0] - write address"
+  ui[1]: "ADDR[1] - write address"
+  ui[2]: "ADDR[2] - write address"
+  ui[3]: "WE - write strobe, rising edge writes WDATA to ADDR"
+  ui[4]: "RSEL[0] - read select"
+  ui[5]: "RSEL[1] - read select"
+  ui[6]: "RSEL[2] - read select"
+  ui[7]: ""
+
+  # Outputs
+  uo[0]: "RDATA[0] - byte selected by RSEL"
+  uo[1]: "RDATA[1] - byte selected by RSEL"
+  uo[2]: "RDATA[2] - byte selected by RSEL"
+  uo[3]: "RDATA[3] - byte selected by RSEL"
+  uo[4]: "RDATA[4] - byte selected by RSEL"
+  uo[5]: "RDATA[5] - byte selected by RSEL"
+  uo[6]: "RDATA[6] - byte selected by RSEL"
+  uo[7]: "RDATA[7] - byte selected by RSEL"
+
+  # Bidirectional pins
+  uio[0]: "WDATA[0] - write data (input)"
+  uio[1]: "WDATA[1] - write data (input)"
+  uio[2]: "WDATA[2] - write data (input)"
+  uio[3]: "WDATA[3] - write data (input)"
+  uio[4]: "WDATA[4] - write data (input)"
+  uio[5]: "WDATA[5] - write data (input)"
+  uio[6]: "WDATA[6] - write data (input)"
+  uio[7]: "WDATA[7] - write data (input)"
+
+  # Analog pins - make sure to also set "analog_pins" above, else the pins won't be connected
+  ua[0]: ""
+  ua[1]: ""
+  ua[2]: ""
+  ua[3]: ""
+  ua[4]: ""
+  ua[5]: ""
+
+# Do not change!
+yaml_version: 6
