@@ -2,11 +2,11 @@ VERSION 5.7 ;
   NOWIREEXTENSIONATPIN ON ;
   DIVIDERCHAR "/" ;
   BUSBITCHARS "[]" ;
-MACRO tt_um_voice_calculator_mauro_ciccone
+MACRO tt_um_snn_voice_calculator_mauro_ciccone
   CLASS BLOCK ;
-  FOREIGN tt_um_voice_calculator_mauro_ciccone ;
+  FOREIGN tt_um_snn_voice_calculator_mauro_ciccone ;
   ORIGIN 0.000 0.000 ;
-  SIZE 1289.280 BY 313.740 ;
+  SIZE 854.400 BY 313.740 ;
   PIN VGND
     DIRECTION INOUT ;
     USE GROUND ;
@@ -97,50 +97,6 @@ MACRO tt_um_voice_calculator_mauro_ciccone
     PORT
       LAYER TopMetal1 ;
         RECT 837.850 3.150 840.050 310.180 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 876.720 3.150 878.920 310.180 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 915.590 3.150 917.790 310.180 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 954.460 3.150 956.660 310.180 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 993.330 3.150 995.530 310.180 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 1032.200 3.150 1034.400 310.180 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 1071.070 3.150 1073.270 310.180 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 1109.940 3.150 1112.140 310.180 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 1148.810 3.150 1151.010 310.180 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 1187.680 3.150 1189.880 310.180 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 1226.550 3.150 1228.750 310.180 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 1265.420 3.150 1267.620 310.180 ;
     END
   END VGND
   PIN VPWR
@@ -234,54 +190,11 @@ MACRO tt_um_voice_calculator_mauro_ciccone
       LAYER TopMetal1 ;
         RECT 831.650 3.560 833.850 310.590 ;
     END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 870.520 3.560 872.720 310.590 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 909.390 3.560 911.590 310.590 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 948.260 3.560 950.460 310.590 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 987.130 3.560 989.330 310.590 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 1026.000 3.560 1028.200 310.590 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 1064.870 3.560 1067.070 310.590 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 1103.740 3.560 1105.940 310.590 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 1142.610 3.560 1144.810 310.590 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 1181.480 3.560 1183.680 310.590 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 1220.350 3.560 1222.550 310.590 ;
-    END
-    PORT
-      LAYER TopMetal1 ;
-        RECT 1259.220 3.560 1261.420 310.590 ;
-    END
   END VPWR
   PIN clk
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 1.450800 ;
     PORT
       LAYER Metal4 ;
         RECT 187.050 312.740 187.350 313.740 ;
@@ -298,6 +211,7 @@ MACRO tt_um_voice_calculator_mauro_ciccone
   PIN rst_n
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNAGATEAREA 0.180700 ;
     PORT
       LAYER Metal4 ;
         RECT 183.210 312.740 183.510 313.740 ;
@@ -315,7 +229,6 @@ MACRO tt_um_voice_calculator_mauro_ciccone
   PIN ui_in[1]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.180700 ;
     PORT
       LAYER Metal4 ;
         RECT 175.530 312.740 175.830 313.740 ;
@@ -324,7 +237,6 @@ MACRO tt_um_voice_calculator_mauro_ciccone
   PIN ui_in[2]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.180700 ;
     PORT
       LAYER Metal4 ;
         RECT 171.690 312.740 171.990 313.740 ;
@@ -333,7 +245,6 @@ MACRO tt_um_voice_calculator_mauro_ciccone
   PIN ui_in[3]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.180700 ;
     PORT
       LAYER Metal4 ;
         RECT 167.850 312.740 168.150 313.740 ;
@@ -342,7 +253,6 @@ MACRO tt_um_voice_calculator_mauro_ciccone
   PIN ui_in[4]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.180700 ;
     PORT
       LAYER Metal4 ;
         RECT 164.010 312.740 164.310 313.740 ;
@@ -351,7 +261,6 @@ MACRO tt_um_voice_calculator_mauro_ciccone
   PIN ui_in[5]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.180700 ;
     PORT
       LAYER Metal4 ;
         RECT 160.170 312.740 160.470 313.740 ;
@@ -360,7 +269,6 @@ MACRO tt_um_voice_calculator_mauro_ciccone
   PIN ui_in[6]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.180700 ;
     PORT
       LAYER Metal4 ;
         RECT 156.330 312.740 156.630 313.740 ;
@@ -369,7 +277,6 @@ MACRO tt_um_voice_calculator_mauro_ciccone
   PIN ui_in[7]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.180700 ;
     PORT
       LAYER Metal4 ;
         RECT 152.490 312.740 152.790 313.740 ;
@@ -378,7 +285,6 @@ MACRO tt_um_voice_calculator_mauro_ciccone
   PIN uio_in[0]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.180700 ;
     PORT
       LAYER Metal4 ;
         RECT 148.650 312.740 148.950 313.740 ;
@@ -387,7 +293,6 @@ MACRO tt_um_voice_calculator_mauro_ciccone
   PIN uio_in[1]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.180700 ;
     PORT
       LAYER Metal4 ;
         RECT 144.810 312.740 145.110 313.740 ;
@@ -396,7 +301,6 @@ MACRO tt_um_voice_calculator_mauro_ciccone
   PIN uio_in[2]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.180700 ;
     PORT
       LAYER Metal4 ;
         RECT 140.970 312.740 141.270 313.740 ;
@@ -405,7 +309,6 @@ MACRO tt_um_voice_calculator_mauro_ciccone
   PIN uio_in[3]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.180700 ;
     PORT
       LAYER Metal4 ;
         RECT 137.130 312.740 137.430 313.740 ;
@@ -414,7 +317,6 @@ MACRO tt_um_voice_calculator_mauro_ciccone
   PIN uio_in[4]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.180700 ;
     PORT
       LAYER Metal4 ;
         RECT 133.290 312.740 133.590 313.740 ;
@@ -423,7 +325,6 @@ MACRO tt_um_voice_calculator_mauro_ciccone
   PIN uio_in[5]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.180700 ;
     PORT
       LAYER Metal4 ;
         RECT 129.450 312.740 129.750 313.740 ;
@@ -432,7 +333,6 @@ MACRO tt_um_voice_calculator_mauro_ciccone
   PIN uio_in[6]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.180700 ;
     PORT
       LAYER Metal4 ;
         RECT 125.610 312.740 125.910 313.740 ;
@@ -441,7 +341,6 @@ MACRO tt_um_voice_calculator_mauro_ciccone
   PIN uio_in[7]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.180700 ;
     PORT
       LAYER Metal4 ;
         RECT 121.770 312.740 122.070 313.740 ;
@@ -450,7 +349,7 @@ MACRO tt_um_voice_calculator_mauro_ciccone
   PIN uio_oe[0]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.299200 ;
+    ANTENNADIFFAREA 0.392700 ;
     PORT
       LAYER Metal4 ;
         RECT 56.490 312.740 56.790 313.740 ;
@@ -459,7 +358,7 @@ MACRO tt_um_voice_calculator_mauro_ciccone
   PIN uio_oe[1]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.299200 ;
+    ANTENNADIFFAREA 0.392700 ;
     PORT
       LAYER Metal4 ;
         RECT 52.650 312.740 52.950 313.740 ;
@@ -468,7 +367,7 @@ MACRO tt_um_voice_calculator_mauro_ciccone
   PIN uio_oe[2]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.299200 ;
+    ANTENNADIFFAREA 0.392700 ;
     PORT
       LAYER Metal4 ;
         RECT 48.810 312.740 49.110 313.740 ;
@@ -477,7 +376,7 @@ MACRO tt_um_voice_calculator_mauro_ciccone
   PIN uio_oe[3]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.299200 ;
+    ANTENNADIFFAREA 0.392700 ;
     PORT
       LAYER Metal4 ;
         RECT 44.970 312.740 45.270 313.740 ;
@@ -486,7 +385,7 @@ MACRO tt_um_voice_calculator_mauro_ciccone
   PIN uio_oe[4]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.299200 ;
+    ANTENNADIFFAREA 0.392700 ;
     PORT
       LAYER Metal4 ;
         RECT 41.130 312.740 41.430 313.740 ;
@@ -495,7 +394,7 @@ MACRO tt_um_voice_calculator_mauro_ciccone
   PIN uio_oe[5]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.299200 ;
+    ANTENNADIFFAREA 0.392700 ;
     PORT
       LAYER Metal4 ;
         RECT 37.290 312.740 37.590 313.740 ;
@@ -504,7 +403,7 @@ MACRO tt_um_voice_calculator_mauro_ciccone
   PIN uio_oe[6]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.299200 ;
+    ANTENNADIFFAREA 0.392700 ;
     PORT
       LAYER Metal4 ;
         RECT 33.450 312.740 33.750 313.740 ;
@@ -513,7 +412,7 @@ MACRO tt_um_voice_calculator_mauro_ciccone
   PIN uio_oe[7]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.299200 ;
+    ANTENNADIFFAREA 0.392700 ;
     PORT
       LAYER Metal4 ;
         RECT 29.610 312.740 29.910 313.740 ;
@@ -522,7 +421,7 @@ MACRO tt_um_voice_calculator_mauro_ciccone
   PIN uio_out[0]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.299200 ;
+    ANTENNADIFFAREA 0.708600 ;
     PORT
       LAYER Metal4 ;
         RECT 87.210 312.740 87.510 313.740 ;
@@ -531,7 +430,7 @@ MACRO tt_um_voice_calculator_mauro_ciccone
   PIN uio_out[1]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.299200 ;
+    ANTENNADIFFAREA 0.708600 ;
     PORT
       LAYER Metal4 ;
         RECT 83.370 312.740 83.670 313.740 ;
@@ -540,7 +439,7 @@ MACRO tt_um_voice_calculator_mauro_ciccone
   PIN uio_out[2]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.299200 ;
+    ANTENNADIFFAREA 0.708600 ;
     PORT
       LAYER Metal4 ;
         RECT 79.530 312.740 79.830 313.740 ;
@@ -549,7 +448,7 @@ MACRO tt_um_voice_calculator_mauro_ciccone
   PIN uio_out[3]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.299200 ;
+    ANTENNADIFFAREA 0.708600 ;
     PORT
       LAYER Metal4 ;
         RECT 75.690 312.740 75.990 313.740 ;
@@ -558,7 +457,7 @@ MACRO tt_um_voice_calculator_mauro_ciccone
   PIN uio_out[4]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.299200 ;
+    ANTENNADIFFAREA 0.708600 ;
     PORT
       LAYER Metal4 ;
         RECT 71.850 312.740 72.150 313.740 ;
@@ -567,7 +466,7 @@ MACRO tt_um_voice_calculator_mauro_ciccone
   PIN uio_out[5]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.299200 ;
+    ANTENNADIFFAREA 0.708600 ;
     PORT
       LAYER Metal4 ;
         RECT 68.010 312.740 68.310 313.740 ;
@@ -576,7 +475,7 @@ MACRO tt_um_voice_calculator_mauro_ciccone
   PIN uio_out[6]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.299200 ;
+    ANTENNADIFFAREA 0.708600 ;
     PORT
       LAYER Metal4 ;
         RECT 64.170 312.740 64.470 313.740 ;
@@ -585,7 +484,7 @@ MACRO tt_um_voice_calculator_mauro_ciccone
   PIN uio_out[7]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.299200 ;
+    ANTENNADIFFAREA 0.706400 ;
     PORT
       LAYER Metal4 ;
         RECT 60.330 312.740 60.630 313.740 ;
@@ -594,7 +493,7 @@ MACRO tt_um_voice_calculator_mauro_ciccone
   PIN uo_out[0]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.706400 ;
+    ANTENNADIFFAREA 0.649200 ;
     PORT
       LAYER Metal4 ;
         RECT 117.930 312.740 118.230 313.740 ;
@@ -603,7 +502,7 @@ MACRO tt_um_voice_calculator_mauro_ciccone
   PIN uo_out[1]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.706400 ;
+    ANTENNADIFFAREA 0.662000 ;
     PORT
       LAYER Metal4 ;
         RECT 114.090 312.740 114.390 313.740 ;
@@ -612,7 +511,7 @@ MACRO tt_um_voice_calculator_mauro_ciccone
   PIN uo_out[2]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.706400 ;
+    ANTENNADIFFAREA 0.662000 ;
     PORT
       LAYER Metal4 ;
         RECT 110.250 312.740 110.550 313.740 ;
@@ -621,7 +520,7 @@ MACRO tt_um_voice_calculator_mauro_ciccone
   PIN uo_out[3]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.733200 ;
+    ANTENNADIFFAREA 0.662000 ;
     PORT
       LAYER Metal4 ;
         RECT 106.410 312.740 106.710 313.740 ;
@@ -630,7 +529,7 @@ MACRO tt_um_voice_calculator_mauro_ciccone
   PIN uo_out[4]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.733200 ;
+    ANTENNADIFFAREA 0.649200 ;
     PORT
       LAYER Metal4 ;
         RECT 102.570 312.740 102.870 313.740 ;
@@ -639,7 +538,7 @@ MACRO tt_um_voice_calculator_mauro_ciccone
   PIN uo_out[5]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.733200 ;
+    ANTENNADIFFAREA 0.662000 ;
     PORT
       LAYER Metal4 ;
         RECT 98.730 312.740 99.030 313.740 ;
@@ -648,7 +547,7 @@ MACRO tt_um_voice_calculator_mauro_ciccone
   PIN uo_out[6]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.733200 ;
+    ANTENNADIFFAREA 0.958400 ;
     PORT
       LAYER Metal4 ;
         RECT 94.890 312.740 95.190 313.740 ;
@@ -657,7 +556,7 @@ MACRO tt_um_voice_calculator_mauro_ciccone
   PIN uo_out[7]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.733200 ;
+    ANTENNADIFFAREA 0.758600 ;
     PORT
       LAYER Metal4 ;
         RECT 91.050 312.740 91.350 313.740 ;
@@ -665,13 +564,13 @@ MACRO tt_um_voice_calculator_mauro_ciccone
   END uo_out[7]
   OBS
       LAYER GatPoly ;
-        RECT 2.880 3.630 1286.400 310.110 ;
+        RECT 2.880 3.630 851.520 310.110 ;
       LAYER Metal1 ;
-        RECT 2.880 3.560 1286.400 310.180 ;
+        RECT 2.880 3.560 851.520 310.180 ;
       LAYER Metal2 ;
-        RECT 15.560 3.635 1267.440 312.205 ;
+        RECT 3.255 3.635 839.870 311.365 ;
       LAYER Metal3 ;
-        RECT 15.515 3.680 1267.485 312.165 ;
+        RECT 3.215 3.680 839.915 311.325 ;
       LAYER Metal4 ;
         RECT 15.560 312.530 29.400 312.740 ;
         RECT 30.120 312.530 33.240 312.740 ;
@@ -716,11 +615,11 @@ MACRO tt_um_voice_calculator_mauro_ciccone
         RECT 179.880 312.530 183.000 312.740 ;
         RECT 183.720 312.530 186.840 312.740 ;
         RECT 187.560 312.530 190.680 312.740 ;
-        RECT 191.400 312.530 1267.440 312.740 ;
-        RECT 15.560 3.635 1267.440 312.530 ;
+        RECT 191.400 312.530 839.870 312.740 ;
+        RECT 15.560 3.635 839.870 312.530 ;
       LAYER Metal5 ;
-        RECT 15.515 3.470 1267.485 310.270 ;
+        RECT 15.515 3.470 839.915 310.270 ;
   END
-END tt_um_voice_calculator_mauro_ciccone
+END tt_um_snn_voice_calculator_mauro_ciccone
 END LIBRARY
 
