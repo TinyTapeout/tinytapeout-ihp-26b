@@ -1,0 +1,51 @@
+# Tiny Tapeout project information
+
+project:
+  title: "Neurona LIF con Aprendizaje STDP Dinamico (IEEE)"
+  author: "Casandra Saray Galiano Quillahuaman"
+  discord: "casandra6171"
+  description: "Neurona artificial biologica con plasticidad configurable y monitoreo de peso en tiempo real. — Equipo Triada CEG"
+  language: "Verilog"
+  clock_hz: 10000000
+  tiles: "1x1"
+  top_module: "tt_um_cass_s_ui_neuron_lif"
+  # Source files must be in ./src
+  source_files:
+    - "project.v"
+    - "neuron_lif.v"
+    - "stdp_core.v"
+
+# Pinout
+pinout:
+  # Inputs
+  ui[0]: "spike_pre"
+  ui[1]: "leak[0]"
+  ui[2]: "leak[1]"
+  ui[3]: "leak[2]"
+  ui[4]: "leak[3]"
+  ui[5]: "stdp_window[0]"
+  ui[6]: "stdp_window[1]"
+  ui[7]: "stdp_window[2]"
+
+  # Outputs
+  uo[0]: "spike_post"
+  uo[1]: "weight[0]"
+  uo[2]: "weight[1]"
+  uo[3]: "weight[2]"
+  uo[4]: "weight[3]"
+  uo[5]: "weight[4]"
+  uo[6]: "weight[5]"
+  uo[7]: "unused"
+
+  # Bidirectional pins
+  uio[0]: "threshold[0]"
+  uio[1]: "threshold[1]"
+  uio[2]: "threshold[2]"
+  uio[3]: "threshold[3]"
+  uio[4]: ""
+  uio[5]: ""
+  uio[6]: ""
+  uio[7]: ""
+
+# Do not change!
+yaml_version: 6
