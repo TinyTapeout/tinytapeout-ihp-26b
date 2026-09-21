@@ -1,0 +1,46 @@
+149. Printing statistics.
+
+=== tt_um_vga_glyph_mode_CDM_Matrix ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+      870        - wires
+      905        - wire bits
+       42        - public wires
+       77        - public wire bits
+        8        - ports
+       43        - port bits
+      886 9.93E+03 cells
+       27  342.922   sg13g2_a21o_1
+       95   861.84   sg13g2_a21oi_1
+       21  304.819   sg13g2_a221oi_1
+       20  216.972   sg13g2_a22oi_1
+       41  371.952   sg13g2_and2_1
+       11  139.709   sg13g2_and3_1
+       10  145.152   sg13g2_and4_1
+        2   14.515   sg13g2_buf_1
+       34 1.67E+03   sg13g2_dfrbpq_1
+       33  179.626   sg13g2_inv_1
+       14  254.016   sg13g2_mux2_1
+       84  609.638   sg13g2_nand2_1
+       28  254.016   sg13g2_nand2b_1
+       39  353.808   sg13g2_nand3_1
+       11  139.709   sg13g2_nand3b_1
+       19  206.842   sg13g2_nand4_1
+       87  631.411   sg13g2_nor2_1
+       16  145.152   sg13g2_nor2b_1
+       34  308.448   sg13g2_nor3_1
+       12  130.637   sg13g2_nor4_1
+      104  943.488   sg13g2_o21ai_1
+       15   136.08   sg13g2_or2_1
+        6   76.205   sg13g2_or3_1
+        1   14.515   sg13g2_or4_1
+       23  166.925   sg13g2_tiehi
+       16  116.122   sg13g2_tielo
+       56  812.851   sg13g2_xnor2_1
+       27   391.91   sg13g2_xor2_1
+
+   Chip area for module '\tt_um_vga_glyph_mode_CDM_Matrix': 9934.898400
+     of which used for sequential elements: 1665.619200 (16.77%)
+
