@@ -83,7 +83,7 @@ MACRO tt_um_schwallsunk_signal_discriminator
   PIN ui_in[0]
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.180700 ;
+    ANTENNAGATEAREA 1.450800 ;
     PORT
       LAYER Metal4 ;
         RECT 179.370 153.980 179.670 154.980 ;
@@ -308,7 +308,7 @@ MACRO tt_um_schwallsunk_signal_discriminator
   PIN uio_out[2]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.632400 ;
+    ANTENNADIFFAREA 0.662000 ;
     PORT
       LAYER Metal4 ;
         RECT 79.530 153.980 79.830 154.980 ;
@@ -344,7 +344,7 @@ MACRO tt_um_schwallsunk_signal_discriminator
   PIN uio_out[6]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
-    ANTENNADIFFAREA 0.632400 ;
+    ANTENNADIFFAREA 0.662000 ;
     PORT
       LAYER Metal4 ;
         RECT 64.170 153.980 64.470 154.980 ;
@@ -437,9 +437,9 @@ MACRO tt_um_schwallsunk_signal_discriminator
       LAYER Metal1 ;
         RECT 2.880 3.560 199.200 151.420 ;
       LAYER Metal2 ;
-        RECT 15.560 3.635 194.985 153.865 ;
+        RECT 5.655 3.635 200.265 153.865 ;
       LAYER Metal3 ;
-        RECT 15.515 3.680 195.025 153.825 ;
+        RECT 5.615 3.680 200.305 153.825 ;
       LAYER Metal4 ;
         RECT 15.560 153.770 29.400 153.980 ;
         RECT 30.120 153.770 33.240 153.980 ;
@@ -482,7 +482,9 @@ MACRO tt_um_schwallsunk_signal_discriminator
         RECT 172.200 153.770 175.320 153.980 ;
         RECT 176.040 153.770 179.160 153.980 ;
         RECT 179.880 153.770 183.000 153.980 ;
-        RECT 15.560 3.635 183.460 153.770 ;
+        RECT 183.720 153.770 186.840 153.980 ;
+        RECT 187.560 153.770 190.660 153.980 ;
+        RECT 15.560 3.635 190.660 153.770 ;
       LAYER Metal5 ;
         RECT 15.515 3.470 179.125 151.510 ;
   END
