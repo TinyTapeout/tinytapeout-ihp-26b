@@ -5,43 +5,43 @@
         +----------Local Count, excluding submodules.
         |        +-Local Area, excluding submodules.
         |        | 
-     4928        - wires
-     4963        - wire bits
-     1032        - public wires
-     1067        - public wire bits
+     4891        - wires
+     4926        - wire bits
+     1031        - public wires
+     1066        - public wire bits
         8        - ports
        43        - port bits
-     4944 8.65E+04 cells
-       29  368.323   sg13g2_a21o_1
-      331    3E+03   sg13g2_a21oi_1
-       56  812.851   sg13g2_a221oi_1
-      408 4.43E+03   sg13g2_a22oi_1
-       79  716.688   sg13g2_and2_1
-       14  177.811   sg13g2_and3_1
-       14  203.213   sg13g2_and4_1
+     4907 8.63E+04 cells
+       20  254.016   sg13g2_a21o_1
+      305  2766.96   sg13g2_a21oi_1
+       65  943.488   sg13g2_a221oi_1
+      406  4.4E+03   sg13g2_a22oi_1
+       60   544.32   sg13g2_and2_1
+       21  266.717   sg13g2_and3_1
+       15  217.728   sg13g2_and4_1
         7   50.803   sg13g2_buf_1
-     1038 5.09E+04   sg13g2_dfrbpq_1
-      132  718.502   sg13g2_inv_1
-      105  1905.12   sg13g2_mux2_1
+     1037 5.08E+04   sg13g2_dfrbpq_1
+      121  658.627   sg13g2_inv_1
+      113 2.05E+03   sg13g2_mux2_1
         1   38.102   sg13g2_mux4_1
-      835 6.06E+03   sg13g2_nand2_1
-       48  435.456   sg13g2_nand2b_1
-       74  671.328   sg13g2_nand3_1
-        8  101.606   sg13g2_nand3b_1
-      114  1241.05   sg13g2_nand4_1
-      375   2721.6   sg13g2_nor2_1
-       57  517.104   sg13g2_nor2b_1
-      105   952.56   sg13g2_nor3_1
-      112 1.22E+03   sg13g2_nor4_1
-      800   7257.6   sg13g2_o21ai_1
-       27  244.944   sg13g2_or2_1
-        4   50.803   sg13g2_or3_1
+      852 6.18E+03   sg13g2_nand2_1
+       62  562.464   sg13g2_nand2b_1
+       78  707.616   sg13g2_nand3_1
+        5   63.504   sg13g2_nand3b_1
+      111  1208.39   sg13g2_nand4_1
+      351 2.55E+03   sg13g2_nor2_1
+       64  580.608   sg13g2_nor2b_1
+       97  879.984   sg13g2_nor3_1
+      100  1088.64   sg13g2_nor4_1
+      810  7348.32   sg13g2_o21ai_1
+       23  208.656   sg13g2_or2_1
+        5   63.504   sg13g2_or3_1
         3   43.546   sg13g2_or4_1
-       95  689.472   sg13g2_tiehi
+       94  682.214   sg13g2_tiehi
         4    29.03   sg13g2_tielo
-       53  769.306   sg13g2_xnor2_1
-       16  232.243   sg13g2_xor2_1
+       60  870.912   sg13g2_xnor2_1
+       17  246.758   sg13g2_xor2_1
 
-   Chip area for module '\tt_um_llr_hepiarisc': 86507.870400
-     of which used for sequential elements: 50850.374400 (58.78%)
+   Chip area for module '\tt_um_llr_hepiarisc': 86311.990800
+     of which used for sequential elements: 50801.385600 (58.86%)
 
