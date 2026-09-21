@@ -1,0 +1,43 @@
+# Tiny Tapeout project information
+project:
+  title:        "UART SPI RAM Loader"
+  author:       "romd"
+  discord:      ""
+  description:  "CRC-protected UART loader for a 64 KiB SPI SRAM"
+  language:     "Verilog"
+  clock_hz:     50000000
+  tiles:        "2x2"
+  top_module:   "tt_um_romd_uart_loader"
+  source_files:
+    - "uart.v"
+    - "uart_loader.v"
+    - "spi_sram.v"
+    - "project.v"
+
+pinout:
+  ui[0]: "Unused"
+  ui[1]: "Unused"
+  ui[2]: "Unused"
+  ui[3]: "UART RX"
+  ui[4]: "Unused"
+  ui[5]: "Unused"
+  ui[6]: "Unused"
+  ui[7]: "Unused"
+  uo[0]: "SPI memory ready"
+  uo[1]: "Memory transaction active"
+  uo[2]: "UART framing error"
+  uo[3]: "UART RX has capacity"
+  uo[4]: "UART TX"
+  uo[5]: "UART RX overrun"
+  uo[6]: "Protocol error"
+  uo[7]: "SPI memory fault"
+  uio[0]: "SPI SRAM chip select, active low"
+  uio[1]: "SPI SRAM MOSI"
+  uio[2]: "SPI SRAM MISO"
+  uio[3]: "SPI SRAM clock"
+  uio[4]: "Unused"
+  uio[5]: "Unused"
+  uio[6]: "Unused"
+  uio[7]: "Unused"
+
+yaml_version: 6
