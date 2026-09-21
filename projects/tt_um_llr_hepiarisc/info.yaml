@@ -24,6 +24,8 @@ project:
     - "hepiarisc_alu.sv"
     - "systick_gen.sv"
     - "i2c_master.v"
+    - "uart_tx.v"
+    - "uart_rx.v"
 
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
 # This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
