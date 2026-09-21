@@ -1,0 +1,56 @@
+# Tiny Tapeout project information
+project:
+  title:        "Morse Tree LED Decoder"   # Project title
+  author:       "Matthias Wegmann"               # Your name
+  discord:      ""                         # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "Reads a Morse key and lights the matching node of the Morse code tree on an 8x8 LED matrix"
+  language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz:     10000000  # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_mattizen_morse_tree"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "project.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "KEY (Morse key, 1 = pressed)"
+  ui[1]: "SPEED[0]"
+  ui[2]: "SPEED[1]"
+  ui[3]: "SPEED[2]"
+  ui[4]: "HOLD (keep last character until next key press)"
+  ui[5]: "RAW (uo_out = {KEY, DONE, NODE[5:0]})"
+  ui[6]: ""
+  ui[7]: "KEY_INV (1 = key is active low)"
+
+  # Outputs
+  uo[0]: "ROW0 / NODE0"
+  uo[1]: "ROW1 / NODE1"
+  uo[2]: "ROW2 / NODE2"
+  uo[3]: "ROW3 / NODE3"
+  uo[4]: "ROW4 / NODE4"
+  uo[5]: "ROW5 / NODE5"
+  uo[6]: "ROW6 / DONE"
+  uo[7]: "ROW7 / KEY"
+
+  # Bidirectional pins
+  uio[0]: "COL0 (active low)"
+  uio[1]: "COL1 (active low)"
+  uio[2]: "COL2 (active low)"
+  uio[3]: "COL3 (active low)"
+  uio[4]: "COL4 (active low)"
+  uio[5]: "COL5 (active low)"
+  uio[6]: "COL6 (active low)"
+  uio[7]: "COL7 (active low)"
+
+# Do not change!
+yaml_version: 6
