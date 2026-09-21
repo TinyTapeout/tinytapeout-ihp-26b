@@ -1,0 +1,42 @@
+# Digital lock-in. RTL refactored specifically for a 1x1 IHP tile.
+project:
+  title: "Digital IQ Lock-in (IEEE)"
+  author: "Gabriela Sheilyn Ticona Jimenez"
+  discord: ""
+  description: "Dual-phase digital demodulator with programmable block averaging — Equipo Triada CEG"
+  language: "Verilog"
+  clock_hz: 50000000
+  # Fixed allocation for TTIHP26b. Keep at 1x1 and optimize RTL instead.
+  tiles: "1x1"
+  top_module: "tt_um_gstj_lockin"
+  source_files:
+    - "project.v"
+    - "reference_generator.v"
+    - "lockin_core.v"
+    - "register_interface.v"
+pinout:
+  ui[0]: "DATA_IN[0]"
+  ui[1]: "DATA_IN[1]"
+  ui[2]: "DATA_IN[2]"
+  ui[3]: "DATA_IN[3]"
+  ui[4]: "DATA_IN[4]"
+  ui[5]: "DATA_IN[5]"
+  ui[6]: "DATA_IN[6]"
+  ui[7]: "DATA_IN[7]"
+  uo[0]: "READ_DATA[0]"
+  uo[1]: "READ_DATA[1]"
+  uo[2]: "READ_DATA[2]"
+  uo[3]: "READ_DATA[3]"
+  uo[4]: "READ_DATA[4]"
+  uo[5]: "READ_DATA[5]"
+  uo[6]: "READ_DATA[6]"
+  uo[7]: "READ_DATA[7]"
+  uio[0]: "SAMPLE_STROBE"
+  uio[1]: "WRITE_STROBE"
+  uio[2]: "ADDR[0]"
+  uio[3]: "ADDR[1]"
+  uio[4]: "ADDR[2]"
+  uio[5]: "SNAPSHOT_STROBE"
+  uio[6]: "BUSY"
+  uio[7]: "NEW_RESULT"
+yaml_version: 6

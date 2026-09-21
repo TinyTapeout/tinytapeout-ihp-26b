@@ -1,0 +1,46 @@
+148. Printing statistics.
+
+=== tt_um_gstj_lockin ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+     1432        - wires
+     1467        - wire bits
+      179        - public wires
+      214        - public wire bits
+        8        - ports
+       43        - port bits
+     1448 1.99E+04 cells
+       14  177.811   sg13g2_a21o_1
+      228 2.07E+03   sg13g2_a21oi_1
+       20  290.304   sg13g2_a221oi_1
+       45  488.187   sg13g2_a22oi_1
+       33  299.376   sg13g2_and2_1
+        3   38.102   sg13g2_and3_1
+        3   43.546   sg13g2_and4_1
+        2   14.515   sg13g2_buf_1
+      170 8.33E+03   sg13g2_dfrbpq_1
+      123  669.514   sg13g2_inv_1
+       24  435.456   sg13g2_mux2_1
+        2   76.205   sg13g2_mux4_1
+       79   573.35   sg13g2_nand2_1
+       15   136.08   sg13g2_nand2b_1
+       10    90.72   sg13g2_nand3_1
+        3   38.102   sg13g2_nand3b_1
+        5   54.432   sg13g2_nand4_1
+       86  624.154   sg13g2_nor2_1
+       19  172.368   sg13g2_nor2b_1
+       34  308.448   sg13g2_nor3_1
+        4   43.546   sg13g2_nor4_1
+      251 2.28E+03   sg13g2_o21ai_1
+        8   72.576   sg13g2_or2_1
+        5   63.504   sg13g2_or3_1
+      172 1.25E+03   sg13g2_tiehi
+       12   87.091   sg13g2_tielo
+       60  870.912   sg13g2_xnor2_1
+       18  261.274   sg13g2_xor2_1
+
+   Chip area for module '\tt_um_gstj_lockin': 19851.463800
+     of which used for sequential elements: 8328.096000 (41.95%)
+
