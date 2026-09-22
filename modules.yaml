@@ -22,3 +22,8 @@ modules:
       0: 0
       1: 1
       2: 2
+  - name: snn_voice_calculator_mauro_ciccone
+    height: 2
+    width: 4
+    x: 11
+    y: 7
