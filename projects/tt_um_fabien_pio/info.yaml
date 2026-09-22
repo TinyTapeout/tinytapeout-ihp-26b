@@ -1,17 +1,17 @@
 # Tiny Tapeout project information
 project:
   title:        "AstraPIO"
-  author:       "Fabien" # Confirm public attribution before publishing.
+  author:       "Fabien"
   discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  "General-purpose programmable IO prototype; not ready for tapeout"
+  description:  "Programmable PIO and autonomous timed I/O coprocessor (ABI 5)"
   language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
-  clock_hz:     50000000 # Exploratory target, not verified.
+  clock_hz:     50000000 # Timing-checked design target; board/silicon qualification remains pending.
 
-  # Two-tile area target; final fit must be measured with the IHP flow.
+  # Accepted 1x2 layout; see docs/info.md for validation scope.
   tiles: "1x2"
 
   # Your top module name must start with "tt_um_". Make it unique by including your github username:
-  top_module:  "tt_um_fabien_pio" # Provisional; confirm uniqueness before submission.
+  top_module:  "tt_um_fabien_pio" # Same module as the accepted layout.
 
   # List your project's source files here.
   # Source files must be in ./src and you must list each source file separately, one per line.
