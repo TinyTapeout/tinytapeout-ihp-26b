@@ -1,40 +1,83 @@
-# AstraPIO — single PIO plus timed I/O (ABI v5)
+# AstraPIO
 
-**Branch warning:** this development revision adds a configurable
-timed pulse-I/O engine beside one general-purpose PIO context. It is not physically
-qualified or submitted. The already submitted compact fallback is commit
-`946648ff` / shuttle PR 142, whose central checks passed. Its results do not
-qualify this extension. See `docs/dense-pio-v5.md` for the architecture,
-migration, tests and limitations.
-
-Experimental general-purpose programmable digital IO coprocessor, **not yet qualified for fabrication**. This is ABI 0x0500; earlier single/dual-context and SRAM submissions describe different implementations.
+Programmable digital I/O coprocessor with a host SPI interface.
 
 ## How it works
 
-One interpreter uses a programmable 16-word, 10-bit instruction store made from IHP standard-cell latches, with two-byte transmit and receive queues. One instruction slot occurs every four chip clocks. There is no SRAM macro. An autonomous pulse engine can concurrently capture a 1..24-bit prefix, replace it on a regenerated output stream and relay subsequent bits. Timing and routing are programmable; WS2812B V5 is one tested profile, not a hardwired ASIC purpose.
+AstraPIO combines a programmable PIO interpreter with an independent timed
+pulse engine. The host configures both blocks and exchanges data over SPI;
+individual I/O transitions are handled by the ASIC.
 
-The host uses SPI mode 0, MSB first: command byte (02 write / 03 read), register address byte, then a 16-bit payload. Program words occupy the low ten bits; upper bits must be zero. Stop the interpreter before changing its program. Probe identity 5049, ABI 0500 and context count 1 before using the driver. SPI high/low periods and CS setup/hold/gap each require at least six ASIC clocks. MISO is not tri-stated.
+The PIO provides 16 ten-bit instructions, an eight-bit accumulator, a four-bit
+loop counter and two-byte TX and RX FIFOs. An instruction slot occurs every
+four ASIC clocks. Instructions support GPIO direction and output control,
+input sampling, conditional branches, loops, delays and host events.
+`PULL` and `PUSH` wait when the corresponding FIFO cannot transfer data.
+
+The timed engine samples pulse-width-coded input bits after a programmable
+delay. It can capture a 1 to 24-bit prefix, regenerate the stream, and replace
+the prefix with a host-supplied value. Updates take effect atomically at a
+qualified frame boundary. The remaining bits are regenerated without a frame
+buffer. The PIO and timed engine can run concurrently on separate outputs.
+
+Typical applications include GPIO sequencing, simple serial transmitters and
+pulse-stream processing. Live WS2812 prefix replacement is described in a
+separate application note; AstraPIO is a general-purpose I/O device.
+
+## Host interface
+
+SPI mode 0, MSB first, with exactly 32 clocks per CS assertion:
+command byte (`0x02` write, `0x03` read), register address byte, then 16 data bits.
+On reads, only the last two received bytes contain register data.
+
+SCK high and low periods, plus CS setup, hold and inactive gaps, must each be
+at least six ASIC clocks. At CLK = 50 MHz this is 120 ns. MISO remains driven
+with CS inactive: use a dedicated MISO input or external bus isolation.
+IRQ is an active-high level shared by data-ready and error sources.
 
 ## How to test
 
-Reset, confirm ID/ABI/context count/capacity registers (00/01/02/0F), load and read back code, set entry PC and GPIO mask, then run with mask 1. Use assembler option `--abi 5`; old binaries are incompatible. The pin-level suite checks program integrity, 14 output indices, FIFO/SPI atomicity, UART timing, faults and reset, plus pulse-stream capture/replacement/relay while the interpreter runs independently.
+1. Select the design, supply CLK, keep host CS high and SCK low, then apply and release reset. Allow at least five CLK cycles in reset and five after release as a functional startup sequence.
+2. Read `0x00`, `0x01`, `0x02` and `0x0F`: expect `0x5049`, `0x0500`, `0x0001` and `0x1002`.
+3. With the PIO stopped, load consecutive instructions at `0x40` through `0x4F` and read them back. Each word must fit in ten bits. Assemble with `--abi 5`.
+4. Set the output mask at `0x10`, entry PC at `0x11`, then write `1` to RUN at `0x03`. Read error and FIFO status registers during use.
 
-See `docs/dense-pio-v5.md` for the register map, ISA migration and verification scope. Pulse timing must be configured for the actual attached device. No broad WS2812 compatibility or physical timing qualification is claimed at this development stage.
-
-## External hardware
-
-A host MCU (intended LPC546xx), clock source and wiring for the selected programmable protocol. The exact LPC546xx board transport/DMA and board timing remain to be qualified. No external memory is required for the compact examples.
+The timed engine has its own register page at `0x60` through `0x6C`, with
+identity `0x5449` and version `0x0118`. Configure it disabled. Reserve its
+output separately from the PIO mask, then enable the selected mode.
 
 ## Pin use
 
-ui0/1/2: host SCK/MOSI/CS_n; ui3..7: five dedicated PIO inputs.
+| Ports | Function |
+|---|---|
+| `ui_in[0]`, `[1]`, `[2]` | Host SCK, MOSI, active-low CS |
+| `ui_in[3]` through `[7]` | Application input indices I8 through I12 |
+| `uo_out[0]`, `[1]` | Host MISO, active-high IRQ |
+| `uo_out[2]` through `[7]` | Application output indices O8 through O13 |
+| `uio[0]` through `[7]` | Bidirectional application pins I0/O0 through I7/O7 |
 
-uo0/1: MISO/IRQ; uo2..7: six dedicated PIO outputs.
+The eight bidirectional pins are included in both the 13-input and 14-output
+logical index spaces. Each output can belong to only one block. Reset or
+deselection forces output values low and disables the bidirectional drivers.
+Stopping the PIO retains its output levels and directions.
 
-uio0..7: eight bidirectional PIO pins. The single interpreter may own any of the 14 outputs; the pulse engine exclusively owns at most one. Masks cannot overlap. All pad output values are forced low and uio directions disabled on reset or deselection; dedicated outputs are not tri-state.
+## External hardware
 
-## Qualification status
+A microcontroller with an SPI master, a clock source and the application
+circuit. A portable C driver is provided; the board-specific SPI transport
+must serialize accesses and respect the CS timing. Program and configuration
+are volatile and must be loaded after global reset.
 
-This branch is for development and independent CI. No SRAM waiver, DRC filtering or nonblocking signoff exception is permitted. Placement/routing, timing including latch/clock-gate paths, DRC, LVS and official precheck must all pass before a new revision can be considered.
+Check the delivered IHP carrier board for physical pin mapping, supply rails,
+logic levels and level translation. Logical port names are not package pin
+numbers. No direct 5 V compatibility is specified.
 
-The compact candidate at commit `946648f` completed the official flow in 1×2 tiles on 2026-09-18: Magic/KLayout DRC, LVS, XOR, antenna checks, nominal-RC timing at three cell corners, ten official prechecks and ten routed functional tests passed. The latest eleven-test suite also passes locally on that exact routed netlist. That compact candidate was submitted as PR 142; this timed extension has not been submitted. Board timing review remains separate. Detailed fallback evidence is in `docs/compact-validation.md`.
+## Documentation
+
+- [Datasheet and user documentation](https://github.com/fvannel/AstraPIO/tree/main/docs)
+- [Getting started](https://github.com/fvannel/AstraPIO/blob/main/docs/getting-started.md)
+- [WS2812 live patching application note](https://github.com/fvannel/AstraPIO/blob/main/docs/application-notes/AN-APIO-001-ws2812-live-patching.md)
+
+The interface described here is ABI 5. The reference clock is 50 MHz;
+all programmable delays scale with CLK. Functional simulation does not
+constitute electrical characterization or board-level qualification.
