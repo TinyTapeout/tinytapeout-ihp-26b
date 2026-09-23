@@ -1,103 +1,83 @@
-# AstraPIO — programmable PIO and autonomous timed I/O (ABI 5)
+# AstraPIO
 
-## Release status
-
-The final ABI 5 design was accepted for **Tiny Tapeout IHP26b, 1x2 tiles** in
-[PR149](https://github.com/TinyTapeout/tinytapeout-ihp-26b/pull/149), merged on
-19 September 2026. Its exact source is
-[`1b1c91183a4a9a5ea3516699845336175ffe6d96`](https://github.com/fvannel/AstraPIO/tree/1b1c91183a4a9a5ea3516699845336175ffe6d96),
-project [5799](https://app.tinytapeout.com/projects/5799).
-
-This documentation corrects development-stage warnings that remained in the
-submitted text. It does not replace the accepted layout, netlist or source
-revision. The implementation checks passed; board and silicon qualification
-remain separate and have not yet been performed.
+Programmable digital I/O coprocessor with a host SPI interface.
 
 ## How it works
 
-AstraPIO combines one general-purpose PIO interpreter with an independent,
-configurable pulse-stream engine. The interpreter has a 16-word, 10-bit
-instruction store implemented with standard-cell latches, an 8-bit accumulator,
-a 4-bit loop counter, and two-byte TX and RX queues. It executes one instruction
-slot every four ASIC clocks: 80 ns at the 50 MHz design target.
-There is no SRAM macro, second PIO context, or OUTMSB/ABI 6 extension.
+AstraPIO combines a programmable PIO interpreter with an independent timed
+pulse engine. The host configures both blocks and exchanges data over SPI;
+individual I/O transitions are handled by the ASIC.
 
-The timed engine can capture a programmable 1-to-24-bit prefix, replace it on
-the regenerated output stream, and relay subsequent bits unchanged. It operates
-concurrently with the interpreter, with exclusive output ownership. WS2812B V5
-is a tested timing profile, not the sole purpose of the ASIC.
+The PIO provides 16 ten-bit instructions, an eight-bit accumulator, a four-bit
+loop counter and two-byte TX and RX FIFOs. An instruction slot occurs every
+four ASIC clocks. Instructions support GPIO direction and output control,
+input sampling, conditional branches, loops, delays and host events.
+`PULL` and `PUSH` wait when the corresponding FIFO cannot transfer data.
 
-In the WS2812 application, the engine detects the low reset interval, captures
-the first 24 DIN bits for the host, sends a prepared replacement value on DOUT,
-then regenerates the remaining stream. The LPC546xx computes and increments
-the application counter on request and prepares the next frame's value. It does
-not need to handle every LED-data edge. Timing parameters must match the actual
-LED variant; compatibility with every WS2812 device is not claimed.
+The timed engine samples pulse-width-coded input bits after a programmable
+delay. It can capture a 1 to 24-bit prefix, regenerate the stream, and replace
+the prefix with a host-supplied value. Updates take effect atomically at a
+qualified frame boundary. The remaining bits are regenerated without a frame
+buffer. The PIO and timed engine can run concurrently on separate outputs.
 
-The host interface is SPI mode 0, MSB first, with one 32-bit transaction per CS:
-an 8-bit command (`0x02` write / `0x03` read), an 8-bit register address, and a
-16-bit data field. SCK high/low and CS setup/hold/inactive gap each require at
-least six ASIC clocks. **MISO is not tri-stated when CS is inactive.**
+Typical applications include GPIO sequencing, simple serial transmitters and
+pulse-stream processing. Live WS2812 prefix replacement is described in a
+separate application note; AstraPIO is a general-purpose I/O device.
+
+## Host interface
+
+SPI mode 0, MSB first, with exactly 32 clocks per CS assertion:
+command byte (`0x02` write, `0x03` read), register address byte, then 16 data bits.
+On reads, only the last two received bytes contain register data.
+
+SCK high and low periods, plus CS setup, hold and inactive gaps, must each be
+at least six ASIC clocks. At CLK = 50 MHz this is 120 ns. MISO remains driven
+with CS inactive: use a dedicated MISO input or external bus isolation.
+IRQ is an active-high level shared by data-ready and error sources.
 
 ## How to test
 
-Reset, then read ID `0x5049`, ABI `0x0500`, context count `1`, and capacity
-`0x1002` at registers `0x00`, `0x01`, `0x02`, and `0x0F` respectively.
-Assemble programs with `--abi 5`; older instruction binaries are incompatible.
-Stop the interpreter before loading its program. Upload consecutively, read
-back the code, set the entry PC and output mask, then run with context mask `1`.
-Program words occupy ten bits; nonzero upper six bits are rejected.
+1. Select the design, supply CLK, keep host CS high and SCK low, then apply and release reset. Allow at least five CLK cycles in reset and five after release as a functional startup sequence.
+2. Read `0x00`, `0x01`, `0x02` and `0x0F`: expect `0x5049`, `0x0500`, `0x0001` and `0x1002`.
+3. With the PIO stopped, load consecutive instructions at `0x40` through `0x4F` and read them back. Each word must fit in ten bits. Assemble with `--abi 5`.
+4. Set the output mask at `0x10`, entry PC at `0x11`, then write `1` to RUN at `0x03`. Read error and FIFO status registers during use.
 
-The independent timed engine has its own configuration and data registers.
-The interpreter and timed engine must not own the same output. See the
-[ABI 5 datasheet (PDF, French)](https://github.com/fvannel/AstraPIO/blob/main/docs/datasheet/AstraPIO_Datasheet_ABI5_Rev1.0_FR.pdf)
-for the full register map, instruction set, timing diagrams, programming
-sequence and host integration. The corresponding
-[portable C driver](https://github.com/fvannel/AstraPIO/tree/1b1c91183a4a9a5ea3516699845336175ffe6d96/firmware)
-is pinned to the accepted source. Historical source files on the repository's
-`main` branch describe an older design; use the exact source link above.
-
-## External hardware
-
-A host MCU (intended LPC546xx), a suitable ASIC clock, and wiring for the
-selected protocol are required. No external memory is needed for the compact
-examples. Verify module voltage limits and provide level translation where
-required; do not assume that a 5 V LED signal can connect directly.
-Use a dedicated SPI connection or suitable isolation if sharing MISO.
-LPC546xx transport/DMA, board timing, voltage translation and real LEDs remain
-to be qualified on hardware.
+The timed engine has its own register page at `0x60` through `0x6C`, with
+identity `0x5449` and version `0x0118`. Configure it disabled. Reserve its
+output separately from the PIO mask, then enable the selected mode.
 
 ## Pin use
 
-- `ui[0:2]`: host SCK, MOSI, CS_n; `ui[3:7]`: five dedicated application inputs.
-- `uo[0:1]`: host MISO and IRQ; `uo[2:7]`: six dedicated application outputs.
-- `uio[0:7]`: eight bidirectional application pins.
+| Ports | Function |
+|---|---|
+| `ui_in[0]`, `[1]`, `[2]` | Host SCK, MOSI, active-low CS |
+| `ui_in[3]` through `[7]` | Application input indices I8 through I12 |
+| `uo_out[0]`, `[1]` | Host MISO, active-high IRQ |
+| `uo_out[2]` through `[7]` | Application output indices O8 through O13 |
+| `uio[0]` through `[7]` | Bidirectional application pins I0/O0 through I7/O7 |
 
-There are 13 application input indices and 14 application output indices.
-The interpreter may own any of the 14 outputs; the timed engine exclusively
-owns at most one. All pad output values are forced low and `uio` output enables
-are disabled on reset or deselection. Dedicated outputs are not tri-state.
+The eight bidirectional pins are included in both the 13-input and 14-output
+logical index spaces. Each output can belong to only one block. Reset or
+deselection forces output values low and disables the bidirectional drivers.
+Stopping the PIO retains its output levels and directions.
 
-## Validation scope
+## External hardware
 
-The accepted candidate passed placement/routing, Magic and KLayout DRC, LVS,
-XOR, antenna checks, all ten official prechecks and all 25 routed-netlist
-functional tests. A supplemental three-cell-corner audit with explicit
-early 0.95 / late 1.05 derating passed setup/hold, recovery/removal, clock gating,
-pulse width, electrical constraints and unconstrained-path checks. The fast
-hold margin is narrow: +0.004872 ns at nominal extracted RC and a 20 ns clock.
+A microcontroller with an SPI master, a clock source and the application
+circuit. A portable C driver is provided; the board-specific SPI transport
+must serialize accesses and respect the CS timing. Program and configuration
+are volatile and must be loaded after global reset.
 
-Evidence: [official build 35442726541](https://github.com/fvannel/AstraPIO/actions/runs/35442726541),
-[supplemental audit 35448283122](https://github.com/fvannel/AstraPIO/actions/runs/35448283122),
-[central checks 35450180122](https://github.com/TinyTapeout/tinytapeout-ihp-26b/actions/runs/35450180122)
-and the [validation summary](https://github.com/fvannel/AstraPIO/blob/main/docs/final-validation-abi5.md).
+Check the delivered IHP carrier board for physical pin mapping, supply rails,
+logic levels and level translation. Logical port names are not package pin
+numbers. No direct 5 V compatibility is specified.
 
-The supplemental WS2812 replay passed 12 scenarios in RTL and 12 on the exact
-routed netlist, including the counter application over 12 frames and 1,440
-output bits per mode. The host is a SPI behavioural model, not ARM firmware
-execution. Simulations are functional and do not include SDF annotation.
+## Documentation
 
-No SRAM waiver, DRC filtering or nonblocking precheck exception is used to
-qualify the final ABI 5 design. These results apply to the named frozen
-candidate only. Acceptance into the shuttle does not mean that fabrication
-or electrical qualification on silicon has been completed.
+- [Datasheet and user documentation](https://github.com/fvannel/AstraPIO/tree/main/docs)
+- [Getting started](https://github.com/fvannel/AstraPIO/blob/main/docs/getting-started.md)
+- [WS2812 live patching application note](https://github.com/fvannel/AstraPIO/blob/main/docs/application-notes/AN-APIO-001-ws2812-live-patching.md)
+
+The interface described here is ABI 5. The reference clock is 50 MHz;
+all programmable delays scale with CLK. Functional simulation does not
+constitute electrical characterization or board-level qualification.

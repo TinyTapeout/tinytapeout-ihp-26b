@@ -5,13 +5,13 @@ project:
   discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
   description:  "Programmable PIO and autonomous timed I/O coprocessor (ABI 5)"
   language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
-  clock_hz:     50000000 # Timing-checked design target; board/silicon qualification remains pending.
+  clock_hz:     50000000 # Reference clock; board and silicon characterization pending.
 
-  # Accepted 1x2 layout; see docs/info.md for validation scope.
+  # Accepted block allocation: 1x2 tiles.
   tiles: "1x2"
 
   # Your top module name must start with "tt_um_". Make it unique by including your github username:
-  top_module:  "tt_um_fabien_pio" # Same module as the accepted layout.
+  top_module:  "tt_um_fabien_pio" # Top module of the accepted ABI 5 layout.
 
   # List your project's source files here.
   # Source files must be in ./src and you must list each source file separately, one per line.
