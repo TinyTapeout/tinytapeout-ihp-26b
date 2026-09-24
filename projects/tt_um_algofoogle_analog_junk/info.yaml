@@ -1,6 +1,6 @@
 # Tiny Tapeout project information
 project:
-  title:        "Simple comparator + 2 DACs analog layout in a 1x1 tile"
+  title:        "Simple comparator + 2 RDACs analog layout in a 1x1 tile"
   author:       "algofoogle (Anton Maurovic)"
   discord:      "algofoogle"
   description:  "IHP sg13g2 custom layout analog experiments in a regular TT 1x1 digital tile"
