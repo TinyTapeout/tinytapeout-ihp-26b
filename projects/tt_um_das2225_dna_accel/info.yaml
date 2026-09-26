@@ -1,7 +1,7 @@
 # Tiny Tapeout project information
 project:
   title:        "DNA_Accel"      # Project title
-  author:       "Garv R Jain, Suhani Das, Dr. Vishal Gupta"      # Your name
+  author:       "Garv R Jain, Suhani Das, Dr. Vishal Gupta (Vellore Institute of Technology, Vellore, Tamil Nadu, India)"      # Your name
   discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
   description:  "SPI-driven hardware accelerator for transition/transversion-aware DNA sequence comparison"      # One line description of what your project does
   language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
